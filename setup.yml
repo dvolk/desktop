@@ -130,6 +130,7 @@
           - sunclock
           - virt-manager
           - webp
+          - lightdm
       tags:
         - desktop
 
