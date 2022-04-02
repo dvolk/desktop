@@ -1,0 +1,153 @@
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+(package-initialize)
+
+(setq package-selected-packages '(lsp-mode yasnippet lsp-treemacs helm-lsp magit diff-hl python-black
+                                           projectile hydra flycheck company avy which-key helm-xref
+                                           rainbow-delimiters dap-mode yaml-mode))
+
+(when (cl-find-if-not #'package-installed-p package-selected-packages)
+  (package-refresh-contents)
+  (mapc #'package-install package-selected-packages))
+
+(helm-mode)
+(which-key-mode)
+;;(global-visual-line-mode)
+(xterm-mouse-mode)
+(scroll-bar-mode 0)
+(menu-bar-mode 0)
+(show-paren-mode)
+(tool-bar-mode nil)
+(tab-bar-mode nil)
+(xterm-mouse-mode t)
+
+
+(require 'helm-xref)
+(define-key global-map [remap find-file] #'helm-find-files)
+(define-key global-map [remap execute-extended-command] #'helm-M-x)
+(define-key global-map [remap switch-to-buffer] #'helm-mini)
+
+(setq gc-cons-threshold (* 100 1024 1024)
+      read-process-output-max (* 1024 1024)
+      treemacs-space-between-root-nodes nil
+      company-idle-delay 0.0
+      company-minimum-prefix-length 1
+      lsp-headerline-breadcrumb-enable t)
+
+(windmove-default-keybindings)
+(setq mouse-autoselect-window t)
+
+(with-eval-after-load 'lsp-mode
+  (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
+  (yas-global-mode))
+
+(global-set-key (kbd "C-d") 'avy-goto-char-timer)
+
+
+
+
+(global-set-key [mouse-4] (lambda () (interactive) (scroll-down 10)))
+(global-set-key [mouse-5] (lambda () (interactive) (scroll-up 10)))
+;;(global-set-key [mouse-8] (lambda () (interactive) (previous-buffer)))
+;;(global-set-key [mouse-9] (lambda () (interactive) (next-buffer)))
+
+(add-to-list 'auto-mode-alist '("\\.nf\\'" . groovy-mode))
+(add-to-list 'auto-mode-alist '("\\.template\\'" . jinja2-mode))
+
+;;(setq pixel-scxroll-precision-large-scroll-height 40.0)
+;;(setq pixel-scroll-precision-interpolation-factor 30)
+
+;; Disable lockfiles.
+(setq create-lockfiles nil)
+
+
+(setq-default show-trailing-whitespace nil)
+(setq-default indicate-empty-lines t)
+(setq-default indicate-buffer-boundaries 'left)
+
+;; Consider a period followed by a single space to be end of sentence.
+(setq sentence-end-double-space nil)
+
+;; Use spaces, not tabs, for indentation
+
+(setq-default indent-tabs-mode nil)
+
+;; Display the distance between two tab stops as 4 characters wide.
+(setq-default tab-width 4)
+
+
+;; Indentation setting for various languages.
+(setq c-basic-offset 4)
+(setq js-indent-level 2)
+(setq css-indent-offset 2)
+
+;; Highlight matching pairs of parentheses.
+(setq show-paren-delay 0)
+
+
+(setq
+ backup-by-copying t      ; don't clobber symlinks
+ backup-directory-alist
+ '(("." . "~/.saves/"))    ; don't litter my fs tree
+ delete-old-versions t
+ kept-new-versions 31
+ kept-old-versions 7
+ version-control t)       ; use versioned backups
+
+(defun my-before-save-hook ()
+  (progn (if (not (string-match ".*makefile.*" (message "%s" major-mode)))
+             (untabify (point-min) (point-max)))
+         (delete-trailing-whitespace)))
+(add-hook 'before-save-hook 'my-before-save-hook)
+
+(setq rust-format-on-save t)
+
+
+
+;; Go - lsp-mode
+;; Set up before-save hooks to format buffer and add/delete imports.
+(defun lsp-go-install-save-hooks ()
+  (add-hook 'before-save-hook #'lsp-format-buffer t t)
+  (add-hook 'before-save-hook #'lsp-organize-imports t t))
+(add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
+;; Start LSP Mode and YASnippet mode
+(add-hook 'go-mode-hook #'lsp-deferred)
+(add-hook 'go-mode-hook #'yas-minor-mode)
+(add-hook 'org-mode-hook #'flyspell-mode)
+(add-hook 'python-mode-hook #'lsp-deferred)
+(add-hook 'c-mode-hook #'lsp-deferred)
+(add-hook 'c++-mode-hook #'lsp-deferred)
+(add-hook 'python-mode-hook #'rainbow-delimiters-mode)
+(add-hook 'c-mode-hook #'rainbow-delimiters-mode)
+(add-hook 'c++-mode-hook #'rainbow-delimiters-mode)
+(add-hook 'python-mode-hook #'display-line-numbers-mode)
+(add-hook 'python-mode-hook #'diff-hl-mode)
+(add-hook 'python-mode-hook #'diff-hl-margin-mode)
+(add-hook 'python-mode-hook #'diff-hl-flydiff-mode)
+(add-hook 'python-mode-hook #'rainbow-delimiters-mode)
+(add-hook 'python-mode-hook #'python-black-on-save-mode)
+
+(setq rust-language-server 'rust-analyzer)
+;; (setq browse-url-browser-function 'eww-browse-url)
+(autoload 'ispell-get-word "ispell")
+
+(global-set-key [f2] 'tab-previous)
+(global-set-key [f3] 'tab-next)
+(global-set-key [f5] 'elfeed)
+(global-set-key [f9] 'lsp-find-definition)
+(global-set-key [f12] 'lsp-rename)
+(treemacs)
+(global-visual-line-mode)
+
+(with-eval-after-load "org-tree-slide"
+  (define-key org-tree-slide-mode-map (kbd "<f9>") 'org-tree-slide-move-previous-tree)
+  (define-key org-tree-slide-mode-map (kbd "<f10>") 'org-tree-slide-move-next-tree)
+  )
+
+(setq split-height-threshold nil)
+(setq split-width-threshold 160)
+
+(setq redisplay-dont-pause t)
+
+(setq custom-file "~/custom.el")
+(load custom-file)

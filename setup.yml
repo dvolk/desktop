@@ -1,0 +1,183 @@
+---
+- hosts: localhost
+  connection: local
+
+  tasks:
+    - name: Install common packages
+      become: true
+      apt:
+        update_cache: yes
+        cache_valid_time: 36000
+        state: latest
+        pkg:
+          - ubuntu-server
+          - jq
+          - build-essential
+          - python3-pip
+          - rsync
+          - git
+          - tmux
+          - htop
+          - iotop
+          - bmon
+          - powertop
+          - lsof
+          - imagemagick
+          - ncdu
+          - aria2
+          - autoconf
+          - automake
+          - bzip2
+          - blender
+          - fzf
+          - g++
+          - emacs-nox
+          - lnav
+          - oathtool
+          - p7zip
+          - parallel
+          - rdate
+          - sqlite3
+          - syncthing
+          - tig
+          - unace
+          - unar
+          - unrar
+          - unzip
+          - valgrind
+          - tshark
+          - zip
+          - apt-file
+          - autojump
+          - bc
+          - clamav
+          - cloc
+          - cmake
+          - cmake-curses-gui
+          - curl
+          - dict-gcide
+          - dict-moby-thesaurus
+          - dictd
+          - ranger
+          - smartmontools
+          - lshw
+          - m4
+          - mutt
+          - openvpn
+          - tinc
+          - pwgen
+          - sshfs
+          - strace
+          - tree
+          - ufw
+          - w3m
+          - lynx
+          - wget
+          - whois
+          - xdg-user-dirs
+          - xz-utils
+
+    - name: Install python dev packages
+      pip:
+        name:
+          - python-lsp-server
+          - isort
+          - black
+
+    - name: Install desktop packages
+      become: true
+      apt:
+        update_cache: yes
+        cache_valid_time: 36000
+        state: latest
+        pkg:
+          - feh
+          - mpv
+          - i3
+          - i3blocks
+          - xclip
+          - zathura
+          - zathura-djvu
+          - gimp
+          - firefox
+          - webext-ublock-origin-firefox
+          - xserver-xorg
+          - xserver-xorg-input-all
+          - xserver-xorg-video-all
+          - x11-apps
+          - x11-utils
+          - x11-xkb-utils
+          - x11-xserver-utils
+          - kitty
+          - thunderbird
+          - wireshark
+          - thunar
+          - mousepad
+          - transmission-remote-gtk
+          - blender
+          - rawtherapee
+          - chromium-browser
+          - cups
+          - fbreader
+          - fonts-dejavu
+          - lxappearance
+          - gthumb
+          - slock
+          - obs-studio
+          - remmina
+          - xterm
+          - scrot
+          - sunclock
+          - virt-manager
+          - webp
+      tags:
+        - desktop
+
+    - name: Download jetbrains font
+      ansible.builtin.get_url:
+        url: https://github.com/JetBrains/JetBrainsMono/releases/download/v2.242/JetBrainsMono-2.242.zip
+        dest: /tmp/JetBrainsMono.zip
+        checksum: sha256:4e315b4ef176ce7ffc971b14997bdc8f646e3d1e5b913d1ecba3a3b10b4a1a9f
+      tags:
+        - desktop
+
+    - name: Extract jetbrains font
+      ansible.builtin.unarchive:
+        src: /tmp/JetBrainsMono.zip
+        dest: ~/.fonts
+      tags:
+        - desktop
+
+    - name: Copy emacs config
+      copy:
+        src: emacs-config
+        dest: ~/.emacs
+
+    - name: Copy i3 config
+      copy:
+        src: i3-config
+        dest: ~/.config/i3/config
+      tags:
+        - desktop
+
+    - name: Copy kitty config
+      copy:
+        src: kitty-config
+        dest: ~/.config/kitty/kitty.conf
+      tags:
+        - desktop
+
+    - name: Copy kitty theme
+      copy:
+        src: kitty-theme
+        dest: ~/.config/kitty/current-theme.conf
+      tags:
+        - desktop
+
+    - name: Copy firefox policies
+      become: true
+      copy:
+        src: firefox-policies
+        dest: /usr/lib/firefox/distribution/policies.json
+      tags:
+        - desktop
