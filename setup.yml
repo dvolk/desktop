@@ -152,6 +152,7 @@
         cache_valid_time: 36000
         state: latest
         pkg:
+          - barrier
           - libreoffice
           - firefox
           - webext-ublock-origin-firefox
@@ -166,6 +167,7 @@
           - avahi-daemon
           - gdm3
           - command-not-found
+          - motd-news-config
 
     - name: Download jetbrains font
       ansible.builtin.get_url:
@@ -179,6 +181,8 @@
       file:
         path: ~/.fonts
         state: directory
+      tags:
+        - desktop
 
     - name: Extract jetbrains font
       ansible.builtin.unarchive:
@@ -196,6 +200,8 @@
       file:
         path: ~/.config/i3
         state: directory
+      tags:
+        - desktop
 
     - name: Copy i3 config
       copy:
@@ -215,6 +221,8 @@
       file:
         path: ~/.config/kitty
         state: directory
+      tags:
+        - desktop
 
     - name: Copy kitty config
       copy:
@@ -249,6 +257,8 @@
       file:
         path: ~/.config/gtk-3.0
         state: directory
+      tags:
+        - desktop
 
     - name: Copy gtk3 config
       copy:
@@ -317,9 +327,18 @@
       template:
         src: xresources
         dest: ~/.Xresources
+      tags:
+        - desktop
 
     - name: setup x11 synaptics
-      copy :
+      copy:
         src: synaptics-config
         dest: /etc/X11/xorg.conf.d/70-synaptics.conf
       become: yes
+      tags:
+        - desktop
+
+    - name: setup git
+      copy:
+        src: git-config
+        dest: ~/.gitconfig
