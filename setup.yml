@@ -87,6 +87,7 @@
           - screenfetch
           - net-tools
           - aptitude
+          - transmission-remote-gtk
 
     - name: Install python dev packages
       pip:
@@ -150,20 +151,18 @@
         cache_valid_time: 36000
         state: latest
         pkg:
-          - notification-daemon
-          - libnotify4
-          - transmission-remote-gtk
           - firefox
           - webext-ublock-origin-firefox
       tags:
         - desktop
 
-    - name: Remove avahi-daemon
+    - name: Remove avahi-daemon, gdm3
       become: true
       apt:
         state: absent
         pkg:
           - avahi-daemon
+          - gdm3
 
     - name: Download jetbrains font
       ansible.builtin.get_url:
