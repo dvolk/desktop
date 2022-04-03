@@ -12,4 +12,4 @@ Set up a desktop with ansible
     sudo apt install git ansible
     git clone https://github.com/dvolk/desktop/
     cd desktop
-    ansible-playbook -K setup.yml
+    DPI=96 ansible-playbook -K setup.yml

@@ -1,4 +1,5 @@
 /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+blueman-applet &
 
 xset dpms 0 0 3600
 xset s 3600
