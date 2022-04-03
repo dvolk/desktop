@@ -121,8 +121,6 @@
           - wireshark
           - thunar
           - mousepad
-          - transmission-remote-gtk
-          - blender
           - rawtherapee
           - cups
           - fbreader
@@ -138,6 +136,8 @@
           - virt-manager
           - webp
           - elementary-xfce-icon-theme
+          - lightdm-gtk-greeter
+          - lightdm
       tags:
         - desktop
 
@@ -149,8 +149,8 @@
         cache_valid_time: 36000
         state: latest
         pkg:
-          - lightdm-gtk-greeter
-          - lightdm
+          - libnotify4
+          - transmission-remote-gtk
           - firefox
           - webext-ublock-origin-firefox
       tags:
