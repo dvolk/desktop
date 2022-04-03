@@ -37,7 +37,6 @@
           - autoconf
           - automake
           - bzip2
-          - blender
           - fzf
           - g++
           - emacs-nox
@@ -87,7 +86,6 @@
           - screenfetch
           - net-tools
           - aptitude
-          - transmission-remote-gtk
 
     - name: Install python dev packages
       pip:
@@ -140,6 +138,7 @@
           - elementary-xfce-icon-theme
           - lightdm-gtk-greeter
           - lightdm
+          - transmission-remote-gtk
       tags:
         - desktop
 
@@ -151,18 +150,20 @@
         cache_valid_time: 36000
         state: latest
         pkg:
+          - libreoffice
           - firefox
           - webext-ublock-origin-firefox
       tags:
         - desktop
 
-    - name: Remove avahi-daemon, gdm3
+    - name: Remove avahi-daemon, gdm3, etc
       become: true
       apt:
         state: absent
         pkg:
           - avahi-daemon
           - gdm3
+          - command-not-found
 
     - name: Download jetbrains font
       ansible.builtin.get_url:
