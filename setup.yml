@@ -150,6 +150,7 @@
         cache_valid_time: 36000
         state: latest
         pkg:
+          - notification-daemon
           - libnotify4
           - transmission-remote-gtk
           - firefox
