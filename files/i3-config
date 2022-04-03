@@ -205,7 +205,6 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
     status_command i3blocks
-    output HDMI-0
     position top
     font pango:Terminus TTF 16
 
