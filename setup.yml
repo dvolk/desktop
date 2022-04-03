@@ -212,3 +212,19 @@
         dest: /usr/lib/firefox/distribution/policies.json
       tags:
         - desktop
+
+    - name: enable firewall
+      community.general.ufw:
+        state: enabled
+        direction: incoming
+        policy: deny
+      become: true
+      tags:
+        - desktop
+
+    - name: set firewall logging
+      community.general.ufw:
+        logging: 'on'
+      become: true
+      tags:
+        - desktop
