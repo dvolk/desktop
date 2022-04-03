@@ -244,9 +244,25 @@
       tags:
         - desktop
 
-    - name: set firewall logging
+    - name: Set firewall logging
       community.general.ufw:
         logging: 'on'
       become: true
       tags:
         - desktop
+
+    - name: Create command logs directory
+      file:
+        path: ~/.logs
+        state: directory
+
+    - name: Setup bashrc
+      blockinfile:
+        path: ~/.bashrc
+        block: |
+          . /usr/share/autojump/autojump.sh
+          HISTTIMEFORMAT="%F %T "
+          shopt -s histappend
+          HISTSIZE=100000
+          HISTFILESIZE=200000
+          export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> ~/.logs/bash-history-$(date "+%Y-%m-%d").log; fi'
