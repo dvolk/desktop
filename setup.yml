@@ -142,6 +142,13 @@
       tags:
         - desktop
 
+    - name: Remove avahi-daemon
+      become: true
+      apt:
+        state: absent
+        pkg:
+          - avahi-daemon
+
     - name: Download jetbrains font
       ansible.builtin.get_url:
         url: https://github.com/JetBrains/JetBrainsMono/releases/download/v2.242/JetBrainsMono-2.242.zip
