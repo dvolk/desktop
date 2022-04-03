@@ -146,6 +146,7 @@
     - name: Install desktop packages (no recommends)
       become: true
       apt:
+        install_recommends: no
         update_cache: yes
         cache_valid_time: 36000
         state: latest
