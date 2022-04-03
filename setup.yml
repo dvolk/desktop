@@ -186,6 +186,13 @@
       tags:
         - desktop
 
+    - name: Copy desktop setup script
+      copy:
+        src: start.sh
+        dest: ~/start.sh
+      tags:
+        - desktop
+
     - name: Create kitty config directory
       file:
         path: ~/.config/kitty

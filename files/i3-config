@@ -86,7 +86,7 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 #bindsym --release $mod+m exec "emacsclient -c -n"
 bindsym --release $mod+l exec slock
 
-exec bash caps.sh
+exec bash ~/start.sh
 
 # change focus
 bindsym $mod+j focus left
