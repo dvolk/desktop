@@ -86,6 +86,7 @@
           - xz-utils
           - screenfetch
           - net-tools
+          - aptitude
 
     - name: Install python dev packages
       pip:
