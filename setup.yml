@@ -141,6 +141,11 @@
       tags:
         - desktop
 
+    - name: Create font directory
+      file:
+        path: ~/.fonts
+        state: directory
+
     - name: Extract jetbrains font
       ansible.builtin.unarchive:
         src: /tmp/JetBrainsMono.zip
