@@ -158,12 +158,22 @@
         src: emacs-config
         dest: ~/.emacs
 
+    - name: Create i3 config directory
+      file:
+        path: ~/.config/i3
+        state: directory
+
     - name: Copy i3 config
       copy:
         src: i3-config
         dest: ~/.config/i3/config
       tags:
         - desktop
+
+    - name: Create kitty config directory
+      file:
+        path: ~/.config/kitty
+        state: directory
 
     - name: Copy kitty config
       copy:
