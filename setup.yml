@@ -272,6 +272,13 @@
     - name: download adware+malware hosts file
       ansible.builtin.get_url:
         url: https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts
+        dest: /tmp/hosts
+      tags:
+        - desktop
+
+    - name: copy adware+malware hosts file to /etc/hosts
+      copy:
+        src: /tmp/hosts
         dest: /etc/hosts
       become: true
       tags:
