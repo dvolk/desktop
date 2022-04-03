@@ -109,7 +109,6 @@
           - zathura
           - zathura-djvu
           - gimp
-          - webext-ublock-origin-firefox
           - xserver-xorg
           - xserver-xorg-input-all
           - xserver-xorg-video-all
@@ -152,6 +151,7 @@
         state: latest
         pkg:
           - firefox
+          - webext-ublock-origin-firefox
       tags:
         - desktop
 
