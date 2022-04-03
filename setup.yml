@@ -276,19 +276,19 @@
       tags:
         - desktop
 
-    - name: copy adware+malware hosts file to /etc/hosts
-      copy:
-        src: /tmp/hosts
-        dest: /etc/hosts
+    - name: insert hostname into /tmp/hosts
+      blockinfile:
+        path: /tmp/hosts
+        block: |
+          127.0.1.1 {{ ansible_hostname }}
       become: true
       tags:
         - desktop
 
-    - name: insert hostname into /etc/hosts
-      blockinfile:
-        path: /etc/hosts
-        block: |
-          127.0.1.1 {{ ansible_hostname }}
+    - name: copy adware+malware hosts file to /etc/hosts
+      copy:
+        src: /tmp/hosts
+        dest: /etc/hosts
       become: true
       tags:
         - desktop
