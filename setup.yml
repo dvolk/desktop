@@ -240,6 +240,11 @@
       tags:
         - desktop
 
+    - name: Create gtk3 config directory
+      file:
+        path: ~/.config/gtk-3.0
+        state: directory
+
     - name: Copy gtk3 config
       copy:
         src: gtk3-config
