@@ -140,6 +140,7 @@
           - virt-manager
           - webp
           - lightdm-gtk-greeter
+          - lightdm
           - elementary-xfce-icon-theme
       tags:
         - desktop
