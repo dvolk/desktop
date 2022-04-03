@@ -236,7 +236,7 @@
       tags:
         - desktop
 
-    - name: enable firewall
+    - name: Enable firewall
       community.general.ufw:
         state: enabled
         direction: incoming
