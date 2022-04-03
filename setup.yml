@@ -269,6 +269,23 @@
       tags:
         - desktop
 
+    - name: download adware+malware hosts file
+      ansible.builtin.get_url:
+        url: https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts
+        dest: /etc/hosts
+      become: true
+      tags:
+        - desktop
+
+    - name: insert hostname into /etc/hosts
+      blockinfile:
+        path: /etc/hosts
+        block: |
+          127.0.1.1 {{ ansible_hostname }}
+      become: true
+      tags:
+        - desktop
+
     - name: Create command logs directory
       file:
         path: ~/.logs
