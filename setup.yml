@@ -137,8 +137,6 @@
           - sunclock
           - virt-manager
           - webp
-          - lightdm-gtk-greeter
-          - lightdm
           - elementary-xfce-icon-theme
       tags:
         - desktop
@@ -151,6 +149,8 @@
         cache_valid_time: 36000
         state: latest
         pkg:
+          - lightdm-gtk-greeter
+          - lightdm
           - firefox
           - webext-ublock-origin-firefox
       tags:
