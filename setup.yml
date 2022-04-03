@@ -139,7 +139,7 @@
           - virt-manager
           - webp
           - lightdm
-          - humanity-icon-theme
+          - elementary-xfce-icon-theme
       tags:
         - desktop
 
@@ -218,6 +218,13 @@
       copy:
         src: firefox-policies
         dest: /usr/lib/firefox/distribution/policies.json
+      tags:
+        - desktop
+
+    - name: Copy gtk2 config
+      copy:
+        src: gtkrc-config
+        dest: ~/.gtkrc-2.0
       tags:
         - desktop
 
