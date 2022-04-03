@@ -139,6 +139,7 @@
           - virt-manager
           - webp
           - lightdm
+          - humanity-icon-theme
       tags:
         - desktop
 
