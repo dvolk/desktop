@@ -201,6 +201,12 @@
         src: emacs-config
         dest: ~/.emacs.d/init.el
 
+    - name: touch emacs custom config file
+      file:
+        dest: ~/.emacs.d/custom.el
+        state: touch
+        mode: u+rw,g-wx,o-rwx
+
     - name: Create i3 config directory
       file:
         path: ~/.config/i3
