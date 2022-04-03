@@ -191,10 +191,15 @@
       tags:
         - desktop
 
+    - name: Create emacs directory
+      file:
+        path: ~/.emacs.d
+        state: directory
+
     - name: Copy emacs config
       copy:
         src: emacs-config
-        dest: ~/.emacs
+        dest: ~/.emacs.d/init.el
 
     - name: Create i3 config directory
       file:

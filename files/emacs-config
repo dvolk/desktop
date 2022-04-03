@@ -10,6 +10,9 @@
   (package-refresh-contents)
   (mapc #'package-install package-selected-packages))
 
+(setq custom-file "~/.emacs.d/custom.el")
+(load-file custom-file)
+
 (helm-mode)
 (which-key-mode)
 ;;(global-visual-line-mode)
@@ -148,6 +151,3 @@
 (setq split-width-threshold 160)
 
 (setq redisplay-dont-pause t)
-
-(setq custom-file "~/custom.el")
-(load custom-file)
