@@ -109,7 +109,6 @@
           - zathura
           - zathura-djvu
           - gimp
-          - firefox
           - webext-ublock-origin-firefox
           - xserver-xorg
           - xserver-xorg-input-all
@@ -140,8 +139,19 @@
           - sunclock
           - virt-manager
           - webp
-          - lightdm
+          - lightdm-gtk-greeter
           - elementary-xfce-icon-theme
+      tags:
+        - desktop
+
+    - name: Install desktop packages (no recommends)
+      become: true
+      apt:
+        update_cache: yes
+        cache_valid_time: 36000
+        state: latest
+        pkg:
+          - firefox
       tags:
         - desktop
 
