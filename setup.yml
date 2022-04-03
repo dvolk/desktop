@@ -223,8 +223,15 @@
 
     - name: Copy gtk2 config
       copy:
-        src: gtkrc-config
+        src: gtk2-config
         dest: ~/.gtkrc-2.0
+      tags:
+        - desktop
+
+    - name: Copy gtk3 config
+      copy:
+        src: gtk3-config
+        dest: ~/.config/gtk-3.0/settings.ini
       tags:
         - desktop
 
