@@ -56,7 +56,6 @@
           - cmake-curses-gui
           - curl
           - dict-gcide
-          - dict-moby-thesaurus
           - dictd
           - ranger
           - smartmontools
