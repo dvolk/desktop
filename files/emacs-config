@@ -4,7 +4,7 @@
 
 (setq package-selected-packages '(lsp-mode yasnippet lsp-treemacs helm-lsp magit diff-hl python-black
                                            projectile hydra flycheck company avy which-key helm-xref
-                                           rainbow-delimiters dap-mode yaml-mode))
+                                           rainbow-delimiters dap-mode yaml-mode json-mode twilight-bright-theme))
 
 (when (cl-find-if-not #'package-installed-p package-selected-packages)
   (package-refresh-contents)
