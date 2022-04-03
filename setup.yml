@@ -84,6 +84,7 @@
           - whois
           - xdg-user-dirs
           - xz-utils
+          - screenfetch
 
     - name: Install python dev packages
       pip:
