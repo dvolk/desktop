@@ -85,6 +85,7 @@
           - xdg-user-dirs
           - xz-utils
           - screenfetch
+          - net-tools
 
     - name: Install python dev packages
       pip:
