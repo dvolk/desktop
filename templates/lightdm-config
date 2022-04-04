@@ -1,0 +1,2 @@
+[SeatDefaults]
+xserver-command=X -dpi {{ lookup('env', 'DPI') }} -nolisten tcp
