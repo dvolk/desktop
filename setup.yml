@@ -86,6 +86,7 @@
           - screenfetch
           - net-tools
           - aptitude
+          - tlp
 
     - name: Install python dev packages
       pip:
@@ -137,10 +138,10 @@
           - virt-manager
           - webp
           - elementary-xfce-icon-theme
-          - lightdm-gtk-greeter
-          - lightdm
+          - sddm
           - transmission-remote-gtk
           - blueman
+          - syncthing-gtk
       tags:
         - desktop
 
