@@ -132,6 +132,7 @@
           - fonts-firacode
           - fonts-ubuntu
           - fonts-ubuntu-console
+          - fonts-roboto
           - xfonts-terminus
           - ttf-mscorefonts-installer
       tags:
