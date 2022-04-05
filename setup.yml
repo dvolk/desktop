@@ -95,6 +95,47 @@
           - isort
           - black
 
+    - name: accept ms font eula (have not actually read it)
+      debconf:
+        name: ttf-mscorefonts-installer
+        question: msttcorefonts/accepted-mscorefonts-eula
+        vtype: boolean
+        value: true
+      tags: desktop
+
+    - name: Install Xorg and i3
+      become: true
+      apt:
+        update_cache: yes
+        cache_valid_time: 36000
+        state: latest
+        pkg:
+          - i3
+          - i3blocks
+          - xserver-xorg
+          - xserver-xorg-input-all
+          - xserver-xorg-input-synaptics
+          - xserver-xorg-video-all
+          - x11-apps
+          - x11-utils
+          - x11-xkb-utils
+          - x11-xserver-utils
+          - xterm
+          - elementary-xfce-icon-theme
+          - lightdm
+          - lightdm-gtk-greeter
+          - slock
+          - xclip
+          - webp
+          - fonts-dejavu
+          - fonts-firacode
+          - fonts-ubuntu
+          - fonts-ubuntu-console
+          - xfonts-terminus
+          - ttf-mscorefonts-installer
+      tags:
+        - desktop
+
     - name: Install desktop packages
       become: true
       apt:
@@ -104,20 +145,9 @@
         pkg:
           - feh
           - mpv
-          - i3
-          - i3blocks
-          - xclip
           - zathura
           - zathura-djvu
           - gimp
-          - xserver-xorg
-          - xserver-xorg-input-all
-          - xserver-xorg-input-synaptics
-          - xserver-xorg-video-all
-          - x11-apps
-          - x11-utils
-          - x11-xkb-utils
-          - x11-xserver-utils
           - kitty
           - thunderbird
           - wireshark
@@ -126,23 +156,19 @@
           - rawtherapee
           - cups
           - fbreader
-          - fonts-dejavu
           - lxappearance
           - gthumb
-          - slock
           - obs-studio
           - remmina
-          - xterm
           - scrot
           - sunclock
           - virt-manager
-          - webp
-          - elementary-xfce-icon-theme
-          - lightdm
-          - lightdm-gtk-greeter
           - transmission-remote-gtk
           - blueman
           - syncthing-gtk
+          - gparted
+          - gnome-disk-utility
+          - pinta
       tags:
         - desktop
 
