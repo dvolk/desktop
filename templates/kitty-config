@@ -2,7 +2,7 @@
 
 disable_ligatures always
 
-#: Fonts {{{
+#: Fonts
 
 #: kitty has very powerful font management. You can configure
 #: individual font faces and even specify special fonts for particular
@@ -26,7 +26,7 @@ font_family     Jetbrains Mono
 #:     italic_font      Operator Mono Book Italic
 #:     bold_italic_font Operator Mono Medium Italic
 
-font_size 10.0
+font_size {{ lookup('env', 'FONT_SIZE') }}
 
 #: Font size (in pts)
 
@@ -152,7 +152,7 @@ font_size 10.0
 
 #: }}}
 
-#: Cursor customization {{{
+#: Cursor customization
 
 # cursor #cccccc
 
@@ -190,7 +190,7 @@ font_size 10.0
 
 #: }}}
 
-#: Scrollback {{{
+#: Scrollback
 
 # scrollback_lines 2000
 
@@ -237,7 +237,7 @@ font_size 10.0
 
 #: }}}
 
-#: Mouse {{{
+#: Mouse
 
 # mouse_hide_wait 3.0
 
@@ -342,7 +342,7 @@ font_size 10.0
 
 #: }}}
 
-#: Performance tuning {{{
+#: Performance tuning
 
 # repaint_delay 10
 
@@ -373,7 +373,7 @@ font_size 10.0
 
 #: }}}
 
-#: Terminal bell {{{
+#: Terminal bell
 
 # enable_audio_bell yes
 
@@ -402,7 +402,7 @@ font_size 10.0
 
 #: }}}
 
-#: Window layout {{{
+#: Window layout
 
 # remember_window_size  yes
 # initial_window_width  640
@@ -537,7 +537,7 @@ font_size 10.0
 
 #: }}}
 
-#: Tab bar {{{
+#: Tab bar
 
 # tab_bar_edge bottom
 
@@ -625,7 +625,7 @@ tab_bar_style hidden
 
 #: }}}
 
-#: Color scheme {{{
+#: Color scheme
 
 # foreground #dddddd
 # background #000000
@@ -764,7 +764,7 @@ tab_bar_style hidden
 
 #: }}}
 
-#: Advanced {{{
+#: Advanced
 
 # shell .
 
@@ -881,7 +881,7 @@ update_check_interval 0
 
 #: }}}
 
-#: OS specific tweaks {{{
+#: OS specific tweaks
 
 # macos_titlebar_color system
 
@@ -955,7 +955,7 @@ update_check_interval 0
 
 #: }}}
 
-#: Keyboard shortcuts {{{
+#: Keyboard shortcuts
 
 #: For a list of key names, see: the GLFW key macros
 #: <https://github.com/kovidgoyal/kitty/blob/master/glfw/glfw3.h#L349>.
@@ -1032,7 +1032,7 @@ update_check_interval 0
 #: kitty +kitten hints --hints-offset to zero for all mappings,
 #: including the builtin ones.
 
-#: Clipboard {{{
+#: Clipboard
 
 # map kitty_mod+c copy_to_clipboard
 
@@ -1062,7 +1062,7 @@ update_check_interval 0
 
 #: }}}
 
-#: Scrolling {{{
+#: Scrolling
 
 # map kitty_mod+up        scroll_line_up
 # map kitty_mod+k         scroll_line_up
@@ -1086,7 +1086,7 @@ update_check_interval 0
 
 #: }}}
 
-#: Window management {{{
+#: Window management
 
 # map kitty_mod+enter new_window
 
@@ -1140,7 +1140,7 @@ update_check_interval 0
 # map kitty_mod+0 tenth_window
 #: }}}
 
-#: Tab management {{{
+#: Tab management
 
 # map kitty_mod+right next_tab
 # map kitty_mod+left  previous_tab
@@ -1167,7 +1167,7 @@ map kitty_mod+f select_tab
 #:     map ctrl+t new_tab !neighbor [optional cmd to run]
 #: }}}
 
-#: Layout management {{{
+#: Layout management
 
 # map kitty_mod+l next_layout
 
@@ -1181,7 +1181,7 @@ map kitty_mod+f select_tab
 #:    map ctrl+alt+p last_used_layout
 #: }}}
 
-#: Font sizes {{{
+#: Font sizes
 
 #: You can change the font size for all top-level kitty OS windows at
 #: a time or only the current one.
@@ -1200,7 +1200,7 @@ map kitty_mod+f select_tab
 #:     map kitty_mod+f6 change_font_size current 10.0
 #: }}}
 
-#: Select and act on visible text {{{
+#: Select and act on visible text
 
 #: Use the hints kitten to select text and either pass it to an
 #: external program or insert it into the terminal or copy it to the
@@ -1251,7 +1251,7 @@ map kitty_mod+f select_tab
 #: to different shortcuts. For a full description see kittens/hints.
 #: }}}
 
-#: Miscellaneous {{{
+#: Miscellaneous
 
 # map kitty_mod+f11    toggle_fullscreen
 # map kitty_mod+f10    toggle_maximized
@@ -1311,11 +1311,6 @@ map kitty_mod+f select_tab
 
 #:     map ctrl+alt+a send_text normal Word\x1b[H
 #:     map ctrl+alt+a send_text application Word\x1bOH
-
-#: }}}
-
-# }}}
-
 
 # BEGIN_KITTY_THEME
 # Ayu Light
