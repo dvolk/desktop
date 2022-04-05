@@ -96,6 +96,7 @@
           - black
 
     - name: accept ms font eula (have not actually read it)
+      become: true
       debconf:
         name: ttf-mscorefonts-installer
         question: msttcorefonts/accepted-mscorefonts-eula
