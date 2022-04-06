@@ -23,7 +23,7 @@
       replace:
         dest: /etc/apt/sources.list
         regexp: ^(deb.+)(?<! contrib non-free)$'
-        replaces: '\1 contrib non-free'
+        replace: '\1 contrib non-free'
 
     - name: Install common packages
       become: true
