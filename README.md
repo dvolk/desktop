@@ -4,7 +4,11 @@ Set up a desktop with ansible
 
 ## requirements
 
-- Ubuntu
+Tested on:
+
+- Ubuntu 21.10
+- Ubuntu 22.04
+- Debian 11
 
 ## running
 

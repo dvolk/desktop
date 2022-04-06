@@ -12,6 +12,19 @@
         pkg:
           - etckeeper
 
+    - name: etckeeper commit
+      become: true
+      command: etckeeper commit "pre-ansible auto-commit"
+      ignore_errors: yes
+
+    - name: add contrib and non-free repos (debian)
+      when: ansible_distribution == "Debian"
+      become: true
+      replace:
+        dest: /etc/apt/sources.list
+        regexp: ^(deb.+)(?<! contrib non-free)$'
+        replaces: '\1 contrib non-free'
+
     - name: Install common packages
       become: true
       apt:
