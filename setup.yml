@@ -205,7 +205,7 @@
     - name: Install firefox-esr apparmor profile (debian)
       when: ansible_distribution == "Debian"
       become: true
-      file:
+      copy:
         src: usr.bin.firefox-esr
         dest: /etc/apparmor.d/usr.bin.firefox-esr
       tags:
