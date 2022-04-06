@@ -211,6 +211,12 @@
       tags:
         - desktop
 
+    - name: touch emacs custom config file
+      become: yes
+      file:
+        dest: /etc/apparmor.d/local/usr.bin.firefox
+        state: touch
+
     - name: Install firefox-esr apparmor profile (debian)
       when: ansible_distribution == "Debian"
       become: true
