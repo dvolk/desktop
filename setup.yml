@@ -202,6 +202,15 @@
       tags:
         - desktop
 
+    - name: Install firefox-esr apparmor abstractions (debian)
+      when: ansible_distribution == "Debian"
+      become: true
+      copy:
+        src: ubuntu-browsers.d-firefox
+        dest: /etc/apparmor.d/abstractions/ubuntu-browsers.d/firefox
+      tags:
+        - desktop
+
     - name: Install firefox-esr apparmor profile (debian)
       when: ansible_distribution == "Debian"
       become: true
