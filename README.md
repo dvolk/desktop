@@ -2,7 +2,9 @@
 
 Set up a desktop with ansible
 
-## requirements
+<img src="https://i.imgur.com/XfdJyYP.png"> <img src="https://i.imgur.com/yUHvZoQ.png">
+
+## Requirements
 
 Tested on:
 
@@ -10,7 +12,7 @@ Tested on:
 - Ubuntu 22.04
 - Debian 11
 
-## running
+## Running
 
     sudo apt update
     sudo apt install git ansible

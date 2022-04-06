@@ -99,6 +99,10 @@
           - net-tools
           - aptitude
           - tlp
+          - apparmor
+          - apparmor-utils
+          - apparmor-profiles
+          - apparmor-profiles-extra
 
     - name: Install python dev packages
       pip:
@@ -197,6 +201,20 @@
           - firefox-esr
       tags:
         - desktop
+
+    - name: Install firefox-esr apparmor profile (debian)
+      when: ansible_distribution == "Debian"
+      become: true
+      file:
+        src: usr.bin.firefox-esr
+        dest: /etc/apparmor.d/usr.bin.firefox-esr
+      tags:
+        - desktop
+
+    - name: Enforce firefox-esr apparmor profile (debian)
+      when: ansible_distribution == "Debian"
+      become: true
+      command: aa-enforce usr.bin.firefox
 
     - name: Install firefox (ubuntu)
       when: ansible_distribution == "Ubuntu"
