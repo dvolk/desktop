@@ -500,7 +500,7 @@
         path: /etc/lightdm/lightdm-gtk-greeter.conf
         section: greeter
         option: hide-user-image
-        value: true
+        value: "true"
       become: yes
 
     - name: remove panel from lightdm-gtk-greeter
