@@ -501,6 +501,7 @@
         section: greeter
         option: hide-user-image
         value: true
+      become: yes
 
     - name: remove panel from lightdm-gtk-greeter
       community.general.ini_file:
@@ -508,6 +509,7 @@
         section: greeter
         option: indicators
         value: ""
+      become: yes
 
     - name: setup git
       copy:
