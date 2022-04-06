@@ -70,7 +70,7 @@ bindsym $mod+Tab workspace back_and_forth
 bindsym F6 workspace back_and_forth
 bindsym F7 floating toggle
 bindsym F1 exec "curl http://localhost:6859/toggle_play"
-bindsym --release F4 exec slock
+bindsym --release F4 exec i3lock
 
 # kill focused window
 bindsym $mod+Control+z kill
