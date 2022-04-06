@@ -2,9 +2,14 @@
 
 Set up a desktop with ansible
 
-<img src="https://i.imgur.com/XfdJyYP.png"> <img src="https://i.imgur.com/yUHvZoQ.png">
+<table>
+    <tr>
+        <td><img src="https://i.imgur.com/XfdJyYP.png"></td>
+        <td><img src="https://i.imgur.com/yUHvZoQ.png"></td>
+    </tr>
+</table>
 
-## Requirements
+## requirements
 
 Tested on:
 
