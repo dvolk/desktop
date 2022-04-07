@@ -28,6 +28,7 @@
 
     - name: update cache after adding repos (debian)
       when: ansible_distribution == "Debian" and add_repos.changed
+      become: true
       apt:
         update_cache: yes
         cache_valid_time: 0
