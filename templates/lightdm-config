@@ -1,3 +1,6 @@
 [SeatDefaults]
 xserver-command=X -dpi {{ lookup('env', 'DPI') }} -nolisten tcp
 user-session=i3
+{% if lookup('env', 'AUTOLOGIN') %}
+autologin-user={{ ansible_user }}
+{% endif %}

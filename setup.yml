@@ -590,3 +590,24 @@
 
     - name: set gsettings key theme to emacs
       command: gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
+
+    - name: add user to autologin group
+      when: lookup('env', 'AUTOLOGIN') is defined
+      become: yes
+      user:
+        name: {{ ansible_user }}
+        groups: autologin
+        append: yes
+
+    - name: install
+
+    - name: add user to other groups
+      become: yes
+      user:
+        name: {{ ansible_user }}
+        groups: {{ item }}
+        append: yes
+      loop:
+        - lpadmin
+        - libvirt
+        - lxd
