@@ -17,26 +17,6 @@ Tested on:
 - Ubuntu 22.04
 - Debian 11
 
-## Options
-
-Set environmental variables to configure the playbook:
-
-    AUTOLOGIN=true/false
-
-automatically log in to the i3 desktop. Useful with encrypted disks or VMs.
-
-    USER
-
-Your username on the system
-
-    FONT_SIZE
-
-Default for size for GTK and kitty
-
-    DPI
-
-DPI setting for X11 and Xft (default is 96. To make everything eg. twice as big, use 192)
-
 ## Running
 
     sudo apt update
