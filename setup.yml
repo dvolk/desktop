@@ -601,6 +601,8 @@
       command: gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
 
     - name: add autologin group
+      when: lookup('env', 'AUTOLOGIN')|bool
+      become: yes
       group:
         name: autologin
         state: present
