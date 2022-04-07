@@ -24,6 +24,13 @@
         dest: /etc/apt/sources.list
         regexp: ^(deb.+)(?<! contrib non-free)$'
         replace: '\1 contrib non-free'
+      register: add_repos
+
+    - name: update cache after adding repos (debian)
+      when: ansible_distribution == "Debian" and add_repos.changed
+      apt:
+        update_cache: yes
+        cache_valid_time: 0
 
     - name: Install common packages
       become: true
