@@ -21,19 +21,19 @@ Tested on:
 
 Set environmental variables to configure the playbook:
 
-- AUTOLOGIN=true/false
+    AUTOLOGIN=true/false
 
 automatically log in to the i3 desktop. Useful with encrypted disks or VMs.
 
-- USER
+    USER
 
 Your username on the system
 
-- FONT_SIZE
+    FONT_SIZE
 
 Default for size for GTK and kitty
 
-- DPI
+    DPI
 
 DPI setting for X11 and Xft (default is 96. To make everything eg. twice as big, use 192)
 
