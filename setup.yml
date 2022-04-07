@@ -496,10 +496,20 @@
       tags:
         - desktop
 
+    - name: download mozilla hosts file
+      ansible.builtin.get_url:
+        url: https://raw.githubusercontent.com/MrRawes/firefox-hosts/firefox-hosts/hosts
+        dest: /tmp/mozilla-hosts
+      tags:
+        - desktop
+
     - name: insert hostname into /tmp/hosts
       blockinfile:
         path: /tmp/hosts
         block: |
+          # block mozilla telemetry
+          {{ lookup('file', '/tmp/mozilla-hosts') }}
+          # add localhost
           127.0.1.1 {{ ansible_hostname }}
       become: true
       tags:
