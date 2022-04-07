@@ -605,7 +605,6 @@
       become: yes
       user:
         name: "{{ lookup('env', 'USER') }}"
-        groups: {{ item }}
         append: yes
       loop:
         - lpadmin
