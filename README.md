@@ -5,7 +5,7 @@ Set up a desktop with ansible
 <table>
     <tr>
         <td><img src="https://i.imgur.com/XfdJyYP.png"></td>
-        <td><img src="https://i.imgur.com/yUHvZoQ.png"></td>
+        <td><img src="https://i.imgur.com/hqS89hh.png"></td>
     </tr>
 </table>
 
