@@ -385,21 +385,19 @@
 
     - name: Add firefox user prefs (debian)
       when: ansible_distribution == "Debian"
-      blockinfile:
-        path: ~/.mozilla/firefox/*.default-esr/prefs.js
-        block: {{ lookup('file', 'firefox-prefs') }}
-        create: yes
-        state: present
+      become: true
+      copy:
+        src: firefox-prefs
+        path: /usr/lib/firefox-esr/browser/defaults/preferences/all-myprefs.js
       tags:
         - desktop
 
     - name: Add firefox user prefs (ubuntu)
       when: ansible_distribution == "Ubuntu"
-      blockinfile:
-        path: ~/.mozilla/firefox/*.default-release/prefs.js
-        block: {{ lookup('file', 'firefox-prefs') }}
-        create: yes
-        state: present
+      become: true
+      copy:
+        src: firefox-prefs
+        path: /usr/lib/firefox/browser/defaults/preferences/all-myprefs.js
       tags:
         - desktop
 
