@@ -599,12 +599,11 @@
         groups: autologin
         append: yes
 
-    - name: install
-
     - name: add user to other groups
       become: yes
       user:
         name: "{{ lookup('env', 'USER') }}"
+        groups: "{{ item }}"
         append: yes
       loop:
         - lpadmin
