@@ -22,7 +22,7 @@
       become: true
       replace:
         dest: /etc/apt/sources.list
-        regexp: ^(deb.+)(?<! contrib non-free)$'
+        regexp: '^(deb.+)(?<! contrib non-free)$'
         replace: '\1 contrib non-free'
       register: add_repos
 
