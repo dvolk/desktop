@@ -593,7 +593,7 @@
       command: gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
 
     - name: add user to autologin group
-      when: lookup('env', 'AUTOLOGIN') is defined
+      when: lookup('env', 'AUTOLOGIN')|bool
       become: yes
       user:
         name: "{{ lookup('env', 'USER') }}"
