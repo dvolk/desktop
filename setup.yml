@@ -103,6 +103,13 @@
           - apparmor-utils
           - apparmor-profiles
           - apparmor-profiles-extra
+          - snapd
+
+    - name: Install lxd snap
+      become: yes
+      community.general.snap:
+        name:
+          - lxd
 
     - name: Install python dev packages
       pip:
