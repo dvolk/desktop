@@ -561,3 +561,6 @@
       copy:
         src: git-config
         dest: ~/.gitconfig
+
+    - name: set gsettings key theme to emacs
+      command: gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
