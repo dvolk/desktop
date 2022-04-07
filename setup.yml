@@ -142,6 +142,7 @@
           - elementary-xfce-icon-theme
           - lightdm
           - lightdm-gtk-greeter
+          - libglib2.0-bin
           - xclip
           - webp
           - fonts-dejavu
