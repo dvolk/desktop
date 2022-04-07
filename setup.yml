@@ -383,6 +383,26 @@
       tags:
         - desktop
 
+    - name: Add firefox user prefs (debian)
+      when: ansible_distribution == "Debian"
+      blockinfile:
+        path: ~/.mozilla/firefox/*.default-esr/prefs.js
+        block: {{ lookup('file', 'firefox-prefs') }}
+        create: yes
+        state: present
+      tags:
+        - desktop
+
+    - name: Add firefox user prefs (ubuntu)
+      when: ansible_distribution == "Ubuntu"
+      blockinfile:
+        path: ~/.mozilla/firefox/*.default-release/prefs.js
+        block: {{ lookup('file', 'firefox-prefs') }}
+        create: yes
+        state: present
+      tags:
+        - desktop
+
     - name: Create firefox policies directory (ubuntu deb)
       when: ansible_distribution == "Ubuntu" and ansible_lsb.major_release|int < 22
       become: true
