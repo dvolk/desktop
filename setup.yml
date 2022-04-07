@@ -388,7 +388,7 @@
       become: true
       copy:
         src: firefox-prefs
-        path: /usr/lib/firefox-esr/browser/defaults/preferences/all-myprefs.js
+        dest: /usr/lib/firefox-esr/browser/defaults/preferences/all-myprefs.js
       tags:
         - desktop
 
@@ -397,7 +397,7 @@
       become: true
       copy:
         src: firefox-prefs
-        path: /usr/lib/firefox/browser/defaults/preferences/all-myprefs.js
+        dest: /usr/lib/firefox/browser/defaults/preferences/all-myprefs.js
       tags:
         - desktop
 
