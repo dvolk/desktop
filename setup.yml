@@ -600,6 +600,11 @@
     - name: set gsettings key theme to emacs
       command: gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
 
+    - name: add autologin group
+      group:
+        name: autologin
+        state: present
+
     - name: add user to autologin group
       when: lookup('env', 'AUTOLOGIN')|bool
       become: yes
