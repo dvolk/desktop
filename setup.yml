@@ -595,7 +595,7 @@
       when: lookup('env', 'AUTOLOGIN') is defined
       become: yes
       user:
-        name: {{ lookup('env', 'USER') }}
+        name: "{{ lookup('env', 'USER') }}"
         groups: autologin
         append: yes
 
@@ -604,7 +604,7 @@
     - name: add user to other groups
       become: yes
       user:
-        name: {{ lookup('env', 'USER') }}
+        name: "{{ lookup('env', 'USER') }}"
         groups: {{ item }}
         append: yes
       loop:
