@@ -160,10 +160,10 @@ pref("privacy.sanitize.sanitizeOnShutdown", true);
 pref("privacy.clearOnShutdown.cache", true);     // [DEFAULT: true]
 pref("privacy.clearOnShutdown.downloads", true); // [DEFAULT: true]
 pref("privacy.clearOnShutdown.formdata", true);  // [DEFAULT: true]
-pref("privacy.clearOnShutdown.history", true);   // [DEFAULT: true]
+pref("privacy.clearOnShutdown.history", false);   // [DEFAULT: true]
 pref("privacy.clearOnShutdown.sessions", true);  // [DEFAULT: true]
-pref("privacy.clearOnShutdown.offlineApps", false); // [DEFAULT: false]
-pref("privacy.clearOnShutdown.cookies", false);
+pref("privacy.clearOnShutdown.offlineApps", true); // [DEFAULT: false]
+pref("privacy.clearOnShutdown.cookies", true);
 pref("privacy.cpd.cache", true);    // [DEFAULT: true]
 pref("privacy.cpd.formdata", true); // [DEFAULT: true]
 pref("privacy.cpd.history", true);  // [DEFAULT: true]
@@ -203,17 +203,17 @@ pref("app.update.background.scheduling.enabled", false);
 
 // privacy - options not enabled in arkenfox user.js by default
 
-// user_pref("geo.provider.network.logging.enabled", true); // [HIDDEN PREF]
-// user_pref("browser.search.region", "US"); // [HIDDEN PREF]
-// user_pref("browser.crashReports.unsubmittedCheck.enabled", false); // [FF51+] [DEFAULT: false]
-user_pref("browser.safebrowsing.malware.enabled", false);
-user_pref("browser.safebrowsing.phishing.enabled", false);
+pref("geo.provider.network.logging.enabled", true); // [HIDDEN PREF]
+pref("browser.search.region", "US"); // [HIDDEN PREF]
+// pref("browser.crashReports.unsubmittedCheck.enabled", false); // [FF51+] [DEFAULT: false]
+pref("browser.safebrowsing.malware.enabled", false);
+pref("browser.safebrowsing.phishing.enabled", false);
 pref("browser.safebrowsing.downloads.enabled", false);
 pref("browser.safebrowsing.downloads.remote.url", ""); // Defense-in-depth
 pref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", false);
 pref("browser.safebrowsing.downloads.remote.block_uncommon", false);
 pref("browser.safebrowsing.allowOverride", false);
-// pref("network.dns.disablePrefetchFromHTTPS", true); // [DEFAULT: true]
+pref("network.dns.disablePrefetchFromHTTPS", true); // [DEFAULT: true]
 pref("browser.send_pings", false); // [DEFAULT: false]
 // pref("network.proxy.failover_direct", false);
 // pref("network.proxy.allow_bypass", false); // [HIDDEN PREF FF95-96]
@@ -263,11 +263,11 @@ pref("browser.urlbar.suggest.topsites", false); // [FF78+]
 pref("browser.urlbar.maxRichResults", 0);
 pref("browser.urlbar.autoFill", false);
 // pref("places.history.enabled", false);
-// pref("browser.taskbar.lists.enabled", false);
-// pref("browser.taskbar.lists.frequent.enabled", false);
-// pref("browser.taskbar.lists.recent.enabled", false);
-// pref("browser.taskbar.lists.tasks.enabled", false);
-// pref("browser.taskbar.previews.enable", false); // [DEFAULT: false]
+pref("browser.taskbar.lists.enabled", false);
+pref("browser.taskbar.lists.frequent.enabled", false);
+pref("browser.taskbar.lists.recent.enabled", false);
+pref("browser.taskbar.lists.tasks.enabled", false);
+pref("browser.taskbar.previews.enable", false); // [DEFAULT: false]
 // pref("browser.download.folderList", 2);
 // pref("mathml.disabled", true); // 1173199
 // pref("svg.disabled", true); // 1216893
@@ -316,10 +316,10 @@ pref("network.http.spdy.enabled", false);
 // pref("network.http.spdy.websockets", false); // [FF65+]
 // pref("network.http.altsvc.enabled", false);
 // pref("network.http.altsvc.oe", false); // [DEFAULT: false FF94+]
-// pref("dom.event.contextmenu.enabled", false);
+pref("dom.event.contextmenu.enabled", false);
 pref("gfx.downloadable_fonts.enabled", false); // [FF41+]
 // pref("gfx.downloadable_fonts.fallback_delay", -1);
-// pref("dom.event.clipboardevents.enabled", false);
+pref("dom.event.clipboardevents.enabled", false);
 // pref("extensions.systemAddon.update.enabled", false); // [FF62+]
 // pref("extensions.systemAddon.update.url", ""); // [FF44+]
 pref("privacy.donottrackheader.enabled", true);
@@ -330,16 +330,16 @@ pref("privacy.trackingprotection.enabled", true);
 pref("privacy.trackingprotection.socialtracking.enabled", true);
 pref("privacy.trackingprotection.cryptomining.enabled", true); // [DEFAULT: true]
 pref("privacy.trackingprotection.fingerprinting.enabled", true); // [DEFAULT: true]
-// pref("dom.serviceWorkers.enabled", false);
-// pref("dom.webnotifications.enabled", false); // [FF22+]
-// pref("dom.webnotifications.serviceworker.enabled", false); // [FF44+]
+pref("dom.serviceWorkers.enabled", false);
+pref("dom.webnotifications.enabled", false); // [FF22+]
+pref("dom.webnotifications.serviceworker.enabled", false); // [FF44+]
 pref("dom.push.enabled", false);
-pref("device.sensors.enabled", false);
-pref("dom.enable_performance", false);
-pref("dom.enable_resource_timing", false);
-pref("dom.gamepad.enabled", false);
-pref("dom.netinfo.enabled", false); // [DEFAULT: false NON-ANDROID: false ANDROID FF99+]
-pref("dom.webaudio.enabled", false);
+// pref("device.sensors.enabled", false);
+// pref("dom.enable_performance", false);
+// pref("dom.enable_resource_timing", false);
+// pref("dom.gamepad.enabled", false);
+// pref("dom.netinfo.enabled", false); // [DEFAULT: false NON-ANDROID: false ANDROID FF99+]
+// pref("dom.webaudio.enabled", false);
 // pref("browser.display.use_document_fonts", 0);
 // pref("browser.zoom.siteSpecific", false);
 // pref("dom.w3c_touch_events.enabled", 0);
@@ -364,28 +364,28 @@ pref("browser.tabs.warnOnClose", false); // [DEFAULT false FF94+]
 pref("browser.tabs.warnOnCloseOtherTabs", false);
 pref("browser.tabs.warnOnOpen", false);
 pref("browser.warnOnQuitShortcut", false); // [FF94+]
-// pref("full-screen-api.warning.delay", 0);
-// pref("full-screen-api.warning.timeout", 0);
+pref("full-screen-api.warning.delay", 0);
+pref("full-screen-api.warning.timeout", 0);
 pref("app.update.auto", false); // [NON-WINDOWS] disable auto app updates
 pref("browser.search.update", false); // disable search engine updates (e.g. OpenSearch)
 pref("extensions.update.enabled", false); // disable extension and theme update checks
 pref("extensions.update.autoUpdateDefault", false); // disable installing extension and theme updates
 // pref("extensions.getAddons.cache.enabled", false); // disable extension metadata (extension detail tab)
 pref("browser.download.autohideButton", false); // [FF57+]
-// pref("toolkit.legacyUserProfileCustomizations.stylesheets", true); // [FF68+] allow userChrome/userContent
+pref("toolkit.legacyUserProfileCustomizations.stylesheets", true); // [FF68+] allow userChrome/userContent
 pref("ui.prefersReducedMotion", 1); // disable chrome animations [FF77+] [RESTART] [HIDDEN PREF]
 // pref("ui.systemUsesDarkTheme", 1); // [FF67+] [HIDDEN PREF]
 // pref("accessibility.typeaheadfind", true); // enable "Find As You Type"
-// pref("clipboard.autocopy", false); // disable autocopy default [LINUX]
-// pref("layout.spellcheckDefault", 2); // 0=none, 1-multi-line, 2=multi-line & single-line
-// pref("browser.backspace_action", 2); // 0=previous page, 1=scroll up, 2=do nothing
-// pref("browser.quitShortcut.disabled", true); // disable Ctrl-Q quit shortcut [LINUX] [MAC] [FF87+]
-// pref("browser.tabs.closeWindowWithLastTab", false);
-// pref("browser.tabs.loadBookmarksInTabs", true); // open bookmarks in a new tab [FF57+]
+pref("clipboard.autocopy", false); // disable autocopy default [LINUX]
+pref("layout.spellcheckDefault", 0); // 0=none, 1-multi-line, 2=multi-line & single-line
+pref("browser.backspace_action", 0); // 0=previous page, 1=scroll up, 2=do nothing
+pref("browser.quitShortcut.disabled", true); // disable Ctrl-Q quit shortcut [LINUX] [MAC] [FF87+]
+pref("browser.tabs.closeWindowWithLastTab", false);
+pref("browser.tabs.loadBookmarksInTabs", true); // open bookmarks in a new tab [FF57+]
 // pref("browser.urlbar.decodeURLsOnCopy", true); // see bugzilla 1320061 [FF53+]
-// pref("general.autoScroll", false); // middle-click enabling auto-scrolling [DEFAULT: false on Linux]
-// pref("ui.key.menuAccessKey", 0); // disable alt key toggling the menu bar [RESTART]
-// pref("view_source.tab", false); // view "page/selection source" in a new window [FF68+]
+pref("general.autoScroll", false); // middle-click enabling auto-scrolling [DEFAULT: false on Linux]
+pref("ui.key.menuAccessKey", 0); // disable alt key toggling the menu bar [RESTART]
+pref("view_source.tab", false); // view "page/selection source" in a new window [FF68+]
 pref("extensions.pocket.enabled", false); // Pocket Account [FF46+]
 pref("extensions.screenshots.disabled", true); // [FF55+]
 pref("identity.fxaccounts.enabled", false); // Firefox Accounts & Sync [FF60+] [RESTART]
