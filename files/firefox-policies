@@ -67,7 +67,6 @@
         "Locked": true
     },
     "PromptForDownloadLocation": false,
-    "SearchBar": "separate",
     "SearchEngines": {
         "PreventInstalls": true,
         "Default": "none"

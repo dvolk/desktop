@@ -80,7 +80,7 @@ pref("browser.search.suggest.enabled", false);
 pref("browser.urlbar.suggest.searches", false);
 pref("browser.urlbar.speculativeConnect.enabled", false);
 pref("browser.urlbar.dnsResolveSingleWordsAfterSearch", 0);
-pref("browser.urlbar.suggest.quicksuggest.nonsponsored", false); // [FF95+]
+// pref("browser.urlbar.suggest.quicksuggest.nonsponsored", false); // [FF95+]
 pref("browser.urlbar.suggest.quicksuggest.sponsored", false);
 pref("browser.formfill.enable", false);
 pref("extensions.formautofill.addresses.enabled", false); // [FF55+]
@@ -258,9 +258,9 @@ pref("media.autoplay.default", 5);
 // pref("browser.download.forbid_open_with", true);
 // pref("browser.urlbar.suggest.history", false);
 // pref("browser.urlbar.suggest.bookmark", false);
-pref("browser.urlbar.suggest.openpage", false);
+// pref("browser.urlbar.suggest.openpage", false);
 pref("browser.urlbar.suggest.topsites", false); // [FF78+]
-pref("browser.urlbar.maxRichResults", 0);
+// pref("browser.urlbar.maxRichResults", 0);
 pref("browser.urlbar.autoFill", false);
 // pref("places.history.enabled", false);
 pref("browser.taskbar.lists.enabled", false);
