@@ -148,9 +148,9 @@ pref("permissions.delegation.enabled", false);
 pref("browser.download.useDownloadDir", false);
 pref("browser.download.alwaysOpenPanel", false);
 pref("browser.download.manager.addToRecentDocs", false);
-pref("extensions.enabledScopes", 5); // [HIDDEN PREF]
-pref("extensions.autoDisableScopes", 15); // [DEFAULT: 15]
-pref("extensions.postDownloadThirdPartyPrompt", false);
+//pref("extensions.enabledScopes", 5); // [HIDDEN PREF]
+//pref("extensions.autoDisableScopes", 15); // [DEFAULT: 15]
+//pref("extensions.postDownloadThirdPartyPrompt", false);
 pref("browser.contentblocking.category", "strict");
 pref("privacy.partition.serviceWorkers", true);
 pref("network.cookie.lifetimePolicy", 2);
