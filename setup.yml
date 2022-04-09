@@ -412,7 +412,7 @@
       become: true
       copy:
         src: firefox-prefs
-        dest: /etc/firefox/all-prefs.js
+        dest: /usr/lib/firefox/browser/defaults/preferences/all-prefs.js
       tags:
         - desktop
 
