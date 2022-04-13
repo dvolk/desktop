@@ -602,6 +602,8 @@
         option: hide-user-image
         value: "true"
       become: yes
+      tags:
+        - desktop
 
     - name: remove panel from lightdm-gtk-greeter
       community.general.ini_file:
@@ -610,6 +612,8 @@
         option: indicators
         value: ""
       become: yes
+      tags:
+        - desktop
 
     - name: setup git
       copy:
@@ -618,6 +622,8 @@
 
     - name: set gsettings key theme to emacs
       command: gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
+      tags:
+        - desktop
 
     - name: add autologin group
       when: lookup('env', 'AUTOLOGIN')|bool
