@@ -155,8 +155,6 @@
           - x11-xserver-utils
           - xterm
           - elementary-xfce-icon-theme
-          - lightdm
-          - lightdm-gtk-greeter
           - libglib2.0-bin
           - xclip
           - webp
@@ -169,6 +167,17 @@
           - ttf-mscorefonts-installer
       tags:
         - desktop
+
+    - name: Install lightdm
+      become: true
+      apt:
+        update_cache: yes
+        cache_valid_time: 36000
+        state: latest
+        pkg:
+          - lightdm
+          - lightdm-gtk-greeter
+      tags: desktop
 
     - name: Install desktop packages
       become: true
