@@ -171,7 +171,7 @@ pref("privacy.cpd.sessions", true); // [DEFAULT: true]
 pref("privacy.cpd.offlineApps", false); // [DEFAULT: false]
 pref("privacy.cpd.cookies", false);
 pref("privacy.sanitize.timeSpan", 0);
-pref("privacy.resistFingerprinting", true);
+// pref("privacy.resistFingerprinting", true);
 pref("privacy.window.maxInnerWidth", 1600);
 pref("privacy.window.maxInnerHeight", 900);
 pref("privacy.resistFingerprinting.block_mozAddonManager", true); // [HIDDEN PREF]
@@ -317,7 +317,7 @@ pref("network.http.spdy.enabled", false);
 // pref("network.http.altsvc.enabled", false);
 // pref("network.http.altsvc.oe", false); // [DEFAULT: false FF94+]
 pref("dom.event.contextmenu.enabled", false);
-pref("gfx.downloadable_fonts.enabled", false); // [FF41+]
+pref("gfx.downloadable_fonts.enabled", true); // [FF41+]
 // pref("gfx.downloadable_fonts.fallback_delay", -1);
 pref("dom.event.clipboardevents.enabled", false);
 // pref("extensions.systemAddon.update.enabled", false); // [FF62+]
