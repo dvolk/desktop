@@ -136,9 +136,12 @@
 
 (global-set-key [f2] 'tab-previous)
 (global-set-key [f3] 'tab-next)
-(global-set-key [f5] 'elfeed)
+(global-set-key [f5] 'treemacs)
 (global-set-key [f9] 'lsp-find-definition)
 (global-set-key [f12] 'lsp-rename)
+(global-set-key [(shift f5)] 'elfeed)
+(global-set-key [(shift f9)] 'elfeed-update)
+
 (treemacs)
 (global-visual-line-mode)
 
@@ -147,7 +150,7 @@
   (define-key org-tree-slide-mode-map (kbd "<f10>") 'org-tree-slide-move-next-tree)
   )
 
-(setq split-height-threshold nil)
-(setq split-width-threshold 160)
+;; (setq split-height-threshold nil)
+;; (setq split-width-threshold 160)
 
 (setq redisplay-dont-pause t)
