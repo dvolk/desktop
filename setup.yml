@@ -299,6 +299,7 @@
           - webext-ublock-origin-firefox
       tags:
         - desktop
+      ignore_errors: yes
 
     - name: Remove avahi-daemon, gdm3, etc
       become: true
