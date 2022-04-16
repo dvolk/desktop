@@ -581,6 +581,14 @@
       tags:
         - desktop
 
+    - name: Create xorg.conf.d directory
+      become: yes
+      file:
+        path: /etc/X11/xorg.conf.d
+        state: directory
+      tags:
+        - desktop
+
     - name: setup x11 synaptics
       copy:
         src: synaptics-config
