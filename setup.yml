@@ -284,6 +284,7 @@
         path: /usr/local/share/desktop_background.png
       tags:
         - desktop
+      ignore_errors: yes
 
     - name: Install desktop packages (no recommends)
       become: true
