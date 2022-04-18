@@ -149,6 +149,7 @@
           - xserver-xorg-input-all
           - xserver-xorg-input-synaptics
           - xserver-xorg-video-all
+          - xinit
           - x11-apps
           - x11-utils
           - x11-xkb-utils

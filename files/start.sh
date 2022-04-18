@@ -1,3 +1,5 @@
+xrdb -merge .Xresources
+
 /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 blueman-applet &
 
