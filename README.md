@@ -13,7 +13,6 @@ Set up a desktop with ansible
 
 Tested on:
 
-- Ubuntu 21.10
 - Ubuntu 22.04
 - Debian 11
 
