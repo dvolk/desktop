@@ -661,3 +661,22 @@
         - lpadmin
         - libvirt
         - lxd
+
+    - name: Create mpv config directory
+      file:
+        path: ~/.config/mpv
+        state: directory
+      tags:
+        - desktop
+
+    - name: Create mpv screenshot directory
+      file:
+        path: ~/mpv-screenshots
+        state: directory
+      tags:
+        - desktop
+
+    - name: copy mpv config
+      copy:
+        src: mpv-config
+        dest: ~/.config/mpv/mpv.conf

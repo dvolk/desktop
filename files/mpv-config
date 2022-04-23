@@ -1,0 +1,3 @@
+screenshot-format=png
+screenshot-directory="~/mpv-screenshots"
+screenshot-template="%f_%P"
