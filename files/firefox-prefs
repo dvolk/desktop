@@ -1,3 +1,5 @@
+pref("signon.management.page.fileImport.enabled", true)
+
 // fonts
 
 pref("font.language.group", "x-western");
