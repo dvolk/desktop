@@ -166,6 +166,7 @@
           - fonts-roboto
           - xfonts-terminus
           - ttf-mscorefonts-installer
+          - xinput
       tags:
         - desktop
 
@@ -212,6 +213,7 @@
           - syncthing-gtk
           - gparted
           - gnome-disk-utility
+          - pavucontrol
       tags:
         - desktop
 
