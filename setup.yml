@@ -59,7 +59,6 @@
           - bzip2
           - fzf
           - g++
-          - emacs-nox
           - lnav
           - oathtool
           - p7zip
@@ -112,6 +111,16 @@
           - apparmor-profiles
           - apparmor-profiles-extra
           - snapd
+
+    - name: Install emacs-nox
+      become: true
+      when: '"all" not in ansible_run_tags and "desktop" not in ansible_run_tags'
+      apt:
+        update_cache: yes
+        cache_valid_time: 36000
+        state: latest
+        pkg:
+          - emacs-nox
 
     - name: Install lxd snap
       become: yes
@@ -216,6 +225,16 @@
           - pavucontrol
       tags:
         - desktop
+
+    - name: Install emacs
+      become: true
+      apt:
+        update_cache: yes
+        cache_valid_time: 36000
+        state: latest
+        pkg:
+          - emacs
+      tags: desktop
 
     - name: Install firefox-esr (debian)
       when: ansible_distribution == "Debian"
