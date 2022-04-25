@@ -683,6 +683,13 @@
         - libvirt
         - lxd
 
+    - name: Create stuff
+      file:
+        path: ~/stuff
+        state: directory
+      tags:
+        - desktop
+
     - name: Create mpv config directory
       file:
         path: ~/.config/mpv
@@ -692,7 +699,7 @@
 
     - name: Create mpv screenshot directory
       file:
-        path: ~/mpv-screenshots
+        path: ~/stuff/mpv-screenshots
         state: directory
       tags:
         - desktop
