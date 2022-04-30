@@ -127,6 +127,16 @@
 
 (add-hook 'python-mode-hook #'python-black-on-save-mode)
 
+(add-hook 'yaml-mode-hook #'display-line-numbers-mode)
+(add-hook 'yaml-mode-hook #'diff-hl-mode)
+(add-hook 'yaml-mode-hook #'diff-hl-margin-mode)
+(add-hook 'yaml-mode-hook #'diff-hl-flydiff-mode)
+(add-hook 'org-mode-hook #'display-line-numbers-mode)
+(add-hook 'org-mode-hook #'diff-hl-mode)
+(add-hook 'org-mode-hook #'diff-hl-margin-mode)
+(add-hook 'org-mode-hook #'diff-hl-flydiff-mode)
+
+
 (setq rust-language-server 'rust-analyzer)
 ;; (setq browse-url-browser-function 'eww-browse-url)
 (autoload 'ispell-get-word "ispell")
