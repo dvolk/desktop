@@ -43,6 +43,9 @@
           - jq
           - build-essential
           - python3-pip
+          - mypy
+          - clangd
+          - ccls
           - rsync
           - git
           - tmux
@@ -132,9 +135,22 @@
       become: true
       pip:
         name:
-          - python-lsp-server
+          - "python-lsp-server[all]"
           - isort
           - black
+          - pylsp-mypy
+          - pyls-flake8
+          - pyls-isort
+          - python-lsp-black
+          - pyls-memestra
+          - pylsp-rope
+          - argh
+          - humanize
+          - Flask
+          - Flask-Migrate
+          - Flask-SQLAlchemy
+          - flask-mongoengine
+          - requests
 
     - name: accept ms font eula (have not actually read it)
       become: true
