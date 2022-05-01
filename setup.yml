@@ -725,3 +725,8 @@
       copy:
         src: mpv-config
         dest: ~/.config/mpv/mpv.conf
+
+    - name: copy mpv config
+      copy:
+        src: flake8-config
+        dest: ~/.config/flake8
