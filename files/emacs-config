@@ -4,7 +4,8 @@
 
 (setq package-selected-packages '(lsp-mode yasnippet lsp-treemacs helm-lsp magit diff-hl python-black
                                            projectile hydra flycheck company avy which-key helm-xref
-                                           rainbow-delimiters dap-mode yaml-mode json-mode twilight-bright-theme))
+                                           rainbow-delimiters dap-mode yaml-mode json-mode jinja2-mode
+                                           twilight-bright-theme))
 
 (when (cl-find-if-not #'package-installed-p package-selected-packages)
   (package-refresh-contents)
@@ -151,6 +152,8 @@
 
 (treemacs)
 (global-visual-line-mode)
+(lsp-treemacs-symbols)
+(lsp-treemacs-errors-list)
 
 (with-eval-after-load "org-tree-slide"
   (define-key org-tree-slide-mode-map (kbd "<f9>") 'org-tree-slide-move-previous-tree)
