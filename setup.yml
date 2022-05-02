@@ -275,7 +275,7 @@
       tags:
         - desktop
 
-    - name: touch emacs custom config file
+    - name: touch firefox apparmor profile
       become: yes
       file:
         dest: /etc/apparmor.d/local/usr.bin.firefox
@@ -726,7 +726,7 @@
         src: mpv-config
         dest: ~/.config/mpv/mpv.conf
 
-    - name: copy mpv config
+    - name: copy flake8 config
       copy:
         src: flake8-config
         dest: ~/.config/flake8
