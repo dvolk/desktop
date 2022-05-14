@@ -589,7 +589,7 @@
           HISTSIZE=100000
           HISTFILESIZE=200000
           export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> ~/.logs/bash-history-$(date "+%Y-%m-%d").log; fi'
-          PATH=$PATH:/snap/bin
+          PATH=$PATH:/snap/bin:/home/{{ lookup('env', 'USER') }}/.local/bin:/opt/mongodb-linux-x86_64-debian11-5.0.8/
 
     - name: setup Xresources (user)
       template:
