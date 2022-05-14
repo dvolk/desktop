@@ -731,3 +731,48 @@
       copy:
         src: flake8-config
         dest: ~/.config/flake8
+
+    - name: download mongodb
+      ansible.builtin.get_url:
+        url: https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-debian11-5.0.8.tgz
+        dest: /tmp/mongodb-linux-x86_64-debian11-5.0.8.tgz
+        checksum: sha256:dba4de0ebc12dd57bf1adfec071310a4a4b633017ab082c4605972dcca4d6811
+
+    - name: Create /opt
+      become: yes
+      file:
+        path: /opt
+        state: directory
+
+    - name: Extract mongodb to /opt
+      become: yes
+      ansible.builtin.unarchive:
+        src: /tmp/mongodb-linux-x86_64-debian11-5.0.8.tgz
+        dest: /opt
+
+    - name: Create ~/.config/systemd/user
+      file:
+        path: ~/.config/systemd/user
+        state: directory
+
+    - name: Create ~/mongodb
+      file:
+        path: ~/mongodb
+        state: directory
+
+    - name: copy mongo systemd service
+      template:
+        src: mongodb-user-service
+        dest: ~/.config/systemd/user/mongodb-user.service
+
+    - name: reload systemd user service
+      ansible.builtin.systemd:
+        daemon_reexec: yes
+        scope: user
+
+    - name: enable and start mongodb service
+      ansible.builtin.systemd:
+        name: mongodb-user
+        state: started
+        enabled: yes
+        scope: user
