@@ -1,0 +1,6 @@
+[Unit]
+Description=mongodb user service
+
+[Service]
+WorkingDirectory=/opt/mongodb-linux-x86_64-debian11-5.0.8
+ExecStart=/opt/mongodb-linux-x86_64-debian11-5.0.8/bin/mongod --dbpath /home/{{ lookup('env', 'USER') }}/mongodb
