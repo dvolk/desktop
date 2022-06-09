@@ -1,4 +1,4 @@
-pref("signon.management.page.fileImport.enabled", true)
+pref("signon.management.page.fileImport.enabled", true);
 
 // fonts
 
@@ -481,8 +481,8 @@ pref("browser.safebrowsing.provider.google.lists", "");
 pref("browser.safebrowsing.provider.google.gethashURL", "");
 pref("browser.safebrowsing.provider.google.advisoryURL", "");
 pref("browser.safebrowsing.downloads.remote.url", "");
-pref("browser.safebrowsing.provider.mozilla.gethashURL", "")
-pref("browser.safebrowsing.provider.mozilla.updateURL", "")
+pref("browser.safebrowsing.provider.mozilla.gethashURL", "");
+pref("browser.safebrowsing.provider.mozilla.updateURL", "");
 pref("browser.selfsupport.url", "");
 pref("browser.aboutHomeSnippets.updateUrL", "");
 pref("browser.startup.homepage_override.mstone", "ignore");
