@@ -22,7 +22,7 @@
 (menu-bar-mode 0)
 (show-paren-mode)
 ;;(tool-bar-mode nil)
-(tab-bar-mode nil)
+(tab-bar-mode 0)
 (xterm-mouse-mode t)
 
 
@@ -152,8 +152,8 @@
 
 (treemacs)
 (global-visual-line-mode)
-(lsp-treemacs-symbols)
-(lsp-treemacs-errors-list)
+;;(lsp-treemacs-symbols)
+;;(lsp-treemacs-errors-list)
 
 (with-eval-after-load "org-tree-slide"
   (define-key org-tree-slide-mode-map (kbd "<f9>") 'org-tree-slide-move-previous-tree)
