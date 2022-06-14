@@ -22,7 +22,7 @@
 (menu-bar-mode 0)
 (show-paren-mode)
 ;;(tool-bar-mode nil)
-(tab-bar-mode 0)
+;;(tab-bar-mode 0)
 (xterm-mouse-mode t)
 
 
