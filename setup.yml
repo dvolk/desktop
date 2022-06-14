@@ -3,6 +3,17 @@
   connection: local
 
   tasks:
+    - name: touch ansible run log
+      file:
+        dest: ./ansible_run.log
+        state: touch
+
+    - name: Add ansible run to log
+      lineinfile:
+        path: ./ansible_run.log
+        line: "{{ ansible_date_time.iso8601 }} AUTOLOGIN={{ lookup('env', 'AUTOLOGIN') }} USER={{ lookup('env', 'USER') }} FONT_SIZE={{ lookup('env', 'FONT_SIZE') }} DPI={{ lookup('env', 'DPI') }}"
+        insertbefore: EOF
+
     - name: Install etckeeper
       become: true
       apt:
