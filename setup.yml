@@ -3,17 +3,6 @@
   connection: local
 
   tasks:
-    - name: touch ansible run log
-      file:
-        dest: ./ansible_run.log
-        state: touch
-
-    - name: Add ansible run to log
-      lineinfile:
-        path: ./ansible_run.log
-        line: "{{ ansible_date_time.iso8601 }} AUTOLOGIN={{ lookup('env', 'AUTOLOGIN') }} USER={{ lookup('env', 'USER') }} FONT_SIZE={{ lookup('env', 'FONT_SIZE') }} DPI={{ lookup('env', 'DPI') }}"
-        insertbefore: EOF
-
     - name: Install etckeeper
       become: true
       apt:
@@ -712,23 +701,51 @@
         - libvirt
         - lxd
 
-    - name: Create stuff
+    - name: Create hierarchy of stuff
       file:
-        path: ~/stuff
+        path: "{{ item }}"
         state: directory
       tags:
         - desktop
+      loop:
+        - ~/stuff
+        - ~/stuff/code
+        - ~/stuff/code/work
+        - ~/stuff/notes
+        - ~/stuff/notes/work
+        - ~/stuff/presentations
+        - ~/stuff/mpv-screenshots
+        - ~/stuff/docs
+        - ~/stuff/docs/work
+        - ~/stuff/screenshots
+        - ~/stuff/screenshots/work
+        - ~/stuff/logs
+        - ~/stuff/images
+        - ~/stuff/photos
+        - ~/bin
+        - ~/stuff/
+        - ~/mnt
+        - ~/mnt/phone
+        - ~/sync
+
+    - name: touch ansible run log
+      file:
+        dest: ~/stuff/logs/ansible_desktop_run.log
+        state: touch
+
+    - name: get playbook git version
+      shell: "git describe --tags --always --dirty"
+      register: playbook_version
+
+    - name: Add ansible run to log
+      lineinfile:
+        path: ~/stuff/logs/ansible_desktop_run.log
+        line: "{{ ansible_date_time.iso8601 }} {{ playbook_version.stdout }} AUTOLOGIN={{ lookup('env', 'AUTOLOGIN') }} USER={{ lookup('env', 'USER') }} FONT_SIZE={{ lookup('env', 'FONT_SIZE') }} DPI={{ lookup('env', 'DPI') }}"
+        insertbefore: EOF
 
     - name: Create mpv config directory
       file:
         path: ~/.config/mpv
-        state: directory
-      tags:
-        - desktop
-
-    - name: Create mpv screenshot directory
-      file:
-        path: ~/stuff/mpv-screenshots
         state: directory
       tags:
         - desktop
