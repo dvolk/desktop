@@ -754,11 +754,15 @@
       copy:
         src: mpv-config
         dest: ~/.config/mpv/mpv.conf
+      tags:
+        - desktop
 
     - name: copy mimetypes config
       copy:
         src: mimeapps.list
         dest: ~/.config/mimeapps.list
+      tags:
+        - desktop
 
     - name: Create gtk3 directory
       file:
@@ -771,6 +775,8 @@
       copy:
         src: fm-bookmarks
         dest: ~/.config/gtk-3.0/bookmarks
+      tags:
+        - desktop
 
     - name: copy flake8 config
       copy:
