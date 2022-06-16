@@ -772,7 +772,7 @@
         - desktop
 
     - name: copy file manager bookmarks
-      copy:
+      template:
         src: fm-bookmarks
         dest: ~/.config/gtk-3.0/bookmarks
       tags:
