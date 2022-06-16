@@ -1,0 +1,5 @@
+[Added Associations]
+image/jpeg=feh.desktop;
+image/png=feh.desktop;
+application/epub+zip=FBReader.desktop;
+application/pdf=org.pwmt.zathura-pdf-poppler.desktop;
