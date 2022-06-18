@@ -722,6 +722,12 @@
         - ~/stuff/logs
         - ~/stuff/images
         - ~/stuff/photos
+        - ~/stuff/books
+        - ~/stuff/books/fiction
+        - ~/stuff/books/nonfiction
+        - ~/stuff/audiobooks
+        - ~/stuff/audiobooks/fiction
+        - ~/stuff/audiobooks/nonfiction
         - ~/bin
         - ~/stuff/
         - ~/mnt
