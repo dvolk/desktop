@@ -116,6 +116,7 @@
           - apparmor-profiles
           - apparmor-profiles-extra
           - snapd
+          - zenity
 
     - name: Install emacs-nox
       become: true
