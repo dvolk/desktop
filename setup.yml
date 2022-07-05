@@ -353,10 +353,23 @@
           - command-not-found
           - motd-news-config
 
+    - name: Create /opt
+      become: yes
+      file:
+        path: /opt
+        state: directory
+
+    - name: Create /opt/tmp
+      become: yes
+      file:
+        path: /opt/tmp
+        state: directory
+        mode: '777'
+
     - name: Download jetbrains font
       ansible.builtin.get_url:
         url: https://github.com/JetBrains/JetBrainsMono/releases/download/v2.242/JetBrainsMono-2.242.zip
-        dest: /tmp/JetBrainsMono.zip
+        dest: /opt/tmp/JetBrainsMono.zip
         checksum: sha256:4e315b4ef176ce7ffc971b14997bdc8f646e3d1e5b913d1ecba3a3b10b4a1a9f
       tags:
         - desktop
@@ -370,7 +383,7 @@
 
     - name: Extract jetbrains font
       ansible.builtin.unarchive:
-        src: /tmp/JetBrainsMono.zip
+        src: /opt/tmp/JetBrainsMono.zip
         dest: ~/.fonts
       tags:
         - desktop
@@ -591,7 +604,7 @@
           HISTSIZE=100000
           HISTFILESIZE=200000
           export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> ~/.logs/bash-history-$(date "+%Y-%m-%d").log; fi'
-          PATH=$PATH:/snap/bin:/home/{{ lookup('env', 'USER') }}/.local/bin:/opt/mongodb-linux-x86_64-debian11-5.0.8/
+          PATH=$PATH:/snap/bin:/home/{{ lookup('env', 'USER') }}/.local/bin:/opt/mongodb-linux-x86_64-debian11-5.0.8/:/opt/nim-1.6.6/bin:/home/{{ lookup('env', 'USER') }}/.nimble/bin
 
     - name: setup Xresources (user)
       template:
@@ -794,19 +807,13 @@
     - name: download mongodb
       ansible.builtin.get_url:
         url: https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-debian11-5.0.8.tgz
-        dest: /tmp/mongodb-linux-x86_64-debian11-5.0.8.tgz
+        dest: /opt/tmp/mongodb-linux-x86_64-debian11-5.0.8.tgz
         checksum: sha256:dba4de0ebc12dd57bf1adfec071310a4a4b633017ab082c4605972dcca4d6811
-
-    - name: Create /opt
-      become: yes
-      file:
-        path: /opt
-        state: directory
 
     - name: Extract mongodb to /opt
       become: yes
       ansible.builtin.unarchive:
-        src: /tmp/mongodb-linux-x86_64-debian11-5.0.8.tgz
+        src: /opt/tmp/mongodb-linux-x86_64-debian11-5.0.8.tgz
         dest: /opt
 
     - name: Create ~/.config/systemd/user
@@ -835,3 +842,15 @@
         state: started
         enabled: yes
         scope: user
+
+    - name: download nim
+      ansible.builtin.get_url:
+        url: https://nim-lang.org/download/nim-1.6.6-linux_x64.tar.xz
+        dest: /opt/tmp/nim-1.6.6-linux_x64.tar.xz
+        checksum: sha256:3e88df45dbbec2f083d31e00e6f2c07e0c70c392c91b2a934f7f283dd0fdf5f9
+
+    - name: Extract nim to /opt
+      become: yes
+      ansible.builtin.unarchive:
+        src: /opt/tmp/nim-1.6.6-linux_x64.tar.xz
+        dest: /opt
