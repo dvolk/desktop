@@ -14,17 +14,17 @@
 (setq custom-file "~/.emacs.d/custom.el")
 (load-file custom-file)
 
+(menu-bar-mode nil)
+(tool-bar-mode nil)
+(tab-bar-mode nil)
+(scroll-bar-mode nil)
+
 (helm-mode)
 (which-key-mode)
 ;;(global-visual-line-mode)
 (xterm-mouse-mode)
-;;(scroll-bar-mode 0)
-(menu-bar-mode 0)
 (show-paren-mode)
-;;(tool-bar-mode nil)
-;;(tab-bar-mode 0)
 (xterm-mouse-mode t)
-
 
 (require 'helm-xref)
 (define-key global-map [remap find-file] #'helm-find-files)
