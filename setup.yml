@@ -236,6 +236,8 @@
           - gparted
           - gnome-disk-utility
           - pavucontrol
+          - chromium
+          - webext-ublock-origin-chromium
       tags:
         - desktop
 
@@ -597,7 +599,7 @@
           HISTSIZE=100000
           HISTFILESIZE=200000
           export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> ~/.logs/bash-history-$(date "+%Y-%m-%d").log; fi'
-          PATH=$PATH:/snap/bin:/home/{{ lookup('env', 'USER') }}/.local/bin:/opt/mongodb-linux-x86_64-debian11-5.0.8/:/opt/nim-1.6.6/bin:/home/{{ lookup('env', 'USER') }}/.nimble/bin
+          PATH=$PATH:/snap/bin:/home/{{ lookup('env', 'USER') }}/.local/bin:/opt/mongodb-linux-x86_64-debian11-5.0.8/:/opt/nim-1.6.6/bin:/home/{{ lookup('env', 'USER') }}/.nimble/bin:/opt/node-v16.16.0-linux-x64/bin
 
     - name: setup Xresources (user)
       template:
@@ -847,3 +849,47 @@
       ansible.builtin.unarchive:
         src: /opt/tmp/nim-1.6.6-linux_x64.tar.xz
         dest: /opt
+
+    - name: download nodejs
+      ansible.builtin.get_url:
+        url: https://nodejs.org/dist/v16.16.0/node-v16.16.0-linux-x64.tar.xz
+        dest: /opt/tmp/node-v16.16.0-linux-x64.tar.xz
+        checksum: sha256:edcb6e9bb049ae365611aa209fc03c4bfc7e0295dbcc5b2f1e710ac70384a8ec
+
+    - name: Extract nodejs to /opt
+      become: yes
+      ansible.builtin.unarchive:
+        src: /opt/tmp/node-v16.16.0-linux-x64.tar.xz
+        dest: /opt
+
+    - name: Set Chromium as default browser
+      command: update-alternatives --install /usr/bin/x-www-browser x-www-browser /usr/bin/chromium 250
+      become: yes
+
+    # See https://www.chromium.org/administrators/policy-list-3
+    - name: Create Chromium policies directory
+      file:
+        path: /etc/chromium/policies/managed
+        state: directory
+      become: yes
+
+    - name: Create Chromium JSON policy file
+      copy:
+        src: chromium-policy
+        dest: "/etc/chromium/policies/managed/my-policy.json"
+      become: yes
+
+    - name: Create Chromium extensions directory
+      file:
+        path: /usr/share/chromium/extensions
+        state: directory
+      become: yes
+
+    # ublock is installed through apt
+    # # See https://developer.chrome.com/extensions/external_extensions#preferences
+    # - name: Create Chromium JSON file to install extensions for all users
+    #   template:
+    #     src: chrome-extensions.json
+    #     dest: "/usr/share/chromium-browser/extensions/{{ item }}.json"
+    #   with_items:
+    #     - cjpalhdlnbpafiamejdnhcphjbkeiagm # ublock
