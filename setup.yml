@@ -147,13 +147,6 @@
           - python-lsp-black
           - pyls-memestra
           - pylsp-rope
-          - argh
-          - humanize
-          - Flask
-          - Flask-Migrate
-          - Flask-SQLAlchemy
-          - flask-mongoengine
-          - requests
 
     - name: accept ms font eula (have not actually read it)
       become: true
