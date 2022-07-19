@@ -413,6 +413,20 @@
       tags:
         - desktop
 
+    - name: Create i3blocks config directory
+      file:
+        path: ~/.config/i3blocks
+        state: directory
+      tags:
+        - desktop
+
+    - name: Copy i3blocks config
+      template:
+        src: i3blocks-config
+        dest: ~/.config/i3blocks/config
+      tags:
+        - desktop
+
     - name: Copy desktop setup script
       copy:
         src: start.sh
