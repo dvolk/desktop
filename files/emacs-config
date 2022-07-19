@@ -14,10 +14,10 @@
 (setq custom-file "~/.emacs.d/custom.el")
 (load-file custom-file)
 
-(menu-bar-mode nil)
-(tool-bar-mode nil)
-(tab-bar-mode nil)
-(scroll-bar-mode nil)
+(setq menu-bar-mode nil)
+(setq tool-bar-mode nil)
+(setq tab-bar-mode nil)
+(setq scroll-bar-mode nil)
 
 (helm-mode)
 (which-key-mode)
