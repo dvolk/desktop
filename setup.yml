@@ -421,7 +421,7 @@
         - desktop
 
     - name: Copy i3blocks config
-      template:
+      copy:
         src: i3blocks-config
         dest: ~/.config/i3blocks/config
       tags:
