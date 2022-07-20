@@ -1,0 +1,108 @@
+#+TITLE: Bookmarks
+#+AUTHOR: dvolk
+#+HTML_HEAD: <style type="text/css">
+#+HTML_HEAD:   a { text-decoration: none; color: seagreen; }
+#+HTML_HEAD:   body { margin: auto; max-width: 600px; font-family: Jetbrains Mono Medium, monospace; padding-bottom: 50px; }
+#+HTML_HEAD:   ul { list-style-type: none; }
+#+HTML_HEAD: </style>
+* Software
+- https://gitea.io/
+- https://www.gnu.org/software/emacs/
+- https://git-scm.com/
+- https://i3wm.org/
+- https://orgmode.org/
+- https://www.rawtherapee.com/
+- https://obsproject.com/y
+- https://www.mongodb.com/
+- https://nodejs.org/en/
+- https://github.com/minad/org-modern
+- https://github.com/kuanyui/moe-theme.el
+- https://chromium.googlesource.com/chromium/chromium/+/master/chrome/app/policy/policy_templates.json
+* Software hosting
+- https://github.com/
+- https://about.gitlab.com/
+- https://gitee.com/
+- https://gitlab.gnome.org/
+* Nim libraries
+- https://github.com/treeform/print
+- https://github.com/ftsf/nico
+- https://github.com/Vladar4/nimgame2
+- https://github.com/Timofffee/tecs.nim
+* Python libraries
+- https://github.com/suds-community/suds
+- https://flask.palletsprojects.com/en/2.1.x/
+- https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+- https://selenium-python.readthedocs.io/
+* Mine common software
+- https://github.com/dvolk/sp3
+- https://github.com/dvolk/shawl5
+* Work common software
+- https://en.wikipedia.org/wiki/MATLAB
+- https://nextflow.io/
+* Web dev
+- https://www.w3schools.com/w3css/default.asp
+- https://fontawesome.com/v4/icons/
+- https://en.wikipedia.org/wiki/X11_color_names
+* Programming language docs
+- https://docs.python.org/3/
+- https://nim-lang.org/documentation.html
+- https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md
+* "Dev-ops"
+- https://docs.ansible.com/ansible/latest/collections/index.html
+- https://ansible-semaphore.com/
+* Operating systems
+- https://www.debian.org/
+- https://ubuntu.com/
+- https://nixos.org/
+- https://www.qubes-os.org/
+* Guides
+- http://littleosbook.github.io/
+- https://tylersguides.com/guides/linux-acl-permissions-tutorial/
+- https://docs.xfce.org/xfce/thunar/custom-actions
+* News/wasting time
+- https://news.ycombinator.com/
+- https://www.bbc.co.uk/
+- https://www.metafilter.com/
+- https://planet.debian.org/
+- https://en.wikipedia.org/
+- https://stackoverflow.com/questions
+- https://worldbuilding.stackexchange.com/
+- https://www.wikihow.com/Main-Page
+- https://store.steampowered.com/
+- https://www.gregegan.net/
+- http://www.ecns.cn/
+- https://english.pravda.ru/
+- https://www.aljazeera.com/
+- https://www.notechmagazine.com/
+- https://datorss.com/
+- https://www.iso.org/isoiec-27001-information-security.html
+- https://lwn.net/
+- https://lemmy.ml/
+- https://www.typelit.io/
+* Hardware
+- https://www.lenovo.com/gb/en/
+- https://www.dell.com/en-uk
+- https://frame.work/gb/en
+* Hardware reviews
+- https://www.gsmarena.com/
+- https://www.notebookcheck.net/
+* Games
+- https://github.com/CleverRaven/Cataclysm-DDA
+- https://github.com/OpenMW/ope
+- https://www.dfworkshop.net/
+- https://www.nexusmods.com/morrowind/mods/49057
+* Life
+- https://www.ikea.com/gb/en/
+- https://www.oxfordbus.co.uk/services/THTR/ST1
+- https://www.oxfordbus.co.uk/services/THTR/X32
+- https://www.oxford.gov.uk/
+- https://www.amazon.co.uk/
+- https://www.ebay.co.uk/
+- https://www.currys.co.uk/
+- https://www.jobs.ac.uk/
+- https://www.rightmove.co.uk/
+- https://www.scan.co.uk/
+- https://en.wikipedia.org/wiki/Counties_of_England
+- https://www.oxfordmail.co.uk/
+* Convert file to HTML
+Open in emacs and export with org-html-export-to-html
