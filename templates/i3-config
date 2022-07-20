@@ -18,7 +18,7 @@ set $alt Mod1
 #default_border pixel 6
 #default_floating_border pixel 6
 
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 3
 #new_window 1pixel
 # class                 border  bground text    indicator child_border
 client.focused          #7DDFFF #7DDFFF #000000 #7DDFFF   #7DDFFF
