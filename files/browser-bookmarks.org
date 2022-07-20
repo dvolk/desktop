@@ -18,6 +18,9 @@
 - https://github.com/minad/org-modern
 - https://github.com/kuanyui/moe-theme.el
 - https://chromium.googlesource.com/chromium/chromium/+/master/chrome/app/policy/policy_templates.json
+- https://github.com/rlister/org-present
+- https://github.com/zendbit/nim.nwatchdog
+- https://github.com/joehillen/sysz
 * Software hosting
 - https://github.com/
 - https://about.gitlab.com/
