@@ -567,23 +567,32 @@
     - name: download adware+malware hosts file
       ansible.builtin.get_url:
         url: https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts
-        dest: /tmp/hosts
+        dest: /opt/tmp/hosts
       tags:
         - desktop
 
     - name: download mozilla hosts file
       ansible.builtin.get_url:
         url: https://raw.githubusercontent.com/MrRawes/firefox-hosts/firefox-hosts/hosts
-        dest: /tmp/mozilla-hosts
+        dest: /opt/tmp/mozilla-hosts
       tags:
         - desktop
 
-    - name: insert hostname into /tmp/hosts
+    - name: download mozilla hosts file
+      ansible.builtin.get_url:
+        url: https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt
+        dest: /opt/tmp/crypto-hosts
+      tags:
+        - desktop
+
+    - name: insert hostname into /opt/tmp/hosts
       blockinfile:
-        path: /tmp/hosts
+        path: /opt/tmp/hosts
         block: |
           # block mozilla telemetry
-          {{ lookup('file', '/tmp/mozilla-hosts') }}
+          {{ lookup('file', '/opt/tmp/mozilla-hosts') }}
+          # block crypto hosts
+          {{ lookup('file', '/opt/tmp/crypto-hosts') }}
           # add localhost
           127.0.1.1 {{ ansible_hostname }}
       become: true
@@ -592,7 +601,7 @@
 
     - name: copy adware+malware hosts file to /etc/hosts
       copy:
-        src: /tmp/hosts
+        src: /opt/tmp/hosts
         dest: /etc/hosts
       become: true
       tags:
