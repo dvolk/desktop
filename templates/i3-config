@@ -22,7 +22,7 @@ for_window [class="^.*"] border pixel 0
 #new_window 1pixel
 # class                 border  bground text    indicator child_border
 client.focused          #7DDFFF #7DDFFF #000000 #7DDFFF   #7DDFFF
-client.focused_inactive #EEEEEE #EEEEEE #000000 #EEEEEE   #EEEEEE
+client.focused_inactive #DDDD00 #DDDD00 #000000 #DDDD00   #DDDD00
 client.unfocused        #EEEEEE #EEEEEE #545454 #EEEEEE   #EEEEEE
 client.urgent           #FF5555 #FF5555 #FFFFFF #FF5555   #FF5555
 client.placeholder      #000000 #000000 #FFFFFF #000000   #000000
@@ -198,8 +198,8 @@ bar {
     statusline #000000
     separator  #000000
 
-    focused_workspace  #7FC8FF #7FC8FF #FFFFFF
-    active_workspace   #C5C5C5 #C3C3C3 #000000
+    focused_workspace  #7FC8FF #7FC8FF #000000
+    active_workspace   #C5C5C5 #C3C3C3 #393939
     inactive_workspace #ACACAC #ACACAC #393939
     urgent_workspace   #FF0000 #FF0000 #FFFFFF
     binding_mode       #FF0000 #FF0000 #FFFFFF
