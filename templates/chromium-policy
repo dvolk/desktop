@@ -1,0 +1,15 @@
+{
+  "BookmarkBarEnabled": false,
+  "ShowAppsShortcutInBookmarkBar": false,
+  "ShowHomeButton": true,
+  "TranslateEnabled": false,
+  "HomepageIsNewTabPage": false,
+  "BackgroundModeEnabled": false,
+  "MetricsReportingEnabled": false,
+  "PasswordManagerEnabled": true,
+  "SafeBrowsingEnabled": false,
+  "SearchSuggestEnabled": false,
+  "SyncDisabled": true,
+  "TranslateEnabled": false,
+  "HomepageLocation": "/home/{{ lookup('env', 'USER') }}/stuff/browser-bookmarks.html"
+}
