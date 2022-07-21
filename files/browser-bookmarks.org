@@ -28,6 +28,7 @@
 - https://github.com/pashinin/workgroups2
 - https://emacsthemes.com/
 - https://www.virtualbox.org/
+- https://filebrowser.org/features
 * Software hosting
 - https://github.com/
 - https://about.gitlab.com/
@@ -46,6 +47,7 @@
 - https://pypi.org/project/redmail/
 - https://www.mathworks.com/help/matlab/matlab_external/install-the-matlab-engine-for-python.html
 - https://pydantic-docs.helpmanual.io/usage/models/
+- https://github.com/ChrisKnott/Eel
 * Mine common software
 - https://github.com/dvolk/sp3
 - https://github.com/dvolk/shawl5
@@ -63,6 +65,7 @@
 - https://www.syncfusion.com/succinctly-free-ebooks/jquery/core-jquery
 - https://alpinejs.dev/
 - https://api.jquery.com/jquery.ajax/
+- https://svelte.dev/
 * Programming language docs
 - https://docs.python.org/3/
 - https://nim-lang.org/documentation.html
