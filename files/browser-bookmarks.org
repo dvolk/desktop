@@ -21,6 +21,13 @@
 - https://github.com/rlister/org-present
 - https://github.com/zendbit/nim.nwatchdog
 - https://github.com/joehillen/sysz
+- https://thomashunter.name/i3-configurator/
+- https://www.focalboard.com/download/personal-edition/ubuntu/
+- https://www.rawtherapee.com/
+- https://help.gnome.org/users/zenity/stable/
+- https://github.com/pashinin/workgroups2
+- https://emacsthemes.com/
+- https://www.virtualbox.org/
 * Software hosting
 - https://github.com/
 - https://about.gitlab.com/
@@ -36,6 +43,9 @@
 - https://flask.palletsprojects.com/en/2.1.x/
 - https://www.crummy.com/software/BeautifulSoup/bs4/doc/
 - https://selenium-python.readthedocs.io/
+- https://pypi.org/project/redmail/
+- https://www.mathworks.com/help/matlab/matlab_external/install-the-matlab-engine-for-python.html
+- https://pydantic-docs.helpmanual.io/usage/models/
 * Mine common software
 - https://github.com/dvolk/sp3
 - https://github.com/dvolk/shawl5
@@ -46,6 +56,13 @@
 - https://www.w3schools.com/w3css/default.asp
 - https://fontawesome.com/v4/icons/
 - https://en.wikipedia.org/wiki/X11_color_names
+- http://colorsafe.co/
+- http://www.coolphptools.com/color_extract
+- https://angular.io/
+- https://reactjs.org/
+- https://www.syncfusion.com/succinctly-free-ebooks/jquery/core-jquery
+- https://alpinejs.dev/
+- https://api.jquery.com/jquery.ajax/
 * Programming language docs
 - https://docs.python.org/3/
 - https://nim-lang.org/documentation.html
@@ -53,6 +70,8 @@
 * "Dev-ops"
 - https://docs.ansible.com/ansible/latest/collections/index.html
 - https://ansible-semaphore.com/
+- https://docs.ansible.com/ansible/latest/user_guide/intro_adhoc.html
+- https://docs.ansible.com/ansible/latest/collections/ansible/builtin/git_module.html
 * Operating systems
 - https://www.debian.org/
 - https://ubuntu.com/
@@ -62,6 +81,7 @@
 - http://littleosbook.github.io/
 - https://tylersguides.com/guides/linux-acl-permissions-tutorial/
 - https://docs.xfce.org/xfce/thunar/custom-actions
+- https://wiki.archlinux.org/title/desktop_entries
 * News/wasting time
 - https://news.ycombinator.com/
 - https://www.bbc.co.uk/
@@ -82,16 +102,19 @@
 - https://lwn.net/
 - https://lemmy.ml/
 - https://www.typelit.io/
+- https://en.wiktionary.org/wiki/Wiktionary:Main_Page
+- https://www.gog.com/
 * Hardware
 - https://www.lenovo.com/gb/en/
 - https://www.dell.com/en-uk
 - https://frame.work/gb/en
+- https://ploopy.co/mouse/
 * Hardware reviews
 - https://www.gsmarena.com/
 - https://www.notebookcheck.net/
 * Games
 - https://github.com/CleverRaven/Cataclysm-DDA
-- https://github.com/OpenMW/ope
+- https://github.com/OpenMW/openmw
 - https://www.dfworkshop.net/
 - https://www.nexusmods.com/morrowind/mods/49057
 * Life
@@ -107,5 +130,7 @@
 - https://www.scan.co.uk/
 - https://en.wikipedia.org/wiki/Counties_of_England
 - https://www.oxfordmail.co.uk/
+- https://www.openstreetmap.org/#map=13/51.7543/-1.2293
+- https://www.google.com/maps/@51.7538573,-1.2259815,13z
 * Convert file to HTML
 Open in emacs and export with org-html-export-to-html
