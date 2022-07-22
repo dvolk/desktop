@@ -34,11 +34,6 @@
 - https://about.gitlab.com/
 - https://gitee.com/
 - https://gitlab.gnome.org/
-* Nim libraries
-- https://github.com/treeform/print
-- https://github.com/ftsf/nico
-- https://github.com/Vladar4/nimgame2
-- https://github.com/Timofffee/tecs.nim
 * Python libraries
 - https://github.com/suds-community/suds
 - https://flask.palletsprojects.com/en/2.1.x/
@@ -48,6 +43,14 @@
 - https://www.mathworks.com/help/matlab/matlab_external/install-the-matlab-engine-for-python.html
 - https://pydantic-docs.helpmanual.io/usage/models/
 - https://github.com/ChrisKnott/Eel
+* Nim libraries
+- https://github.com/treeform/print
+- https://github.com/ftsf/nico
+- https://github.com/Vladar4/nimgame2
+- https://github.com/Timofffee/tecs.nim
+- https://github.com/Niminem/Neel
+- https://github.com/avahe-kellenberger/nimdow
+- https://github.com/fox0430/moe
 * Mine common software
 - https://github.com/dvolk/sp3
 - https://github.com/dvolk/shawl5
