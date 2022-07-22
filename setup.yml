@@ -278,6 +278,7 @@
       file:
         dest: /etc/apparmor.d/local/usr.bin.firefox
         state: touch
+      tags: desktop
 
     - name: Install firefox-esr apparmor profile (debian)
       when: ansible_distribution == "Debian"
@@ -292,6 +293,7 @@
       when: ansible_distribution == "Debian"
       become: true
       command: aa-enforce usr.bin.firefox
+      tags: desktop
 
     - name: Install firefox (ubuntu)
       when: ansible_distribution == "Ubuntu"
@@ -889,6 +891,7 @@
     - name: Set Chromium as default browser
       command: update-alternatives --install /usr/bin/x-www-browser x-www-browser /usr/bin/chromium 250
       become: yes
+      tags: desktop
 
     # See https://www.chromium.org/administrators/policy-list-3
     - name: Create Chromium policies directory
@@ -896,26 +899,31 @@
         path: /etc/chromium/policies/managed
         state: directory
       become: yes
+      tags: desktop
 
     - name: Create Chromium JSON policy file
       template:
         src: chromium-policy
         dest: "/etc/chromium/policies/managed/my-policy.json"
       become: yes
+      tags: desktop
 
     - name: Create Chromium extensions directory
       file:
         path: /usr/share/chromium/extensions
         state: directory
       become: yes
+      tags: desktop
 
     - name: Copy browser bookmarks org file
       copy:
         src: browser-bookmarks.org
         dest: ~/stuff/browser-bookmarks.org
+      tags: desktop
 
     - name: Convert org browser bookmarks to html
       command: emacs --batch --eval "(require 'org)" ~/stuff/browser-bookmarks.org --funcall org-html-export-to-html
+      tags: desktop
 
 
     # ublock is installed through apt
