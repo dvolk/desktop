@@ -88,25 +88,29 @@
 - https://tylersguides.com/guides/linux-acl-permissions-tutorial/
 - https://docs.xfce.org/xfce/thunar/custom-actions
 - https://wiki.archlinux.org/title/desktop_entries
-* News/wasting time
-- https://news.ycombinator.com/
+* News
 - https://www.bbc.co.uk/
+- http://www.ecns.cn/
+- https://english.pravda.ru/
+- https://www.aljazeera.com/
+- https://lwn.net/
+- https://container-news.com/
+* User-submitted news sites
+- https://news.ycombinator.com/
 - https://www.metafilter.com/
 - https://planet.debian.org/
+- https://lemmy.ml/
+- https://en.wikinews.org/wiki/Main_Page
+* Wasting time
 - https://en.wikipedia.org/
 - https://stackoverflow.com/questions
 - https://worldbuilding.stackexchange.com/
 - https://www.wikihow.com/Main-Page
 - https://store.steampowered.com/
 - https://www.gregegan.net/
-- http://www.ecns.cn/
-- https://english.pravda.ru/
-- https://www.aljazeera.com/
 - https://www.notechmagazine.com/
 - https://datorss.com/
 - https://www.iso.org/isoiec-27001-information-security.html
-- https://lwn.net/
-- https://lemmy.ml/
 - https://www.typelit.io/
 - https://en.wiktionary.org/wiki/Wiktionary:Main_Page
 - https://www.gog.com/
