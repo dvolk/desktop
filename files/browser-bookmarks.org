@@ -43,6 +43,7 @@
 - https://www.mathworks.com/help/matlab/matlab_external/install-the-matlab-engine-for-python.html
 - https://pydantic-docs.helpmanual.io/usage/models/
 - https://github.com/ChrisKnott/Eel
+- https://github.com/gorakhargosh/watchdog
 * Nim libraries
 - https://github.com/treeform/print
 - https://github.com/ftsf/nico
