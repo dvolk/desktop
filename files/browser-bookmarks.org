@@ -12,7 +12,7 @@
 - https://i3wm.org/
 - https://orgmode.org/
 - https://www.rawtherapee.com/
-- https://obsproject.com/y
+- https://obsproject.com/
 - https://www.mongodb.com/
 - https://nodejs.org/en/
 - https://github.com/minad/org-modern
@@ -44,6 +44,8 @@
 - https://pydantic-docs.helpmanual.io/usage/models/
 - https://github.com/ChrisKnott/Eel
 - https://github.com/gorakhargosh/watchdog
+* Programming languages
+- https://github.com/carbon-language/carbon-lang
 * Nim libraries
 - https://github.com/treeform/print
 - https://github.com/ftsf/nico
