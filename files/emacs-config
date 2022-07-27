@@ -2,10 +2,34 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 (package-initialize)
 
-(setq package-selected-packages '(lsp-mode yasnippet lsp-treemacs helm-lsp magit diff-hl python-black
-                                           projectile hydra flycheck company avy which-key helm-xref
-                                           rainbow-delimiters dap-mode yaml-mode json-mode jinja2-mode
-                                           twilight-bright-theme))
+(setq package-selected-packages '(
+                                  lsp-mode
+                                  yasnippet
+                                  lsp-treemacs
+                                  helm-lsp
+                                  magit
+                                  diff-hl
+                                  python-black
+                                  projectile
+                                  hydra
+                                  flycheck
+                                  company
+                                  company-quickhelp
+                                  avy
+                                  which-key
+                                  helm-xref
+                                  rainbow-delimiters
+                                  dap-mode
+                                  yaml-mode
+                                  json-mode
+                                  jinja2-mode
+                                  elfeed
+                                  focus
+                                  lsp-focus
+                                  twilight-bright-theme
+                                  twilight-anti-bright-theme
+                                  hide-mode-line
+                                  ))
 
 (when (cl-find-if-not #'package-installed-p package-selected-packages)
   (package-refresh-contents)
@@ -17,7 +41,7 @@
 (setq menu-bar-mode nil)
 (setq tool-bar-mode nil)
 (setq tab-bar-mode nil)
-(setq scroll-bar-mode nil)
+(scroll-bar-mode 0)
 
 (helm-mode)
 (which-key-mode)
@@ -125,6 +149,7 @@
 (add-hook 'prog-mode-hook #'diff-hl-flydiff-mode)
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 (add-hook 'prog-mode-hook #'company-mode)
+(add-hook 'prog-mode-hook #'company-quickhelp-mode)
 
 (add-hook 'python-mode-hook #'python-black-on-save-mode)
 
@@ -149,6 +174,7 @@
 (global-set-key [f12] 'lsp-rename)
 (global-set-key [(shift f5)] 'elfeed)
 (global-set-key [(shift f9)] 'elfeed-update)
+(global-set-key [(shift f12)] 'hide-mode-line-mode)
 
 (treemacs)
 (global-visual-line-mode)
@@ -176,3 +202,20 @@
 (save-place-mode t)
 (savehist-mode t)
 (recentf-mode t)
+
+(defun unhtml (start end)
+  (interactive "r")
+  (save-excursion
+    (save-restriction
+      (narrow-to-region start end)
+      (goto-char (point-min))
+      (replace-string "&" "&amp;")
+      (goto-char (point-min))
+      (replace-string "<" "&lt;")
+      (goto-char (point-min))
+      (replace-string ">" "&gt;")
+      (goto-char (point-min))
+      (replace-string "'" "&#39;")
+      (goto-char (point-min))
+      (replace-string "\"" "&amp;")
+      )))
