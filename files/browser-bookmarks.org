@@ -29,6 +29,8 @@
 - https://emacsthemes.com/
 - https://www.virtualbox.org/
 - https://filebrowser.org/features
+- https://fossil-scm.org/home/doc/trunk/www/index.wiki
+- https://github.com/executablebooks/jupyter-book
 * Software hosting
 - https://github.com/
 - https://about.gitlab.com/
@@ -117,6 +119,8 @@
 - https://www.typelit.io/
 - https://en.wiktionary.org/wiki/Wiktionary:Main_Page
 - https://www.gog.com/
+- https://www.instructables.com/Duck-Tape-Book-Binding-Cheepo-Delux/
+- https://questions.wizardzines.com/
 * Hardware
 - https://www.lenovo.com/gb/en/
 - https://www.dell.com/en-uk
