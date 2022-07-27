@@ -118,6 +118,8 @@
           - apparmor-profiles-extra
           - snapd
           - zenity
+          - auditd
+          - ngrep
 
     - name: Install emacs-nox
       become: true
