@@ -29,18 +29,18 @@
                                   twilight-bright-theme
                                   twilight-anti-bright-theme
                                   hide-mode-line
+                                  web-mode
                                   ))
 
 (when (cl-find-if-not #'package-installed-p package-selected-packages)
   (package-refresh-contents)
   (mapc #'package-install package-selected-packages))
 
-(setq custom-file "~/.emacs.d/custom.el")
-(load-file custom-file)
+(load-theme 'twilight-anti-bright t)
 
-(setq menu-bar-mode nil)
-(setq tool-bar-mode nil)
-(setq tab-bar-mode nil)
+(menu-bar-mode 0)
+(tool-bar-mode 0)
+(tab-bar-mode 0)
 (scroll-bar-mode 0)
 
 (helm-mode)
@@ -71,8 +71,7 @@
 
 (global-set-key (kbd "C-d") 'avy-goto-char-timer)
 
-
-
+(setq pos-tip-background-color "#000")
 
 (global-set-key [mouse-4] (lambda () (interactive) (scroll-down 10)))
 (global-set-key [mouse-5] (lambda () (interactive) (scroll-up 10)))
@@ -80,7 +79,10 @@
 ;;(global-set-key [mouse-9] (lambda () (interactive) (next-buffer)))
 
 (add-to-list 'auto-mode-alist '("\\.nf\\'" . groovy-mode))
-(add-to-list 'auto-mode-alist '("\\.template\\'" . jinja2-mode))
+(add-to-list 'auto-mode-alist '("\\.template\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.j2\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
 
 ;;(setq pixel-scxroll-precision-large-scroll-height 40.0)
 ;;(setq pixel-scroll-precision-interpolation-factor 30)
@@ -192,10 +194,10 @@
 (setq redisplay-dont-pause t)
 
 ;; Miscellaneous options
-(setq major-mode (lambda () ; guess major mode from file name
-                   (unless buffer-file-name
-                     (let ((buffer-file-name (buffer-name)))
-                       (set-auto-mode)))))
+;(setq major-mode (lambda () ; guess major mode from file name
+;                   (unless buffer-file-name
+;                     (let ((buffer-file-name (buffer-name)))
+;                       (set-auto-mode)))))
 (setq confirm-kill-emacs #'yes-or-no-p)
 (setq window-resize-pixelwise t)
 (setq frame-resize-pixelwise t)
@@ -219,3 +221,6 @@
       (goto-char (point-min))
       (replace-string "\"" "&amp;")
       )))
+
+(setq custom-file "~/.emacs.d/custom.el")
+(load-file custom-file)
