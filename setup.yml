@@ -605,6 +605,7 @@
         - desktop
 
     - name: copy adware+malware hosts file to /etc/hosts
+      when: not lookup('env', 'DONTREPLACEHOSTS')|bool
       copy:
         src: /opt/tmp/hosts
         dest: /etc/hosts
