@@ -887,6 +887,32 @@
         src: /opt/tmp/nim-1.6.6-linux_x64.tar.xz
         dest: /opt
 
+    - name: download rust
+      when: lookup('env', 'RUST')|bool
+      ansible.builtin.get_url:
+        url: https://static.rust-lang.org/dist/rust-1.62.1-x86_64-unknown-linux-gnu.tar.gz
+        dest: /opt/tmp/rust-1.62.1-x86_64-unknown-linux-gnu.tar.gz
+        checksum: sha256:dd7d82b8fa8eae59729e1c31fe59a9de6ee61d08ab40ce016185653beebe04d2
+
+
+    - name: Extract rust to /opt/tmp
+      when: lookup('env', 'RUST')|bool
+      ansible.builtin.unarchive:
+        src: /opt/tmp/rust-1.62.1-x86_64-unknown-linux-gnu.tar.gz
+        dest: /opt/tmp
+
+    - name: Create rust directory
+      become: true
+      when: lookup('env', 'RUST')|bool
+      file:
+        path: /opt/rust1621
+        state: directory
+
+    - name: Install rust
+      become: true
+      when: lookup('env', 'RUST')|bool
+      command: "/opt/tmp/rust-1.62.1-x86_64-unknown-linux-gnu/install.sh --prefix=/opt/rust1621"
+
     - name: download nodejs
       ansible.builtin.get_url:
         url: https://nodejs.org/dist/v16.16.0/node-v16.16.0-linux-x64.tar.xz
