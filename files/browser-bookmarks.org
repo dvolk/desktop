@@ -149,7 +149,7 @@
 - Counties of England https://en.wikipedia.org/wiki/Counties_of_England
 - Oxford mail https://www.oxfordmail.co.uk/
 - Oxford Openstreetmap https://www.openstreetmap.org/#map=13/51.7543/-1.2293
-- Oxford Google Mapshttps://www.google.com/maps/@51.7538573,-1.2259815,13z
+- Oxford Google Maps https://www.google.com/maps/@51.7538573,-1.2259815,13z
 - Aliexpress https://www.aliexpress.com/
 - Gearbest https://www.gearbest.com/
 - Taobao https://world.taobao.com/
