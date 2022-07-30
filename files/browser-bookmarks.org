@@ -2,153 +2,156 @@
 #+AUTHOR: dvolk
 #+HTML_HEAD: <style type="text/css">
 #+HTML_HEAD:   a { text-decoration: none; color: seagreen; }
-#+HTML_HEAD:   body { margin: auto; max-width: 600px; font-family: Jetbrains Mono Medium, monospace; padding-bottom: 50px; }
-#+HTML_HEAD:   ul { list-style-type: none; }
+#+HTML_HEAD:   body { margin: auto; max-width: 800px; font-family: Jetbrains Mono Medium, monospace; padding-bottom: 50px; }
+#+HTML_HEAD:   ul { padding: 0; margin: 0; list-style-type: none; }
 #+HTML_HEAD: </style>
 * Software
-- https://gitea.io/
-- https://www.gnu.org/software/emacs/
-- https://git-scm.com/
-- https://i3wm.org/
-- https://orgmode.org/
-- https://www.rawtherapee.com/
-- https://obsproject.com/
-- https://www.mongodb.com/
-- https://nodejs.org/en/
-- https://github.com/minad/org-modern
-- https://github.com/kuanyui/moe-theme.el
-- https://chromium.googlesource.com/chromium/chromium/+/master/chrome/app/policy/policy_templates.json
-- https://github.com/rlister/org-present
-- https://github.com/zendbit/nim.nwatchdog
-- https://github.com/joehillen/sysz
-- https://thomashunter.name/i3-configurator/
-- https://www.focalboard.com/download/personal-edition/ubuntu/
-- https://www.rawtherapee.com/
-- https://help.gnome.org/users/zenity/stable/
-- https://github.com/pashinin/workgroups2
-- https://emacsthemes.com/
-- https://www.virtualbox.org/
-- https://filebrowser.org/features
-- https://fossil-scm.org/home/doc/trunk/www/index.wiki
-- https://github.com/executablebooks/jupyter-book
+- Gitea https://gitea.io/
+- Emacs https://www.gnu.org/software/emacs/
+- Git https://git-scm.com/
+- i3 https://i3wm.org/
+- Org-mode https://orgmode.org/
+- Rawtherappe https://www.rawtherapee.com/
+- OBS https://obsproject.com/
+- Mongo https://www.mongodb.com/
+- Nodejs https://nodejs.org/en/
+- Chromium policies https://chromium.googlesource.com/chromium/chromium/+/master/chrome/app/policy/policy_templates.json
+- org-present https://github.com/rlister/org-present
+- Nim watchdog https://github.com/zendbit/nim.nwatchdog
+- sysz https://github.com/joehillen/sysz
+- i3 configurator https://thomashunter.name/i3-configurator/
+- Focal board https://www.focalboard.com/download/personal-edition/ubuntu/
+- Zenity https://help.gnome.org/users/zenity/stable/
+- workgroups2 https://github.com/pashinin/workgroups2
+- Emacs themes https://emacsthemes.com/
+- Virtualbox https://www.virtualbox.org/
+- Filebrowser https://filebrowser.org/features
+- Fossil https://fossil-scm.org/home/doc/trunk/www/index.wiki
+- Jupyter book https://github.com/executablebooks/jupyter-book
 * Software hosting
-- https://github.com/
-- https://about.gitlab.com/
-- https://gitee.com/
-- https://gitlab.gnome.org/
+- Github https://github.com/
+- Gitlab https://about.gitlab.com/
+- Gitee https://gitee.com/
+- GNOME gitlab https://gitlab.gnome.org/
 * Python libraries
-- https://github.com/suds-community/suds
-- https://flask.palletsprojects.com/en/2.1.x/
-- https://www.crummy.com/software/BeautifulSoup/bs4/doc/
-- https://selenium-python.readthedocs.io/
-- https://pypi.org/project/redmail/
-- https://www.mathworks.com/help/matlab/matlab_external/install-the-matlab-engine-for-python.html
-- https://pydantic-docs.helpmanual.io/usage/models/
-- https://github.com/ChrisKnott/Eel
-- https://github.com/gorakhargosh/watchdog
+- SUDS (SOAP) https://github.com/suds-community/suds
+- Flask https://flask.palletsprojects.com/en/2.1.x/
+- BeautifulSoup https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+- Selenium https://selenium-python.readthedocs.io/
+- Redmail https://pypi.org/project/redmail/
+- Matlab https://www.mathworks.com/help/matlab/matlab_external/install-the-matlab-engine-for-python.html
+- Pydantic https://pydantic-docs.helpmanual.io/usage/models/
+- Eel https://github.com/ChrisKnott/Eel
+- Watchdog https://github.com/gorakhargosh/watchdog
 * Programming languages
-- https://github.com/carbon-language/carbon-lang
+- Carbon https://github.com/carbon-language/carbon-lang
 * Nim libraries
-- https://github.com/treeform/print
-- https://github.com/ftsf/nico
-- https://github.com/Vladar4/nimgame2
-- https://github.com/Timofffee/tecs.nim
-- https://github.com/Niminem/Neel
-- https://github.com/avahe-kellenberger/nimdow
-- https://github.com/fox0430/moe
+- Print https://github.com/treeform/print
+- Nico https://github.com/ftsf/nico
+- nimgame2 https://github.com/Vladar4/nimgame2
+- tecs https://github.com/Timofffee/tecs.nim
+- Neel https://github.com/Niminem/Neel
+- nimdow https://github.com/avahe-kellenberger/nimdow
+- moe https://github.com/fox0430/moe
 * Mine common software
-- https://github.com/dvolk/sp3
-- https://github.com/dvolk/shawl5
+- sp3 https://github.com/dvolk/sp3
+- shawl5 https://github.com/dvolk/shawl5
 * Work common software
-- https://en.wikipedia.org/wiki/MATLAB
-- https://nextflow.io/
+- MATLAB https://en.wikipedia.org/wiki/MATLAB
+- Nextflow https://nextflow.io/
 * Web dev
-- https://www.w3schools.com/w3css/default.asp
-- https://fontawesome.com/v4/icons/
-- https://en.wikipedia.org/wiki/X11_color_names
-- http://colorsafe.co/
-- http://www.coolphptools.com/color_extract
-- https://angular.io/
-- https://reactjs.org/
-- https://www.syncfusion.com/succinctly-free-ebooks/jquery/core-jquery
-- https://alpinejs.dev/
-- https://api.jquery.com/jquery.ajax/
-- https://svelte.dev/
+- W3.CSS https://www.w3schools.com/w3css/default.asp
+- Fontawesome4 https://fontawesome.com/v4/icons/
+- X11 color names https://en.wikipedia.org/wiki/X11_color_names
+- Colorsafe http://colorsafe.co/
+- Color extract http://www.coolphptools.com/color_extract
+- Angular https://angular.io/
+- React https://reactjs.org/
+- Jquery https://www.syncfusion.com/succinctly-free-ebooks/jquery/core-jquery
+- Alpinejs https://alpinejs.dev/
+- jquery ajax https://api.jquery.com/jquery.ajax/
+- Svelte https://svelte.dev/
 * Programming language docs
-- https://docs.python.org/3/
-- https://nim-lang.org/documentation.html
-- https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md
+- Python https://docs.python.org/3/
+- Nim https://nim-lang.org/documentation.html
+- C++ guidelines https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md
 * "Dev-ops"
-- https://docs.ansible.com/ansible/latest/collections/index.html
-- https://ansible-semaphore.com/
-- https://docs.ansible.com/ansible/latest/user_guide/intro_adhoc.html
-- https://docs.ansible.com/ansible/latest/collections/ansible/builtin/git_module.html
+- Ansible https://docs.ansible.com/ansible/latest/collections/index.html
+- Ansible semaphore https://ansible-semaphore.com/
+- Ansible ad-hoc https://docs.ansible.com/ansible/latest/user_guide/intro_adhoc.html
+- Ansible Git https://docs.ansible.com/ansible/latest/collections/ansible/builtin/git_module.html
 * Operating systems
-- https://www.debian.org/
-- https://ubuntu.com/
-- https://nixos.org/
-- https://www.qubes-os.org/
-- https://alpinelinux.org/
+- Debian https://www.debian.org/
+- Ubuntu https://ubuntu.com/
+- NixOS https://nixos.org/
+- Qubes OS https://www.qubes-os.org/
+- Alpinelinux https://alpinelinux.org/
 * Guides
-- http://littleosbook.github.io/
-- https://tylersguides.com/guides/linux-acl-permissions-tutorial/
-- https://docs.xfce.org/xfce/thunar/custom-actions
-- https://wiki.archlinux.org/title/desktop_entries
+- Little OS book http://littleosbook.github.io/
+- Linux ACL permissions https://tylersguides.com/guides/linux-acl-permissions-tutorial/
+- XFCE custom actions https://docs.xfce.org/xfce/thunar/custom-actions
+- Desktop entries https://wiki.archlinux.org/title/desktop_entries
 * News
-- https://www.bbc.co.uk/
-- http://www.ecns.cn/
-- https://english.pravda.ru/
-- https://www.aljazeera.com/
-- https://lwn.net/
-- https://container-news.com/
+- BBC https://www.bbc.co.uk/
+- ECNS http://www.ecns.cn/
+- Pravda https://english.pravda.ru/
+- Aljazeera https://www.aljazeera.com/
+- LWN https://lwn.net/
+- Container News https://container-news.com/
+- Phoronix https://www.phoronix.com/
+- Liliputing https://liliputing.com/
 * User-submitted news sites
-- https://news.ycombinator.com/
-- https://www.metafilter.com/
-- https://planet.debian.org/
-- https://lemmy.ml/
-- https://en.wikinews.org/wiki/Main_Page
+- Hacker News https://news.ycombinator.com/
+- Metafilter https://www.metafilter.com/
+- Planet Debian https://planet.debian.org/
+- Lemmy https://lemmy.ml/
+- Wikinews https://en.wikinews.org/wiki/Main_Page
 * Wasting time
-- https://en.wikipedia.org/
-- https://stackoverflow.com/questions
-- https://worldbuilding.stackexchange.com/
-- https://www.wikihow.com/Main-Page
-- https://store.steampowered.com/
-- https://www.gregegan.net/
-- https://www.notechmagazine.com/
-- https://datorss.com/
-- https://www.iso.org/isoiec-27001-information-security.html
-- https://www.typelit.io/
-- https://en.wiktionary.org/wiki/Wiktionary:Main_Page
-- https://www.gog.com/
-- https://www.instructables.com/Duck-Tape-Book-Binding-Cheepo-Delux/
-- https://questions.wizardzines.com/
+- Wikipedia https://en.wikipedia.org/
+- Stackoverflow https://stackoverflow.com/questions
+- Worldbuilding stackoverflow https://worldbuilding.stackexchange.com/
+- Wikihow https://www.wikihow.com/Main-Page
+- Steam https://store.steampowered.com/
+- Greg Egan https://www.gregegan.net/
+- No Tech Magazine https://www.notechmagazine.com/
+- DatoRSS https://datorss.com/
+- ISO 27001 https://www.iso.org/isoiec-27001-information-security.html
+- Typelit https://www.typelit.io/
+- Wiktionary https://en.wiktionary.org/wiki/Wiktionary:Main_Page
+- GOG https://www.gog.com/
+- Instructables https://www.instructables.com/Duck-Tape-Book-Binding-Cheepo-Delux/
+- Wizard Zines https://questions.wizardzines.com/
 * Hardware
-- https://www.lenovo.com/gb/en/
-- https://www.dell.com/en-uk
-- https://frame.work/gb/en
-- https://ploopy.co/mouse/
+- Lenovo https://www.lenovo.com/gb/en/
+- Dell https://www.dell.com/en-uk
+- Framework laptop https://frame.work/gb/en
+- Ploopy https://ploopy.co/mouse/
+- Pine64 https://www.pine64.org/pinephone/
 * Hardware reviews
-- https://www.gsmarena.com/
-- https://www.notebookcheck.net/
+- GSMarena https://www.gsmarena.com/
+- Notebookcheck https://www.notebookcheck.net/
 * Games
-- https://github.com/CleverRaven/Cataclysm-DDA
-- https://github.com/OpenMW/openmw
-- https://www.dfworkshop.net/
-- https://www.nexusmods.com/morrowind/mods/49057
+- CataclysmDDA https://github.com/CleverRaven/Cataclysm-DDA
+- OpenMW https://github.com/OpenMW/openmw
+- Daggerfall Unity https://www.dfworkshop.net/
+- Ashfall https://www.nexusmods.com/morrowind/mods/49057
 * Life
-- https://www.ikea.com/gb/en/
-- https://www.oxfordbus.co.uk/services/THTR/ST1
-- https://www.oxfordbus.co.uk/services/THTR/X32
-- https://www.oxford.gov.uk/
-- https://www.amazon.co.uk/
-- https://www.ebay.co.uk/
-- https://www.currys.co.uk/
-- https://www.jobs.ac.uk/
-- https://www.rightmove.co.uk/
-- https://www.scan.co.uk/
-- https://en.wikipedia.org/wiki/Counties_of_England
-- https://www.oxfordmail.co.uk/
-- https://www.openstreetmap.org/#map=13/51.7543/-1.2293
-- https://www.google.com/maps/@51.7538573,-1.2259815,13z
+- IKEA https://www.ikea.com/gb/en/
+- ST1 bus https://www.oxfordbus.co.uk/services/THTR/ST1
+- X32 bus https://www.oxfordbus.co.uk/services/THTR/X32
+- Oxford council https://www.oxford.gov.uk/
+- Amazon UK https://www.amazon.co.uk/
+- Ebay UK https://www.ebay.co.uk/
+- Currys https://www.currys.co.uk/
+- Jobs.ac.uk https://www.jobs.ac.uk/
+- Rightmove https://www.rightmove.co.uk/
+- Scan https://www.scan.co.uk/
+- Counties of England https://en.wikipedia.org/wiki/Counties_of_England
+- Oxford mail https://www.oxfordmail.co.uk/
+- Oxford Openstreetmap https://www.openstreetmap.org/#map=13/51.7543/-1.2293
+- Oxford Google Mapshttps://www.google.com/maps/@51.7538573,-1.2259815,13z
+- Aliexpress https://www.aliexpress.com/
+- Gearbest https://www.gearbest.com/
+- Taobao https://world.taobao.com/
 * Convert file to HTML
 Open in emacs and export with org-html-export-to-html
