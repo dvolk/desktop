@@ -715,17 +715,17 @@
         - desktop
 
     - name: disable gthumb extensions except list_tools
-      command: "gsettings set org.gnome.gthumb.general active-extensions ['list_tools']"
+      command: "gsettings set org.gnome.gthumb.general active-extensions \"['list_tools']\""
       tags:
         - desktop
 
     - name: don't record app/file usage
-      command: "{{ loop }}"
+      command: "{{ item }}"
       loop:
-        "gsettings set org.gnome.desktop.privacy remember-app-usage false"
-        "gsettings set org.gnome.desktop.privacy remember-recent-files false"
-        "gsettings set org.gnome.desktop.privacy report-technical-problems false"
-        "gsettings set org.gnome.desktop.privacy report-software-usage-stats false"
+        - "gsettings set org.gnome.desktop.privacy remember-app-usage false"
+        - "gsettings set org.gnome.desktop.privacy remember-recent-files false"
+        - "gsettings set org.gnome.desktop.privacy report-technical-problems false"
+        - "gsettings set org.gnome.desktop.privacy send-software-usage-stats false"
       tags:
         - desktop
 
