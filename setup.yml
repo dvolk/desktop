@@ -618,17 +618,9 @@
         state: directory
 
     - name: Setup bashrc
-      blockinfile:
-        path: ~/.bashrc
-        block: |
-          . /usr/share/autojump/autojump.sh
-          HISTTIMEFORMAT="%F %T "
-          shopt -s histappend
-          HISTSIZE=100000
-          HISTFILESIZE=200000
-          PS1='{% raw %}\D{%Y-%m-%d %H:%M} \u@\h:\w$ {% endraw %}'
-          export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> ~/.logs/bash-history-$(date "+%Y-%m-%d").log; fi'
-          PATH=$PATH:/snap/bin:/home/{{ lookup('env', 'USER') }}/.local/bin:/opt/mongodb-linux-x86_64-debian11-5.0.8/:/opt/nim-1.6.6/bin:/home/{{ lookup('env', 'USER') }}/.nimble/bin:/opt/node-v16.16.0-linux-x64/bin
+      template:
+        src: bashrc
+        dest: ~/.bashrc
 
     - name: setup Xresources (user)
       template:
