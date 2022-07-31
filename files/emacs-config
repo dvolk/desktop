@@ -30,6 +30,7 @@
                                   twilight-anti-bright-theme
                                   hide-mode-line
                                   web-mode
+                                  nim-mode
                                   ))
 
 (when (cl-find-if-not #'package-installed-p package-selected-packages)
