@@ -121,6 +121,7 @@ PATH=$PATH:/home/{{ lookup('env', 'USER') }}/.nimble/bin
 PATH=$PATH:/opt/mongodb-linux-x86_64-debian11-5.0.8/
 PATH=$PATH:/opt/node-v16.16.0-linux-x64/bin
 PATH=$PATH:/opt/rust1621/bin
+PATH=$PATH:/opt/emacs-28.1/bin
 
 # initialize autojump
 . /usr/share/autojump/autojump.sh
