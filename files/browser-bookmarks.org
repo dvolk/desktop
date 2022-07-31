@@ -5,31 +5,50 @@
 #+HTML_HEAD:   body { margin: auto; max-width: 800px; font-family: Jetbrains Mono Medium, monospace; padding-bottom: 50px; }
 #+HTML_HEAD:   ul { padding: 0; margin: 0; list-style-type: none; }
 #+HTML_HEAD: </style>
-* Software
-- Gitea https://gitea.io/
+* Desktop Software
 - Emacs https://www.gnu.org/software/emacs/
 - Git https://git-scm.com/
 - i3 https://i3wm.org/
-- Org-mode https://orgmode.org/
 - Rawtherappe https://www.rawtherapee.com/
 - OBS https://obsproject.com/
-- Mongo https://www.mongodb.com/
 - Nodejs https://nodejs.org/en/
 - Chromium policies https://chromium.googlesource.com/chromium/chromium/+/master/chrome/app/policy/policy_templates.json
-- org-present https://github.com/rlister/org-present
 - Nim watchdog https://github.com/zendbit/nim.nwatchdog
 - sysz https://github.com/joehillen/sysz
-- i3 configurator https://thomashunter.name/i3-configurator/
-- Focal board https://www.focalboard.com/download/personal-edition/ubuntu/
 - Zenity https://help.gnome.org/users/zenity/stable/
-- workgroups2 https://github.com/pashinin/workgroups2
-- Emacs themes https://emacsthemes.com/
 - Virtualbox https://www.virtualbox.org/
+- Kitty terminal https://github.com/kovidgoyal/kitty
+- List of OSS software https://en.wikipedia.org/wiki/List_of_free_and_open-source_software_packages
+* Self-hosted server software
+- Gitea https://gitea.io/
+- Mongo https://www.mongodb.com/
+- Focal board https://www.focalboard.com/download/personal-edition/ubuntu/
 - Filebrowser https://filebrowser.org/features
 - Fossil https://fossil-scm.org/home/doc/trunk/www/index.wiki
 - Jupyter book https://github.com/executablebooks/jupyter-book
-* Books
-- https://www.goodreads.com/book/similar/1270567-permutation-city
+- FreshRSS https://github.com/FreshRSS/FreshRSS
+- The Lounge https://thelounge.chat/
+* Free SaaS
+- i3 configurator https://thomashunter.name/i3-configurator/
+* Emacs packages
+- avy https://github.com/abo-abo/avy
+- company http://company-mode.github.io/
+- company quickhelp https://www.github.com/expez/company-quickhelp
+- diff-hl https://github.com/dgutov/diff-hl
+- elfeed  https://github.com/skeeto/elfeed
+- flycheck http://www.flycheck.org
+- focus-mode https://github.com/larstvei/Focus
+- magit https://github.com/magit/magit
+- projectile https://github.com/bbatsov/projectile
+- twilight-bright-theme https://github.com/jimeh/twilight-bright-theme.el
+- twilight-anti-bright-theme https://github.com/jimeh/twilight-anti-bright-theme.el
+- web-mode https://web-mode.org
+- osm https://github.com/minad/osm
+- treemacs https://github.com/Alexander-Miller/treemacs
+- org-mode https://orgmode.org/
+- org-present https://github.com/rlister/org-present
+- emacs themes https://emacsthemes.com/
+- workgroups2 https://github.com/pashinin/workgroups2
 * Software hosting
 - Github https://github.com/
 - Gitlab https://about.gitlab.com/
@@ -55,6 +74,8 @@
 - Neel https://github.com/Niminem/Neel
 - nimdow https://github.com/avahe-kellenberger/nimdow
 - moe https://github.com/fox0430/moe
+* Rust libraries
+- Bevy https://github.com/bevyengine/bevy
 * Mine common software
 - sp3 https://github.com/dvolk/sp3
 - shawl5 https://github.com/dvolk/shawl5
@@ -88,6 +109,27 @@
 - NixOS https://nixos.org/
 - Qubes OS https://www.qubes-os.org/
 - Alpinelinux https://alpinelinux.org/
+* Fiction/Books
+- Greg Egan https://www.gregegan.net/
+- Ted Chiang https://www.goodreads.com/author/show/130698.Ted_Chiang
+- Peter Watts https://www.rifters.com/
+- Stephen Baxter https://www.stephen-baxter.com/
+- Yahtzee Croshaw https://www.goodreads.com/author/show/3443203.Yahtzee_Croshaw
+- Andy Weir https://www.goodreads.com/author/show/6540057.Andy_Weir
+- Vernor Vinge https://www.goodreads.com/author/show/44037.Vernor_Vinge
+- David Brin https://www.goodreads.com/author/show/14078.David_Brin
+- Iain Banks https://www.goodreads.com/author/show/5807106.Iain_M_Banks
+- Roger Zelazny https://www.goodreads.com/author/show/3619.Roger_Zelazny
+- Peter Hamilton https://www.goodreads.com/author/show/25375.Peter_F_Hamilton
+- Dan Simmons https://www.goodreads.com/author/show/2687.Dan_Simmons
+- Arthur Clarke https://www.goodreads.com/author/show/7779.Arthur_C_Clarke
+- Alice Munro https://www.goodreads.com/author/show/6410.Alice_Munro
+- Iris Murdoch https://www.goodreads.com/author/show/7287.Iris_Murdoch
+- Ma Yan https://www.goodreads.com/author/show/121407.Mo_Yan
+- Liu Cixin https://www.goodreads.com/author/show/5780686.Liu_Cixin
+- qntm https://qntm.org/
+- exubr1a https://www.goodreads.com/search?utf8=%E2%9C%93&query=exubr1a
+- List of literary awards https://en.wikipedia.org/wiki/List_of_literary_awards
 * Guides
 - Little OS book http://littleosbook.github.io/
 - Linux ACL permissions https://tylersguides.com/guides/linux-acl-permissions-tutorial/
@@ -108,13 +150,13 @@
 - Planet Debian https://planet.debian.org/
 - Lemmy https://lemmy.ml/
 - Wikinews https://en.wikinews.org/wiki/Main_Page
+- Planet Emacs https://planet.emacslife.com/
 * Wasting time
 - Wikipedia https://en.wikipedia.org/
 - Stackoverflow https://stackoverflow.com/questions
 - Worldbuilding stackoverflow https://worldbuilding.stackexchange.com/
 - Wikihow https://www.wikihow.com/Main-Page
 - Steam https://store.steampowered.com/
-- Greg Egan https://www.gregegan.net/
 - No Tech Magazine https://www.notechmagazine.com/
 - DatoRSS https://datorss.com/
 - ISO 27001 https://www.iso.org/isoiec-27001-information-security.html
@@ -137,10 +179,8 @@
 - OpenMW https://github.com/OpenMW/openmw
 - Daggerfall Unity https://www.dfworkshop.net/
 - Ashfall https://www.nexusmods.com/morrowind/mods/49057
-* Life
+* Oxford life
 - IKEA https://www.ikea.com/gb/en/
-- ST1 bus https://www.oxfordbus.co.uk/services/THTR/ST1
-- X32 bus https://www.oxfordbus.co.uk/services/THTR/X32
 - Oxford council https://www.oxford.gov.uk/
 - Amazon UK https://www.amazon.co.uk/
 - Ebay UK https://www.ebay.co.uk/
@@ -150,10 +190,16 @@
 - Scan https://www.scan.co.uk/
 - Counties of England https://en.wikipedia.org/wiki/Counties_of_England
 - Oxford mail https://www.oxfordmail.co.uk/
-- Oxford Openstreetmap https://www.openstreetmap.org/#map=13/51.7543/-1.2293
-- Oxford Google Maps https://www.google.com/maps/@51.7538573,-1.2259815,13z
 - Aliexpress https://www.aliexpress.com/
 - Gearbest https://www.gearbest.com/
 - Taobao https://world.taobao.com/
+* Oxford travel
+- ST1 bus https://www.oxfordbus.co.uk/services/THTR/ST1
+- X32 bus https://www.oxfordbus.co.uk/services/THTR/X32
+- Oxford Openstreetmap https://www.openstreetmap.org/#map=13/51.7543/-1.2293
+- Oxford Google Maps https://www.google.com/maps/@51.7538573,-1.2259815,13z
+* Memes
+- Killed by Google https://killedbygoogle.com/
+- Embrace, extend, extinguish https://en.m.wikipedia.org/wiki/Embrace,_extend,_and_extinguish
 * Convert file to HTML
 Open in emacs and export with org-html-export-to-html
