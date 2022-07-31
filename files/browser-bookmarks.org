@@ -28,6 +28,8 @@
 - Filebrowser https://filebrowser.org/features
 - Fossil https://fossil-scm.org/home/doc/trunk/www/index.wiki
 - Jupyter book https://github.com/executablebooks/jupyter-book
+* Books
+- https://www.goodreads.com/book/similar/1270567-permutation-city
 * Software hosting
 - Github https://github.com/
 - Gitlab https://about.gitlab.com/
