@@ -120,6 +120,12 @@
           - zenity
           - auditd
           - ngrep
+          - pkg-config
+          - gcc-10
+          - libgccjit0
+          - libgccjit-10-dev
+          - libjansson4
+          - libjansson-dev
 
     - name: Install emacs-nox
       become: true
