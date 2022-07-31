@@ -595,7 +595,7 @@
       tags:
         - desktop
 
-    - name: download mozilla hosts file
+    - name: download crypto hosts file
       ansible.builtin.get_url:
         url: https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt
         dest: /opt/tmp/crypto-hosts
