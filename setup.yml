@@ -137,6 +137,12 @@
         pkg:
           - emacs-nox
 
+    - name: Install the build dependencies for package emacs
+      become: true
+      ansible.builtin.apt:
+        pkg: emacs
+        state: build-dep
+
     - name: Install lxd snap
       become: yes
       community.general.snap:
