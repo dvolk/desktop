@@ -887,7 +887,34 @@
         enabled: yes
         scope: user
 
-    - name: download nim
+    - name: Download emacs
+      ansible.builtin.get_url:
+        url: https://mirror.lyrahosting.com/gnu/emacs/emacs-28.1.tar.xz
+        dest: /opt/tmp/emacs-28.1.tar.xz
+        checksum: sha256:28b1b3d099037a088f0a4ca251d7e7262eab5ea1677aabffa6c4426961ad75e1
+
+    - name: Extract emacs to /opt
+      become: yes
+      ansible.builtin.unarchive:
+        src: /opt/tmp/emacs-28.1.tar.xz
+        dest: /opt
+
+    - name: Create emacs note file
+      become: yes
+      file:
+        path: /opt/emacs-28.1/NOTE.txt
+        state: touch
+
+    - name: Make a note on how to compile emacs
+      become: yes
+      comment: "optional but recommended for heavy use"
+      blockinfile:
+        path: /opt/emacs-28.1/NOTE.txt
+        block: |
+          sudo ./configure --with-native-compilation
+          sudo make -j4
+
+    - name: Download nim
       ansible.builtin.get_url:
         url: https://nim-lang.org/download/nim-1.6.6-linux_x64.tar.xz
         dest: /opt/tmp/nim-1.6.6-linux_x64.tar.xz
