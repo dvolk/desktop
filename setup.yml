@@ -907,10 +907,10 @@
 
     - name: Make a note on how to compile emacs
       become: yes
-      comment: "optional but recommended for heavy use"
       blockinfile:
         path: /opt/emacs-28.1/NOTE.txt
         block: |
+          # optional but recommended for heavy use
           sudo ./configure --with-native-compilation
           sudo make -j4
 
