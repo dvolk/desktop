@@ -405,6 +405,17 @@
         path: ~/.emacs.d
         state: directory
 
+    - name: Create emacs cache directory
+      file:
+        path: ~/.emacs.d/.cache
+        state: directory
+
+    - name: Copy treemacs persist file if it doesn't exist
+      copy:
+        src: treemacs-persist
+        dest: ~/.emacs.d/.cache/treemacs-persist
+        force: no
+
     - name: Copy emacs config
       copy:
         src: emacs-config
