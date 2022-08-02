@@ -75,6 +75,7 @@
 - nimdow https://github.com/avahe-kellenberger/nimdow
 - moe https://github.com/fox0430/moe
 - Curated packages https://github.com/nim-lang/Nim/wiki/Curated-Packages
+- prologue https://github.com/planety/prologue
 * Rust libraries
 - Bevy https://github.com/bevyengine/bevy
 * Mine common software
