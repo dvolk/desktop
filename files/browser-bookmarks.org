@@ -55,6 +55,8 @@
 - Gitlab https://about.gitlab.com/
 - Gitee https://gitee.com/
 - GNOME gitlab https://gitlab.gnome.org/
+- MELPA https://github.com/melpa/melpa
+- ELPA https://elpa.gnu.org/
 * Python libraries
 - SUDS (SOAP) https://github.com/suds-community/suds
 - Flask https://flask.palletsprojects.com/en/2.1.x/
@@ -209,7 +211,9 @@
 - Aliexpress https://www.aliexpress.com/
 - Gearbest https://www.gearbest.com/
 - Taobao https://world.taobao.com/
+- Ebuyer https://www.ebuyer.com/
 * Oxford travel
+- Oxford Key https://www.oxfordkey.co.uk/smart-card/
 - ST1 bus https://www.oxfordbus.co.uk/services/THTR/ST1
 - X32 bus https://www.oxfordbus.co.uk/services/THTR/X32
 - Oxford Openstreetmap https://www.openstreetmap.org/#map=13/51.7543/-1.2293
