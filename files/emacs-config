@@ -32,6 +32,7 @@
                                   hide-mode-line
                                   web-mode
                                   nim-mode
+                                  color-identifiers-mode
                                   ))
 
 (when (cl-find-if-not #'package-installed-p package-selected-packages)
@@ -148,7 +149,7 @@
 
 ;; prog mode minor modes
 (add-hook 'prog-mode-hook #'lsp-deferred)
-(add-hook 'prog-mode-hook #'display-line-numbers-mode)
+;;(add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (add-hook 'prog-mode-hook #'diff-hl-mode)
 (add-hook 'prog-mode-hook #'diff-hl-margin-mode)
 (add-hook 'prog-mode-hook #'diff-hl-flydiff-mode)
@@ -161,11 +162,11 @@
 (add-hook 'python-mode-hook #'python-black-on-save-mode)
 (add-hook 'nim-mode-hook 'nimsuggest-mode)
 
-(add-hook 'yaml-mode-hook #'display-line-numbers-mode)
+;;(add-hook 'yaml-mode-hook #'display-line-numbers-mode)
 (add-hook 'yaml-mode-hook #'diff-hl-mode)
 (add-hook 'yaml-mode-hook #'diff-hl-margin-mode)
 (add-hook 'yaml-mode-hook #'diff-hl-flydiff-mode)
-(add-hook 'org-mode-hook #'display-line-numbers-mode)
+;;(add-hook 'org-mode-hook #'display-line-numbers-mode)
 (add-hook 'org-mode-hook #'diff-hl-mode)
 (add-hook 'org-mode-hook #'diff-hl-margin-mode)
 (add-hook 'org-mode-hook #'diff-hl-flydiff-mode)
@@ -179,7 +180,7 @@
 (global-set-key [f3] 'tab-next)
 (global-set-key [f5] 'treemacs)
 (global-set-key [f9] 'lsp-find-definition)
-(global-set-key [f12] 'lsp-rename)
+(global-set-key [f12] 'color-identifiers-mode)
 (global-set-key [(shift f5)] 'elfeed)
 (global-set-key [(shift f9)] 'elfeed-update)
 (global-set-key [(shift f12)] 'hide-mode-line-mode)
