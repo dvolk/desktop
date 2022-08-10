@@ -128,6 +128,17 @@
           - libjansson-dev
           - docker.io
           - rtorrent
+          - arj
+          - lha
+          - lzip
+          - lzop
+          - ncompress
+          - rar
+          - rpm2cpio
+          - rzip
+          - unalz
+          - zoo
+          - p7zip-rar
 
     - name: Install emacs-nox
       become: true
@@ -257,6 +268,7 @@
           - webext-ublock-origin-chromium
           - transmission-gtk
           - transmission-remote-gtk
+          - engrampa
       tags:
         - desktop
 
