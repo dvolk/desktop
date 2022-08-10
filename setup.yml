@@ -127,6 +127,7 @@
           - libjansson4
           - libjansson-dev
           - docker.io
+          - rtorrent
 
     - name: Install emacs-nox
       become: true
@@ -254,6 +255,8 @@
           - pavucontrol
           - chromium
           - webext-ublock-origin-chromium
+          - transmission-gtk
+          - transmission-remote-gtk
       tags:
         - desktop
 
@@ -805,6 +808,7 @@
         - ~/mnt
         - ~/mnt/phone
         - ~/sync
+        - ~/torrents
 
     - name: touch ansible run log
       file:

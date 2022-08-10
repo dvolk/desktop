@@ -14,3 +14,4 @@ file:///home/{{ lookup('env', 'USER') }}/stuff/audiobooks
 file:///home/{{ lookup('env', 'USER') }}/stuff/code
 file:///home/{{ lookup('env', 'USER') }}/mnt
 file:///home/{{ lookup('env', 'USER') }}/sync
+file:///home/{{ lookup('env', 'USER') }}/torrents
