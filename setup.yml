@@ -126,6 +126,7 @@
           - libgccjit-10-dev
           - libjansson4
           - libjansson-dev
+          - docker.io
 
     - name: Install emacs-nox
       become: true
@@ -770,6 +771,7 @@
         - lpadmin
         - libvirt
         - lxd
+        - docker
 
     - name: Create hierarchy of stuff
       file:
@@ -973,6 +975,19 @@
       ansible.builtin.unarchive:
         src: /opt/tmp/node-v16.16.0-linux-x64.tar.xz
         dest: /opt
+
+    - name: download minikube
+      ansible.builtin.get_url:
+        url: https://github.com/kubernetes/minikube/releases/download/v1.26.1/minikube-linux-amd64
+        dest: /opt/tmp/minikube-linux-amd64
+        checksum: sha256:9acd25706661b932ee98063147e58080cb949b92fd0d97b3b96dc5f898dcad21
+
+    - name: Install minikube
+      become: yes
+      shell: install minikube-linux-amd64 /usr/local/bin/minikube
+      args:
+        chdir: /opt/tmp
+        creates: /usr/local/bin/minikube
 
     - name: Set Chromium as default browser
       command: update-alternatives --install /usr/bin/x-www-browser x-www-browser /usr/bin/chromium 250
