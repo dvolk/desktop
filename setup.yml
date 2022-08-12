@@ -129,7 +129,6 @@
           - docker.io
           - rtorrent
           - arj
-          - lha
           - lzip
           - lzop
           - ncompress
@@ -137,7 +136,6 @@
           - rpm2cpio
           - rzip
           - unalz
-          - zoo
           - p7zip-rar
 
     - name: Install emacs-nox
