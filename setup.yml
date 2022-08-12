@@ -1040,6 +1040,34 @@
       command: emacs --batch --eval "(require 'org)" ~/stuff/browser-bookmarks.org --funcall org-html-export-to-html
       tags: desktop
 
+    - name: Create /opt/bin
+      file:
+        path: /opt/bin
+        state: directory
+      become: yes
+
+    - name: Download Koreader
+      get_url:
+        url: https://github.com/koreader/koreader/releases/download/v2022.07/koreader-appimage-x86_64-linux-gnu-v2022.07.AppImage
+        dest: /opt/tmp/koreader-appimage-x86_64-linux-gnu-v2022.07.AppImage
+        checksum: sha256:93d79bc48520c8d875804d9ce7bbc20a39b431d2d581b3b0288c231c6db33e1e
+      tags: desktop
+
+    - name: Move Koreader to /opt/bin
+      become: yes
+      copy:
+        src: /opt/tmp/koreader-appimage-x86_64-linux-gnu-v2022.07.AppImage
+        dest: /opt/bin/koreader-appimage-x86_64-linux-gnu-v2022.07.AppImage
+      tags: desktop
+
+    - name: Set Koreader executable attributes
+      file:
+        path: /opt/bin/koreader-appimage-x86_64-linux-gnu-v2022.07.AppImage
+        mode: 0755
+        owner: root
+        group: root
+      become: yes
+      tags: desktop
 
     # ublock is installed through apt
     # # See https://developer.chrome.com/extensions/external_extensions#preferences
