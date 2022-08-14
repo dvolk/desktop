@@ -914,6 +914,12 @@
         enabled: yes
         scope: user
 
+    - name: Create /opt/bin
+      file:
+        path: /opt/bin
+        state: directory
+      become: yes
+
     - name: Download emacs
       ansible.builtin.get_url:
         url: https://mirror.lyrahosting.com/gnu/emacs/emacs-28.1.tar.xz
@@ -998,10 +1004,10 @@
 
     - name: Install minikube
       become: yes
-      shell: install minikube-linux-amd64 /usr/local/bin/minikube
+      shell: install minikube-linux-amd64 /opt/bin/minikube
       args:
         chdir: /opt/tmp
-        creates: /usr/local/bin/minikube
+        creates: /opt/bin/minikube
 
     - name: Set Chromium as default browser
       command: update-alternatives --install /usr/bin/x-www-browser x-www-browser /usr/bin/chromium 250
@@ -1039,12 +1045,6 @@
     - name: Convert org browser bookmarks to html
       command: emacs --batch --eval "(require 'org)" ~/stuff/browser-bookmarks.org --funcall org-html-export-to-html
       tags: desktop
-
-    - name: Create /opt/bin
-      file:
-        path: /opt/bin
-        state: directory
-      become: yes
 
     - name: Download Koreader
       get_url:
