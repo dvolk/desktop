@@ -184,6 +184,8 @@
 - Instructables https://www.instructables.com/Duck-Tape-Book-Binding-Cheepo-Delux/
 - Wizard Zines https://questions.wizardzines.com/
 - Random streetview https://randomstreetview.com/
+- Geoguessr https://www.geoguessr.com/
+- Brilliant https://brilliant.org/
 * Hardware
 - Lenovo https://www.lenovo.com/gb/en/
 - Dell https://www.dell.com/en-uk
