@@ -19,6 +19,8 @@
 - Virtualbox https://www.virtualbox.org/
 - Kitty terminal https://github.com/kovidgoyal/kitty
 - List of OSS software https://en.wikipedia.org/wiki/List_of_free_and_open-source_software_packages
+- Calibre https://calibre-ebook.com/
+- Koreader https://koreader.rocks/
 * Self-hosted server software
 - Gitea https://gitea.io/
 - Mongo https://www.mongodb.com/
@@ -82,6 +84,10 @@
 - nimpylib https://github.com/Yardanico/nimpylib
 * Rust libraries
 - Bevy https://github.com/bevyengine/bevy
+* Go libraries
+- Ent. https://entgo.io/docs/getting-started/
+- Pagoda https://github.com/mikestefanello/pagoda
+- Chi https://github.com/go-chi/chi
 * Mine common software
 - sp3 https://github.com/dvolk/sp3
 - shawl5 https://github.com/dvolk/shawl5
@@ -103,10 +109,14 @@
 - Spectre CSS https://picturepan2.github.io/spectre/index.html
 - Marx CSS https://github.com/mblode/marx
 - Pantone https://en.wikipedia.org/wiki/Pantone
+- Material design icons https://materialdesignicons.com/
+- Bulma https://bulma.io/
 * Programming language docs
 - Python https://docs.python.org/3/
 - Nim https://nim-lang.org/documentation.html
 - C++ guidelines https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md
+- Go https://go.dev/learn/
+- Tour of Go https://go.dev/tour/welcome/1
 * "Dev-ops"
 - Ansible https://docs.ansible.com/ansible/latest/collections/index.html
 - Ansible semaphore https://ansible-semaphore.com/
