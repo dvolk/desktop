@@ -103,6 +103,7 @@
 - Spectre CSS https://picturepan2.github.io/spectre/index.html
 - Marx CSS https://github.com/mblode/marx
 - Pantone https://en.wikipedia.org/wiki/Pantone
+- Puppertino https://codedgar.github.io/Puppertino/
 * Programming language docs
 - Python https://docs.python.org/3/
 - Nim https://nim-lang.org/documentation.html
