@@ -119,6 +119,7 @@ alias kubectl="minikube kubectl --"
 PATH=$PATH:/snap/bin
 PATH=$PATH:/home/{{ lookup('env', 'USER') }}/.local/bin
 PATH=$PATH:/opt/nim-1.6.6/bin
+PATH=$PATH:/opt/go/bin
 PATH=$PATH:/home/{{ lookup('env', 'USER') }}/.nimble/bin
 PATH=$PATH:/opt/mongodb-linux-x86_64-debian11-5.0.8/
 PATH=$PATH:/opt/node-v16.16.0-linux-x64/bin
