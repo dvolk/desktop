@@ -127,6 +127,7 @@
           - libjansson4
           - libjansson-dev
           - docker.io
+          - docker-compose
           - rtorrent
           - arj
           - lzip

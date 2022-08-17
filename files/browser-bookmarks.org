@@ -109,6 +109,7 @@
 - Spectre CSS https://picturepan2.github.io/spectre/index.html
 - Marx CSS https://github.com/mblode/marx
 - Pantone https://en.wikipedia.org/wiki/Pantone
+- Puppertino https://codedgar.github.io/Puppertino/
 - Material design icons https://materialdesignicons.com/
 - Bulma https://bulma.io/
 * Programming language docs
@@ -158,6 +159,9 @@
 - Mingwei Song https://www.goodreads.com/author/show/14261954.Mingwei_Song
 - Dennis Taylor https://www.goodreads.com/author/show/12130438.Dennis_E_Taylor
 - Ken Liu https://www.goodreads.com/author/show/2917920.Ken_Liu
+* Fiction magazines
+- Clarkesworld https://clarkesworldmagazine.com/
+- Lightspeed https://www.lightspeedmagazine.com/
 * Guides
 - Little OS book http://littleosbook.github.io/
 - Linux ACL permissions https://tylersguides.com/guides/linux-acl-permissions-tutorial/
