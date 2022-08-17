@@ -120,6 +120,7 @@
 - Tour of Go https://go.dev/tour/welcome/1
 * "Dev-ops"
 - Ansible https://docs.ansible.com/ansible/latest/collections/index.html
+- Ansible built-in https://docs.ansible.com/ansible/latest/collections/ansible/builtin/index.html#plugin-index
 - Ansible semaphore https://ansible-semaphore.com/
 - Ansible ad-hoc https://docs.ansible.com/ansible/latest/user_guide/intro_adhoc.html
 - Ansible Git https://docs.ansible.com/ansible/latest/collections/ansible/builtin/git_module.html
