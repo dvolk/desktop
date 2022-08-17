@@ -1071,6 +1071,7 @@
       copy:
         src: /opt/tmp/koreader-appimage-x86_64-linux-gnu-v2022.07.AppImage
         dest: /opt/bin/koreader-appimage-x86_64-linux-gnu-v2022.07.AppImage
+        checksum: sha256:93d79bc48520c8d875804d9ce7bbc20a39b431d2d581b3b0288c231c6db33e1e
       tags: desktop
 
     - name: Set Koreader executable attributes
