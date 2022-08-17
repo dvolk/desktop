@@ -1081,6 +1081,26 @@
       become: yes
       tags: desktop
 
+    - name: Download Calibre
+      get_url:
+        url: https://download.calibre-ebook.com/6.3.0/calibre-6.3.0-x86_64.txz
+        dest: /opt/tmp/calibre-6.3.0-x86_64.txz
+        checksum: sha256:2aa596827c09a20793d2639f392ea202c9dba8251295712b8655a53a7d5ae6d9
+      tags: desktop
+
+    - name: Create calibre directory
+      file:
+        path: /opt/calibre6.3.0
+        state: directory
+      become: yes
+      tags: desktop
+
+    - name: Extract calibre to /opt
+      become: yes
+      ansible.builtin.unarchive:
+        src: /opt/tmp/calibre-6.3.0-x86_64.txz
+        dest: /opt/calibre6.3.0
+
     # ublock is installed through apt
     # # See https://developer.chrome.com/extensions/external_extensions#preferences
     # - name: Create Chromium JSON file to install extensions for all users
