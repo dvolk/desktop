@@ -138,6 +138,8 @@
           - rzip
           - unalz
           - p7zip-rar
+          - cockpit
+          - cockpit-machines
 
     - name: Install emacs-nox
       become: true
@@ -1103,6 +1105,12 @@
       ansible.builtin.unarchive:
         src: /opt/tmp/calibre-6.3.0-x86_64.txz
         dest: /opt/calibre6.3.0
+
+    - name: enable and start cockpit service
+      ansible.builtin.systemd:
+        name: cockpit
+        state: started
+        enabled: yes
 
     # ublock is installed through apt
     # # See https://developer.chrome.com/extensions/external_extensions#preferences
