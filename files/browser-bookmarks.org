@@ -128,6 +128,8 @@
 - Ansible Git https://docs.ansible.com/ansible/latest/collections/ansible/builtin/git_module.html
 - Kubernetes stories https://hn.algolia.com/?q=kubernetes
 - Kubernetes stories https://hn.algolia.com/?q=k8s
+- Systemd by example https://seb.jambor.dev/posts/systemd-by-example-part-1-minimization/
+- Podman https://podman.io/getting-started/
 * Operating systems
 - Debian https://www.debian.org/
 - Ubuntu https://ubuntu.com/
