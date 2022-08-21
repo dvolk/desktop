@@ -140,6 +140,7 @@
           - p7zip-rar
           - cockpit
           - cockpit-machines
+          - cockpit-podman
 
     - name: Install emacs-nox
       become: true
