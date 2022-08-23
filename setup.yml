@@ -952,6 +952,15 @@
           sudo ./configure --with-native-compilation
           sudo make -j4
 
+    - name: Create a link to compiled emacs if it exists
+      become: yes
+      ansible.builtin.file:
+        src: /opt/emacs-28.1/src/emacs
+        dest: /usr/local/bin/emacsc
+        owner: root
+        state: link
+      ignore_errors: yes
+
     - name: Copy nano config
       become: yes
       copy:
@@ -1114,16 +1123,8 @@
         dest: /opt/calibre6.3.0
 
     - name: enable and start cockpit service
+      become: yes
       ansible.builtin.systemd:
         name: cockpit
         state: started
         enabled: yes
-
-    # ublock is installed through apt
-    # # See https://developer.chrome.com/extensions/external_extensions#preferences
-    # - name: Create Chromium JSON file to install extensions for all users
-    #   template:
-    #     src: chrome-extensions.json
-    #     dest: "/usr/share/chromium-browser/extensions/{{ item }}.json"
-    #   with_items:
-    #     - cjpalhdlnbpafiamejdnhcphjbkeiagm # ublock
