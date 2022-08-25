@@ -1,4 +1,4 @@
-** Autologin to vt and start X
+## Autologin to vt and start X
 
 run
 
@@ -24,7 +24,7 @@ add to .bashrc:
         exec startx -- -nolisten tcp -dpi {{ lookup('env', 'DPI') }}
     fi
 
-** Enable lxd traffic with ufw on debian 11
+## Enable lxd traffic with ufw on debian 11
 
     ufw allow in on lxdbr0
     ufw route allow in on lxdbr0
