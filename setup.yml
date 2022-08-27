@@ -1104,7 +1104,7 @@
 
     - name: Download Calibre
       get_url:
-        url: https://download.calibre-ebook.com/6.3.0/calibre-6.3.0-x86_64.txz
+        url: https://github.com/kovidgoyal/calibre/releases/download/v6.3.0/calibre-6.3.0-x86_64.txz
         dest: /opt/tmp/calibre-6.3.0-x86_64.txz
         checksum: sha256:2aa596827c09a20793d2639f392ea202c9dba8251295712b8655a53a7d5ae6d9
       tags: desktop
