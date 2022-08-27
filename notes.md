@@ -31,3 +31,19 @@ add to .bashrc:
     ufw route allow out on lxdbr0
 
 reference: https://discuss.linuxcontainers.org/t/lxd-bridge-doesnt-work-with-ipv4-and-ufw-with-nftables/10034/27
+
+## problems with systemd --user
+
+    export XDG_RUNTIME_DIR=/run/user/$(id -u)
+
+## find dupes by name
+
+    find . -type f -iname *.ext | xargs basename -a > names
+    cat names | wc -l
+    cat names | sort | uniq | wc -l
+
+## find dupes by md5sum
+
+    find . -type f -iname *.ext | xargs md5sum | awk '{ print $1 }' > hashes
+    cat hashes | wc -l
+    cat hashes | sort | uniq | wc -l
