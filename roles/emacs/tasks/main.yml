@@ -9,6 +9,7 @@
       - emacs-nox
 
 - name: Install the build dependencies for package emacs
+  when: ansible_distribution == "Debian"
   become: true
   ansible.builtin.apt:
     pkg: emacs
@@ -23,6 +24,7 @@
     pkg:
       - emacs
   tags: desktop
+
 - name: Create emacs directory
   file:
     path: ~/.emacs.d
