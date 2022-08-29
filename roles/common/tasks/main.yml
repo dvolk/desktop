@@ -133,9 +133,6 @@
       - rzip
       - unalz
       - p7zip-rar
-      - cockpit
-      - cockpit-machines
-      - cockpit-podman
 
 - name: Install lxd snap
   become: yes
@@ -289,10 +286,3 @@
 - name: Convert org browser bookmarks to html
   command: emacs --batch --eval "(require 'org)" ~/stuff/browser-bookmarks.org --funcall org-html-export-to-html
   tags: desktop
-
-- name: enable and start cockpit service
-  become: yes
-  ansible.builtin.systemd:
-    name: cockpit
-    state: started
-    enabled: yes
