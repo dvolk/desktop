@@ -1,0 +1,301 @@
+- name: accept ms font eula (have not actually read it)
+  become: true
+  debconf:
+    name: ttf-mscorefonts-installer
+    question: msttcorefonts/accepted-mscorefonts-eula
+    vtype: boolean
+    value: true
+
+- name: Install Xorg and i3
+  become: true
+  apt:
+    update_cache: yes
+    cache_valid_time: 36000
+    state: latest
+    pkg:
+      - i3
+      - i3blocks
+      - i3lock
+      - xserver-xorg
+      - xserver-xorg-input-all
+      - xserver-xorg-input-synaptics
+      - xserver-xorg-video-all
+      - xinit
+      - x11-apps
+      - x11-utils
+      - x11-xkb-utils
+      - x11-xserver-utils
+      - xterm
+      - elementary-xfce-icon-theme
+      - libglib2.0-bin
+      - xclip
+      - webp
+      - fonts-dejavu
+      - fonts-firacode
+      - fonts-ubuntu
+      - fonts-ubuntu-console
+      - fonts-roboto
+      - xfonts-terminus
+      - ttf-mscorefonts-installer
+      - xinput
+
+- name: Install lightdm
+  become: true
+  apt:
+    update_cache: yes
+    cache_valid_time: 36000
+    state: latest
+    pkg:
+      - lightdm
+      - lightdm-gtk-greeter
+
+- name: Install desktop packages
+  become: true
+  apt:
+    update_cache: yes
+    cache_valid_time: 36000
+    state: latest
+    pkg:
+      - feh
+      - mpv
+      - zathura
+      - zathura-djvu
+      - gimp
+      - kitty
+      - thunderbird
+      - wireshark
+      - thunar
+      - mousepad
+      - rawtherapee
+      - cups
+      - fbreader
+      - lxappearance
+      - gthumb
+      - obs-studio
+      - remmina
+      - scrot
+      - sunclock
+      - virt-manager
+      - transmission-remote-gtk
+      - blueman
+      - syncthing-gtk
+      - gparted
+      - gnome-disk-utility
+      - pavucontrol
+      - chromium
+      - webext-ublock-origin-chromium
+      - transmission-gtk
+      - transmission-remote-gtk
+      - engrampa
+
+- name: Copy desktop background
+  become: yes
+  copy:
+    src: desktop_background.png
+    dest: /usr/local/share/desktop_background.png
+
+- name: Set login screen background
+  become: yes
+  community.general.alternatives:
+    name: desktop-login-background
+    path: /usr/local/share/desktop_background.png
+  ignore_errors: yes
+
+- name: Install desktop packages (no recommends)
+  become: true
+  apt:
+    install_recommends: no
+    update_cache: yes
+    cache_valid_time: 36000
+    state: latest
+    pkg:
+      - barrier
+      - libreoffice
+      - webext-ublock-origin-firefox
+  ignore_errors: yes
+
+- name: Remove avahi-daemon, gdm3, etc
+  become: true
+  apt:
+    state: absent
+    pkg:
+      - avahi-daemon
+      - gdm3
+      - command-not-found
+      - motd-news-config
+
+- name: Download jetbrains font
+  ansible.builtin.get_url:
+    url: https://github.com/JetBrains/JetBrainsMono/releases/download/v2.242/JetBrainsMono-2.242.zip
+    dest: /opt/tmp/JetBrainsMono.zip
+    checksum: sha256:4e315b4ef176ce7ffc971b14997bdc8f646e3d1e5b913d1ecba3a3b10b4a1a9f
+
+- name: Create font directory
+  file:
+    path: ~/.fonts
+    state: directory
+
+- name: Extract jetbrains font
+  ansible.builtin.unarchive:
+    src: /opt/tmp/JetBrainsMono.zip
+    dest: ~/.fonts
+
+- name: Create i3 config directory
+  file:
+    path: ~/.config/i3
+    state: directory
+
+- name: Copy i3 config
+  template:
+    src: i3-config
+    dest: ~/.config/i3/config
+
+- name: Create i3blocks config directory
+  file:
+    path: ~/.config/i3blocks
+    state: directory
+
+- name: Copy i3blocks config
+  copy:
+    src: i3blocks-config
+    dest: ~/.config/i3blocks/config
+
+- name: Copy desktop setup script
+  copy:
+    src: start.sh
+    dest: ~/start.sh
+
+- name: Create kitty config directory
+  file:
+    path: ~/.config/kitty
+    state: directory
+
+- name: Copy kitty config
+  template:
+    src: kitty-config
+    dest: ~/.config/kitty/kitty.conf
+
+- name: Copy kitty theme
+  copy:
+    src: kitty-theme
+    dest: ~/.config/kitty/current-theme.conf
+
+- name: Copy gtk2 config
+  template:
+    src: gtk2-config
+    dest: ~/.gtkrc-2.0
+
+- name: Create gtk3 config directory
+  file:
+    path: ~/.config/gtk-3.0
+    state: directory
+
+- name: Copy gtk3 config
+  template:
+    src: gtk3-config
+    dest: ~/.config/gtk-3.0/settings.ini
+
+- name: setup Xresources (user)
+  template:
+    src: xresources
+    dest: ~/.Xresources
+
+- name: check if /etc/X11/Xresources directory exists
+  stat:
+    path: /etc/X11/Xresources
+  register: x11dir
+
+- name: delete global Xresources directory
+  file:
+    path: /etc/X11/XResources
+    state: absent
+  when: x11dir.stat.exists and x11dir.stat.isdir
+
+- name: setup Xresources (global)
+  template:
+    src: xresources
+    dest: /etc/X11/Xresources
+  become: yes
+
+- name: Create xorg.conf.d directory
+  become: yes
+  file:
+    path: /etc/X11/xorg.conf.d
+    state: directory
+
+- name: setup x11 synaptics
+  copy:
+    src: synaptics-config
+    dest: /etc/X11/xorg.conf.d/70-synaptics.conf
+  become: yes
+
+- name: setup X11 dpi in lightdm
+  template:
+    src: lightdm-config
+    dest: /etc/lightdm/lightdm.conf
+  become: yes
+
+- name: hide user images in lightdm-gtk-greeter
+  community.general.ini_file:
+    path: /etc/lightdm/lightdm-gtk-greeter.conf
+    section: greeter
+    option: hide-user-image
+    value: "true"
+  become: yes
+
+- name: remove panel from lightdm-gtk-greeter
+  community.general.ini_file:
+    path: /etc/lightdm/lightdm-gtk-greeter.conf
+    section: greeter
+    option: indicators
+    value: ""
+  become: yes
+
+- name: set gsettings key theme to emacs
+  command: gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
+
+- name: disable gthumb extensions except list_tools
+  command: "gsettings set org.gnome.gthumb.general active-extensions \"['list_tools']\""
+
+- name: don't record app/file usage
+  command: "{{ item }}"
+  loop:
+    - "gsettings set org.gnome.desktop.privacy remember-app-usage false"
+    - "gsettings set org.gnome.desktop.privacy remember-recent-files false"
+    - "gsettings set org.gnome.desktop.privacy report-technical-problems false"
+    - "gsettings set org.gnome.desktop.privacy send-software-usage-stats false"
+
+- name: Create mpv config directory
+  file:
+    path: ~/.config/mpv
+    state: directory
+  tags:
+    - desktop
+
+- name: copy mpv config
+  copy:
+    src: mpv-config
+    dest: ~/.config/mpv/mpv.conf
+  tags:
+    - desktop
+
+- name: copy mimetypes config
+  copy:
+    src: mimeapps.list
+    dest: ~/.config/mimeapps.list
+  tags:
+    - desktop
+
+- name: Create gtk3 directory
+  file:
+    path: ~/.config/gtk-3.0
+    state: directory
+  tags:
+    - desktop
+
+- name: copy file manager bookmarks
+  template:
+    src: fm-bookmarks
+    dest: ~/.config/gtk-3.0/bookmarks
+  tags:
+    - desktop

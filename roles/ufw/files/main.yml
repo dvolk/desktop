@@ -1,0 +1,11 @@
+- name: Enable firewall
+  community.general.ufw:
+    state: enabled
+    direction: incoming
+    policy: deny
+  become: true
+
+- name: Set firewall logging
+  community.general.ufw:
+    logging: 'on'
+  become: true

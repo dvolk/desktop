@@ -1,0 +1,11 @@
+- name: download nodejs
+  ansible.builtin.get_url:
+    url: https://nodejs.org/dist/v16.16.0/node-v16.16.0-linux-x64.tar.xz
+    dest: /opt/tmp/node-v16.16.0-linux-x64.tar.xz
+    checksum: sha256:edcb6e9bb049ae365611aa209fc03c4bfc7e0295dbcc5b2f1e710ac70384a8ec
+
+- name: Extract nodejs to /opt
+  become: yes
+  ansible.builtin.unarchive:
+    src: /opt/tmp/node-v16.16.0-linux-x64.tar.xz
+    dest: /opt

@@ -1,0 +1,298 @@
+- name: Install etckeeper
+  become: true
+  apt:
+    update_cache: yes
+    cache_valid_time: 36000
+    state: latest
+    pkg:
+      - etckeeper
+
+- name: etckeeper commit
+  become: true
+  command: etckeeper commit "pre-ansible auto-commit"
+  ignore_errors: yes
+
+- name: add contrib and non-free repos (debian)
+  when: ansible_distribution == "Debian"
+  become: true
+  replace:
+    dest: /etc/apt/sources.list
+    regexp: '^(deb.+)(?<! contrib non-free)$'
+    replace: '\1 contrib non-free'
+  register: add_repos
+
+- name: update cache after adding repos (debian)
+  when: ansible_distribution == "Debian" and add_repos.changed
+  become: true
+  apt:
+    update_cache: yes
+    cache_valid_time: 0
+
+- name: Install common packages
+  become: true
+  apt:
+    update_cache: yes
+    cache_valid_time: 36000
+    state: latest
+    pkg:
+      - python-is-python3
+      - jq
+      - build-essential
+      - python3-pip
+      - python3-virtualenv
+      - python3-watchdog
+      - mypy
+      - clangd
+      - ccls
+      - rsync
+      - git
+      - tmux
+      - htop
+      - iotop
+      - bmon
+      - powertop
+      - lsof
+      - imagemagick
+      - ncdu
+      - aria2
+      - autoconf
+      - automake
+      - bzip2
+      - fzf
+      - g++
+      - lnav
+      - oathtool
+      - p7zip
+      - parallel
+      - rdate
+      - sqlite3
+      - syncthing
+      - tig
+      - unace
+      - unar
+      - unrar
+      - unzip
+      - valgrind
+      - tshark
+      - zip
+      - apt-file
+      - autojump
+      - bc
+      - clamav
+      - cloc
+      - cmake
+      - cmake-curses-gui
+      - curl
+      - dict-gcide
+      - dictd
+      - ranger
+      - smartmontools
+      - lshw
+      - m4
+      - mutt
+      - openvpn
+      - tinc
+      - pwgen
+      - sshfs
+      - strace
+      - tree
+      - ufw
+      - w3m
+      - lynx
+      - wget
+      - whois
+      - xdg-user-dirs
+      - xz-utils
+      - screenfetch
+      - net-tools
+      - aptitude
+      - tlp
+      - apparmor
+      - apparmor-utils
+      - apparmor-profiles
+      - apparmor-profiles-extra
+      - snapd
+      - zenity
+      - auditd
+      - ngrep
+      - pkg-config
+      - gcc-10
+      - libgccjit0
+      - libgccjit-10-dev
+      - libjansson4
+      - libjansson-dev
+      - docker.io
+      - docker-compose
+      - rtorrent
+      - arj
+      - lzip
+      - lzop
+      - ncompress
+      - rar
+      - rpm2cpio
+      - rzip
+      - unalz
+      - p7zip-rar
+      - cockpit
+      - cockpit-machines
+      - cockpit-podman
+
+- name: Install lxd snap
+  become: yes
+  community.general.snap:
+    name:
+      - lxd
+
+- name: Install python dev packages
+  become: true
+  pip:
+    name:
+      - "python-lsp-server[all]"
+      - isort
+      - black
+      - pylsp-mypy
+      - pyls-flake8
+      - pyls-isort
+      - python-lsp-black
+      - pyls-memestra
+      - pylsp-rope
+
+- name: Create /opt
+  become: yes
+  file:
+    path: /opt
+    state: directory
+
+- name: Create /opt/tmp
+  become: yes
+  file:
+    path: /opt/tmp
+    state: directory
+    mode: '777'
+
+- name: Create command logs directory
+  file:
+    path: ~/.logs
+    state: directory
+
+- name: Setup bashrc
+  template:
+    src: bashrc
+    dest: ~/.bashrc
+
+- name: setup git
+  copy:
+    src: git-config
+    dest: ~/.gitconfig
+
+- name: add autologin group
+  when: lookup('env', 'AUTOLOGIN')|bool
+  become: yes
+  group:
+    name: autologin
+    state: present
+
+- name: add user to autologin group
+  when: lookup('env', 'AUTOLOGIN')|bool
+  become: yes
+  user:
+    name: "{{ lookup('env', 'USER') }}"
+    groups: autologin
+    append: yes
+
+- name: add user to other groups
+  become: yes
+  user:
+    name: "{{ lookup('env', 'USER') }}"
+    groups: "{{ item }}"
+    append: yes
+  loop:
+    - lpadmin
+    - libvirt
+    - lxd
+    - docker
+
+- name: Create hierarchy of stuff
+  file:
+    path: "{{ item }}"
+    state: directory
+  tags:
+    - desktop
+  loop:
+    - ~/.config
+    - ~/stuff
+    - ~/stuff/code
+    - ~/stuff/code/work
+    - ~/stuff/notes
+    - ~/stuff/notes/work
+    - ~/stuff/presentations
+    - ~/stuff/mpv-screenshots
+    - ~/stuff/docs
+    - ~/stuff/docs/work
+    - ~/stuff/screenshots
+    - ~/stuff/screenshots/work
+    - ~/stuff/logs
+    - ~/stuff/images
+    - ~/stuff/photos
+    - ~/stuff/books
+    - ~/stuff/books/fiction
+    - ~/stuff/books/nonfiction
+    - ~/stuff/audiobooks
+    - ~/stuff/audiobooks/fiction
+    - ~/stuff/audiobooks/nonfiction
+    - ~/stuff/CalibreLibrary
+    - ~/bin
+    - ~/stuff/
+    - ~/mnt
+    - ~/mnt/phone
+    - ~/sync
+    - ~/torrents
+
+- name: touch ansible run log
+  file:
+    dest: ~/stuff/logs/ansible_desktop_run.log
+    state: touch
+
+- name: get playbook git version
+  shell: "git describe --tags --always --dirty"
+  register: playbook_version
+
+- name: Add ansible run to log
+  lineinfile:
+    path: ~/stuff/logs/ansible_desktop_run.log
+    line: "{{ ansible_date_time.iso8601 }} {{ playbook_version.stdout }} AUTOLOGIN={{ lookup('env', 'AUTOLOGIN') }} USER={{ lookup('env', 'USER') }} FONT_SIZE={{ lookup('env', 'FONT_SIZE') }} DPI={{ lookup('env', 'DPI') }}"
+    insertbefore: EOF
+
+- name: copy flake8 config
+  copy:
+    src: flake8-config
+    dest: ~/.config/flake8
+
+- name: Create /opt/bin
+  file:
+    path: /opt/bin
+    state: directory
+  become: yes
+
+- name: Copy nano config
+  become: yes
+  copy:
+    src: nanorc
+    dest: /etc/nanorc
+
+- name: Copy browser bookmarks org file
+  copy:
+    src: browser-bookmarks.org
+    dest: ~/stuff/browser-bookmarks.org
+  tags: desktop
+
+- name: Convert org browser bookmarks to html
+  command: emacs --batch --eval "(require 'org)" ~/stuff/browser-bookmarks.org --funcall org-html-export-to-html
+  tags: desktop
+
+- name: enable and start cockpit service
+  become: yes
+  ansible.builtin.systemd:
+    name: cockpit
+    state: started
+    enabled: yes

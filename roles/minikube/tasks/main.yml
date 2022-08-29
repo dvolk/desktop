@@ -1,0 +1,12 @@
+- name: download minikube
+  ansible.builtin.get_url:
+    url: https://github.com/kubernetes/minikube/releases/download/v1.26.1/minikube-linux-amd64
+    dest: /opt/tmp/minikube-linux-amd64
+    checksum: sha256:9acd25706661b932ee98063147e58080cb949b92fd0d97b3b96dc5f898dcad21
+
+- name: Install minikube
+  become: yes
+  shell: install minikube-linux-amd64 /opt/bin/minikube
+  args:
+    chdir: /opt/tmp
+    creates: /opt/bin/minikube
