@@ -205,7 +205,6 @@
     append: yes
   loop:
     - lpadmin
-    - libvirt
     - lxd
     - docker
 

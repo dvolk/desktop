@@ -299,3 +299,12 @@
     dest: ~/.config/gtk-3.0/bookmarks
   tags:
     - desktop
+
+- name: add user libvirt group
+  become: yes
+  user:
+    name: "{{ lookup('env', 'USER') }}"
+    groups: "{{ item }}"
+    append: yes
+  loop:
+    - libvirt
