@@ -11,5 +11,5 @@
   "SearchSuggestEnabled": false,
   "SyncDisabled": true,
   "TranslateEnabled": false,
-  "HomepageLocation": "/home/{{ lookup('env', 'USER') }}/stuff/browser-bookmarks.html"
+  "HomepageLocation": "/home/{{ lookup('env', 'USER') }}/stuff/bm.html"
 }

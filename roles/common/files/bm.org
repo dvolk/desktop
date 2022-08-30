@@ -205,6 +205,7 @@
 - Random streetview https://randomstreetview.com/
 - Geoguessr https://www.geoguessr.com/
 - Brilliant https://brilliant.org/
+- Hackaday https://hackaday.com/
 * Hardware
 - Lenovo https://www.lenovo.com/gb/en/
 - Dell https://www.dell.com/en-uk
