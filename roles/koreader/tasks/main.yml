@@ -3,7 +3,6 @@
     url: https://github.com/koreader/koreader/releases/download/v2022.07/koreader-appimage-x86_64-linux-gnu-v2022.07.AppImage
     dest: /opt/tmp/koreader-appimage-x86_64-linux-gnu-v2022.07.AppImage
     checksum: sha256:93d79bc48520c8d875804d9ce7bbc20a39b431d2d581b3b0288c231c6db33e1e
-  tags: desktop
 
 - name: Move Koreader to /opt/bin
   become: yes
@@ -11,7 +10,6 @@
     src: /opt/tmp/koreader-appimage-x86_64-linux-gnu-v2022.07.AppImage
     dest: /opt/bin/koreader-appimage-x86_64-linux-gnu-v2022.07.AppImage
     checksum: sha256:93d79bc48520c8d875804d9ce7bbc20a39b431d2d581b3b0288c231c6db33e1e
-  tags: desktop
 
 - name: Set Koreader executable attributes
   file:
@@ -20,4 +18,3 @@
     owner: root
     group: root
   become: yes
-  tags: desktop

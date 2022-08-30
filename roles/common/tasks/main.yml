@@ -212,8 +212,6 @@
   file:
     path: "{{ item }}"
     state: directory
-  tags:
-    - desktop
   loop:
     - ~/.config
     - ~/stuff
@@ -280,8 +278,6 @@
   copy:
     src: browser-bookmarks.org
     dest: ~/stuff/browser-bookmarks.org
-  tags: desktop
 
 - name: Convert org browser bookmarks to html
   command: emacs --batch --eval "(require 'org)" ~/stuff/browser-bookmarks.org --funcall org-html-export-to-html
-  tags: desktop

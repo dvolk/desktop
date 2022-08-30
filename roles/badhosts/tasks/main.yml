@@ -2,22 +2,16 @@
   ansible.builtin.get_url:
     url: https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts
     dest: /opt/tmp/hosts
-  tags:
-    - desktop
 
 - name: download mozilla hosts file
   ansible.builtin.get_url:
     url: https://raw.githubusercontent.com/MrRawes/firefox-hosts/firefox-hosts/hosts
     dest: /opt/tmp/mozilla-hosts
-  tags:
-    - desktop
 
 - name: download crypto hosts file
   ansible.builtin.get_url:
     url: https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt
     dest: /opt/tmp/crypto-hosts
-  tags:
-    - desktop
 
 - name: insert hostname into /opt/tmp/hosts
   blockinfile:
@@ -30,14 +24,9 @@
       # add localhost
       127.0.1.1 {{ ansible_hostname }}
   become: true
-  tags:
-    - desktop
 
 - name: copy adware+malware hosts file to /etc/hosts
-  when: not lookup('env', 'DONTREPLACEHOSTS')|bool
   copy:
     src: /opt/tmp/hosts
     dest: /etc/hosts
   become: true
-  tags:
-    - desktop

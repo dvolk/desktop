@@ -23,7 +23,6 @@
     state: latest
     pkg:
       - emacs
-  tags: desktop
 
 - name: Create emacs directory
   file:

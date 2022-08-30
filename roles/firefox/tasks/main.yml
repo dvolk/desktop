@@ -8,8 +8,6 @@
     state: latest
     pkg:
       - firefox-esr
-  tags:
-    - desktop
 
 - name: Install firefox-esr apparmor abstractions (debian)
   when: ansible_distribution == "Debian"
@@ -17,15 +15,12 @@
   copy:
     src: ubuntu-browsers.d-firefox
     dest: /etc/apparmor.d/abstractions/ubuntu-browsers.d/firefox
-  tags:
-    - desktop
 
 - name: touch firefox apparmor profile
   become: yes
   file:
     dest: /etc/apparmor.d/local/usr.bin.firefox
     state: touch
-  tags: desktop
 
 - name: Install firefox-esr apparmor profile (debian)
   when: ansible_distribution == "Debian"
@@ -33,14 +28,11 @@
   copy:
     src: usr.bin.firefox-esr
     dest: /etc/apparmor.d/usr.bin.firefox-esr
-  tags:
-    - desktop
 
 - name: Enforce firefox-esr apparmor profile (debian)
   when: ansible_distribution == "Debian"
   become: true
   command: aa-enforce usr.bin.firefox
-  tags: desktop
 
 - name: Create firefox-esr policies directory (debian)
   when: ansible_distribution == "Debian"
@@ -48,8 +40,6 @@
   file:
     path: /usr/lib/firefox-esr/distribution/
     state: directory
-  tags:
-    - desktop
 
 - name: Copy firefox-esr policies (debian)
   when: ansible_distribution == "Debian"
@@ -57,8 +47,6 @@
   copy:
     src: firefox-policies
     dest: /usr/lib/firefox-esr/distribution/policies.json
-  tags:
-    - desktop
 
 - name: Add firefox user prefs (debian)
   when: ansible_distribution == "Debian"
@@ -66,8 +54,6 @@
   copy:
     src: firefox-prefs
     dest: /etc/firefox-esr/all-prefs.js
-  tags:
-    - desktop
 
 - name: Add firefox user prefs (ubuntu)
   when: ansible_distribution == "Ubuntu"
@@ -75,8 +61,6 @@
   copy:
     src: firefox-prefs
     dest: /usr/lib/firefox/browser/defaults/preferences/all-prefs.js
-  tags:
-    - desktop
 
 - name: Create firefox policies directory (ubuntu deb)
   when: ansible_distribution == "Ubuntu" and ansible_lsb.major_release|int < 22
@@ -84,8 +68,6 @@
   file:
     path: /usr/lib/firefox/distribution/
     state: directory
-  tags:
-    - desktop
 
 - name: Copy firefox policies (ubuntu deb)
   when: ansible_distribution == "Ubuntu" and ansible_lsb.major_release|int < 22
@@ -93,8 +75,6 @@
   copy:
     src: firefox-policies
     dest: /usr/lib/firefox/distribution/policies.json
-  tags:
-    - desktop
 
 - name: Create firefox policies directory (ubuntu snap)
   when: ansible_distribution == "Ubuntu" and ansible_lsb.major_release|int >= 22
@@ -102,8 +82,6 @@
   file:
     path: /etc/firefox/policies
     state: directory
-  tags:
-    - desktop
 
 - name: Copy firefox policies (ubuntu snap)
   when: ansible_distribution == "Ubuntu" and ansible_lsb.major_release|int >= 22
@@ -111,5 +89,3 @@
   copy:
     src: firefox-policies
     dest: /etc/firefox/policies/policies.json
-  tags:
-    - desktop

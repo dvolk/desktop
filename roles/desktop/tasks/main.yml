@@ -269,36 +269,26 @@
   file:
     path: ~/.config/mpv
     state: directory
-  tags:
-    - desktop
 
 - name: copy mpv config
   copy:
     src: mpv-config
     dest: ~/.config/mpv/mpv.conf
-  tags:
-    - desktop
 
 - name: copy mimetypes config
   copy:
     src: mimeapps.list
     dest: ~/.config/mimeapps.list
-  tags:
-    - desktop
 
 - name: Create gtk3 directory
   file:
     path: ~/.config/gtk-3.0
     state: directory
-  tags:
-    - desktop
 
 - name: copy file manager bookmarks
   template:
     src: fm-bookmarks
     dest: ~/.config/gtk-3.0/bookmarks
-  tags:
-    - desktop
 
 - name: add user libvirt group
   become: yes
