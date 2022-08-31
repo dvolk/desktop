@@ -47,3 +47,17 @@ reference: https://discuss.linuxcontainers.org/t/lxd-bridge-doesnt-work-with-ipv
     find . -type f -iname *.ext | xargs md5sum | awk '{ print $1 }' > hashes
     cat hashes | wc -l
     cat hashes | sort | uniq | wc -l
+
+## unquote url quoted lines in log
+
+    tail -f logfile.txt | python3 -c "import urllib.parse; import sys; [sys.stdout.write(urllib.parse.unquote(line)) for line in sys.stdin]"
+
+## centos 7 on debian 11 lxd
+
+edit in /etc/default/grub:
+
+    GRUB_CMDLINE_LINUX_DEFAULT="quiet systemd.unified_cgroup_hierarchy=false"
+
+run
+
+    sudo update-grub
