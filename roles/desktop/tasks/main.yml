@@ -290,7 +290,7 @@
     src: fm-bookmarks
     dest: ~/.config/gtk-3.0/bookmarks
 
-- name: add user libvirt group
+- name: add user to libvirt group
   become: yes
   user:
     name: "{{ lookup('env', 'USER') }}"
