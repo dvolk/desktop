@@ -123,6 +123,7 @@ PATH=$PATH:/opt/node-v16.16.0-linux-x64/bin
 PATH=$PATH:/opt/rust1621/bin
 PATH=$PATH:/opt/bin
 PATH=$PATH:/opt/calibre6.3.0
+PATH=$PATH:/opt/kitty/bin
 
 # initialize autojump
 

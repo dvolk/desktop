@@ -35,13 +35,8 @@
     cache_valid_time: 36000
     state: latest
     pkg:
-      - python-is-python3
       - jq
       - build-essential
-      - python3-pip
-      - python3-virtualenv
-      - python3-watchdog
-      - mypy
       - clangd
       - ccls
       - rsync
@@ -140,20 +135,6 @@
     name:
       - lxd
 
-- name: Install python dev packages
-  become: true
-  pip:
-    name:
-      - "python-lsp-server[all]"
-      - isort
-      - black
-      - pylsp-mypy
-      - pyls-flake8
-      - pyls-isort
-      - python-lsp-black
-      - pyls-memestra
-      - pylsp-rope
-
 - name: Create /opt
   become: yes
   file:
@@ -167,9 +148,15 @@
     state: directory
     mode: '777'
 
+- name: Create /opt/bin
+  file:
+    path: /opt/bin
+    state: directory
+  become: yes
+
 - name: Create command logs directory
   file:
-    path: ~/.logs
+    path:
     state: directory
 
 - name: Setup bashrc
@@ -208,7 +195,7 @@
     - lxd
     - docker
 
-- name: Create hierarchy of stuff
+- name: Create directories in user home
   file:
     path: "{{ item }}"
     state: directory
@@ -241,6 +228,7 @@
     - ~/mnt/phone
     - ~/sync
     - ~/torrents
+    - ~/.logs
 
 - name: touch ansible run log
   file:
@@ -256,17 +244,6 @@
     path: ~/stuff/logs/ansible_desktop_run.log
     line: "{{ ansible_date_time.iso8601 }} {{ playbook_version.stdout }} AUTOLOGIN={{ lookup('env', 'AUTOLOGIN') }} USER={{ lookup('env', 'USER') }} FONT_SIZE={{ lookup('env', 'FONT_SIZE') }} DPI={{ lookup('env', 'DPI') }}"
     insertbefore: EOF
-
-- name: copy flake8 config
-  copy:
-    src: flake8-config
-    dest: ~/.config/flake8
-
-- name: Create /opt/bin
-  file:
-    path: /opt/bin
-    state: directory
-  become: yes
 
 - name: Copy nano config
   become: yes
