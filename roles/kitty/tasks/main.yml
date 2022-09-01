@@ -1,0 +1,17 @@
+- name: Download kitty
+  ansible.builtin.get_url:
+    url: https://github.com/kovidgoyal/kitty/releases/download/v0.26.1/kitty-0.26.1-x86_64.txz
+    dest: /opt/tmp/kitty-0.26.1-x86_64.txz
+    checksum: sha256:7e9765dbcfddddc5401f54a30d173793907155781874bbf2a929dcdb188c98ea
+
+- name: Create kitty directory
+  become: true
+  file:
+    path: /opt/kitty
+    state: directory
+
+- name: Extract kitty to /opt/kitty
+  become: yes
+  ansible.builtin.unarchive:
+    src: /opt/tmp/kitty-0.26.1-x86_64.txz
+    dest: /opt/kitty

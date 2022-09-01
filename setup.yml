@@ -12,6 +12,7 @@
     - desktop
     - chromium
     - firefox
+    - kitty
 
     - go
     - nim
