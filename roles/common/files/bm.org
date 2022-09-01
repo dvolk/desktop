@@ -21,6 +21,7 @@
 - List of OSS software https://en.wikipedia.org/wiki/List_of_free_and_open-source_software_packages
 - Calibre https://calibre-ebook.com/
 - Koreader https://koreader.rocks/
+- sqlite-utils https://sqlite-utils.datasette.io/en/stable/index.html
 * Self-hosted server software
 - Gitea https://gitea.io/
 - Mongo https://www.mongodb.com/
@@ -71,6 +72,7 @@
 - Pydantic https://pydantic-docs.helpmanual.io/usage/models/
 - Eel https://github.com/ChrisKnott/Eel
 - Watchdog https://github.com/gorakhargosh/watchdog
+- Qiskit https://qiskit.org/
 * Programming languages
 - Carbon https://github.com/carbon-language/carbon-lang
 * Nim libraries
