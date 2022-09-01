@@ -1,91 +1,70 @@
-- name: Install firefox-esr (debian)
-  when: ansible_distribution == "Debian"
+- name: Install and configure firefox on debian
   become: true
-  apt:
-    install_recommends: no
-    update_cache: yes
-    cache_valid_time: 36000
-    state: latest
-    pkg:
-      - firefox-esr
-
-- name: Install firefox-esr apparmor abstractions (debian)
   when: ansible_distribution == "Debian"
-  become: true
-  copy:
-    src: ubuntu-browsers.d-firefox
-    dest: /etc/apparmor.d/abstractions/ubuntu-browsers.d/firefox
+  block:
+    - name: Install firefox-esr (debian)
+      apt:
+        install_recommends: no
+        update_cache: yes
+        cache_valid_time: 36000
+        state: latest
+        pkg:
+          - firefox-esr
+          - webext-ublock-origin-firefox
 
-- name: touch firefox apparmor profile
-  become: yes
-  file:
-    dest: /etc/apparmor.d/local/usr.bin.firefox
-    state: touch
+    - name: Install firefox-esr apparmor abstractions (debian)
+      copy:
+        src: ubuntu-browsers.d-firefox
+        dest: /etc/apparmor.d/abstractions/ubuntu-browsers.d/firefox
 
-- name: Install firefox-esr apparmor profile (debian)
-  when: ansible_distribution == "Debian"
-  become: true
-  copy:
-    src: usr.bin.firefox-esr
-    dest: /etc/apparmor.d/usr.bin.firefox-esr
+    - name: Install firefox-esr apparmor profile (debian)
+      copy:
+        src: usr.bin.firefox-esr
+        dest: /etc/apparmor.d/usr.bin.firefox-esr
 
-- name: Enforce firefox-esr apparmor profile (debian)
-  when: ansible_distribution == "Debian"
-  become: true
-  command: aa-enforce usr.bin.firefox
+    - name: Enforce firefox-esr apparmor profile (debian)
+      command: aa-enforce usr.bin.firefox
 
-- name: Create firefox-esr policies directory (debian)
-  when: ansible_distribution == "Debian"
-  become: true
-  file:
-    path: /usr/lib/firefox-esr/distribution/
-    state: directory
+    - name: Create firefox-esr policies directory (debian)
+      file:
+        path: /usr/lib/firefox-esr/distribution/
+        state: directory
 
-- name: Copy firefox-esr policies (debian)
-  when: ansible_distribution == "Debian"
-  become: true
-  copy:
-    src: firefox-policies
-    dest: /usr/lib/firefox-esr/distribution/policies.json
+    - name: Copy firefox-esr policies (debian)
+      copy:
+        src: firefox-policies
+        dest: /usr/lib/firefox-esr/distribution/policies.json
 
-- name: Add firefox user prefs (debian)
-  when: ansible_distribution == "Debian"
-  become: true
-  copy:
-    src: firefox-prefs
-    dest: /etc/firefox-esr/all-prefs.js
+    - name: Add firefox user prefs (debian)
+      copy:
+        src: firefox-prefs
+        dest: /etc/firefox-esr/all-prefs.js
 
-- name: Add firefox user prefs (ubuntu)
+- name: Install and configure firefox on Ubuntu
   when: ansible_distribution == "Ubuntu"
-  become: true
-  copy:
-    src: firefox-prefs
-    dest: /usr/lib/firefox/browser/defaults/preferences/all-prefs.js
+  become: yes
+  block:
+    - name: Install lxd snap
+      community.general.snap:
+        name:
+          - firefox
 
-- name: Create firefox policies directory (ubuntu deb)
-  when: ansible_distribution == "Ubuntu" and ansible_lsb.major_release|int < 22
-  become: true
-  file:
-    path: /usr/lib/firefox/distribution/
-    state: directory
+    - name: touch firefox apparmor profile
+      file:
+        dest: /etc/apparmor.d/local/usr.bin.firefox
+        state: touch
 
-- name: Copy firefox policies (ubuntu deb)
-  when: ansible_distribution == "Ubuntu" and ansible_lsb.major_release|int < 22
-  become: true
-  copy:
-    src: firefox-policies
-    dest: /usr/lib/firefox/distribution/policies.json
+    - name: Add firefox user prefs (ubuntu)
+      copy:
+        src: firefox-prefs
+        dest: /usr/lib/firefox/browser/defaults/preferences/all-prefs.js
 
-- name: Create firefox policies directory (ubuntu snap)
-  when: ansible_distribution == "Ubuntu" and ansible_lsb.major_release|int >= 22
-  become: true
-  file:
-    path: /etc/firefox/policies
-    state: directory
+    - name: Create firefox policies directory (ubuntu snap)
+      file:
+        path: /etc/firefox/policies
+        state: directory
 
-- name: Copy firefox policies (ubuntu snap)
-  when: ansible_distribution == "Ubuntu" and ansible_lsb.major_release|int >= 22
-  become: true
-  copy:
-    src: firefox-policies
-    dest: /etc/firefox/policies/policies.json
+    - name: Copy firefox policies (ubuntu snap)
+      copy:
+        src: firefox-policies
+        dest: /etc/firefox/policies/policies.json

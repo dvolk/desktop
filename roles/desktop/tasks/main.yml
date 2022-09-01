@@ -111,7 +111,6 @@
     pkg:
       - barrier
       - libreoffice
-      - webext-ublock-origin-firefox
   ignore_errors: yes
 
 - name: Remove avahi-daemon, gdm3, etc
