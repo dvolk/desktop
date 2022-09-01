@@ -2,16 +2,25 @@
   ansible.builtin.get_url:
     url: https://github.com/kovidgoyal/kitty/releases/download/v0.26.1/kitty-0.26.1-x86_64.txz
     dest: /opt/tmp/kitty-0.26.1-x86_64.txz
-    checksum: sha256:7e9765dbcfddddc5401f54a30d173793907155781874bbf2a929dcdb188c98ea
-
-- name: Create kitty directory
-  become: true
-  file:
-    path: /opt/kitty
-    state: directory
+    checksum: sha256:2b1b54383ba85c067723e5f8bf6fd7d460172905aeb8464d345ed89d2d132c91
 
 - name: Extract kitty to /opt/kitty
   become: yes
   ansible.builtin.unarchive:
     src: /opt/tmp/kitty-0.26.1-x86_64.txz
     dest: /opt/kitty
+
+- name: Create kitty config directory
+  file:
+    path: ~/.config/kitty
+    state: directory
+
+- name: Copy kitty config
+  template:
+    src: kitty-config
+    dest: ~/.config/kitty/kitty.conf
+
+- name: Copy kitty theme
+  copy:
+    src: kitty-theme
+    dest: ~/.config/kitty/current-theme.conf

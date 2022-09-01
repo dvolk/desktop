@@ -163,21 +163,6 @@
     src: start.sh
     dest: ~/start.sh
 
-- name: Create kitty config directory
-  file:
-    path: ~/.config/kitty
-    state: directory
-
-- name: Copy kitty config
-  template:
-    src: kitty-config
-    dest: ~/.config/kitty/kitty.conf
-
-- name: Copy kitty theme
-  copy:
-    src: kitty-theme
-    dest: ~/.config/kitty/current-theme.conf
-
 - name: Copy gtk2 config
   template:
     src: gtk2-config

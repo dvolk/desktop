@@ -1313,6 +1313,5 @@ map kitty_mod+f select_tab
 #:     map ctrl+alt+a send_text application Word\x1bOH
 
 # BEGIN_KITTY_THEME
-# Ayu Light
 include current-theme.conf
 # END_KITTY_THEME
