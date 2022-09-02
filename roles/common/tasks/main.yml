@@ -154,11 +154,6 @@
     state: directory
   become: yes
 
-- name: Create command logs directory
-  file:
-    path:
-    state: directory
-
 - name: Setup bashrc
   template:
     src: bashrc
