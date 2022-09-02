@@ -4,6 +4,12 @@
     dest: /opt/tmp/kitty-0.26.1-x86_64.txz
     checksum: sha256:2b1b54383ba85c067723e5f8bf6fd7d460172905aeb8464d345ed89d2d132c91
 
+- name: Create kitty directory
+  become: yes
+  file:
+    path: /opt/kitty
+    state: directory
+
 - name: Extract kitty to /opt/kitty
   become: yes
   ansible.builtin.unarchive:
