@@ -75,6 +75,8 @@
 - Qiskit https://qiskit.org/
 * Programming languages
 - Carbon https://github.com/carbon-language/carbon-lang
+* Fonts
+- scientifica https://github.com/nerdypepper/scientifica
 * Nim libraries
 - Print https://github.com/treeform/print
 - Nico https://github.com/ftsf/nico
