@@ -1,0 +1,34 @@
+- name: Enable firewall
+  community.general.ufw:
+    state: enabled
+    direction: incoming
+    policy: deny
+  become: true
+
+- name: Set firewall logging
+  community.general.ufw:
+    logging: 'on'
+  become: true
+
+- name: Allow traffic to lxd containers
+  community.general.ufw:
+    rule: allow
+    direction: in
+    interface: lxdbr0
+  become: true
+
+- name: Allow traffic between lxd containers (?) 1/2
+  community.general.ufw:
+    rule: allow
+    interface: lxdbr0
+    direction: in
+    route: yes
+  become: true
+
+- name: Allow traffic between lxd containers (?) 2/2
+  community.general.ufw:
+    rule: allow
+    interface: lxdbr0
+    direction: out
+    route: yes
+  become: true
