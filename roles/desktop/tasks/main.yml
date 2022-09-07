@@ -149,6 +149,11 @@
     src: /opt/tmp/scientifica.tar
     dest: ~/.fonts
 
+- name: Copy scientifica fontconfig
+  copy:
+    src: 91-scientifica.conf
+    dest: /etc/fonts/conf.d/91-scientifica.conf
+
 - name: Create i3 config directory
   file:
     path: ~/.config/i3
