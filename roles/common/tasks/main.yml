@@ -245,11 +245,3 @@
   copy:
     src: nanorc
     dest: /etc/nanorc
-
-- name: Copy browser bookmarks org file
-  copy:
-    src: bm.org
-    dest: ~/stuff/bm.org
-
-- name: Convert org browser bookmarks to html
-  command: emacs --batch --eval "(require 'org)" ~/stuff/bm.org --funcall org-html-export-to-html

@@ -128,6 +128,12 @@
     dest: /opt/tmp/JetBrainsMono.zip
     checksum: sha256:4e315b4ef176ce7ffc971b14997bdc8f646e3d1e5b913d1ecba3a3b10b4a1a9f
 
+- name: Download scientifica font
+  ansible.builtin.get_url:
+    url: https://github.com/nerdypepper/scientifica/releases/download/v2.3/scientifica.tar
+    dest: /opt/tmp/scientifica.tar
+    checksum: sha256:f0857869a0e846c6f175dcb853dd1f119ea17a75218e63b7f0736d5a8e1e8a7f
+
 - name: Create font directory
   file:
     path: ~/.fonts
@@ -136,6 +142,11 @@
 - name: Extract jetbrains font
   ansible.builtin.unarchive:
     src: /opt/tmp/JetBrainsMono.zip
+    dest: ~/.fonts
+
+- name: Extract scientifica font
+  ansible.builtin.unarchive:
+    src: /opt/tmp/scientifica.tar
     dest: ~/.fonts
 
 - name: Create i3 config directory
