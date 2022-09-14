@@ -36,6 +36,7 @@
 - Nimforum https://github.com/nim-lang/nimforum
 - Cockpit project https://cockpit-project.org/
 - Cockpit localhost http://localhost:9090/system
+- Portainer https://docs.portainer.io/
 * Free SaaS
 - i3 configurator https://thomashunter.name/i3-configurator/
 * Emacs packages
@@ -75,6 +76,8 @@
 - Eel https://github.com/ChrisKnott/Eel
 - Watchdog https://github.com/gorakhargosh/watchdog
 - Qiskit https://qiskit.org/
+- Celery (with filesystem) https://www.distributedpython.com/2018/07/03/simple-celery-setup/
+- psycopg-binary  https://pypi.org/project/psycopg2-binary/
 * Programming languages
 - Carbon https://github.com/carbon-language/carbon-lang
 * Fonts
@@ -119,7 +122,10 @@
 - Pantone https://en.wikipedia.org/wiki/Pantone
 - Puppertino https://codedgar.github.io/Puppertino/
 - Material design icons https://materialdesignicons.com/
+- HTMx https://htmx.org/reference/
+- Petite Vue https://github.com/vuejs/petite-vue
 - Bulma https://bulma.io/
+- Water.css https://watercss.kognise.dev/
 * Programming language docs
 - Python https://docs.python.org/3/
 - Nim https://nim-lang.org/documentation.html
