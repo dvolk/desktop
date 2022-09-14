@@ -36,7 +36,6 @@
 - Nimforum https://github.com/nim-lang/nimforum
 - Cockpit project https://cockpit-project.org/
 - Cockpit localhost http://localhost:9090/system
-- Portainer https://docs.portainer.io/
 * Free SaaS
 - i3 configurator https://thomashunter.name/i3-configurator/
 * Emacs packages
