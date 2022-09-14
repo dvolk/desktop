@@ -24,6 +24,7 @@
 - sqlite-utils https://sqlite-utils.datasette.io/en/stable/index.html
 - Nyxt browser https://nyxt.atlas.engineer/download
 - LibreWolf browser https://librewolf.net/installation/linux/
+- Godot https://godotengine.org/
 * Self-hosted server software
 - Gitea https://gitea.io/
 - Mongo https://www.mongodb.com/
@@ -125,6 +126,8 @@
 - Petite Vue https://github.com/vuejs/petite-vue
 - Bulma https://bulma.io/
 - Water.css https://watercss.kognise.dev/
+- CSS brightness https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/brightness
+- HTML symbols https://www.toptal.com/designers/htmlarrows/
 * Programming language docs
 - Python https://docs.python.org/3/
 - Nim https://nim-lang.org/documentation.html
@@ -143,6 +146,10 @@
 - Podman https://podman.io/getting-started/
 - Kubernetes concepts https://kubernetes.io/docs/concepts/
 - Portainer https://www.portainer.io/?hsLang=en
+- Hashicorp nomad https://learn.hashicorp.com/nomad
+- k9s kubernetes tui https://k9scli.io/topics/install/
+- Container journal https://containerjournal.com/
+- osquery
 * Operating systems
 - Debian https://www.debian.org/
 - Ubuntu https://ubuntu.com/
@@ -221,6 +228,8 @@
 - Hackaday https://hackaday.com/
 - 512kb club https://512kb.club/
 - are.na https://www.are.na/
+- Academia stackexchange https://academia.stackexchange.com/
+- Ask HN: How do you find the weird parts of the web? https://news.ycombinator.com/item?id=32804832
 * Hardware
 - Lenovo https://www.lenovo.com/gb/en/
 - Dell https://www.dell.com/en-uk
