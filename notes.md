@@ -61,3 +61,24 @@ edit in /etc/default/grub:
 run
 
     sudo update-grub
+
+## Remove submodules but keep files
+
+https://stackoverflow.com/questions/26752481/remove-git-submodule-but-keep-files
+
+    mv subfolder subfolder_tmp
+    git submodule deinit subfolder
+    git rm --cached subfolder
+    mv subfolder_tmp subfolder
+    git add subfolder
+
+## Get chrome history
+
+https://superuser.com/questions/602252/can-chrome-browser-history-be-exported-to-an-html-file
+
+    cp ./.config/chromium/Default/History History
+    sqlite3 History
+    sqlite> .headers on
+    sqlite> .mode csv
+    sqlite> .output my-history.csv
+    sqlite> SELECT url FROM urls ORDER BY last_visit_time DESC
