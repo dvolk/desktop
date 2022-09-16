@@ -38,6 +38,7 @@
 - Nimforum https://github.com/nim-lang/nimforum
 - Cockpit project https://cockpit-project.org/
 - Cockpit localhost http://localhost:9090/system
+- Loqseq https://github.com/logseq/logseq
 * Free SaaS
 - i3 configurator https://thomashunter.name/i3-configurator/
 * Emacs packages
@@ -100,6 +101,8 @@
 - Ent. https://entgo.io/docs/getting-started/
 - Pagoda https://github.com/mikestefanello/pagoda
 - Chi https://github.com/go-chi/chi
+* Lua libraries
+- LOVE https://love2d.org/
 * Mine common software
 - sp3 https://github.com/dvolk/sp3
 - shawl5 https://github.com/dvolk/shawl5
