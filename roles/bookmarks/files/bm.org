@@ -82,6 +82,8 @@
 - Qiskit https://qiskit.org/
 - Celery (with filesystem) https://www.distributedpython.com/2018/07/03/simple-celery-setup/
 - psycopg-binary  https://pypi.org/project/psycopg2-binary/
+- pykube https://pykube.readthedocs.io/en/latest/index.html
+- minikube https://minikube.sigs.k8s.io/docs/start/
 * Programming languages
 - Carbon https://github.com/carbon-language/carbon-lang
 * Fonts
