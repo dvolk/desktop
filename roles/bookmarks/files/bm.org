@@ -22,6 +22,10 @@
 - Calibre https://calibre-ebook.com/
 - Koreader https://koreader.rocks/
 - sqlite-utils https://sqlite-utils.datasette.io/en/stable/index.html
+- Nyxt browser https://nyxt.atlas.engineer/download
+- LibreWolf browser https://librewolf.net/installation/linux/
+- Godot https://godotengine.org/
+- osquery https://osquery.io/
 * Self-hosted server software
 - Gitea https://gitea.io/
 - Mongo https://www.mongodb.com/
@@ -36,6 +40,7 @@
 - Cockpit localhost http://localhost:9090/system
 - Portainer https://docs.portainer.io/
 - Docker swarm https://docs.docker.com/engine/swarm/swarm-tutorial/create-swarm/
+- Loqseq https://github.com/logseq/logseq
 * Free SaaS
 - i3 configurator https://thomashunter.name/i3-configurator/
 * Emacs packages
@@ -98,6 +103,8 @@
 - Ent. https://entgo.io/docs/getting-started/
 - Pagoda https://github.com/mikestefanello/pagoda
 - Chi https://github.com/go-chi/chi
+* Lua libraries
+- LOVE https://love2d.org/
 * Mine common software
 - sp3 https://github.com/dvolk/sp3
 - shawl5 https://github.com/dvolk/shawl5
@@ -125,6 +132,9 @@
 - Petite Vue https://github.com/vuejs/petite-vue
 - Bulma https://bulma.io/
 - Water.css https://watercss.kognise.dev/
+- CSS brightness https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/brightness
+- HTML symbols https://www.toptal.com/designers/htmlarrows/
+- OpenSSL commands https://pleasantpasswords.com/info/pleasant-password-server/b-server-configuration/3-installing-a-3rd-party-certificate/openssl-commands
 * Programming language docs
 - Python https://docs.python.org/3/
 - Nim https://nim-lang.org/documentation.html
@@ -141,6 +151,15 @@
 - Kubernetes stories https://hn.algolia.com/?q=k8s
 - Systemd by example https://seb.jambor.dev/posts/systemd-by-example-part-1-minimization/
 - Podman https://podman.io/getting-started/
+- Kubernetes concepts https://kubernetes.io/docs/concepts/
+- Portainer https://www.portainer.io/?hsLang=en
+- Hashicorp nomad https://learn.hashicorp.com/nomad
+- k9s kubernetes tui https://k9scli.io/topics/install/
+- Container journal https://containerjournal.com/
+- systemd nspawn https://www.freedesktop.org/software/systemd/man/systemd-nspawn.html
+- What is a kubelet https://kamalmarhubi.com/blog/2015/08/27/what-even-is-a-kubelet/
+- jvns containers https://jvns.ca/#kubernetes---containers
+- osquery https://github.com/fleetdm/fleet
 * Operating systems
 - Debian https://www.debian.org/
 - Ubuntu https://ubuntu.com/
@@ -217,6 +236,11 @@
 - Geoguessr https://www.geoguessr.com/
 - Brilliant https://brilliant.org/
 - Hackaday https://hackaday.com/
+- 512kb club https://512kb.club/
+- are.na https://www.are.na/
+- Academia stackexchange https://academia.stackexchange.com/
+- Ask HN: How do you find the weird parts of the web? https://news.ycombinator.com/item?id=32804832
+- Autosummarized HN https://danieljanus.pl/autosummarized-hn/
 * Hardware
 - Lenovo https://www.lenovo.com/gb/en/
 - Dell https://www.dell.com/en-uk
