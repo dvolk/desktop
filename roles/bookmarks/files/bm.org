@@ -35,6 +35,7 @@
 - Cockpit project https://cockpit-project.org/
 - Cockpit localhost http://localhost:9090/system
 - Portainer https://docs.portainer.io/
+- Docker swarm https://docs.docker.com/engine/swarm/swarm-tutorial/create-swarm/
 * Free SaaS
 - i3 configurator https://thomashunter.name/i3-configurator/
 * Emacs packages
