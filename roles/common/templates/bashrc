@@ -132,6 +132,8 @@ PATH=$PATH:/opt/kitty/bin
 # aliases
 
 alias emacs='/opt/emacs-28.1/src/emacs'
+alias g='grep -R'
+alias h='cat ~/.logs/* | grep'
 
 {% endraw %}
 
