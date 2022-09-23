@@ -82,3 +82,9 @@ https://superuser.com/questions/602252/can-chrome-browser-history-be-exported-to
     sqlite> .mode csv
     sqlite> .output my-history.csv
     sqlite> SELECT url FROM urls ORDER BY last_visit_time DESC
+
+### Disable ipv6
+
+    sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
+    sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1
+    sudo sysctl -w net.ipv6.conf.lo.disable_ipv6=1
