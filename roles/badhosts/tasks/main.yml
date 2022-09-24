@@ -17,6 +17,7 @@
   blockinfile:
     path: /opt/tmp/hosts
     block: |
+      127.0.1.1 cdn.matomo.cloud
       # block mozilla telemetry
       {{ lookup('file', '/opt/tmp/mozilla-hosts') }}
       # block crypto hosts

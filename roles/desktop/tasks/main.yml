@@ -1,11 +1,3 @@
-- name: accept ms font eula (have not actually read it)
-  become: true
-  debconf:
-    name: ttf-mscorefonts-installer
-    question: msttcorefonts/accepted-mscorefonts-eula
-    vtype: boolean
-    value: true
-
 - name: Install Xorg and i3
   become: true
   apt:
@@ -30,13 +22,6 @@
       - libglib2.0-bin
       - xclip
       - webp
-      - fonts-dejavu
-      - fonts-firacode
-      - fonts-ubuntu
-      - fonts-ubuntu-console
-      - fonts-roboto
-      - xfonts-terminus
-      - ttf-mscorefonts-installer
       - xinput
 
 - name: Install lightdm
@@ -122,6 +107,7 @@
       - command-not-found
       - motd-news-config
 
+<<<<<<< HEAD
 - name: Download jetbrains font
   ansible.builtin.get_url:
     url: https://github.com/JetBrains/JetBrainsMono/releases/download/v2.242/JetBrainsMono-2.242.zip
@@ -155,6 +141,8 @@
     src: 91-scientifica.conf
     dest: /etc/fonts/conf.d/91-scientifica.conf
 
+=======
+>>>>>>> a392b3c6a54c3b6789b2c2275884f3f3a1a183df
 - name: Create i3 config directory
   file:
     path: ~/.config/i3
