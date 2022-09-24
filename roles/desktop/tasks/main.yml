@@ -150,6 +150,7 @@
     dest: ~/.fonts
 
 - name: Copy scientifica fontconfig
+  become: yes
   copy:
     src: 91-scientifica.conf
     dest: /etc/fonts/conf.d/91-scientifica.conf
