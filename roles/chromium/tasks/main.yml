@@ -8,6 +8,16 @@
     pkg:
       - chromium
 
+- name: Install chromium - ubuntu
+  when: ansible_distribution == "Ubuntu"
+  become: true
+  apt:
+    update_cache: yes
+    cache_valid_time: 36000
+    state: latest
+    pkg:
+      - chromium-browser
+
 - name: Install ublock origin
   when: ansible_distribution == "Debian"
   become: true
@@ -18,18 +28,14 @@
     pkg:
       - webext-ublock-origin-chromium
 
-- name: Install ublock origin
-  when: ansible_distribution == "Ubuntu"
-  become: true
-  apt:
-    update_cache: yes
-    cache_valid_time: 36000
-    state: latest
-    pkg:
-      - chromium-browser
+- name: Set Chromium as default browser
+  when: ansible_distribution == "Debian"
+  command: update-alternatives --install /usr/bin/x-www-browser x-www-browser /usr/bin/chromium 250
+  become: yes
 
 - name: Set Chromium as default browser
-  command: update-alternatives --install /usr/bin/x-www-browser x-www-browser /usr/bin/chromium 250
+  when: ansible_distribution == "Ubuntu"
+  command: update-alternatives --install /usr/bin/x-www-browser x-www-browser /usr/bin/chromium-browser 250
   become: yes
 
 # See https://www.chromium.org/administrators/policy-list-3
