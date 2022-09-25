@@ -66,8 +66,6 @@
       - gparted
       - gnome-disk-utility
       - pavucontrol
-      - chromium
-      - webext-ublock-origin-chromium
       - transmission-gtk
       - transmission-remote-gtk
       - engrampa

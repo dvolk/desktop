@@ -1,3 +1,33 @@
+- name: Install chromium
+  when: ansible_distribution == "Debian"
+  become: true
+  apt:
+    update_cache: yes
+    cache_valid_time: 36000
+    state: latest
+    pkg:
+      - chromium
+
+- name: Install ublock origin
+  when: ansible_distribution == "Debian"
+  become: true
+  apt:
+    update_cache: yes
+    cache_valid_time: 36000
+    state: latest
+    pkg:
+      - webext-ublock-origin-chromium
+
+- name: Install ublock origin
+  when: ansible_distribution == "Ubuntu"
+  become: true
+  apt:
+    update_cache: yes
+    cache_valid_time: 36000
+    state: latest
+    pkg:
+      - chromium-browser
+
 - name: Set Chromium as default browser
   command: update-alternatives --install /usr/bin/x-www-browser x-www-browser /usr/bin/chromium 250
   become: yes
