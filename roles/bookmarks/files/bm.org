@@ -62,6 +62,8 @@
 - org-present https://github.com/rlister/org-present
 - emacs themes https://emacsthemes.com/
 - workgroups2 https://github.com/pashinin/workgroups2
+- ef-themes https://github.com/protesilaos/ef-themes
+- exotica theme https://github.com/zenobht/exotica-theme
 * Software hosting
 - Github https://github.com/
 - Gitlab https://about.gitlab.com/
