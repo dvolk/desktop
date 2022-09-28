@@ -1,0 +1,15 @@
+- name: Download k3s
+  ansible.builtin.get_url:
+    url: https://github.com/k3s-io/k3s/releases/download/v1.25.0%2Bk3s1/k3s
+    dest: /opt/tmp/k3s
+    checksum: sha256:4e2bbf2badf94af623ed19363b4d210650cc8af293a8d550784ecafbfb67ba59
+
+- name: Copy k3s to /opt/bin
+  become: yes
+  copy:
+    src: /opt/tmp/k3s
+    dest: /opt/bin/k3s
+
+- name: make k3s executable
+  become: yes
+  command: chmod 755 /opt/bin/k3s

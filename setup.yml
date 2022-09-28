@@ -25,4 +25,6 @@
     - koreader
     - calibre
 
-    - minikube
+    - kubectl
+    - k9s
+    - lazydocker

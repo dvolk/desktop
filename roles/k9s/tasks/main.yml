@@ -1,0 +1,11 @@
+- name: Download k9s
+  ansible.builtin.get_url:
+    url: https://github.com/derailed/k9s/releases/download/v0.26.6/k9s_Linux_x86_64.tar.gz
+    dest: /opt/tmp/k9s_Linux_x86_64.tar.gz
+    checksum: sha256:7abe5d029a29d8108ab405889ea2a8f731765d79333920ac7c2942c6e16d1bd4
+
+- name: Extract k9s to /opt/bin
+  become: yes
+  ansible.builtin.unarchive:
+    src: /opt/tmp/k9s_Linux_x86_64.tar.gz
+    dest: /opt/bin

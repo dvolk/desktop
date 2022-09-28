@@ -1,0 +1,15 @@
+- name: Download kubectl
+  ansible.builtin.get_url:
+    url: https://dl.k8s.io/release/v1.25.2/bin/linux/amd64/kubectl
+    dest: /opt/tmp/kubectl
+    checksum: sha256:8639f2b9c33d38910d706171ce3d25be9b19fc139d0e3d4627f38ce84f9040eb
+
+- name: copy kubectl to /opt/bin
+  become: yes
+  copy:
+    src: /opt/tmp/kubectl
+    dest: /opt/bin/kubectl
+
+- name: make kubectl executable
+  become: yes
+  command: chmod 755 /opt/bin/kubectl
