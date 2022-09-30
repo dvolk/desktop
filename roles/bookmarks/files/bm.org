@@ -139,6 +139,12 @@
 - CSS brightness https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/brightness
 - HTML symbols https://www.toptal.com/designers/htmlarrows/
 - OpenSSL commands https://pleasantpasswords.com/info/pleasant-password-server/b-server-configuration/3-installing-a-3rd-party-certificate/openssl-commands
+- Google HTML/CSS Style Guide https://google.github.io/styleguide/htmlcssguide.html
+- classless css list https://github.com/dbohdan/classless-css
+- sakura css https://oxal.org/projects/sakura/demo/
+- tacit css https://yegor256.github.io/tacit/
+- tufte css https://edwardtufte.github.io/tufte-css/
+- writ css https://writ.cmcenroe.me/reference.html
 * Programming language docs
 - Python https://docs.python.org/3/
 - Nim https://nim-lang.org/documentation.html
@@ -165,12 +171,18 @@
 - jvns containers https://jvns.ca/#kubernetes---containers
 - osquery https://github.com/fleetdm/fleet
 - kubernetes examples https://github.com/kubernetes/examples
+- judo https://github.com/rollcat/judo
+- kind https://kind.sigs.k8s.io/
+- k3s https://k3s.io/
+- k3s docs https://docs.k3s.io/
+- lazydocker https://github.com/jesseduffield/lazydocker
 * Operating systems
 - Debian https://www.debian.org/
 - Ubuntu https://ubuntu.com/
 - NixOS https://nixos.org/
 - Qubes OS https://www.qubes-os.org/
 - Alpinelinux https://alpinelinux.org/
+- SerenityOS https://serenityos.org/
 * Fiction/Books
 - Greg Egan https://www.gregegan.net/
 - Ted Chiang https://www.goodreads.com/author/show/130698.Ted_Chiang
