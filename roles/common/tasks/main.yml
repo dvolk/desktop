@@ -128,6 +128,7 @@
       - rzip
       - unalz
       - p7zip-rar
+      - ncal
 
 - name: Install lxd snap
   become: yes
