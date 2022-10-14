@@ -91,4 +91,19 @@ https://superuser.com/questions/602252/can-chrome-browser-history-be-exported-to
 
 ## Run docker in lxd
 
+```
 lxc config set CONTAINER-NAME security.nesting=true security.syscalls.intercept.mknod=true security.syscalls.intercept.setxattr=true
+```
+
+## Build/Install emacs 28.2 on centos 7
+
+```
+wget https://www.mirrorservice.org/sites/ftp.gnu.org/gnu/emacs/emacs-28.2.tar.xz
+tar xf emacs-28.2.tar.xz
+cd emacs-28.2
+yum install gcc gnutls-devel ncurses-devel
+./configure
+sudo make install
+```
+
+
