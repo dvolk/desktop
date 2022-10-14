@@ -145,6 +145,7 @@
 - tacit css https://yegor256.github.io/tacit/
 - tufte css https://edwardtufte.github.io/tufte-css/
 - writ css https://writ.cmcenroe.me/reference.html
+- mermaid.js https://mermaid-js.github.io/mermaid/#/./flowchart?id=flowcharts-basic-syntax
 * Programming language docs
 - Python https://docs.python.org/3/
 - Nim https://nim-lang.org/documentation.html
