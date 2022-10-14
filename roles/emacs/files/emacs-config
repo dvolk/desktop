@@ -231,3 +231,6 @@
 
 (setq custom-file "~/.emacs.d/custom.el")
 (load-file custom-file)
+
+(with-eval-after-load 'treemacs
+    (define-key treemacs-mode-map [mouse-1] #'treemacs-single-click-expand-action))
