@@ -1,14 +1,11 @@
 # desktop
 
-Set up a desktop with ansible
+Set up a perculiar desktop system with ansible
 
 <img src="https://i.imgur.com/k8RlwOt.png">
 
 ## Requirements
 
-Tested on:
-
-- Ubuntu 22.04
 - Debian 11
 
 ## Running
