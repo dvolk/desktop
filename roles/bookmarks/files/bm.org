@@ -177,6 +177,7 @@
 - k3s https://k3s.io/
 - k3s docs https://docs.k3s.io/
 - lazydocker https://github.com/jesseduffield/lazydocker
+- Podman systemd https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux_atomic_host/7/html/managing_containers/running_containers_as_systemd_services_with_podman
 * Operating systems
 - Debian https://www.debian.org/
 - Ubuntu https://ubuntu.com/
