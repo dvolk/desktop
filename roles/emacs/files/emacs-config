@@ -15,7 +15,6 @@
                                   flycheck
                                   company
                                   company-quickhelp
-                                  avy
                                   which-key
                                   helm-xref
                                   rainbow-delimiters
@@ -23,16 +22,13 @@
                                   yaml-mode
                                   json-mode
                                   jinja2-mode
-                                  elfeed
-                                  focus
-                                  lsp-focus
                                   twilight-bright-theme
                                   twilight-anti-bright-theme
                                   exotica-theme
-                                  hide-mode-line
                                   web-mode
                                   nim-mode
                                   color-identifiers-mode
+                                  zoom-window
                                   ))
 
 (when (cl-find-if-not #'package-installed-p package-selected-packages)
@@ -148,6 +144,7 @@
 (add-hook 'org-mode-hook #'flyspell-mode)
 
 ;; prog mode minor modes
+(add-hook 'prog-mode-hook #'yas-minor-mode)
 (add-hook 'prog-mode-hook #'lsp-deferred)
 ;;(add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (add-hook 'prog-mode-hook #'diff-hl-mode)
@@ -205,32 +202,24 @@
 ;                   (unless buffer-file-name
 ;                     (let ((buffer-file-name (buffer-name)))
 ;                       (set-auto-mode)))))
+
 (setq confirm-kill-emacs #'yes-or-no-p)
 (setq window-resize-pixelwise t)
 (setq frame-resize-pixelwise t)
+
 (save-place-mode t)
 (savehist-mode t)
 (recentf-mode t)
-
-(defun unhtml (start end)
-  (interactive "r")
-  (save-excursion
-    (save-restriction
-      (narrow-to-region start end)
-      (goto-char (point-min))
-      (replace-string "&" "&amp;")
-      (goto-char (point-min))
-      (replace-string "<" "&lt;")
-      (goto-char (point-min))
-      (replace-string ">" "&gt;")
-      (goto-char (point-min))
-      (replace-string "'" "&#39;")
-      (goto-char (point-min))
-      (replace-string "\"" "&amp;")
-      )))
 
 (setq custom-file "~/.emacs.d/custom.el")
 (load-file custom-file)
 
 (with-eval-after-load 'treemacs
-    (define-key treemacs-mode-map [mouse-1] #'treemacs-single-click-expand-action))
+  (define-key treemacs-mode-map [mouse-1] #'treemacs-single-click-expand-action))
+
+(require 'zoom-window)
+(global-set-key (kbd "C-x C-z") 'zoom-window-zoom)
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((python . t)))
