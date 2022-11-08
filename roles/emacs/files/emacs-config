@@ -22,13 +22,15 @@
                                   yaml-mode
                                   json-mode
                                   jinja2-mode
-                                  twilight-bright-theme
-                                  twilight-anti-bright-theme
-                                  exotica-theme
                                   web-mode
                                   nim-mode
                                   color-identifiers-mode
                                   zoom-window
+                                  twilight-bright-theme
+                                  twilight-anti-bright-theme
+                                  exotica-theme
+                                  ef-themes
+                                  catppuccin-theme
                                   ))
 
 (when (cl-find-if-not #'package-installed-p package-selected-packages)
@@ -146,7 +148,7 @@
 ;; prog mode minor modes
 (add-hook 'prog-mode-hook #'yas-minor-mode)
 (add-hook 'prog-mode-hook #'lsp-deferred)
-;;(add-hook 'prog-mode-hook #'display-line-numbers-mode)
+(add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (add-hook 'prog-mode-hook #'diff-hl-mode)
 (add-hook 'prog-mode-hook #'diff-hl-margin-mode)
 (add-hook 'prog-mode-hook #'diff-hl-flydiff-mode)
@@ -159,7 +161,7 @@
 (add-hook 'python-mode-hook #'python-black-on-save-mode)
 (add-hook 'nim-mode-hook 'nimsuggest-mode)
 
-;;(add-hook 'yaml-mode-hook #'display-line-numbers-mode)
+(add-hook 'yaml-mode-hook #'display-line-numbers-mode)
 (add-hook 'yaml-mode-hook #'diff-hl-mode)
 (add-hook 'yaml-mode-hook #'diff-hl-margin-mode)
 (add-hook 'yaml-mode-hook #'diff-hl-flydiff-mode)
