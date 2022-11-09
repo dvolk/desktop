@@ -6,302 +6,302 @@
 #+HTML_HEAD:   ul { padding: 0; margin: 0; list-style-type: none; }
 #+HTML_HEAD: </style>
 * Desktop Software
-- Emacs https://www.gnu.org/software/emacs/
-- Git https://git-scm.com/
-- i3 https://i3wm.org/
-- Rawtherappe https://www.rawtherapee.com/
-- OBS https://obsproject.com/
-- Nodejs https://nodejs.org/en/
-- Chromium policies https://chromium.googlesource.com/chromium/chromium/+/master/chrome/app/policy/policy_templates.json
-- Nim watchdog https://github.com/zendbit/nim.nwatchdog
-- sysz https://github.com/joehillen/sysz
-- Zenity https://help.gnome.org/users/zenity/stable/
-- Virtualbox https://www.virtualbox.org/
-- Kitty terminal https://github.com/kovidgoyal/kitty
-- List of OSS software https://en.wikipedia.org/wiki/List_of_free_and_open-source_software_packages
-- Calibre https://calibre-ebook.com/
-- Koreader https://koreader.rocks/
-- sqlite-utils https://sqlite-utils.datasette.io/en/stable/index.html
-- Nyxt browser https://nyxt.atlas.engineer/download
-- LibreWolf browser https://librewolf.net/installation/linux/
-- Godot https://godotengine.org/
-- osquery https://osquery.io/
+- [[https://www.gnu.org/software/emacs/][Emacs]]
+- [[https://git-scm.com/][Git]]
+- [[https://i3wm.org/][i3]]
+- [[https://www.rawtherapee.com/][Rawtherappe]]
+- [[https://obsproject.com/][OBS]]
+- [[https://nodejs.org/en/][Nodejs]]
+- [[https://chromium.googlesource.com/chromium/chromium/+/master/chrome/app/policy/policy_templates.json][Chromium policies]]
+- [[https://github.com/zendbit/nim.nwatchdog][Nim watchdog]]
+- [[https://github.com/joehillen/sysz][sysz]]
+- [[https://help.gnome.org/users/zenity/stable/][Zenity]]
+- [[https://www.virtualbox.org/][Virtualbox]]
+- [[https://github.com/kovidgoyal/kitty][Kitty terminal]]
+- [[https://en.wikipedia.org/wiki/List_of_free_and_open-source_software_packages][List of OSS software]]
+- [[https://calibre-ebook.com/][Calibre]]
+- [[https://koreader.rocks/][Koreader]]
+- [[https://sqlite-utils.datasette.io/en/stable/index.html][sqlite-utils]]
+- [[https://nyxt.atlas.engineer/download][Nyxt browser]]
+- [[https://librewolf.net/installation/linux/][LibreWolf browser]]
+- [[https://godotengine.org/][Godot]]
+- [[https://osquery.io/][osquery]]
 * Self-hosted server software
-- Gitea https://gitea.io/
-- Mongo https://www.mongodb.com/
-- Focal board https://www.focalboard.com/download/personal-edition/ubuntu/
-- Filebrowser https://filebrowser.org/features
-- Fossil https://fossil-scm.org/home/doc/trunk/www/index.wiki
-- Jupyter book https://github.com/executablebooks/jupyter-book
-- FreshRSS https://github.com/FreshRSS/FreshRSS
-- The Lounge https://thelounge.chat/
-- Nimforum https://github.com/nim-lang/nimforum
-- Cockpit project https://cockpit-project.org/
-- Cockpit localhost http://localhost:9090/system
-- Portainer https://docs.portainer.io/
-- Docker swarm https://docs.docker.com/engine/swarm/swarm-tutorial/create-swarm/
-- Loqseq https://github.com/logseq/logseq
+- [[https://gitea.io/][Gitea]]
+- [[https://www.mongodb.com/][Mongo]]
+- [[https://www.focalboard.com/download/personal-edition/ubuntu/][Focal board]]
+- [[https://filebrowser.org/features][Filebrowser]]
+- [[https://fossil-scm.org/home/doc/trunk/www/index.wiki][Fossil]]
+- [[https://github.com/executablebooks/jupyter-book][Jupyter book]]
+- [[https://github.com/FreshRSS/FreshRSS][FreshRSS]]
+- [[https://thelounge.chat/][The Lounge]]
+- [[https://github.com/nim-lang/nimforum][Nimforum]]
+- [[https://cockpit-project.org/][Cockpit project]]
+- [[http://localhost:9090/system][Cockpit localhost]]
+- [[https://docs.portainer.io/][Portainer]]
+- [[https://docs.docker.com/engine/swarm/swarm-tutorial/create-swarm/][Docker swarm]]
+- [[https://github.com/logseq/logseq][Loqseq]]
 * Free SaaS
-- i3 configurator https://thomashunter.name/i3-configurator/
+- [[https://thomashunter.name/i3-configurator/][i3 configurator]]
 * Emacs packages
-- avy https://github.com/abo-abo/avy
-- company http://company-mode.github.io/
-- company quickhelp https://www.github.com/expez/company-quickhelp
-- diff-hl https://github.com/dgutov/diff-hl
-- elfeed  https://github.com/skeeto/elfeed
-- flycheck http://www.flycheck.org
-- focus-mode https://github.com/larstvei/Focus
-- magit https://github.com/magit/magit
-- projectile https://github.com/bbatsov/projectile
-- twilight-bright-theme https://github.com/jimeh/twilight-bright-theme.el
-- twilight-anti-bright-theme https://github.com/jimeh/twilight-anti-bright-theme.el
-- web-mode https://web-mode.org
-- osm https://github.com/minad/osm
-- treemacs https://github.com/Alexander-Miller/treemacs
-- org-mode https://orgmode.org/
-- org-present https://github.com/rlister/org-present
-- emacs themes https://emacsthemes.com/
-- workgroups2 https://github.com/pashinin/workgroups2
-- ef-themes https://github.com/protesilaos/ef-themes
-- exotica theme https://github.com/zenobht/exotica-theme
+- [[https://github.com/abo-abo/avy][avy]]
+- [[http://company-mode.github.io/][company]]
+- [[https://www.github.com/expez/company-quickhelp][company quickhelp]]
+- [[https://github.com/dgutov/diff-hl][diff-hl]]
+- [[https://github.com/skeeto/elfeed][elfeed ]]
+- [[http://www.flycheck.org][flycheck]]
+- [[https://github.com/larstvei/Focus][focus-mode]]
+- [[https://github.com/magit/magit][magit]]
+- [[https://github.com/bbatsov/projectile][projectile]]
+- [[https://github.com/jimeh/twilight-bright-theme.el][twilight-bright-theme]]
+- [[https://github.com/jimeh/twilight-anti-bright-theme.el][twilight-anti-bright-theme]]
+- [[https://web-mode.org][web-mode]]
+- [[https://github.com/minad/osm][osm]]
+- [[https://github.com/Alexander-Miller/treemacs][treemacs]]
+- [[https://orgmode.org/][org-mode]]
+- [[https://github.com/rlister/org-present][org-present]]
+- [[https://emacsthemes.com/][emacs themes]]
+- [[https://github.com/pashinin/workgroups2][workgroups2]]
+- [[https://github.com/protesilaos/ef-themes][ef-themes]]
+- [[https://github.com/zenobht/exotica-theme][exotica theme]]
 * Software hosting
-- Github https://github.com/
-- Gitlab https://about.gitlab.com/
-- Gitee https://gitee.com/
-- GNOME gitlab https://gitlab.gnome.org/
-- MELPA https://github.com/melpa/melpa
-- ELPA https://elpa.gnu.org/
+- [[https://github.com/][Github]]
+- [[https://about.gitlab.com/][Gitlab]]
+- [[https://gitee.com/][Gitee]]
+- [[https://gitlab.gnome.org/][GNOME gitlab]]
+- [[https://github.com/melpa/melpa][MELPA]]
+- [[https://elpa.gnu.org/][ELPA]]
 * Python libraries
-- SUDS (SOAP) https://github.com/suds-community/suds
-- Flask https://flask.palletsprojects.com/en/2.1.x/
-- BeautifulSoup https://www.crummy.com/software/BeautifulSoup/bs4/doc/
-- Selenium https://selenium-python.readthedocs.io/
-- Redmail https://pypi.org/project/redmail/
-- Matlab https://www.mathworks.com/help/matlab/matlab_external/install-the-matlab-engine-for-python.html
-- Pydantic https://pydantic-docs.helpmanual.io/usage/models/
-- Eel https://github.com/ChrisKnott/Eel
-- Watchdog https://github.com/gorakhargosh/watchdog
-- Qiskit https://qiskit.org/
-- Celery (with filesystem) https://www.distributedpython.com/2018/07/03/simple-celery-setup/
-- psycopg-binary  https://pypi.org/project/psycopg2-binary/
-- pykube https://pykube.readthedocs.io/en/latest/index.html
-- minikube https://minikube.sigs.k8s.io/docs/start/
+- [[https://github.com/suds-community/suds][SUDS (SOAP)]]
+- [[https://flask.palletsprojects.com/en/2.1.x/][Flask]]
+- [[https://www.crummy.com/software/BeautifulSoup/bs4/doc/][BeautifulSoup]]
+- [[https://selenium-python.readthedocs.io/][Selenium]]
+- [[https://pypi.org/project/redmail/][Redmail]]
+- [[https://www.mathworks.com/help/matlab/matlab_external/install-the-matlab-engine-for-python.html][Matlab]]
+- [[https://pydantic-docs.helpmanual.io/usage/models/][Pydantic]]
+- [[https://github.com/ChrisKnott/Eel][Eel]]
+- [[https://github.com/gorakhargosh/watchdog][Watchdog]]
+- [[https://qiskit.org/][Qiskit]]
+- [[https://www.distributedpython.com/2018/07/03/simple-celery-setup/][Celery (with filesystem)]]
+- [[https://pypi.org/project/psycopg2-binary/][psycopg-binary ]]
+- [[https://pykube.readthedocs.io/en/latest/index.html][pykube]]
+- [[https://minikube.sigs.k8s.io/docs/start/][minikube]]
 * Programming languages
-- Carbon https://github.com/carbon-language/carbon-lang
+- [[https://github.com/carbon-language/carbon-lang][Carbon]]
 * Fonts
-- scientifica https://github.com/nerdypepper/scientifica
+- [[https://github.com/nerdypepper/scientifica][scientifica]]
 * Nim libraries
-- Print https://github.com/treeform/print
-- Nico https://github.com/ftsf/nico
-- nimgame2 https://github.com/Vladar4/nimgame2
-- tecs https://github.com/Timofffee/tecs.nim
-- Neel https://github.com/Niminem/Neel
-- nimdow https://github.com/avahe-kellenberger/nimdow
-- moe https://github.com/fox0430/moe
-- Curated packages https://github.com/nim-lang/Nim/wiki/Curated-Packages
-- prologue https://github.com/planety/prologue
-- nimpylib https://github.com/Yardanico/nimpylib
+- [[https://github.com/treeform/print][Print]]
+- [[https://github.com/ftsf/nico][Nico]]
+- [[https://github.com/Vladar4/nimgame2][nimgame2]]
+- [[https://github.com/Timofffee/tecs.nim][tecs]]
+- [[https://github.com/Niminem/Neel][Neel]]
+- [[https://github.com/avahe-kellenberger/nimdow][nimdow]]
+- [[https://github.com/fox0430/moe][moe]]
+- [[https://github.com/nim-lang/Nim/wiki/Curated-Packages][Curated packages]]
+- [[https://github.com/planety/prologue][prologue]]
+- [[https://github.com/Yardanico/nimpylib][nimpylib]]
 * Rust libraries
-- Bevy https://github.com/bevyengine/bevy
+- [[https://github.com/bevyengine/bevy][Bevy]]
 * Go libraries
-- Ent. https://entgo.io/docs/getting-started/
-- Pagoda https://github.com/mikestefanello/pagoda
-- Chi https://github.com/go-chi/chi
+- [[https://entgo.io/docs/getting-started/][Ent.]]
+- [[https://github.com/mikestefanello/pagoda][Pagoda]]
+- [[https://github.com/go-chi/chi][Chi]]
 * Lua libraries
-- LOVE https://love2d.org/
+- [[https://love2d.org/][LOVE]]
 * Mine common software
-- sp3 https://github.com/dvolk/sp3
-- shawl5 https://github.com/dvolk/shawl5
+- [[https://github.com/dvolk/sp3][sp3]]
+- [[https://github.com/dvolk/shawl5][shawl5]]
 * Work common software
-- MATLAB https://en.wikipedia.org/wiki/MATLAB
-- Nextflow https://nextflow.io/
+- [[https://en.wikipedia.org/wiki/MATLAB][MATLAB]]
+- [[https://nextflow.io/][Nextflow]]
 * Web dev
-- W3.CSS https://www.w3schools.com/w3css/default.asp
-- Fontawesome4 https://fontawesome.com/v4/icons/
-- X11 color names https://en.wikipedia.org/wiki/X11_color_names
-- Colorsafe http://colorsafe.co/
-- Color extract http://www.coolphptools.com/color_extract
-- Angular https://angular.io/
-- React https://reactjs.org/
-- Jquery https://www.syncfusion.com/succinctly-free-ebooks/jquery/core-jquery
-- Alpinejs https://alpinejs.dev/
-- jquery ajax https://api.jquery.com/jquery.ajax/
-- Svelte https://svelte.dev/
-- Spectre CSS https://picturepan2.github.io/spectre/index.html
-- Marx CSS https://github.com/mblode/marx
-- Pantone https://en.wikipedia.org/wiki/Pantone
-- Puppertino https://codedgar.github.io/Puppertino/
-- Material design icons https://materialdesignicons.com/
-- HTMx https://htmx.org/reference/
-- Petite Vue https://github.com/vuejs/petite-vue
-- Bulma https://bulma.io/
-- Water.css https://watercss.kognise.dev/
-- CSS brightness https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/brightness
-- HTML symbols https://www.toptal.com/designers/htmlarrows/
-- OpenSSL commands https://pleasantpasswords.com/info/pleasant-password-server/b-server-configuration/3-installing-a-3rd-party-certificate/openssl-commands
-- Google HTML/CSS Style Guide https://google.github.io/styleguide/htmlcssguide.html
-- classless css list https://github.com/dbohdan/classless-css
-- sakura css https://oxal.org/projects/sakura/demo/
-- tacit css https://yegor256.github.io/tacit/
-- tufte css https://edwardtufte.github.io/tufte-css/
-- writ css https://writ.cmcenroe.me/reference.html
-- mermaid.js https://mermaid-js.github.io/mermaid/#/./flowchart?id=flowcharts-basic-syntax
+- [[https://www.w3schools.com/w3css/default.asp][W3.CSS]]
+- [[https://fontawesome.com/v4/icons/][Fontawesome4]]
+- [[https://en.wikipedia.org/wiki/X11_color_names][X11 color names]]
+- [[http://colorsafe.co/][Colorsafe]]
+- [[http://www.coolphptools.com/color_extract][Color extract]]
+- [[https://angular.io/][Angular]]
+- [[https://reactjs.org/][React]]
+- [[https://www.syncfusion.com/succinctly-free-ebooks/jquery/core-jquery][Jquery]]
+- [[https://alpinejs.dev/][Alpinejs]]
+- [[https://api.jquery.com/jquery.ajax/][jquery ajax]]
+- [[https://svelte.dev/][Svelte]]
+- [[https://picturepan2.github.io/spectre/index.html][Spectre CSS]]
+- [[https://github.com/mblode/marx][Marx CSS]]
+- [[https://en.wikipedia.org/wiki/Pantone][Pantone]]
+- [[https://codedgar.github.io/Puppertino/][Puppertino]]
+- [[https://materialdesignicons.com/][Material design icons]]
+- [[https://htmx.org/reference/][HTMx]]
+- [[https://github.com/vuejs/petite-vue][Petite Vue]]
+- [[https://bulma.io/][Bulma]]
+- [[https://watercss.kognise.dev/][Water.css]]
+- [[https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/brightness][CSS brightness]]
+- [[https://www.toptal.com/designers/htmlarrows/][HTML symbols]]
+- [[https://pleasantpasswords.com/info/pleasant-password-server/b-server-configuration/3-installing-a-3rd-party-certificate/openssl-commands][OpenSSL commands]]
+- [[https://google.github.io/styleguide/htmlcssguide.html][Google HTML/CSS Style Guide]]
+- [[https://github.com/dbohdan/classless-css][classless css list]]
+- [[https://oxal.org/projects/sakura/demo/][sakura css]]
+- [[https://yegor256.github.io/tacit/][tacit css]]
+- [[https://edwardtufte.github.io/tufte-css/][tufte css]]
+- [[https://writ.cmcenroe.me/reference.html][writ css]]
+- [[https://mermaid-js.github.io/mermaid/#/./flowchart?id=flowcharts-basic-syntax][mermaid.js]]
 * Programming language docs
-- Python https://docs.python.org/3/
-- Nim https://nim-lang.org/documentation.html
-- C++ guidelines https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md
-- Go https://go.dev/learn/
-- Tour of Go https://go.dev/tour/welcome/1
+- [[https://docs.python.org/3/][Python]]
+- [[https://nim-lang.org/documentation.html][Nim]]
+- [[https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md][C++ guidelines]]
+- [[https://go.dev/learn/][Go]]
+- [[https://go.dev/tour/welcome/1][Tour of Go]]
 * "Dev-ops"
-- Ansible https://docs.ansible.com/ansible/latest/collections/index.html
-- Ansible built-in https://docs.ansible.com/ansible/latest/collections/ansible/builtin/index.html#plugin-index
-- Ansible semaphore https://ansible-semaphore.com/
-- Ansible ad-hoc https://docs.ansible.com/ansible/latest/user_guide/intro_adhoc.html
-- Ansible Git https://docs.ansible.com/ansible/latest/collections/ansible/builtin/git_module.html
-- Kubernetes stories https://hn.algolia.com/?q=kubernetes
-- Kubernetes stories https://hn.algolia.com/?q=k8s
-- Systemd by example https://seb.jambor.dev/posts/systemd-by-example-part-1-minimization/
-- Podman https://podman.io/getting-started/
-- Kubernetes concepts https://kubernetes.io/docs/concepts/
-- Portainer https://www.portainer.io/?hsLang=en
-- Hashicorp nomad https://learn.hashicorp.com/nomad
-- k9s kubernetes tui https://k9scli.io/topics/install/
-- Container journal https://containerjournal.com/
-- systemd nspawn https://www.freedesktop.org/software/systemd/man/systemd-nspawn.html
-- What is a kubelet https://kamalmarhubi.com/blog/2015/08/27/what-even-is-a-kubelet/
-- jvns containers https://jvns.ca/#kubernetes---containers
-- osquery https://github.com/fleetdm/fleet
-- kubernetes examples https://github.com/kubernetes/examples
-- judo https://github.com/rollcat/judo
-- kind https://kind.sigs.k8s.io/
-- k3s https://k3s.io/
-- k3s docs https://docs.k3s.io/
-- lazydocker https://github.com/jesseduffield/lazydocker
-- Podman systemd https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux_atomic_host/7/html/managing_containers/running_containers_as_systemd_services_with_podman
+- [[https://docs.ansible.com/ansible/latest/collections/index.html][Ansible]]
+- [[https://docs.ansible.com/ansible/latest/collections/ansible/builtin/index.html#plugin-index][Ansible built-in]]
+- [[https://ansible-semaphore.com/][Ansible semaphore]]
+- [[https://docs.ansible.com/ansible/latest/user_guide/intro_adhoc.html][Ansible ad-hoc]]
+- [[https://docs.ansible.com/ansible/latest/collections/ansible/builtin/git_module.html][Ansible Git]]
+- [[https://hn.algolia.com/?q=kubernetes][Kubernetes stories]]
+- [[https://hn.algolia.com/?q=k8s][Kubernetes stories]]
+- [[https://seb.jambor.dev/posts/systemd-by-example-part-1-minimization/][Systemd by example]]
+- [[https://podman.io/getting-started/][Podman]]
+- [[https://kubernetes.io/docs/concepts/][Kubernetes concepts]]
+- [[https://www.portainer.io/?hsLang=en][Portainer]]
+- [[https://learn.hashicorp.com/nomad][Hashicorp nomad]]
+- [[https://k9scli.io/topics/install/][k9s kubernetes tui]]
+- [[https://containerjournal.com/][Container journal]]
+- [[https://www.freedesktop.org/software/systemd/man/systemd-nspawn.html][systemd nspawn]]
+- [[https://kamalmarhubi.com/blog/2015/08/27/what-even-is-a-kubelet/][What is a kubelet]]
+- [[https://jvns.ca/#kubernetes---containers][jvns containers]]
+- [[https://github.com/fleetdm/fleet][osquery]]
+- [[https://github.com/kubernetes/examples][kubernetes examples]]
+- [[https://github.com/rollcat/judo][judo]]
+- [[https://kind.sigs.k8s.io/][kind]]
+- [[https://k3s.io/][k3s]]
+- [[https://docs.k3s.io/][k3s docs]]
+- [[https://github.com/jesseduffield/lazydocker][lazydocker]]
+- [[https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux_atomic_host/7/html/managing_containers/running_containers_as_systemd_services_with_podman][Podman systemd]]
 * Operating systems
-- Debian https://www.debian.org/
-- Ubuntu https://ubuntu.com/
-- NixOS https://nixos.org/
-- Qubes OS https://www.qubes-os.org/
-- Alpinelinux https://alpinelinux.org/
-- SerenityOS https://serenityos.org/
+- [[https://www.debian.org/][Debian]]
+- [[https://ubuntu.com/][Ubuntu]]
+- [[https://nixos.org/][NixOS]]
+- [[https://www.qubes-os.org/][Qubes OS]]
+- [[https://alpinelinux.org/][Alpinelinux]]
+- [[https://serenityos.org/][SerenityOS]]
 * Fiction/Books
-- Greg Egan https://www.gregegan.net/
-- Ted Chiang https://www.goodreads.com/author/show/130698.Ted_Chiang
-- Peter Watts https://www.rifters.com/
-- Stephen Baxter https://www.stephen-baxter.com/
-- Yahtzee Croshaw https://www.goodreads.com/author/show/3443203.Yahtzee_Croshaw
-- Andy Weir https://www.goodreads.com/author/show/6540057.Andy_Weir
-- Vernor Vinge https://www.goodreads.com/author/show/44037.Vernor_Vinge
-- David Brin https://www.goodreads.com/author/show/14078.David_Brin
-- Iain Banks https://www.goodreads.com/author/show/5807106.Iain_M_Banks
-- Roger Zelazny https://www.goodreads.com/author/show/3619.Roger_Zelazny
-- Peter Hamilton https://www.goodreads.com/author/show/25375.Peter_F_Hamilton
-- Dan Simmons https://www.goodreads.com/author/show/2687.Dan_Simmons
-- Arthur Clarke https://www.goodreads.com/author/show/7779.Arthur_C_Clarke
-- Alice Munro https://www.goodreads.com/author/show/6410.Alice_Munro
-- Iris Murdoch https://www.goodreads.com/author/show/7287.Iris_Murdoch
-- Ma Yan https://www.goodreads.com/author/show/121407.Mo_Yan
-- Liu Cixin https://www.goodreads.com/author/show/5780686.Liu_Cixin
-- qntm https://www.goodreads.com/author/show/8352974.qntm
-- qntm https://qntm.org/
-- exubr1a https://www.goodreads.com/author/show/15241440.Exurb1a
-- List of literary awards https://en.wikipedia.org/wiki/List_of_literary_awards
-- Neal Stephenson https://www.goodreads.com/author/show/545.Neal_Stephenson
-- Kazuo Ishiguro https://www.goodreads.com/author/show/4280.Kazuo_Ishiguro
-- William Gibson https://www.goodreads.com/author/show/9226.William_Gibson
-- Mingwei Song https://www.goodreads.com/author/show/14261954.Mingwei_Song
-- Dennis Taylor https://www.goodreads.com/author/show/12130438.Dennis_E_Taylor
-- Ken Liu https://www.goodreads.com/author/show/2917920.Ken_Liu
+- [[https://www.gregegan.net/][Greg Egan]]
+- [[https://www.goodreads.com/author/show/130698.Ted_Chiang][Ted Chiang]]
+- [[https://www.rifters.com/][Peter Watts]]
+- [[https://www.stephen-baxter.com/][Stephen Baxter]]
+- [[https://www.goodreads.com/author/show/3443203.Yahtzee_Croshaw][Yahtzee Croshaw]]
+- [[https://www.goodreads.com/author/show/6540057.Andy_Weir][Andy Weir]]
+- [[https://www.goodreads.com/author/show/44037.Vernor_Vinge][Vernor Vinge]]
+- [[https://www.goodreads.com/author/show/14078.David_Brin][David Brin]]
+- [[https://www.goodreads.com/author/show/5807106.Iain_M_Banks][Iain Banks]]
+- [[https://www.goodreads.com/author/show/3619.Roger_Zelazny][Roger Zelazny]]
+- [[https://www.goodreads.com/author/show/25375.Peter_F_Hamilton][Peter Hamilton]]
+- [[https://www.goodreads.com/author/show/2687.Dan_Simmons][Dan Simmons]]
+- [[https://www.goodreads.com/author/show/7779.Arthur_C_Clarke][Arthur Clarke]]
+- [[https://www.goodreads.com/author/show/6410.Alice_Munro][Alice Munro]]
+- [[https://www.goodreads.com/author/show/7287.Iris_Murdoch][Iris Murdoch]]
+- [[https://www.goodreads.com/author/show/121407.Mo_Yan][Ma Yan]]
+- [[https://www.goodreads.com/author/show/5780686.Liu_Cixin][Liu Cixin]]
+- [[https://www.goodreads.com/author/show/8352974.qntm][qntm]]
+- [[https://qntm.org/][qntm]]
+- [[https://www.goodreads.com/author/show/15241440.Exurb1a][exubr1a]]
+- [[https://en.wikipedia.org/wiki/List_of_literary_awards][List of literary awards]]
+- [[https://www.goodreads.com/author/show/545.Neal_Stephenson][Neal Stephenson]]
+- [[https://www.goodreads.com/author/show/4280.Kazuo_Ishiguro][Kazuo Ishiguro]]
+- [[https://www.goodreads.com/author/show/9226.William_Gibson][William Gibson]]
+- [[https://www.goodreads.com/author/show/14261954.Mingwei_Song][Mingwei Song]]
+- [[https://www.goodreads.com/author/show/12130438.Dennis_E_Taylor][Dennis Taylor]]
+- [[https://www.goodreads.com/author/show/2917920.Ken_Liu][Ken Liu]]
 * Fiction magazines
-- Clarkesworld https://clarkesworldmagazine.com/
-- Lightspeed https://www.lightspeedmagazine.com/
+- [[https://clarkesworldmagazine.com/][Clarkesworld]]
+- [[https://www.lightspeedmagazine.com/][Lightspeed]]
 * Guides
-- Little OS book http://littleosbook.github.io/
-- Linux ACL permissions https://tylersguides.com/guides/linux-acl-permissions-tutorial/
-- XFCE custom actions https://docs.xfce.org/xfce/thunar/custom-actions
-- Desktop entries https://wiki.archlinux.org/title/desktop_entries
+- [[http://littleosbook.github.io/][Little OS book]]
+- [[https://tylersguides.com/guides/linux-acl-permissions-tutorial/][Linux ACL permissions]]
+- [[https://docs.xfce.org/xfce/thunar/custom-actions][XFCE custom actions]]
+- [[https://wiki.archlinux.org/title/desktop_entries][Desktop entries]]
 * News
-- BBC https://www.bbc.co.uk/
-- ECNS http://www.ecns.cn/
-- Pravda https://english.pravda.ru/
-- Aljazeera https://www.aljazeera.com/
-- LWN https://lwn.net/
-- Container News https://container-news.com/
-- Phoronix https://www.phoronix.com/
-- Liliputing https://liliputing.com/
+- [[https://www.bbc.co.uk/][BBC]]
+- [[http://www.ecns.cn/][ECNS]]
+- [[https://english.pravda.ru/][Pravda]]
+- [[https://www.aljazeera.com/][Aljazeera]]
+- [[https://lwn.net/][LWN]]
+- [[https://container-news.com/][Container News]]
+- [[https://www.phoronix.com/][Phoronix]]
+- [[https://liliputing.com/][Liliputing]]
 * User-submitted news sites
-- Hacker News https://news.ycombinator.com/
-- Metafilter https://www.metafilter.com/
-- Planet Debian https://planet.debian.org/
-- Lemmy https://lemmy.ml/
-- Wikinews https://en.wikinews.org/wiki/Main_Page
-- Planet Emacs https://planet.emacslife.com/
+- [[https://news.ycombinator.com/][Hacker News]]
+- [[https://www.metafilter.com/][Metafilter]]
+- [[https://planet.debian.org/][Planet Debian]]
+- [[https://lemmy.ml/][Lemmy]]
+- [[https://en.wikinews.org/wiki/Main_Page][Wikinews]]
+- [[https://planet.emacslife.com/][Planet Emacs]]
 * Wasting time
-- Wikipedia https://en.wikipedia.org/
-- Stackoverflow https://stackoverflow.com/questions
-- Worldbuilding stackoverflow https://worldbuilding.stackexchange.com/
-- Wikihow https://www.wikihow.com/Main-Page
-- Steam https://store.steampowered.com/
-- No Tech Magazine https://www.notechmagazine.com/
-- DatoRSS https://datorss.com/
-- ISO 27001 https://www.iso.org/isoiec-27001-information-security.html
-- Typelit https://www.typelit.io/
-- Wiktionary https://en.wiktionary.org/wiki/Wiktionary:Main_Page
-- GOG https://www.gog.com/
-- Instructables https://www.instructables.com/Duck-Tape-Book-Binding-Cheepo-Delux/
-- Wizard Zines https://questions.wizardzines.com/
-- Random streetview https://randomstreetview.com/
-- Geoguessr https://www.geoguessr.com/
-- Brilliant https://brilliant.org/
-- Hackaday https://hackaday.com/
-- 512kb club https://512kb.club/
-- are.na https://www.are.na/
-- Academia stackexchange https://academia.stackexchange.com/
-- Ask HN: How do you find the weird parts of the web? https://news.ycombinator.com/item?id=32804832
-- Autosummarized HN https://danieljanus.pl/autosummarized-hn/
+- [[https://en.wikipedia.org/][Wikipedia]]
+- [[https://stackoverflow.com/questions][Stackoverflow]]
+- [[https://worldbuilding.stackexchange.com/][Worldbuilding stackoverflow]]
+- [[https://www.wikihow.com/Main-Page][Wikihow]]
+- [[https://store.steampowered.com/][Steam]]
+- [[https://www.notechmagazine.com/][No Tech Magazine]]
+- [[https://datorss.com/][DatoRSS]]
+- [[https://www.iso.org/isoiec-27001-information-security.html][ISO 27001]]
+- [[https://www.typelit.io/][Typelit]]
+- [[https://en.wiktionary.org/wiki/Wiktionary:Main_Page][Wiktionary]]
+- [[https://www.gog.com/][GOG]]
+- [[https://www.instructables.com/Duck-Tape-Book-Binding-Cheepo-Delux/][Instructables]]
+- [[https://questions.wizardzines.com/][Wizard Zines]]
+- [[https://randomstreetview.com/][Random streetview]]
+- [[https://www.geoguessr.com/][Geoguessr]]
+- [[https://brilliant.org/][Brilliant]]
+- [[https://hackaday.com/][Hackaday]]
+- [[https://512kb.club/][512kb club]]
+- [[https://www.are.na/][are.na]]
+- [[https://academia.stackexchange.com/][Academia stackexchange]]
+- [[https://news.ycombinator.com/item?id=32804832][Ask HN: How do you find the weird parts of the web?]]
+- [[https://danieljanus.pl/autosummarized-hn/][Autosummarized HN]]
 * Hardware
-- Lenovo https://www.lenovo.com/gb/en/
-- Dell https://www.dell.com/en-uk
-- Framework laptop https://frame.work/gb/en
-- Ploopy https://ploopy.co/mouse/
-- Pine64 https://www.pine64.org/pinephone/
+- [[https://www.lenovo.com/gb/en/][Lenovo]]
+- [[https://www.dell.com/en-uk][Dell]]
+- [[https://frame.work/gb/en][Framework laptop]]
+- [[https://ploopy.co/mouse/][Ploopy]]
+- [[https://www.pine64.org/pinephone/][Pine64]]
 * Hardware reviews
-- GSMarena https://www.gsmarena.com/
-- Notebookcheck https://www.notebookcheck.net/
+- [[https://www.gsmarena.com/][GSMarena]]
+- [[https://www.notebookcheck.net/][Notebookcheck]]
 * Games
-- CataclysmDDA https://github.com/CleverRaven/Cataclysm-DDA
-- OpenMW https://github.com/OpenMW/openmw
-- Daggerfall Unity https://www.dfworkshop.net/
-- Ashfall https://www.nexusmods.com/morrowind/mods/49057
-- Zachtronics https://www.zachtronics.com/
-- Tomorrow Corporation https://tomorrowcorporation.com/
-- Shapez.io https://shapez.io/
-- Mindustry https://mindustrygame.github.io/
-- OS games clones https://osgameclones.com/
+- [[https://github.com/CleverRaven/Cataclysm-DDA][CataclysmDDA]]
+- [[https://github.com/OpenMW/openmw][OpenMW]]
+- [[https://www.dfworkshop.net/][Daggerfall Unity]]
+- [[https://www.nexusmods.com/morrowind/mods/49057][Ashfall]]
+- [[https://www.zachtronics.com/][Zachtronics]]
+- [[https://tomorrowcorporation.com/][Tomorrow Corporation]]
+- [[https://shapez.io/][Shapez.io]]
+- [[https://mindustrygame.github.io/][Mindustry]]
+- [[https://osgameclones.com/][OS games clones]]
 * Oxford life
-- IKEA https://www.ikea.com/gb/en/
-- Oxford council https://www.oxford.gov.uk/
-- Amazon UK https://www.amazon.co.uk/
-- Ebay UK https://www.ebay.co.uk/
-- Currys https://www.currys.co.uk/
-- Jobs.ac.uk https://www.jobs.ac.uk/
-- Rightmove https://www.rightmove.co.uk/
-- Scan https://www.scan.co.uk/
-- Counties of England https://en.wikipedia.org/wiki/Counties_of_England
-- Oxford mail https://www.oxfordmail.co.uk/
-- Aliexpress https://www.aliexpress.com/
-- Gearbest https://www.gearbest.com/
-- Taobao https://world.taobao.com/
-- Ebuyer https://www.ebuyer.com/
+- [[https://www.ikea.com/gb/en/][IKEA]]
+- [[https://www.oxford.gov.uk/][Oxford council]]
+- [[https://www.amazon.co.uk/][Amazon UK]]
+- [[https://www.ebay.co.uk/][Ebay UK]]
+- [[https://www.currys.co.uk/][Currys]]
+- [[https://www.jobs.ac.uk/][Jobs.ac.uk]]
+- [[https://www.rightmove.co.uk/][Rightmove]]
+- [[https://www.scan.co.uk/][Scan]]
+- [[https://en.wikipedia.org/wiki/Counties_of_England][Counties of England]]
+- [[https://www.oxfordmail.co.uk/][Oxford mail]]
+- [[https://www.aliexpress.com/][Aliexpress]]
+- [[https://www.gearbest.com/][Gearbest]]
+- [[https://world.taobao.com/][Taobao]]
+- [[https://www.ebuyer.com/][Ebuyer]]
 * Oxford travel
-- Oxford Key https://www.oxfordkey.co.uk/smart-card/
-- ST1 bus https://www.oxfordbus.co.uk/services/THTR/ST1
-- X32 bus https://www.oxfordbus.co.uk/services/THTR/X32
-- Oxford Openstreetmap https://www.openstreetmap.org/#map=13/51.7543/-1.2293
-- Oxford Google Maps https://www.google.com/maps/@51.7538573,-1.2259815,13z
+- [[https://www.oxfordkey.co.uk/smart-card/][Oxford Key]]
+- [[https://www.oxfordbus.co.uk/services/THTR/ST1][ST1 bus]]
+- [[https://www.oxfordbus.co.uk/services/THTR/X32][X32 bus]]
+- [[https://www.openstreetmap.org/#map=13/51.7543/-1.2293][Oxford Openstreetmap]]
+- [[https://www.google.com/maps/@51.7538573,-1.2259815,13z][Oxford Google Maps]]
 * Memes
-- Killed by Google https://killedbygoogle.com/
-- Embrace, extend, extinguish https://en.m.wikipedia.org/wiki/Embrace,_extend,_and_extinguish
+- [[https://killedbygoogle.com/][Killed by Google]]
+- [[https://en.m.wikipedia.org/wiki/Embrace,_extend,_and_extinguish][Embrace, extend, extinguish]]
 * Convert file to HTML
 Open in emacs and export with org-html-export-to-html
