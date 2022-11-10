@@ -83,6 +83,7 @@
 (add-to-list 'auto-mode-alist '("\\.nf\\'" . groovy-mode))
 (add-to-list 'auto-mode-alist '("\\.template\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.j2\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.jinja2\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
 
