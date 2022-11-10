@@ -207,7 +207,9 @@
 ;                     (let ((buffer-file-name (buffer-name)))
 ;                       (set-auto-mode)))))
 
-(setq confirm-kill-emacs #'yes-or-no-p)
+
+(setq inhibit-startup-screen t)
+; (setq confirm-kill-emacs #'yes-or-no-p)
 (setq window-resize-pixelwise t)
 (setq frame-resize-pixelwise t)
 
