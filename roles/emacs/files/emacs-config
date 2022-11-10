@@ -5,6 +5,7 @@
 (setq package-selected-packages '(
                                   lsp-mode
                                   yasnippet
+                                  yasnippet-snippets
                                   lsp-treemacs
                                   helm-lsp
                                   magit
@@ -82,6 +83,7 @@
 (add-to-list 'auto-mode-alist '("\\.nf\\'" . groovy-mode))
 (add-to-list 'auto-mode-alist '("\\.template\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.j2\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.jinja2\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
 
@@ -205,7 +207,9 @@
 ;                     (let ((buffer-file-name (buffer-name)))
 ;                       (set-auto-mode)))))
 
-(setq confirm-kill-emacs #'yes-or-no-p)
+
+(setq inhibit-startup-screen t)
+; (setq confirm-kill-emacs #'yes-or-no-p)
 (setq window-resize-pixelwise t)
 (setq frame-resize-pixelwise t)
 
