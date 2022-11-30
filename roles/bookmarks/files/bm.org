@@ -40,6 +40,7 @@
 - [[https://librewolf.net/installation/linux/][LibreWolf browser]]
 - [[https://godotengine.org/][Godot]]
 - [[https://osquery.io/][osquery]]
+- [[https://trilarion.github.io/opensourcegames/index.html][List of open source games]]
 * Self-hosted server software
 - [[https://gitea.io/][Gitea]]
 - [[https://www.mongodb.com/][Mongo]]
@@ -80,6 +81,7 @@
 - [[https://github.com/protesilaos/ef-themes][ef-themes]]
 - [[https://github.com/zenobht/exotica-theme][exotica theme]]
 - [[https://github.com/catppuccin/emacs][catppuccin theme]]
+- [[https://emacs-tree-sitter.github.io/installation/][tree-sitter]]
 * Software hosting
 - [[https://github.com/][Github]]
 - [[https://about.gitlab.com/][Gitlab]]
@@ -136,6 +138,7 @@
 * Work common software
 - [[https://en.wikipedia.org/wiki/MATLAB][MATLAB]]
 - [[https://nextflow.io/][Nextflow]]
+- [[https://spack.io/][Spack]]
 * Web dev
 - [[https://www.w3schools.com/w3css/default.asp][W3.CSS]]
 - [[https://fontawesome.com/v4/icons/][Fontawesome4]]
@@ -303,6 +306,7 @@
 - [[https://shapez.io/][Shapez.io]]
 - [[https://mindustrygame.github.io/][Mindustry]]
 - [[https://osgameclones.com/][OS games clones]]
+- [[https://github.com/leereilly/games][List of games on github]]
 * Oxford life
 - [[https://www.ikea.com/gb/en/][IKEA]]
 - [[https://www.oxford.gov.uk/][Oxford council]]
