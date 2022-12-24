@@ -168,6 +168,8 @@
 - [[https://writ.cmcenroe.me/reference.html][writ css]]
 - [[https://mermaid-js.github.io/mermaid/#/./flowchart?id=flowcharts-basic-syntax][mermaid.js]]
 - [[https://www.w3schools.com/js/js_api_intro.asp][JS APIs]]
+- [[https://mkt1.substack.com/p/homepage-copy][How to create a more effective homepage]]
+- [[https://www.amazingcto.com/postgres-for-everything/][Just Use Postgres for Everything]]
 * Programming language docs
 - [[https://docs.python.org/3/][Python]]
 - [[https://nim-lang.org/documentation.html][Nim]]
@@ -327,3 +329,4 @@
 * Memes
 - [[https://killedbygoogle.com/][Killed by Google]]
 - [[https://en.m.wikipedia.org/wiki/Embrace,_extend,_and_extinguish][Embrace, extend, extinguish]]
+- [[https://typicalprogrammer.com/why-dont-software-development-methodologies-work][Why don’t software development methodologies work?]]
