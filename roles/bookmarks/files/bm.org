@@ -290,6 +290,9 @@
 - [[https://news.ycombinator.com/item?id=32804832][Ask HN: How do you find the weird parts of the web?]]
 - [[https://danieljanus.pl/autosummarized-hn/][Autosummarized HN]]
 * Hardware
+- [[https://www.huawei.com/uk/][Huawei]]
+- [[https://ztedevices.com/en-uk/][ZTE UK]]
+- [[https://uk.redmagic.gg/][Red magic UK]]
 - [[https://www.lenovo.com/gb/en/][Lenovo]]
 - [[https://www.dell.com/en-uk][Dell]]
 - [[https://frame.work/gb/en][Framework laptop]]
@@ -314,6 +317,7 @@
 - [[https://www.oxford.gov.uk/][Oxford council]]
 - [[https://www.amazon.co.uk/][Amazon UK]]
 - [[https://www.ebay.co.uk/][Ebay UK]]
+- [[https://www.giztop.com/][Giztop]]
 - [[https://www.currys.co.uk/][Currys]]
 - [[https://www.jobs.ac.uk/][Jobs.ac.uk]]
 - [[https://www.rightmove.co.uk/][Rightmove]]
