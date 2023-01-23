@@ -56,3 +56,9 @@
     path: /usr/share/chromium/extensions
     state: directory
   become: yes
+
+- name: Create Chromium JSON policy file
+  copy:
+    src: imwheelrc
+    dest: ~/.imwheelrc
+  become: yes

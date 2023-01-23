@@ -14,6 +14,9 @@ xmodmap -e "keycode 66 = Return"
 xinput set-prop "pointer:ELECOM TrackBall Mouse DEFT Pro TrackBall Mouse" 'libinput Button Scrolling Button' 11
 xinput set-prop "pointer:ELECOM TrackBall Mouse DEFT Pro TrackBall Mouse" 'libinput Scroll Method Enabled' 0 0 1
 
+# speed up scrolling
+imwheel -b "4 5"
+
 FILE=start-local.sh
 if [[ -f "$FILE" ]]; then
     bash ./start-local.sh
