@@ -205,6 +205,10 @@
 - [[https://docs.k3s.io/][k3s docs]]
 - [[https://github.com/jesseduffield/lazydocker][lazydocker]]
 - [[https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux_atomic_host/7/html/managing_containers/running_containers_as_systemd_services_with_podman][Podman systemd]]
+- [[https://www.terraform.io/][Terraform]]
+- [[https://www.terraform-best-practices.com/key-concepts][Terraform best practices]]
+- [[https://cloud.google.com/docs/terraform/best-practices-for-terraform][Goog terraform best practices]]
+- [[https://pet2cattle.com/][Pet to cattle]]
 * Operating systems
 - [[https://www.debian.org/][Debian]]
 - [[https://ubuntu.com/][Ubuntu]]
@@ -250,6 +254,7 @@
 - [[https://tylersguides.com/guides/linux-acl-permissions-tutorial/][Linux ACL permissions]]
 - [[https://docs.xfce.org/xfce/thunar/custom-actions][XFCE custom actions]]
 - [[https://wiki.archlinux.org/title/desktop_entries][Desktop entries]]
+- [[https://diataxis.fr/][Diataxis]]
 * News
 - [[https://www.bbc.co.uk/][BBC]]
 - [[http://www.ecns.cn/][ECNS]]
@@ -291,6 +296,8 @@
 - [[https://danieljanus.pl/autosummarized-hn/][Autosummarized HN]]
 * Hardware
 - [[https://www.huawei.com/uk/][Huawei]]
+- [[https://www.chuwi.com/][Chuwi]]
+- [[https://kuu-tech.com/][Kuu]]
 - [[https://ztedevices.com/en-uk/][ZTE UK]]
 - [[https://uk.redmagic.gg/][Red magic UK]]
 - [[https://www.lenovo.com/gb/en/][Lenovo]]
