@@ -294,6 +294,8 @@
 - [[https://academia.stackexchange.com/][Academia stackexchange]]
 - [[https://news.ycombinator.com/item?id=32804832][Ask HN: How do you find the weird parts of the web?]]
 - [[https://danieljanus.pl/autosummarized-hn/][Autosummarized HN]]
+- [[https://gwern.net][Gwern]]
+- [[https://danluu.com][danluu]]
 * Hardware
 - [[https://www.huawei.com/uk/][Huawei]]
 - [[https://www.chuwi.com/][Chuwi]]
