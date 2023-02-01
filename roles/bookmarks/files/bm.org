@@ -308,6 +308,7 @@
 - [[https://gwern.net][Gwern]]
 - [[https://danluu.com][danluu]]
 - [[https://stallman.org/][RMS]]
+- [[https://www.isfdb.org/][ISFDB]]
 * Hardware
 - [[https://www.huawei.com/uk/][Huawei]]
 - [[https://www.chuwi.com/][Chuwi]]
