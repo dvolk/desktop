@@ -41,6 +41,7 @@
 - [[https://godotengine.org/][Godot]]
 - [[https://osquery.io/][osquery]]
 - [[https://trilarion.github.io/opensourcegames/index.html][List of open source games]]
+- [[https://github.com/oniony/TMSU][TMSU]]
 * Self-hosted server software
 - [[https://gitea.io/][Gitea]]
 - [[https://www.mongodb.com/][Mongo]]
@@ -57,8 +58,15 @@
 - [[https://docs.docker.com/engine/swarm/swarm-tutorial/create-swarm/][Docker swarm]]
 - [[https://github.com/logseq/logseq][Loqseq]]
 - [[https://goauthentik.io/][Authentik]]
+- [[https://github.com/novnc/noVNC][noVNC]]
+- [[https://www.virtualgl.org/][virtualGL]]
+- [[https://tigervnc.org/][TigerVNC]]
+- [[https://turbovnc.org/DeveloperInfo/CodeAccess][TurboVNC]]
+- [[https://caddyserver.com/docs/][Caddy]]
+- [[https://wiki.x2go.org/doku.php/start][x2go]]
 * Free SaaS
 - [[https://thomashunter.name/i3-configurator/][i3 configurator]]
+- [[https://nominatim.org/][nominatim]]
 * Emacs packages
 - [[https://github.com/abo-abo/avy][avy]]
 - [[http://company-mode.github.io/][company]]
@@ -209,6 +217,7 @@
 - [[https://www.terraform-best-practices.com/key-concepts][Terraform best practices]]
 - [[https://cloud.google.com/docs/terraform/best-practices-for-terraform][Goog terraform best practices]]
 - [[https://pet2cattle.com/][Pet to cattle]]
+- [[https://github.com/AdminTurnedDevOps/100DaysOfContainersAndOrchestration][100 Days of "dev ops"]]
 * Operating systems
 - [[https://www.debian.org/][Debian]]
 - [[https://ubuntu.com/][Ubuntu]]
@@ -330,6 +339,7 @@
 - [[https://www.wondamobile.com/][Wondamobile]]
 - [[https://www.currys.co.uk/][Currys]]
 - [[https://www.jobs.ac.uk/][Jobs.ac.uk]]
+- [[https://us-rse.org/jobs/][US RSE]]
 - [[https://www.rightmove.co.uk/][Rightmove]]
 - [[https://www.scan.co.uk/][Scan]]
 - [[https://en.wikipedia.org/wiki/Counties_of_England][Counties of England]]
