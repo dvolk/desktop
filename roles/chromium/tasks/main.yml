@@ -57,7 +57,7 @@
     state: directory
   become: yes
 
-- name: Create Chromium JSON policy file
+- name: Copy imwheelrc file to fix chromium scrolling speed
   copy:
     src: imwheelrc
     dest: ~/.imwheelrc

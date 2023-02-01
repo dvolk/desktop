@@ -23,6 +23,7 @@
       - xclip
       - webp
       - xinput
+      - imwheel
 
 - name: Install lightdm
   become: true

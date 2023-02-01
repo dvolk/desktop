@@ -64,6 +64,7 @@
 - [[https://turbovnc.org/DeveloperInfo/CodeAccess][TurboVNC]]
 - [[https://caddyserver.com/docs/][Caddy]]
 - [[https://wiki.x2go.org/doku.php/start][x2go]]
+- [[https://docs.nextcloud.com/server/latest/admin_manual/contents.html#][Nextcloud]]
 * Free SaaS
 - [[https://thomashunter.name/i3-configurator/][i3 configurator]]
 - [[https://nominatim.org/][nominatim]]
@@ -265,7 +266,7 @@
 - [[https://wiki.archlinux.org/title/desktop_entries][Desktop entries]]
 - [[https://diataxis.fr/][Diataxis]]
 * News
-- [[https://www.bbc.co.uk/][BBC]]
+- [[https://www.bbc.co.uk/news][BBC]]
 - [[http://www.ecns.cn/][ECNS]]
 - [[https://english.pravda.ru/][Pravda]]
 - [[https://www.aljazeera.com/][Aljazeera]]
@@ -288,6 +289,7 @@
 - [[https://store.steampowered.com/][Steam]]
 - [[https://www.notechmagazine.com/][No Tech Magazine]]
 - [[https://datorss.com/][DatoRSS]]
+- [[https://crowdview.ai/][crownview]]
 - [[https://www.iso.org/isoiec-27001-information-security.html][ISO 27001]]
 - [[https://www.typelit.io/][Typelit]]
 - [[https://en.wiktionary.org/wiki/Wiktionary:Main_Page][Wiktionary]]
@@ -305,6 +307,7 @@
 - [[https://danieljanus.pl/autosummarized-hn/][Autosummarized HN]]
 - [[https://gwern.net][Gwern]]
 - [[https://danluu.com][danluu]]
+- [[https://stallman.org/][RMS]]
 * Hardware
 - [[https://www.huawei.com/uk/][Huawei]]
 - [[https://www.chuwi.com/][Chuwi]]
