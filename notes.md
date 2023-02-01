@@ -111,3 +111,12 @@ sudo make install
 ```
 echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p
 ```
+
+## Missing libraries for mongo on Ubuntu 22.04+
+
+```
+wget http://nz2.archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2.16_amd64.deb
+sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2.16_amd64.deb
+```
+
+reference: https://stackoverflow.com/questions/72133316/ubuntu-22-04-libssl-so-1-1-cannot-open-shared-object-file-no-such-file-or-di
