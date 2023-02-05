@@ -265,6 +265,7 @@
 - [[https://docs.xfce.org/xfce/thunar/custom-actions][XFCE custom actions]]
 - [[https://wiki.archlinux.org/title/desktop_entries][Desktop entries]]
 - [[https://diataxis.fr/][Diataxis]]
+- [[https://www.nand2tetris.org/][nand2tetris]]
 * News
 - [[https://www.bbc.co.uk/news][BBC]]
 - [[http://www.ecns.cn/][ECNS]]
@@ -309,6 +310,7 @@
 - [[https://danluu.com][danluu]]
 - [[https://stallman.org/][RMS]]
 - [[https://www.isfdb.org/][ISFDB]]
+- [[https://neal.fun/wonders-of-street-view/][Wonders of streetview]]
 * Hardware
 - [[https://www.huawei.com/uk/][Huawei]]
 - [[https://www.chuwi.com/][Chuwi]]
