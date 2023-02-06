@@ -30,3 +30,16 @@
   copy:
     src: kitty-theme
     dest: ~/.config/kitty/current-theme.conf
+
+- name: Add kitty ssh:// handler
+  copy:
+    src: ssh.sh
+    dest: ~/.local/bin/ssh.sh
+
+- name: Add desktop handler for kitty ssh://
+  template:
+    src: ssh.desktop
+    dest: ~/.local/share/applications/ssh.desktop
+
+- name: Set kitty ssh:// handler as default
+  shell: xdg-mime default ssh.desktop x-scheme-handler/ssh

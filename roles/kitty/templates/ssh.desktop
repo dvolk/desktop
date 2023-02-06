@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=SSH Handler
+Exec=/home/{{ lookup('env', 'USER') }}/.local/bin/ssh.sh %U
+Icon=utilities-terminal
+StartupNotify=false
+MimeType=x-scheme-handler/ssh;
