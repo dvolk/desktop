@@ -91,6 +91,7 @@
 - [[https://github.com/zenobht/exotica-theme][exotica theme]]
 - [[https://github.com/catppuccin/emacs][catppuccin theme]]
 - [[https://emacs-tree-sitter.github.io/installation/][tree-sitter]]
+- [[https://github.com/ankurdave/color-identifiers-mode][color-identifiers-mode]]
 * Software hosting
 - [[https://github.com/][Github]]
 - [[https://about.gitlab.com/][Gitlab]]
