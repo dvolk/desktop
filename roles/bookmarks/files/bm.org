@@ -312,6 +312,7 @@
 - [[https://stallman.org/][RMS]]
 - [[https://www.isfdb.org/][ISFDB]]
 - [[https://neal.fun/wonders-of-street-view/][Wonders of streetview]]
+- [[https://same.energy/][Same energy]]
 * Hardware
 - [[https://www.huawei.com/uk/][Huawei]]
 - [[https://www.chuwi.com/][Chuwi]]
@@ -326,6 +327,7 @@
 * Hardware reviews
 - [[https://www.gsmarena.com/][GSMarena]]
 - [[https://www.notebookcheck.net/][Notebookcheck]]
+- [[https://www.laptopmag.com/uk][Laptop magazine]]
 * Games
 - [[https://github.com/CleverRaven/Cataclysm-DDA][CataclysmDDA]]
 - [[https://github.com/OpenMW/openmw][OpenMW]]
