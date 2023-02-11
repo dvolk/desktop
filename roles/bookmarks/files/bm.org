@@ -42,6 +42,7 @@
 - [[https://osquery.io/][osquery]]
 - [[https://trilarion.github.io/opensourcegames/index.html][List of open source games]]
 - [[https://github.com/oniony/TMSU][TMSU]]
+- [[https://www.theologeek.ch/manuskript/][Manuskript]]
 * Self-hosted server software
 - [[https://gitea.io/][Gitea]]
 - [[https://www.mongodb.com/][Mongo]]
@@ -267,6 +268,7 @@
 - [[https://wiki.archlinux.org/title/desktop_entries][Desktop entries]]
 - [[https://diataxis.fr/][Diataxis]]
 - [[https://www.nand2tetris.org/][nand2tetris]]
+- [[https://www.advancedfictionwriting.com/articles/snowflake-method/][The Snowflake Method For Designing A Novel]]
 * News
 - [[https://www.bbc.co.uk/news][BBC]]
 - [[http://www.ecns.cn/][ECNS]]
