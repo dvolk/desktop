@@ -116,6 +116,7 @@
 - [[https://pykube.readthedocs.io/en/latest/index.html][pykube]]
 - [[https://minikube.sigs.k8s.io/docs/start/][minikube]]
 - [[https://docs.djangoproject.com/][Django docs]]
+- [[https://pyauth.github.io/pyotp/][pyotp]]
 * Programming languages
 - [[https://github.com/carbon-language/carbon-lang][Carbon]]
 * Fonts
@@ -231,6 +232,7 @@
 - [[https://www.ibm.com/docs/en/i/7.3?topic=extensions-standard-c-library-functions-table-by-name][C functions]]
 - [[https://www.mkompf.com/cplus/posixlist.html][POSIX functions]]
 * Fiction/Books
+- [[https://www.goodreads.com/shelf/show/hard-science-fiction][goodreads.com hard-sicnce-fiction]]
 - [[https://www.gregegan.net/][Greg Egan]]
 - [[https://www.goodreads.com/author/show/130698.Ted_Chiang][Ted Chiang]]
 - [[https://www.rifters.com/][Peter Watts]]
