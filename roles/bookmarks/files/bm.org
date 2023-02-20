@@ -66,6 +66,7 @@
 - [[https://caddyserver.com/docs/][Caddy]]
 - [[https://wiki.x2go.org/doku.php/start][x2go]]
 - [[https://docs.nextcloud.com/server/latest/admin_manual/contents.html#][Nextcloud]]
+- [[https://github.com/Kanaries/graphic-walker][graphic-walker]]
 * Free SaaS
 - [[https://thomashunter.name/i3-configurator/][i3 configurator]]
 - [[https://nominatim.org/][nominatim]]
@@ -117,6 +118,7 @@
 - [[https://minikube.sigs.k8s.io/docs/start/][minikube]]
 - [[https://docs.djangoproject.com/][Django docs]]
 - [[https://pyauth.github.io/pyotp/][pyotp]]
+- [[https://python-control.readthedocs.io/en/0.9.3.post2/][python-control]]
 * Programming languages
 - [[https://github.com/carbon-language/carbon-lang][Carbon]]
 * Fonts
@@ -272,7 +274,10 @@
 - [[https://www.nand2tetris.org/][nand2tetris]]
 - [[https://www.advancedfictionwriting.com/articles/snowflake-method/][The Snowflake Method For Designing A Novel]]
 - [[https://www.inkandswitch.com/local-first/][Local-first software]]
+- [[https://www.karl.berlin/static-site.html][make as a Static Site Generator]]
 * News
+- [[https://geopoliticaleconomy.com/][geopoliticaleconomy.com]]
+- [[https://asiatimes.com/][Asia times]]
 - [[https://www.bbc.co.uk/news][BBC]]
 - [[http://www.ecns.cn/][ECNS]]
 - [[https://english.pravda.ru/][Pravda]]
@@ -318,6 +323,7 @@
 - [[https://www.isfdb.org/][ISFDB]]
 - [[https://neal.fun/wonders-of-street-view/][Wonders of streetview]]
 - [[https://same.energy/][Same energy]]
+- [[https://babylonbee.com/][Babylon bee]]
 * Wikipedia
 - [[https://en.wikipedia.org/wiki/Integrated_information_theory][Integrated information theory]]
 * Hardware
