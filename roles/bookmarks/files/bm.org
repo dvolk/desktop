@@ -183,6 +183,7 @@
 - [[https://www.w3schools.com/js/js_api_intro.asp][JS APIs]]
 - [[https://mkt1.substack.com/p/homepage-copy][How to create a more effective homepage]]
 - [[https://www.amazingcto.com/postgres-for-everything/][Just Use Postgres for Everything]]
+- [[https://anthonyhobday.com/sideprojects/saferules/][Visual design rules]]
 * Programming language docs
 - [[https://docs.python.org/3/][Python]]
 - [[https://nim-lang.org/documentation.html][Nim]]
