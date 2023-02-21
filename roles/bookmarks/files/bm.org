@@ -277,6 +277,7 @@
 - [[https://www.inkandswitch.com/local-first/][Local-first software]]
 - [[https://www.karl.berlin/static-site.html][make as a Static Site Generator]]
 * News
+- [[https://english.news.cn/home.htm][Xinhuanet]]
 - [[https://geopoliticaleconomy.com/][geopoliticaleconomy.com]]
 - [[https://asiatimes.com/][Asia times]]
 - [[https://www.bbc.co.uk/news][BBC]]
