@@ -197,6 +197,8 @@
     state: directory
   loop:
     - ~/.config
+    - ~/.local
+    - ~/.local/bin
     - ~/stuff
     - ~/stuff/code
     - ~/stuff/code/work
@@ -218,13 +220,12 @@
     - ~/stuff/audiobooks/fiction
     - ~/stuff/audiobooks/nonfiction
     - ~/stuff/CalibreLibrary
-    - ~/bin
-    - ~/stuff/
-    - ~/mnt
-    - ~/mnt/phone
-    - ~/sync
-    - ~/torrents
-    - ~/.logs
+    - ~/stuff/backups
+    - ~/stuff/bin
+    - ~/stuff/mnt
+    - ~/stuff/mnt/phone
+    - ~/stuff/sync
+    - ~/stuff/torrents
 
 - name: touch ansible run log
   file:
