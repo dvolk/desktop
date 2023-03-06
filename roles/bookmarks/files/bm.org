@@ -342,6 +342,9 @@
 - [[https://frame.work/gb/en][Framework laptop]]
 - [[https://ploopy.co/mouse/][Ploopy]]
 - [[https://www.pine64.org/pinephone/][Pine64]]
+- [[http://www.en.jumper.com.cn/en/index.html][Jumper shenzhen]]
+- [[https://en.teclast.com/][Teclast]]
+- [[https://www.ebay.co.uk/sch/i.html?_nkw=thinkpad&_sop=10&_oac=1][Ebay thinkpad newest]]
 * Hardware reviews
 - [[https://www.gsmarena.com/][GSMarena]]
 - [[https://www.notebookcheck.net/][Notebookcheck]]
