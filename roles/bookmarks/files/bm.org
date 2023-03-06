@@ -329,6 +329,8 @@
 - [[https://babylonbee.com/][Babylon bee]]
 * Wikipedia
 - [[https://en.wikipedia.org/wiki/Integrated_information_theory][Integrated information theory]]
+- [[https://en.wikipedia.org/wiki/Lyndon_LaRouche][Lyndon LaRouche]]
+- [[https://en.wikipedia.org/wiki/Fred_Hampton][Fred Hampton]]
 * Hardware
 - [[https://www.huawei.com/uk/][Huawei]]
 - [[https://www.chuwi.com/][Chuwi]]
