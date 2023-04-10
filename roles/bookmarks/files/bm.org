@@ -345,6 +345,9 @@
 - [[http://www.en.jumper.com.cn/en/index.html][Jumper shenzhen]]
 - [[https://en.teclast.com/][Teclast]]
 - [[https://www.ebay.co.uk/sch/i.html?_nkw=thinkpad&_sop=10&_oac=1][Ebay thinkpad newest]]
+- [[https://www.hardkernel.com/][hardkernel]]
+- [[https://www.asrockind.com/en-gb/][Asrock industrial]]
+- [[https://store.minisforum.com/][Minisforum]]
 * Hardware reviews
 - [[https://www.gsmarena.com/][GSMarena]]
 - [[https://www.notebookcheck.net/][Notebookcheck]]
