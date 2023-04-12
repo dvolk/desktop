@@ -8,13 +8,6 @@
     pkg:
       - emacs-nox
 
-- name: Install the build dependencies for package emacs
-  when: ansible_distribution == "Debian"
-  become: true
-  ansible.builtin.apt:
-    pkg: emacs
-    state: build-dep
-
 - name: Install emacs
   become: true
   apt:
@@ -45,44 +38,9 @@
     src: emacs-config
     dest: ~/.emacs.d/init.el
 
+
 - name: touch emacs custom config file
   file:
     dest: ~/.emacs.d/custom.el
     state: touch
     mode: u+rw,g-wx,o-rwx
-
-- name: Download emacs
-  ansible.builtin.get_url:
-    url: https://mirror.lyrahosting.com/gnu/emacs/emacs-28.1.tar.xz
-    dest: /opt/tmp/emacs-28.1.tar.xz
-    checksum: sha256:28b1b3d099037a088f0a4ca251d7e7262eab5ea1677aabffa6c4426961ad75e1
-
-- name: Extract emacs to /opt
-  become: yes
-  ansible.builtin.unarchive:
-    src: /opt/tmp/emacs-28.1.tar.xz
-    dest: /opt
-
-- name: Create emacs note file
-  become: yes
-  file:
-    path: /opt/emacs-28.1/NOTE.txt
-    state: touch
-
-- name: Make a note on how to compile emacs
-  become: yes
-  blockinfile:
-    path: /opt/emacs-28.1/NOTE.txt
-    block: |
-      # optional but recommended for heavy use
-      sudo ./configure --with-native-compilation
-      sudo make -j4
-
-- name: Create a link to compiled emacs if it exists
-  become: yes
-  ansible.builtin.file:
-    src: /opt/emacs-28.1/src/emacs
-    dest: /usr/local/bin/emacsc
-    owner: root
-    state: link
-  ignore_errors: yes
