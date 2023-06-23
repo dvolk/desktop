@@ -1,3 +1,5 @@
 [user]
-	email = denis.volk@gmail.com
-	name = Denis Volk
+       email = denis.volk@gmail.com
+       name = Denis Volk
+[credential]
+       helper = store

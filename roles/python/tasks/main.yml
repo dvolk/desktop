@@ -10,21 +10,27 @@
       - python3-pip
       - python3-virtualenv
       - python3-watchdog
+
       - mypy
 
 - name: Install python dev packages
   become: true
-  pip:
+  apt:
+    update_cache: yes
+    cache_valid_time: 36000
+    state: latest
     name:
-      - "python-lsp-server[all]"
-      - isort
+      - python3-pylsp
+      - python3-pylsp-black
+      - python3-pylsp-jsonrpc
       - black
-      - pylsp-mypy
-      - pyls-flake8
-      - pyls-isort
-      - python-lsp-black
-      - pyls-memestra
-      - pylsp-rope
+      - python3-pylsp-black
+      - python3-isort
+      - mypy
+      - python3-mypy
+      - python3-mypy-extensions
+      - python3-flake8
+      - python3-rope
 
 - name: copy flake8 config
   copy:

@@ -9,8 +9,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod4
-set $alt Mod1
+set $mod Mod1
 
 # all windows float
 # for_window [class="[.]*"] floating enable
@@ -48,8 +47,9 @@ font pango:Jetbrains Mono Medium {{ lookup('env', 'FONT_SIZE') }}
 floating_modifier $mod
 
 bindsym $mod+Shift+s sticky toggle
+
 # start a terminal
-bindsym $mod+Return exec /opt/kitty/bin/kitty
+bindsym $mod+Return exec kitty
 
 bindsym $mod+Tab workspace back_and_forth
 bindsym F6 workspace back_and_forth

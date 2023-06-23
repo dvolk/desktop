@@ -34,6 +34,7 @@
                                   exotica-theme
                                   ef-themes
                                   catppuccin-theme
+                                  astyle
                                   ))
 
 (when (cl-find-if-not #'package-installed-p package-selected-packages)
@@ -78,7 +79,7 @@
 
 (global-set-key (kbd "C-d") 'avy-goto-char-timer)
 
-(setq pos-tip-background-color "#000")
+;;(setq pos-tip-background-color "#000")
 
 (global-set-key [mouse-4] (lambda () (interactive) (scroll-down 10)))
 (global-set-key [mouse-5] (lambda () (interactive) (scroll-up 10)))
@@ -162,11 +163,13 @@
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 (add-hook 'prog-mode-hook #'company-mode)
 (add-hook 'prog-mode-hook #'company-quickhelp-mode)
-(add-hook 'prog-mode-hook #'tree-sitter-mode)
 
+(setq tool-bar-style 'image)
 
 ;; prog mode lang specific
 (add-hook 'python-mode-hook #'python-black-on-save-mode)
+(add-hook 'python-mode-hook #'tree-sitter-mode)
+
 (add-hook 'nim-mode-hook 'nimsuggest-mode)
 
 (add-hook 'yaml-mode-hook #'display-line-numbers-mode)
@@ -185,7 +188,9 @@
 
 (global-set-key [f2] 'tab-previous)
 (global-set-key [f3] 'tab-next)
+(global-set-key [f4] 'switch-to-buffer)
 (global-set-key [f5] 'treemacs)
+(global-set-key [f6] 'magit)
 (global-set-key [f9] 'lsp-find-definition)
 (global-set-key [f12] 'color-identifiers-mode)
 (global-set-key [(shift f5)] 'elfeed)
@@ -196,11 +201,6 @@
 (global-visual-line-mode)
 ;;(lsp-treemacs-symbols)
 ;;(lsp-treemacs-errors-list)
-
-(with-eval-after-load "org-tree-slide"
-  (define-key org-tree-slide-mode-map (kbd "<f9>") 'org-tree-slide-move-previous-tree)
-  (define-key org-tree-slide-mode-map (kbd "<f10>") 'org-tree-slide-move-next-tree)
-  )
 
 ;; (setq split-height-threshold nil)
 ;; (setq split-width-threshold 160)
@@ -235,3 +235,7 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((python . t)))
+
+(add-hook 'c++-mode-hook
+          (lambda ()
+            (add-hook 'before-save-hook 'artistic-style-buffer nil 'local)))

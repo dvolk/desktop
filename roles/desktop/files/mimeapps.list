@@ -3,3 +3,6 @@ image/jpeg=feh.desktop;
 image/png=feh.desktop;
 application/epub+zip=FBReader.desktop;
 application/pdf=org.pwmt.zathura-pdf-poppler.desktop;
+application/x-bittorrent=transmission-gtk.desktop;
+text/x-python=org.xfce.mousepad.desktop;
+text/plain=org.xfce.mousepad.desktop;

@@ -129,6 +129,7 @@
       - unalz
       - p7zip-rar
       - ncal
+      - cpufrequtils
 
 - name: Install lxd snap
   become: yes
@@ -201,15 +202,11 @@
     - ~/.local/bin
     - ~/stuff
     - ~/stuff/code
-    - ~/stuff/code/work
     - ~/stuff/notes
-    - ~/stuff/notes/work
     - ~/stuff/presentations
     - ~/stuff/mpv-screenshots
     - ~/stuff/docs
-    - ~/stuff/docs/work
     - ~/stuff/screenshots
-    - ~/stuff/screenshots/work
     - ~/stuff/logs
     - ~/stuff/images
     - ~/stuff/photos

@@ -131,6 +131,11 @@
     src: start.sh
     dest: ~/start.sh
 
+- name: Copy desktop setup script
+  copy:
+    src: key.sh
+    dest: ~/key.sh
+
 - name: Copy gtk2 config
   template:
     src: gtk2-config
