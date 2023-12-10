@@ -118,6 +118,12 @@
       file:
         path: /opt
         state: directory
+
+    - name: Create /opt/tmp
+      become: yes
+      file:
+        path: /opt/tmp
+        state: directory
     
     - name: Setup bashrc
       template:
