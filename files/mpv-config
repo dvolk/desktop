@@ -1,3 +1,5 @@
 screenshot-format=png
 screenshot-directory="~/stuff/mpv-screenshots"
 screenshot-template="%f_%P"
+mute=yes
+volume=30
