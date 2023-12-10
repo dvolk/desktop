@@ -1,4 +1,6 @@
 file:///home/{{ lookup('env', 'USER') }}/Downloads
+file:///home/{{ lookup('env', 'USER') }}/Documents
+file:///home/{{ lookup('env', 'USER') }}/Pictures
 file:///home/{{ lookup('env', 'USER') }}/stuff
 file:///home/{{ lookup('env', 'USER') }}/stuff/code
 file:///home/{{ lookup('env', 'USER') }}/stuff/mpv-screenshots
@@ -6,4 +8,4 @@ file:///home/{{ lookup('env', 'USER') }}/stuff/logs
 file:///home/{{ lookup('env', 'USER') }}/stuff/images
 file:///home/{{ lookup('env', 'USER') }}/stuff/torrents
 file:///home/{{ lookup('env', 'USER') }}/stuff/mongodb
-file:///home/{{ lookup('env', 'USER') }}/torrents
+file:///home/{{ lookup('env', 'USER') }}/stuff/torrents
