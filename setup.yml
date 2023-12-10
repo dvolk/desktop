@@ -415,7 +415,7 @@
           - webp
           - xinput
           - imwheel
-      - kitty
+          - kitty
 
     - name: Install lightdm
       become: true
