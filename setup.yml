@@ -26,8 +26,6 @@
         pkg:
           - jq
           - build-essential
-          - clangd
-          - ccls
           - rsync
           - git
           - tmux
@@ -100,11 +98,6 @@
           - auditd
           - ngrep
           - pkg-config
-          - gcc-10
-          - libgccjit0
-          - libgccjit-10-dev
-          - libjansson4
-          - libjansson-dev
           - docker.io
           - docker-compose
           - rtorrent
