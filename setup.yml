@@ -175,6 +175,7 @@
         - ~/stuff/logs
         - ~/stuff/images
         - ~/stuff/torrents
+        - ~/stuff/mongodb
 
     - name: touch ansible run log
       file:
@@ -353,32 +354,23 @@
         src: /opt/tmp/mongodb-linux-x86_64-ubuntu2204-6.0.12.tgz
         dest: /opt
 
-    - name: Create ~/.config/systemd/user
-      file:
-        path: ~/.config/systemd/user
-        state: directory
-
-    - name: Create ~/mongodb
-      file:
-        path: ~/mongodb
-        state: directory
-
     - name: copy mongo systemd service
+      become: yes
       template:
         src: mongo.service
-        dest: ~/.config/systemd/user/mongodb-user.service
+        dest: /etc/systemd/system/mongodb-user.service
 
     - name: reload systemd user service
+      become: yes
       ansible.builtin.systemd:
         daemon_reexec: yes
-        scope: user
 
     - name: enable and start mongodb service
+      become: yes
       ansible.builtin.systemd:
         name: mongodb-user
         state: started
         enabled: yes
-        scope: user
 
     - name: Copy browser bookmarks org file
       copy:
@@ -409,13 +401,13 @@
           - x11-xkb-utils
           - x11-xserver-utils
           - xterm
-          - elementary-xfce-icon-theme
           - libglib2.0-bin
           - xclip
           - webp
           - xinput
           - imwheel
           - kitty
+          - adwaita-icon-theme-full
 
     - name: Install lightdm
       become: true
@@ -454,7 +446,6 @@
           - sunclock
           - virt-manager
           - transmission-remote-gtk
-          - blueman
           - syncthing-gtk
           - gparted
           - gnome-disk-utility
@@ -497,6 +488,9 @@
           - gdm3
           - command-not-found
           - motd-news-config
+          - blueman
+          - apport
+          - apport-gtk
 
     - name: Create i3 config directory
       file:
@@ -517,16 +511,6 @@
       copy:
         src: i3blocks-config
         dest: ~/.config/i3blocks/config
-
-    - name: Copy desktop setup script
-      copy:
-        src: start.sh
-        dest: ~/start.sh
-
-    - name: Copy desktop setup script
-      copy:
-        src: key.sh
-        dest: ~/key.sh
 
     - name: Copy gtk2 config
       template:
@@ -723,16 +707,6 @@
         pkg:
           - chromium-browser
 
-    - name: Install ublock origin
-      when: ansible_distribution == "Debian"
-      become: true
-      apt:
-        update_cache: yes
-        cache_valid_time: 36000
-        state: latest
-        pkg:
-          - webext-ublock-origin-chromium
-
     - name: Set Chromium as default browser
       when: ansible_distribution == "Debian"
       command: update-alternatives --install /usr/bin/x-www-browser x-www-browser /usr/bin/chromium 250
@@ -746,20 +720,14 @@
     # See https://www.chromium.org/administrators/policy-list-3
     - name: Create Chromium policies directory
       file:
-        path: /etc/chromium/policies/managed
+        path: /var/snap/chromium/current/policies/managed
         state: directory
       become: yes
 
     - name: Create Chromium JSON policy file
       template:
         src: chromium-policy
-        dest: "/etc/chromium/policies/managed/my-policy.json"
-      become: yes
-
-    - name: Create Chromium extensions directory
-      file:
-        path: /usr/share/chromium/extensions
-        state: directory
+        dest: "/var/snap/chromium/current/policies/managed/my-policy.json"
       become: yes
 
     - name: Copy imwheelrc file to fix chromium scrolling speed
@@ -820,3 +788,15 @@
         dest: ~/.config/kitty/current-theme.conf
       tags:
         - desktop
+
+    - name: Download main.py from GitHub
+      ansible.builtin.get_url:
+        url: https://raw.githubusercontent.com/dvolk/menu/master/main.py
+        dest: /tmp/main.py
+
+    - name: Move main.py to /usr/local/bin/mymenu
+      become: yes
+      ansible.builtin.copy:
+        src: /tmp/main.py
+        dest: /usr/local/bin/mymenu
+        mode: '0755'

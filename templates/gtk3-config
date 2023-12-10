@@ -1,6 +1,6 @@
 [Settings]
 gtk-theme-name=Industrial
-gtk-icon-theme-name=elementary-xfce-darker
+gtk-icon-theme-name=Adwaita
 gtk-font-name=Sans {{ lookup('env', 'FONT_SIZE') }}
 gtk-cursor-theme-name=Adwaita
 gtk-cursor-theme-size=0

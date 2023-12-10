@@ -46,10 +46,10 @@
 (require 'tree-sitter)
 (require 'tree-sitter-langs)
 
-(menu-bar-mode 0)
-(tool-bar-mode 0)
-(tab-bar-mode 0)
-(scroll-bar-mode 0)
+;;(menu-bar-mode 0)
+;;(tool-bar-mode 0)
+;;(tab-bar-mode 0)
+;;(scroll-bar-mode 0)
 
 (helm-mode)
 (which-key-mode)
