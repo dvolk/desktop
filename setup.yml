@@ -123,8 +123,8 @@
       become: yes
       file:
         path: /opt/tmp
-        owner: lookup('env', 'USER')
-        group: lookup('env', 'USER')
+        owner: "{{ lookup('env', 'USER') }}"
+        group: "{{ lookup('env', 'USER') }}"
         state: directory
     
     - name: Setup bashrc
@@ -789,11 +789,11 @@
       become: yes
       copy:
         src: /opt/tmp/koreader-appimage-x86_64-linux-gnu-v2022.07.AppImage
-        dest: /opt/bin/koreader-appimage-x86_64-linux-gnu-v2022.07.AppImage
+        dest: /opt/koreader-appimage-x86_64-linux-gnu-v2022.07.AppImage
     
     - name: Set Koreader executable attributes
       file:
-        path: /opt/bin/koreader-appimage-x86_64-linux-gnu-v2022.07.AppImage
+        path: /opt/koreader-appimage-x86_64-linux-gnu-v2022.07.AppImage
         mode: 0755
         owner: root
         group: root
