@@ -1,0 +1,9 @@
+[Unit]
+Description=mongodb user service
+
+[Service]
+WorkingDirectory=/opt/mongodb-linux-x86_64-ubuntu2204-6.0.12
+ExecStart=/opt/mongodb-linux-x86_64-ubuntu2204-6.0.12/bin/mongod --dbpath /home/{{ lookup('env', 'USER') }}/stuff/mongodb
+
+[Install]
+WantedBy=multi-user.target

@@ -1,16 +1,794 @@
----
-- hosts: localhost
-  connection: local
-  roles:
-    - common
-    - python
-    - ufw
-    - badhosts
-    - emacs
-    - mongo
-    - bookmarks
-    - desktop
-    - fonts
-    - chromium
-    - nim
-    - koreader
+- name: Install etckeeper
+  become: true
+  apt:
+    update_cache: yes
+    cache_valid_time: 36000
+    state: latest
+    pkg:
+      - etckeeper
+
+- name: etckeeper commit
+  become: true
+  command: etckeeper commit "pre-ansible auto-commit"
+  ignore_errors: yes
+
+- name: Install common packages
+  become: true
+  apt:
+    update_cache: yes
+    cache_valid_time: 36000
+    state: latest
+    pkg:
+      - jq
+      - build-essential
+      - clangd
+      - ccls
+      - rsync
+      - git
+      - tmux
+      - htop
+      - iotop
+      - bmon
+      - powertop
+      - lsof
+      - imagemagick
+      - ncdu
+      - aria2
+      - autoconf
+      - automake
+      - bzip2
+      - fzf
+      - g++
+      - lnav
+      - oathtool
+      - p7zip
+      - parallel
+      - rdate
+      - sqlite3
+      - syncthing
+      - tig
+      - unace
+      - unar
+      - unrar
+      - unzip
+      - valgrind
+      - tshark
+      - zip
+      - apt-file
+      - autojump
+      - bc
+      - clamav
+      - cloc
+      - cmake
+      - cmake-curses-gui
+      - curl
+      - dict-gcide
+      - dictd
+      - ranger
+      - smartmontools
+      - lshw
+      - m4
+      - mutt
+      - openvpn
+      - tinc
+      - pwgen
+      - sshfs
+      - strace
+      - tree
+      - ufw
+      - w3m
+      - lynx
+      - wget
+      - whois
+      - xdg-user-dirs
+      - xz-utils
+      - screenfetch
+      - net-tools
+      - aptitude
+      - tlp
+      - apparmor
+      - apparmor-utils
+      - apparmor-profiles
+      - apparmor-profiles-extra
+      - snapd
+      - zenity
+      - auditd
+      - ngrep
+      - pkg-config
+      - gcc-10
+      - libgccjit0
+      - libgccjit-10-dev
+      - libjansson4
+      - libjansson-dev
+      - docker.io
+      - docker-compose
+      - rtorrent
+      - arj
+      - lzip
+      - lzop
+      - ncompress
+      - rar
+      - rpm2cpio
+      - rzip
+      - unalz
+      - p7zip-rar
+      - ncal
+      - cpufrequtils
+
+- name: Create /opt
+  become: yes
+  file:
+    path: /opt
+    state: directory
+
+- name: Setup bashrc
+  template:
+    src: bashrc
+    dest: ~/.bashrc
+
+- name: setup git
+  copy:
+    src: git-config
+    dest: ~/.gitconfig
+
+- name: add autologin group
+  when: lookup('env', 'AUTOLOGIN')|bool
+  become: yes
+  group:
+    name: autologin
+    state: present
+
+- name: add user to autologin group
+  when: lookup('env', 'AUTOLOGIN')|bool
+  become: yes
+  user:
+    name: "{{ lookup('env', 'USER') }}"
+    groups: autologin
+    append: yes
+
+- name: add user to other groups
+  become: yes
+  user:
+    name: "{{ lookup('env', 'USER') }}"
+    groups: "{{ item }}"
+    append: yes
+  loop:
+    - lpadmin
+    - lxd
+    - docker
+
+- name: Create directories in user home
+  file:
+    path: "{{ item }}"
+    state: directory
+  loop:
+    - ~/.config
+    - ~/stuff
+    - ~/stuff/code
+    - ~/stuff/mpv-screenshots
+    - ~/stuff/logs
+    - ~/stuff/images
+    - ~/stuff/torrents
+
+- name: touch ansible run log
+  file:
+    dest: ~/stuff/logs/ansible_desktop_run.log
+    state: touch
+
+- name: get playbook git version
+  shell: "git describe --tags --always --dirty"
+  register: playbook_version
+
+- name: Add ansible run to log
+  lineinfile:
+    path: ~/stuff/logs/ansible_desktop_run.log
+    line: "{{ ansible_date_time.iso8601 }} {{ playbook_version.stdout }} AUTOLOGIN={{ lookup('env', 'AUTOLOGIN') }} USER={{ lookup('env', 'USER') }} FONT_SIZE={{ lookup('env', 'FONT_SIZE') }} DPI={{ lookup('env', 'DPI') }}"
+    insertbefore: EOF
+
+- name: Copy nano config
+  become: yes
+  copy:
+    src: nanorc
+    dest: /etc/nanorc
+
+- name: Install common packages
+  become: true
+  apt:
+    update_cache: yes
+    cache_valid_time: 36000
+    state: latest
+    pkg:
+      - python-is-python3
+      - build-essential
+      - python3-pip
+      - python3-virtualenv
+      - python3-watchdog
+      - mypy
+
+- name: Install python dev packages
+  become: true
+  apt:
+    update_cache: yes
+    cache_valid_time: 36000
+    state: latest
+    name:
+      - python3-pylsp
+      - python3-pylsp-black
+      - python3-pylsp-jsonrpc
+      - black
+      - python3-pylsp-black
+      - python3-isort
+      - mypy
+      - python3-mypy
+      - python3-mypy-extensions
+      - python3-flake8
+      - python3-rope
+
+- name: copy flake8 config
+  copy:
+    src: flake8-config
+    dest: ~/.config/flake8
+
+- name: Enable firewall
+  community.general.ufw:
+    state: enabled
+    direction: incoming
+    policy: deny
+  become: true
+
+- name: Set firewall logging
+  community.general.ufw:
+    logging: 'on'
+  become: true
+
+- name: Allow traffic to lxd containers
+  community.general.ufw:
+    rule: allow
+    direction: in
+    interface: lxdbr0
+  become: true
+
+- name: Allow traffic between lxd containers (?) 1/2
+  community.general.ufw:
+    rule: allow
+    interface: lxdbr0
+    direction: in
+    route: yes
+  become: true
+
+- name: Allow traffic between lxd containers (?) 2/2
+  community.general.ufw:
+    rule: allow
+    interface: lxdbr0
+    direction: out
+    route: yes
+  become: true
+
+- name: download adware+malware hosts file
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts
+    dest: /opt/tmp/hosts
+
+- name: download mozilla hosts file
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/MrRawes/firefox-hosts/firefox-hosts/hosts
+    dest: /opt/tmp/mozilla-hosts
+
+- name: download crypto hosts file
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt
+    dest: /opt/tmp/crypto-hosts
+
+- name: insert hostname into /opt/tmp/hosts
+  blockinfile:
+    path: /opt/tmp/hosts
+    block: |
+      127.0.1.1 cdn.matomo.cloud
+      # block mozilla telemetry
+      {{ lookup('file', '/opt/tmp/mozilla-hosts') }}
+      # block crypto hosts
+      {{ lookup('file', '/opt/tmp/crypto-hosts') }}
+      # add localhost
+      127.0.1.1 {{ ansible_hostname }}
+  become: true
+
+- name: copy adware+malware hosts file to /etc/hosts
+  copy:
+    src: /opt/tmp/hosts
+    dest: /etc/hosts
+  become: true
+
+- name: Install emacs
+  become: true
+  apt:
+    update_cache: yes
+    cache_valid_time: 36000
+    state: latest
+    pkg:
+      - emacs
+
+- name: Create emacs directory
+  file:
+    path: ~/.emacs.d
+    state: directory
+
+- name: Create emacs cache directory
+  file:
+    path: ~/.emacs.d/.cache
+    state: directory
+
+- name: Copy treemacs persist file if it doesn't exist
+  copy:
+    src: treemacs-persist
+    dest: ~/.emacs.d/.cache/treemacs-persist
+    force: no
+
+- name: Copy emacs config
+  copy:
+    src: emacs-config
+    dest: ~/.emacs.d/init.el
+
+
+- name: touch emacs custom config file
+  file:
+    dest: ~/.emacs.d/custom.el
+    state: touch
+    mode: u+rw,g-wx,o-rwx
+
+- name: download mongodb
+  ansible.builtin.get_url:
+    url: https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2204-6.0.12.tgz
+    dest: /opt/tmp/mongodb-linux-x86_64-ubuntu2204-6.0.12.tgz
+    checksum: sha256:a8fd6b5ec2fcff49c53b97658ec7645221cfa6222a871aacd25b3f759c4b73de
+
+- name: Extract mongodb to /opt
+  become: yes
+  ansible.builtin.unarchive:
+    src: /opt/tmp/mongodb-linux-x86_64-ubuntu2204-6.0.12.tgz
+    dest: /opt
+
+- name: Create ~/.config/systemd/user
+  file:
+    path: ~/.config/systemd/user
+    state: directory
+
+- name: Create ~/mongodb
+  file:
+    path: ~/mongodb
+    state: directory
+
+- name: copy mongo systemd service
+  template:
+    src: mongo.service
+    dest: ~/.config/systemd/user/mongodb-user.service
+
+- name: reload systemd user service
+  ansible.builtin.systemd:
+    daemon_reexec: yes
+    scope: user
+
+- name: enable and start mongodb service
+  ansible.builtin.systemd:
+    name: mongodb-user
+    state: started
+    enabled: yes
+    scope: user
+
+- name: Copy browser bookmarks org file
+  copy:
+    src: bm.org
+    dest: ~/stuff/bm.org
+
+- name: Convert org browser bookmarks to html
+  command: emacs --batch --eval "(require 'org)" ~/stuff/bm.org --funcall org-html-export-to-html
+  ignore_errors: yes
+
+- name: Install Xorg and i3
+  become: true
+  apt:
+    update_cache: yes
+    cache_valid_time: 36000
+    state: latest
+    pkg:
+      - i3
+      - i3blocks
+      - i3lock
+      - xserver-xorg
+      - xserver-xorg-input-all
+      - xserver-xorg-input-synaptics
+      - xserver-xorg-video-all
+      - xinit
+      - x11-apps
+      - x11-utils
+      - x11-xkb-utils
+      - x11-xserver-utils
+      - xterm
+      - elementary-xfce-icon-theme
+      - libglib2.0-bin
+      - xclip
+      - webp
+      - xinput
+      - imwheel
+
+- name: Install lightdm
+  become: true
+  apt:
+    update_cache: yes
+    cache_valid_time: 36000
+    state: latest
+    pkg:
+      - lightdm
+      - lightdm-gtk-greeter
+
+- name: Install desktop packages
+  become: true
+  apt:
+    update_cache: yes
+    cache_valid_time: 36000
+    state: latest
+    pkg:
+      - feh
+      - mpv
+      - zathura
+      - zathura-djvu
+      - gimp
+      - thunderbird
+      - wireshark
+      - thunar
+      - mousepad
+      - rawtherapee
+      - cups
+      - fbreader
+      - lxappearance
+      - gthumb
+      - obs-studio
+      - remmina
+      - scrot
+      - sunclock
+      - virt-manager
+      - transmission-remote-gtk
+      - blueman
+      - syncthing-gtk
+      - gparted
+      - gnome-disk-utility
+      - pavucontrol
+      - transmission-gtk
+      - transmission-remote-gtk
+      - engrampa
+
+- name: Copy desktop background
+  become: yes
+  copy:
+    src: desktop_background.png
+    dest: /usr/local/share/desktop_background.png
+
+- name: Set login screen background
+  become: yes
+  community.general.alternatives:
+    name: desktop-login-background
+    path: /usr/local/share/desktop_background.png
+  ignore_errors: yes
+
+- name: Install desktop packages (no recommends)
+  become: true
+  apt:
+    install_recommends: no
+    update_cache: yes
+    cache_valid_time: 36000
+    state: latest
+    pkg:
+      - barrier
+      - libreoffice
+  ignore_errors: yes
+
+- name: Remove avahi-daemon, gdm3, etc
+  become: true
+  apt:
+    state: absent
+    pkg:
+      - avahi-daemon
+      - gdm3
+      - command-not-found
+      - motd-news-config
+
+- name: Create i3 config directory
+  file:
+    path: ~/.config/i3
+    state: directory
+
+- name: Copy i3 config
+  template:
+    src: i3-config
+    dest: ~/.config/i3/config
+
+- name: Create i3blocks config directory
+  file:
+    path: ~/.config/i3blocks
+    state: directory
+
+- name: Copy i3blocks config
+  copy:
+    src: i3blocks-config
+    dest: ~/.config/i3blocks/config
+
+- name: Copy desktop setup script
+  copy:
+    src: start.sh
+    dest: ~/start.sh
+
+- name: Copy desktop setup script
+  copy:
+    src: key.sh
+    dest: ~/key.sh
+
+- name: Copy gtk2 config
+  template:
+    src: gtk2-config
+    dest: ~/.gtkrc-2.0
+
+- name: Create gtk3 config directory
+  file:
+    path: ~/.config/gtk-3.0
+    state: directory
+
+- name: Copy gtk3 config
+  template:
+    src: gtk3-config
+    dest: ~/.config/gtk-3.0/settings.ini
+
+- name: setup Xresources (user)
+  template:
+    src: xresources
+    dest: ~/.Xresources
+
+- name: check if /etc/X11/Xresources directory exists
+  stat:
+    path: /etc/X11/Xresources
+  register: x11dir
+
+- name: delete global Xresources directory
+  file:
+    path: /etc/X11/XResources
+    state: absent
+  when: x11dir.stat.exists and x11dir.stat.isdir
+
+- name: setup Xresources (global)
+  template:
+    src: xresources
+    dest: /etc/X11/Xresources
+  become: yes
+
+- name: Create xorg.conf.d directory
+  become: yes
+  file:
+    path: /etc/X11/xorg.conf.d
+    state: directory
+
+- name: setup x11 synaptics
+  copy:
+    src: synaptics-config
+    dest: /etc/X11/xorg.conf.d/70-synaptics.conf
+  become: yes
+
+- name: setup X11 dpi in lightdm
+  template:
+    src: lightdm-config
+    dest: /etc/lightdm/lightdm.conf
+  become: yes
+
+- name: hide user images in lightdm-gtk-greeter
+  community.general.ini_file:
+    path: /etc/lightdm/lightdm-gtk-greeter.conf
+    section: greeter
+    option: hide-user-image
+    value: "true"
+  become: yes
+
+- name: remove panel from lightdm-gtk-greeter
+  community.general.ini_file:
+    path: /etc/lightdm/lightdm-gtk-greeter.conf
+    section: greeter
+    option: indicators
+    value: ""
+  become: yes
+
+- name: set gsettings key theme to emacs
+  command: gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
+
+- name: disable gthumb extensions except list_tools
+  command: "gsettings set org.gnome.gthumb.general active-extensions \"['list_tools']\""
+
+- name: don't record app/file usage
+  command: "{{ item }}"
+  loop:
+    - "gsettings set org.gnome.desktop.privacy remember-app-usage false"
+    - "gsettings set org.gnome.desktop.privacy remember-recent-files false"
+    - "gsettings set org.gnome.desktop.privacy report-technical-problems false"
+    - "gsettings set org.gnome.desktop.privacy send-software-usage-stats false"
+
+- name: Create mpv config directory
+  file:
+    path: ~/.config/mpv
+    state: directory
+
+- name: copy mpv config
+  copy:
+    src: mpv-config
+    dest: ~/.config/mpv/mpv.conf
+
+- name: copy mimetypes config
+  copy:
+    src: mimeapps.list
+    dest: ~/.config/mimeapps.list
+
+- name: Create gtk3 directory
+  file:
+    path: ~/.config/gtk-3.0
+    state: directory
+
+- name: copy file manager bookmarks
+  template:
+    src: fm-bookmarks
+    dest: ~/.config/gtk-3.0/bookmarks
+
+- name: add user to libvirt group
+  become: yes
+  user:
+    name: "{{ lookup('env', 'USER') }}"
+    groups: "{{ item }}"
+    append: yes
+  loop:
+    - libvirt
+
+- name: accept ms font eula (have not actually read it)
+  become: true
+  debconf:
+    name: ttf-mscorefonts-installer
+    question: msttcorefonts/accepted-mscorefonts-eula
+    vtype: boolean
+    value: true
+
+- name: Install x11 fonts
+  become: true
+  apt:
+    update_cache: yes
+    cache_valid_time: 36000
+    state: latest
+    pkg:
+      - fonts-dejavu
+      - fonts-firacode
+      - fonts-ubuntu
+      - fonts-ubuntu-console
+      - fonts-roboto
+      - xfonts-terminus
+      - ttf-mscorefonts-installer
+
+- name: Create font directory
+  file:
+    path: ~/.fonts
+    state: directory
+
+- name: Download jetbrains font
+  ansible.builtin.get_url:
+    url: https://github.com/JetBrains/JetBrainsMono/releases/download/v2.242/JetBrainsMono-2.242.zip
+    dest: /opt/tmp/JetBrainsMono.zip
+    checksum: sha256:4e315b4ef176ce7ffc971b14997bdc8f646e3d1e5b913d1ecba3a3b10b4a1a9f
+
+- name: Extract jetbrains font
+  ansible.builtin.unarchive:
+    src: /opt/tmp/JetBrainsMono.zip
+    dest: ~/.fonts
+
+- name: Download scientifica font
+  ansible.builtin.get_url:
+    url: https://github.com/nerdypepper/scientifica/releases/download/v2.3/scientifica.tar
+    dest: /opt/tmp/scientifica.tar
+    checksum: sha256:f0857869a0e846c6f175dcb853dd1f119ea17a75218e63b7f0736d5a8e1e8a7f
+
+- name: Extract scientifica font
+  ansible.builtin.unarchive:
+    src: /opt/tmp/scientifica.tar
+    dest: ~/.fonts
+
+- name: Copy scientifica fontconfig
+  become: true
+  copy:
+    src: 91-scientifica.conf
+    dest: /etc/fonts/conf.d/91-scientifica.conf
+
+- name: Install chromium
+  when: ansible_distribution == "Debian"
+  become: true
+  apt:
+    update_cache: yes
+    cache_valid_time: 36000
+    state: latest
+    pkg:
+      - chromium
+
+- name: Install chromium - ubuntu
+  when: ansible_distribution == "Ubuntu"
+  become: true
+  apt:
+    update_cache: yes
+    cache_valid_time: 36000
+    state: latest
+    pkg:
+      - chromium-browser
+
+- name: Install ublock origin
+  when: ansible_distribution == "Debian"
+  become: true
+  apt:
+    update_cache: yes
+    cache_valid_time: 36000
+    state: latest
+    pkg:
+      - webext-ublock-origin-chromium
+
+- name: Set Chromium as default browser
+  when: ansible_distribution == "Debian"
+  command: update-alternatives --install /usr/bin/x-www-browser x-www-browser /usr/bin/chromium 250
+  become: yes
+
+- name: Set Chromium as default browser
+  when: ansible_distribution == "Ubuntu"
+  command: update-alternatives --install /usr/bin/x-www-browser x-www-browser /usr/bin/chromium-browser 250
+  become: yes
+
+# See https://www.chromium.org/administrators/policy-list-3
+- name: Create Chromium policies directory
+  file:
+    path: /etc/chromium/policies/managed
+    state: directory
+  become: yes
+
+- name: Create Chromium JSON policy file
+  template:
+    src: chromium-policy
+    dest: "/etc/chromium/policies/managed/my-policy.json"
+  become: yes
+
+- name: Create Chromium extensions directory
+  file:
+    path: /usr/share/chromium/extensions
+    state: directory
+  become: yes
+
+- name: Copy imwheelrc file to fix chromium scrolling speed
+  copy:
+    src: imwheelrc
+    dest: ~/.imwheelrc
+  become: yes
+
+- name: Download nim
+  ansible.builtin.get_url:
+    url: https://nim-lang.org/download/nim-1.6.12-linux_x64.tar.xz
+    dest: /opt/tmp/nim-1.6.12-linux_x64.tar.xz
+    checksum: sha256:6b22894d0db974e10bd271217ce7f01a5fcd0b37cb3ea9d539734cb46f2cac75
+
+- name: Extract nim to /opt
+  become: yes
+  ansible.builtin.unarchive:
+    src: /opt/tmp/nim-1.6.12-linux_x64.tar.xz
+    dest: /opt
+
+- name: Download Koreader
+  get_url:
+    url: https://github.com/koreader/koreader/releases/download/v2022.07/koreader-appimage-x86_64-linux-gnu-v2022.07.AppImage
+    dest: /opt/tmp/koreader-appimage-x86_64-linux-gnu-v2022.07.AppImage
+    checksum: sha256:93d79bc48520c8d875804d9ce7bbc20a39b431d2d581b3b0288c231c6db33e1e
+
+- name: Move Koreader to /opt/bin
+  become: yes
+  copy:
+    src: /opt/tmp/koreader-appimage-x86_64-linux-gnu-v2022.07.AppImage
+    dest: /opt/bin/koreader-appimage-x86_64-linux-gnu-v2022.07.AppImage
+
+- name: Set Koreader executable attributes
+  file:
+    path: /opt/bin/koreader-appimage-x86_64-linux-gnu-v2022.07.AppImage
+    mode: 0755
+    owner: root
+    group: root
+  become: yes
