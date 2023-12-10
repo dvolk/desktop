@@ -112,6 +112,7 @@
           - p7zip-rar
           - ncal
           - cpufrequtils
+          - expect
 
     - name: Create /opt
       become: yes
@@ -734,7 +735,6 @@
       copy:
         src: imwheelrc
         dest: ~/.imwheelrc
-      become: yes
 
     - name: Download nim
       ansible.builtin.get_url:
