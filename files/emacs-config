@@ -239,3 +239,7 @@
 (add-hook 'c++-mode-hook
           (lambda ()
             (add-hook 'before-save-hook 'artistic-style-buffer nil 'local)))
+
+;; remove lsp headerline/breadcrumbs
+(setq lsp-headerline-breadcrumb-enable nil)
+(remove-hook 'lsp-configure-hook 'lsp-headerline-breadcrumb-mode)
