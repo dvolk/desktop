@@ -1,5 +1,14 @@
 screenshot-format=png
 screenshot-directory="~/stuff/mpv-screenshots"
 screenshot-template="%f_%P"
-mute=yes
-volume=30
+pulse-latency-hacks=yes
+fs=yes
+cache=yes
+
+sub-auto=all
+slang=en
+alang=en,eng,ja,jp,jpn
+
+gamma=10
+panscan=1
+profile=high-quality
