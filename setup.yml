@@ -113,6 +113,7 @@
           - ncal
           - cpufrequtils
           - expect
+          - transmission-daemon
 
     - name: Create /opt
       become: yes
@@ -336,7 +337,6 @@
         src: emacs-config
         dest: ~/.emacs.d/init.el
 
-
     - name: touch emacs custom config file
       file:
         dest: ~/.emacs.d/custom.el
@@ -409,6 +409,7 @@
           - imwheel
           - kitty
           - adwaita-icon-theme-full
+          - picom
 
     - name: Install lightdm
       become: true
@@ -451,8 +452,6 @@
           - gparted
           - gnome-disk-utility
           - pavucontrol
-          - transmission-gtk
-          - transmission-remote-gtk
           - engrampa
 
     - name: Copy desktop background
@@ -492,6 +491,7 @@
           - blueman
           - apport
           - apport-gtk
+          - bluez
 
     - name: Create i3 config directory
       file:
