@@ -528,6 +528,16 @@
         src: gtk3-config
         dest: ~/.config/gtk-3.0/settings.ini
 
+    - name: Create gtk4 config directory
+      file:
+        path: ~/.config/gtk-4.0
+        state: directory
+
+    - name: Copy gtk4 config
+      template:
+        src: gtk4.css
+        dest: ~/.config/gtk-4.0/gtk.css
+
     - name: setup Xresources (user)
       template:
         src: xresources

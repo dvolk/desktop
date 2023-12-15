@@ -1,0 +1,4 @@
+* {
+    font-family: 'Ubuntu Regular', sans-serif;
+    font-size: {{ lookup('env', 'FONT_SIZE')|int * 2 }}px;
+}
