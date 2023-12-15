@@ -800,3 +800,18 @@
         src: /tmp/main.py
         dest: /usr/local/bin/mymenu
         mode: '0755'
+
+    - name: create transmission config dir
+      file:
+        path: ~/.config/transmission
+        state: directory
+
+    - name: copy transmission config
+      template:
+        src: settings.json
+        dest: ~/.config/transmission/settings.json
+
+    - name: copy picom config
+      copy:
+        src: picom.conf
+        dest: ~/.config/picom.conf
