@@ -454,6 +454,18 @@
           - pavucontrol
           - engrampa
 
+    - name: Install game deps
+      become: true
+      apt:
+        update_cache: yes
+        cache_valid_time: 36000
+        state: latest
+        pkg:
+          - libsdl2-gfx-1.0-0
+          - libsdl2-image-2.0-0
+          - libsdl2-mixer-2.0-0
+          - libsdl2-ttf-2.0-0
+
     - name: Copy desktop background
       become: yes
       copy:
