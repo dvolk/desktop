@@ -136,3 +136,18 @@ PATH=$PATH:/home/{{ lookup('env', 'USER') }}/.nimble/bin
 
 TERM=xterm-256color
 COLORTERM=truecolor
+
+# kube aliases
+alias k='kubectl'
+alias ka='kubectl apply -f'
+alias kd='kubectl delete -f'
+alias kn='kubectl get nodes -o=wide'
+alias kp='kubectl get pods --all-namespaces -o=wide'
+alias kpw='kubectl get pods --all-namespaces -o=wide -w'
+alias kde='kubectl describe'
+function ke() {
+    kubectl exec -it "$1" -- /bin/bash
+}
+function kee() {
+    kubectl exec -it "$1" -c "$2" -- /bin/bash
+}
