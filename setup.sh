@@ -10,6 +10,7 @@ set -e
 #
 
 sudo apt update
+sudo apt upgrade
 sudo apt -y install etckeeper
 sudo etckeeper commit || true
 
