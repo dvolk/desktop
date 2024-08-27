@@ -474,11 +474,13 @@ cat <<EOF > /tmp/policies.json
         "ExtensionSettings": {
             "uBlock0@raymondhill.net": {
                 "installation_mode": "force_installed",
-                "install_url": "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi"
+                "install_url": "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi",
+                "default_area": "navbar"
             },
             "treestyletab@piro.sakura.ne.jp": {
                 "installation_mode": "force_installed",
                 "install_url": "https://addons.mozilla.org/firefox/downloads/latest/tree-style-tab/latest.xpi"
+                "default_area": "navbar"
             }
         },
         "HttpsOnlyMode": "force_enabled",
