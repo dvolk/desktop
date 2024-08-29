@@ -35,7 +35,7 @@ sudo apt -y install jq rsync git tmux htop iotop bmon powertop lsof ncdu aria2 b
 sudo apt -y install python-is-python3 build-essential python3-pip python3-virtualenv python3-watchdog mypy python3-pylsp python3-pylsp-black python3-pylsp-jsonrpc black python3-pylsp-black python3-isort mypy python3-mypy python3-mypy-extensions python3-flake8 python3-rope
 
 # desktop packages
-sudo apt -y install gimp emacs blender rawtherapee feh mpv fbreader zathura zathura-djvu obs-studio virt-manager transmission gthumb gnome-weather
+sudo apt -y install gimp emacs blender rawtherapee feh mpv fbreader zathura zathura-djvu obs-studio virt-manager transmission gthumb gnome-weather gnome-tweaks
 
 # deps for cataclysmdda
 sudo apt -y install libsdl2-gfx-1.0-0 libsdl2-image-2.0-0 libsdl2-mixer-2.0-0 libsdl2-ttf-2.0-0
