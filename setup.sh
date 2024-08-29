@@ -11,10 +11,11 @@ set -e
 
 sudo apt update
 sudo apt upgrade
-sudo apt -y install etckeeper
-sudo etckeeper commit || true
 
 sudo snap refresh
+
+sudo apt -y install etckeeper
+sudo etckeeper commit || true
 
 # dev packages
 sudo apt -y install build-essential autoconf automake g++ oathtool valgrind cloc cmake cmake-curses-gui strace pkg-config nodejs npm
