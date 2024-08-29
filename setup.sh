@@ -409,9 +409,11 @@ file:///home/ubuntu/stuff/org
 EOF
 
 # add user to additional groups
-sudo adduser ubuntu docker
-sudo adduser ubuntu lxd
-sudo adduser ubuntu libvirt
+{
+    sudo adduser ubuntu docker
+    sudo adduser ubuntu lxd
+    sudo adduser ubuntu libvirt
+} || true
 
 # how does this interact with the hotspot?
 # sudo ufw enable
@@ -1085,10 +1087,12 @@ sudo mv /tmp/policies.json /etc/firefox/policies
 #
 
 # disable extensions
-gnome-extensions disable ding@rastersoft.com
-gnome-extensions disable tiling-assistant@ubuntu.com
-gnome-extensions disable ubuntu-appindicators@ubuntu.com
-gnome-extensions disable ubuntu-dock@ubuntu.com
+{
+    gnome-extensions disable ding@rastersoft.com
+    gnome-extensions disable tiling-assistant@ubuntu.com
+    gnome-extensions disable ubuntu-appindicators@ubuntu.com
+    gnome-extensions disable ubuntu-dock@ubuntu.com
+} || true
 dconf write /org/gnome/shell/enabled-extensions "@as []"
 dconf write /org/gnome/shell/disable-user-extensions true
 # lock screen after 10 minutes
