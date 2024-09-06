@@ -1140,7 +1140,7 @@ dconf write /org/gnome/shell/weather/locations "[<(uint32 2, <('Oxford', 'EGTK',
 # dash apps
 dconf write /org/gnome/shell/favorite-apps "['firefox_firefox.desktop', 'emacs.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop', 'transmission-gtk.desktop', 'virt-manager.desktop', 'com.obsproject.Studio.desktop', 'org.gnome.gThumb.desktop', 'org.gnome.SystemMonitor.desktop', 'org.gnome.Settings.desktop']"
 # download and set background
-wget -nc -O .config/background 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Hong_Kong_Harbour_Night_2019-06-11.jpg'
+wget -nc -O .config/background 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Hong_Kong_Harbour_Night_2019-06-11.jpg' || true
 dconf write /org/gnome/desktop/background/picture-uri "'file:///home/ubuntu/.config/background'"
 dconf write /org/gnome/desktop/background/picture-options "'zoom'"
 dconf write /org/gnome/desktop/background/picture-uri-dark "'file:///home/ubuntu/.config/background'"
