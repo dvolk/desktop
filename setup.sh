@@ -83,7 +83,7 @@ Host eclipse
 EOF
 
 # git config
-mkdir .git
+mkdir -p .git
 cat<<'EOF' > ~/.git/config
 [user]
     email = denis.volk@gmail.com
