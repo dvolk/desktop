@@ -9,8 +9,11 @@ set -e
 # |_|                         |___/
 #
 
+DEBIAN_FRONTEND=readline
+export DEBIAN_FRONTEND
+
 sudo apt update
-sudo apt upgrade
+sudo apt -y upgrade
 
 sudo snap refresh
 
