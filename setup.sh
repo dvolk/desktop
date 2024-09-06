@@ -65,6 +65,7 @@ export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then
 fi'
 
 alias h='cat ~/stuff/logs/bash-history-* | grep -a'
+alias k='kubectl'
 EOF
 
 # ssh config
@@ -1148,3 +1149,23 @@ dconf write /org/gnome/shell/world-clocks/locations "[<(uint32 2, <('Beijing', '
 # nautilus
 dconf write /org/gnome/nautilus/icon-view/default-zoom-level "'large'"
 dconf write /org/gnome/nautilus/preferences/recursive-search "'never'"
+
+#  _          _                          _
+# | | ___   _| |__   ___ _ __ _ __   ___| |_ ___  ___
+# | |/ / | | | '_ \ / _ \ '__| '_ \ / _ \ __/ _ \/ __|
+# |   <| |_| | |_) |  __/ |  | | | |  __/ ||  __/\__ \
+# |_|\_\\__,_|_.__/ \___|_|  |_| |_|\___|\__\___||___/
+#
+#
+
+if [ ! -f "/usr/local/bin/kubectl" ]; then
+    curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+    chmod a+x kubectl
+    sudo mv kubectl /usr/local/bin/kubectl
+fi
+
+if [ ! -f "/usr/local/bin/kind" ]; then
+    curl -LO https://kind.sigs.k8s.io/dl/v0.24.0/kind-linux-amd64
+    chmod +x kind-linux-amd64
+    sudo mv kind-linux-amd64 /usr/local/bin/kind
+fi
