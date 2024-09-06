@@ -493,13 +493,25 @@ cat <<EOF > /tmp/policies.json
             },
             "treestyletab@piro.sakura.ne.jp": {
                 "installation_mode": "force_installed",
-                "install_url": "https://addons.mozilla.org/firefox/downloads/latest/tree-style-tab/latest.xpi"
+                "install_url": "https://addons.mozilla.org/firefox/downloads/latest/tree-style-tab/latest.xpi",
+                "default_area": "navbar"
+            },
+            "@testpilot-containers": {
+                "installation_mode": "force_installed",
+                "install_url": "https://addons.mozilla.org/firefox/downloads/latest/multi-account-containers/latest.xpi",
                 "default_area": "navbar"
             }
+        },
+        "Cookies": {
+            "Behavior": "reject-tracker-and-partition-foreign"
         },
         "HttpsOnlyMode": "force_enabled",
         "AutofillAddressEnabled": false,
         "AutofillCreditCardEnabled": false,
+        "DisableSetDesktopBackground": true,
+        "DownloadDirectory": "${home}/Downloads",
+        "PromptForDownloadLocation": false,
+        "NoDefaultBookmarks": true,
         "Preferences":
         {
             "general.smoothScroll": { "Value": false, "Status": "locked" },
