@@ -516,7 +516,8 @@ cat <<EOF > /tmp/policies.json
         {
             "general.smoothScroll": { "Value": false, "Status": "locked" },
             "dom.security.https_only_mode_ever_enabled": { "Value": true, "Status": "locked" },
-            "browser.altClickSave": { "Value": true, "Status": "locked" }
+            "browser.altClickSave": { "Value": true, "Status": "locked" },
+            "toolkit.legacyUserProfileCustomizations.stylesheets": { "Value": true, "Status": "locked" }
         },
         "Bookmarks": [
             { "Title": "Visidata", "URL": "https://www.visidata.org/docs/", "Placement": "menu", "Folder": "Desktop Software" },
