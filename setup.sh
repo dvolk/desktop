@@ -1104,6 +1104,20 @@ EOF
 sudo mkdir -p /etc/firefox/policies
 sudo mv /tmp/policies.json /etc/firefox/policies
 
+# firefox hide tab bar - snap
+for profile_dir in $(find snap/firefox/common/.mozilla/firefox/ -name '*.default*'); do
+    echo "profile_dir: $profile_dir"
+    mkdir -p "$profile_dir/chrome"
+    echo "#TabsToolbar { visibility: collapse; }" > "$profile_dir/chrome/userChrome.css"
+done
+
+# firefox hide tab bar - other
+for profile_dir in $(find .mozilla/firefox/ -name '*.default*'); do
+    echo "profile_dir: $profile_dir"
+    mkdir -p "$profile_dir/chrome"
+    echo "#TabsToolbar { visibility: collapse; }" > "$profile_dir/chrome/userChrome.css"
+done
+
 #
 #   __ _ _ __   ___  _ __ ___   ___
 #  / _` | '_ \ / _ \| '_ ` _ \ / _ \
