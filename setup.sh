@@ -65,7 +65,7 @@ export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then
 fi'
 
 alias h='cat ~/stuff/logs/bash-history-* | grep -a'
-alias k='kubectl'
+alias k='kubecolor'
 EOF
 
 # ssh config
@@ -1183,4 +1183,12 @@ if [ ! -f "/usr/local/bin/kind" ]; then
     curl -LO https://kind.sigs.k8s.io/dl/v0.24.0/kind-linux-amd64
     chmod +x kind-linux-amd64
     sudo mv kind-linux-amd64 /usr/local/bin/kind
+fi
+
+if [ ! -f "/usr/local/bin/kubecolor" ]; then
+    curl -LO https://github.com/kubecolor/kubecolor/releases/download/v0.4.0/kubecolor_0.4.0_linux_amd64.tar.gz
+    tar xf kubecolor_0.4.0_linux_amd64.tar.gz kubecolor
+    rm kubecolor_0.4.0_linux_amd64.tar.gz
+    chmod +x kubecolor
+    sudo mv kubecolor /usr/local/bin/kubecolor
 fi
