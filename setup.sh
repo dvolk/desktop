@@ -517,14 +517,20 @@ cat <<EOF > /tmp/policies.json
         "DownloadDirectory": "${home}/Downloads",
         "PromptForDownloadLocation": false,
         "NoDefaultBookmarks": true,
-        "Preferences":
-        {
-            "general.smoothScroll": { "Value": false, "Status": "locked" },
-            "dom.security.https_only_mode_ever_enabled": { "Value": true, "Status": "locked" },
-            "browser.altClickSave": { "Value": true, "Status": "locked" },
-            "toolkit.legacyUserProfileCustomizations.stylesheets": { "Value": true, "Status": "locked" },
-            "layout.css.has-selector.enabled": { "Value": true, "Status": "locked" }
-        },
+         "Preferences":
+         {
+             "general.smoothScroll": { "Value": false, "Status": "locked" },
+             "browser.altClickSave": { "Value": true, "Status": "locked" },
+             "ui.key.menuAccessKeyFocuses": { "Value": false, "Status": "locked" },
+             "dom.security.https_only_mode_ever_enabled": { "Value": true, "Status": "locked" },
+
+             "toolkit.legacyUserProfileCustomizations.stylesheets": { "Value": true, "Status": "locked" },
+             "layout.css.has-selector.enabled": { "Value": true, "Status": "locked" },
+
+             "keyword.enabled": { "Value": false, "Status": "locked" },
+             "browser.fixup.alternate.enabled": { "Value": false, "Status": "locked" },
+             "browser.urlbar.suggest.searches": { "Value": false, "Status": "locked" }
+         },
         "Bookmarks": [
             { "Title": "Visidata", "URL": "https://www.visidata.org/docs/", "Placement": "menu", "Folder": "Desktop Software" },
             { "Title": "Emacs", "URL": "https://www.gnu.org/software/emacs/", "Placement": "menu", "Folder": "Desktop Software" },
