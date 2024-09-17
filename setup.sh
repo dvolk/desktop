@@ -69,8 +69,29 @@ export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then
     echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> ~/stuff/logs/bash-history-$(date "+%Y-%m-%d").log;
 fi'
 
-alias h='cat ~/stuff/logs/bash-history-* | grep -a'
+alias h='cat ~/stuff/logs/*-history-* | grep -a'
 alias k='kubecolor'
+
+kn() {
+  if [ -z "$1" ]; then
+    current_context=$(kubectl config current-context)
+    current_namespace=$(kubectl config view --minify --output 'jsonpath={..namespace}')
+
+    if [ -z "$current_namespace" ]; then
+      current_namespace="default"
+    fi
+
+    echo "Current context: $current_context"
+    echo "Current namespace: $current_namespace"
+  else
+    kubectl config set-context --current --namespace="$1"
+    if [ $? -eq 0 ]; then
+      echo "Switched to namespace: $1"
+    else
+      echo "Failed to switch namespace"
+    fi
+  fi
+}
 EOF
 
 # ssh config
