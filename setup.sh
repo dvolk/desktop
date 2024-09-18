@@ -477,14 +477,12 @@ cat <<EOF > /tmp/policies.json
         "DontCheckDefaultBrowser": true,
         "DisableFeedbackCommands": true,
         "DisableFirefoxScreenshots": true,
-        "policies": {
-            "FirefoxSuggest": {
-                "WebSuggestions": false,
-                "SponsoredSuggestions": false,
-                "ImproveSuggest": false,
-                "Locked": true
-            }
-        }
+        "FirefoxSuggest": {
+            "WebSuggestions": false,
+            "SponsoredSuggestions": false,
+            "ImproveSuggest": false,
+            "Locked": true
+        },
         "FirefoxHome": {
             "Search": false,
             "TopSites": false,
