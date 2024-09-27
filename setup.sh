@@ -72,6 +72,9 @@ fi'
 alias h='cat ~/stuff/logs/*-history-* | grep -a'
 alias k='kubecolor'
 
+source <(kubectl completion bash)
+complete -o default -F __start_kubectl k
+
 alias dev='echo -e "\033]11;#000000\007"' # black
 alias prod='echo -e "\033]11;#660000\007"' # red
 
