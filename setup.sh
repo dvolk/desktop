@@ -74,6 +74,7 @@ alias k='kubecolor'
 
 source <(kubectl completion bash)
 complete -o default -F __start_kubectl k
+bind 'set completion-ignore-case on'
 
 alias dev='echo -e "\033]11;#000000\007"' # black
 alias prod='echo -e "\033]11;#660000\007"' # red
@@ -97,6 +98,59 @@ kn() {
       echo "Failed to switch namespace"
     fi
   fi
+}
+
+function sk() {
+  local kubeconfig_local="$HOME/.kube/config"
+  local kubeconfig_teleport="$HOME/.kube/teleport"
+  local kubeconfig_cwinternal="$HOME/.kube/cwinternal"
+
+  if [[ -z "$1" ]]; then
+    echo "Current KUBECONFIG: ${KUBECONFIG:-$kubeconfig_local}"
+  elif [[ "$1" == "local" ]]; then
+    export KUBECONFIG="$kubeconfig_local"
+    echo "Switched to local kubeconfig: $KUBECONFIG"
+  elif [[ "$1" == "teleport" ]]; then
+    export KUBECONFIG="$kubeconfig_teleport"
+    echo "Switched to teleport kubeconfig: $KUBECONFIG"
+  elif [[ "$1" == "cwinternal" ]]; then
+    export KUBECONFIG="$kubeconfig_cwinternal"
+    echo "Switched to teleport kubeconfig: $KUBECONFIG"
+  else
+    echo "Usage: switch_kubeconfig [local|teleport|cwinternal]"
+  fi
+}
+
+be() {
+  local namespace=""
+  local pod_name
+  local container_name
+
+  # Check if a namespace was provided
+  if [ -n "$1" ]; then
+    namespace="--namespace=$1"
+  fi
+
+  # Get a list of pods in the specified namespace and use fzf for selection
+  pod_name=$(kubectl get pods $namespace --output=jsonpath='{.items[*].metadata.name}' | tr ' ' '\n' | fzf)
+
+  # Check if a pod was selected
+  if [ -z "$pod_name" ]; then
+    echo "No pod selected."
+    return
+  fi
+
+  # Get a list of containers in the selected pod
+  container_name=$(kubectl get pod $pod_name $namespace -o jsonpath='{.spec.containers[*].name}' | tr ' ' '\n' | fzf)
+
+  # Check if a container was selected
+  if [ -z "$container_name" ]; then
+    echo "No container selected."
+    return
+  fi
+
+  # Exec into the selected container of the selected pod
+  kubectl exec -it $namespace $pod_name -c $container_name -- /bin/bash
 }
 EOF
 
