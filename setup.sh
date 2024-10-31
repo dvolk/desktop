@@ -58,9 +58,7 @@ sudo apt -y install libsdl2-gfx-1.0-0 libsdl2-image-2.0-0 libsdl2-mixer-2.0-0 li
 cat<<'EOF' > .bashrc
 [[ $- != *i* ]] && return
 
-export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then
-    echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> ~/stuff/logs/bash-history-$(date "+%Y-%m-%d").log;
-fi'
+export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> ~/stuff/logs/bash-history-$(date "+%Y-%m-%d").log; fi;'
 
 if [ -f /usr/share/autojump/autojump.bash ]; then
    source /usr/share/autojump/autojump.bash
