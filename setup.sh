@@ -33,7 +33,7 @@ sudo apt -y install imagemagick
 sudo apt -y install p7zip unace unar unrar unzip zip xz-utils arj lzip lzop rar rzip unalz p7zip-rar
 
 # misc packages
-sudo apt -y install jq rsync git tmux htop iotop bmon powertop lsof ncdu aria2 bzip2 fzf parallel rdate sqlite3 tig tshark apt-file autojump bc curl dict-gcide dictd ranger smartmontools lshw m4 pwgen sshfs tree ufw w3m lynx wget whois ngrep rtorrent ncompress rpm2cpio ncal expect figlet neofetch
+sudo apt -y install jq rsync git tmux htop iotop bmon powertop lsof ncdu aria2 bzip2 fzf parallel rdate sqlite3 tig tshark apt-file autojump bc curl dict-gcide dictd ranger smartmontools lshw m4 pwgen sshfs tree ufw w3m lynx wget whois ngrep rtorrent ncompress rpm2cpio ncal expect figlet neofetch mutt
 
 # python dev packages
 sudo apt -y install python-is-python3 build-essential python3-pip python3-virtualenv python3-watchdog mypy python3-pylsp python3-pylsp-black python3-pylsp-jsonrpc black python3-pylsp-black python3-isort mypy python3-mypy python3-mypy-extensions python3-flake8 python3-rope
