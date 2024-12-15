@@ -1200,6 +1200,11 @@ dconf write /org/gnome/shell/world-clocks/locations "[<(uint32 2, <('Beijing', '
 # nautilus
 dconf write /org/gnome/nautilus/icon-view/default-zoom-level "'large'"
 dconf write /org/gnome/nautilus/preferences/recursive-search "'never'"
+dconf write /org/gnome/nautilus/preferences/default-sort-order "'mtime'"
+dconf write /org/gnome/nautilus/icon-view/captions "['detailed_type', 'date_modified', 'size']"
+dconf write /org/gnome/nautilus/preferences/show-delete-permanently true
+dconf write /org/gnome/nautilus/preferences/show-create-link true
+dconf write /org/gnome/nautilus/preferences/show-directory-item-counts "'never'"
 
 #  _          _                          _
 # | | ___   _| |__   ___ _ __ _ __   ___| |_ ___  ___
