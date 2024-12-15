@@ -1205,6 +1205,7 @@ dconf write /org/gnome/nautilus/icon-view/captions "['detailed_type', 'date_modi
 dconf write /org/gnome/nautilus/preferences/show-delete-permanently true
 dconf write /org/gnome/nautilus/preferences/show-create-link true
 dconf write /org/gnome/nautilus/preferences/show-directory-item-counts "'never'"
+dconf write /org/gnome/nautilus/preferences/default-sort-in-reverse-order true
 
 #  _          _                          _
 # | | ___   _| |__   ___ _ __ _ __   ___| |_ ___  ___
