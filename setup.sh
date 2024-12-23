@@ -270,6 +270,7 @@ cat<<'EOF' > .emacs.d/init.el
 (global-set-key [f3] 'tab-next)
 (global-set-key [f4] 'switch-to-buffer)
 (global-set-key [f5] 'treemacs)
+(global-set-key [f7] 'treemacs)
 (global-set-key [f6] 'magit)
 (global-set-key [f9] 'lsp-find-definition)
 (global-set-key [f12] 'color-identifiers-mode)
