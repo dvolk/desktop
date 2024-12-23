@@ -1200,22 +1200,19 @@ EOF
 sudo mkdir -p /etc/firefox/policies
 sudo mv /tmp/policies.json /etc/firefox/policies
 
-# firefox hide tab bar - desktop only
-if [ `hostnamectl chassis` == "desktop" ]; then
-    # snap
-    for profile_dir in $(find snap/firefox/common/.mozilla/firefox/ -name '*.default*'); do
-        echo "profile_dir: $profile_dir"
-        mkdir -p "$profile_dir/chrome"
-        echo "#TabsToolbar { visibility: collapse; }" > "$profile_dir/chrome/userChrome.css"
-    done
+# snap
+for profile_dir in $(find snap/firefox/common/.mozilla/firefox/ -name '*.default*'); do
+    echo "profile_dir: $profile_dir"
+    mkdir -p "$profile_dir/chrome"
+    echo "#TabsToolbar { visibility: collapse; }" > "$profile_dir/chrome/userChrome.css"
+done
 
-    # other
-    for profile_dir in $(find .mozilla/firefox/ -name '*.default*'); do
-        echo "profile_dir: $profile_dir"
-        mkdir -p "$profile_dir/chrome"
-        echo "#TabsToolbar { visibility: collapse; }" > "$profile_dir/chrome/userChrome.css"
-    done
-fi
+# other
+for profile_dir in $(find .mozilla/firefox/ -name '*.default*'); do
+    echo "profile_dir: $profile_dir"
+    mkdir -p "$profile_dir/chrome"
+    echo "#TabsToolbar { visibility: collapse; }" > "$profile_dir/chrome/userChrome.css"
+done
 
 #
 #   __ _ _ __   ___  _ __ ___   ___
@@ -1283,24 +1280,8 @@ dconf write /org/gnome/nautilus/icon-view/captions "['detailed_type', 'date_modi
 dconf write /org/gnome/nautilus/preferences/show-delete-permanently true
 dconf write /org/gnome/nautilus/preferences/show-create-link true
 dconf write /org/gnome/nautilus/preferences/show-directory-item-counts "'never'"
-# customizations on tablets
-if [ `hostnamectl chassis` == "tablet" ]; then
-    # suspend on power button press
-    dconf write /org/gnome/settings-daemon/plugins/power/power-button-action "'suspend'"
-    # don't lock on suspend
-    dconf write /org/gnome/desktop/screensaver/ubuntu-lock-on-suspend false
-    # turn on on-screen keyboard
-    dconf write /org/gnome/desktop/interface/toolkit-accessibility true
-    dconf write /org/gnome/desktop/a11y/applications/screen-keyboard-enabled true
-    # set power saving profile
-    dconf write /org/gnome/shell/last-selected-power-profile "'power-saver'"
-    # reset to dynamic workspaces
-    dconf write /org/gnome/mutter/dynamic-workspaces true
-fi
-# customization on desktops
-if [ `hostnamectl chassis` == "desktop" ]; then
-    dconf write /org/gnome/shell/last-selected-power-profile "'performance'"
-fi
+# set power profile
+dconf write /org/gnome/shell/last-selected-power-profile "'performance'"
 
 #  _          _                          _
 # | | ___   _| |__   ___ _ __ _ __   ___| |_ ___  ___
@@ -1328,4 +1309,38 @@ if [ ! -f "/usr/local/bin/kubecolor" ]; then
     rm kubecolor_0.4.0_linux_amd64.tar.gz
     chmod +x kubecolor
     sudo mv kubecolor /usr/local/bin/kubecolor
+fi
+
+#                 _
+#   ___ _   _ ___| |_ ___  _ __ ___
+#  / __| | | / __| __/ _ \| '_ ` _ \
+# | (__| |_| \__ \ || (_) | | | | | |
+#  \___|\__,_|___/\__\___/|_| |_| |_|
+#
+#
+
+# tablets
+if [ `hostnamectl chassis` == "tablet" ]; then
+    # suspend on power button press
+    dconf write /org/gnome/settings-daemon/plugins/power/power-button-action "'suspend'"
+    # don't lock on suspend
+    dconf write /org/gnome/desktop/screensaver/ubuntu-lock-on-suspend false
+    # turn on on-screen keyboard
+    dconf write /org/gnome/desktop/interface/toolkit-accessibility true
+    dconf write /org/gnome/desktop/a11y/applications/screen-keyboard-enabled true
+    # set power saving profile
+    dconf write /org/gnome/shell/last-selected-power-profile "'power-saver'"
+    # reset to dynamic workspaces
+    dconf write /org/gnome/mutter/dynamic-workspaces true
+
+    # on tablets we don't want to hide the tab bar
+    # snap
+    for profile_dir in $(find snap/firefox/common/.mozilla/firefox/ -name '*.default*'); do
+        rm "$profile_dir/chrome/userChrome.css"
+    done
+
+    # other
+    for profile_dir in $(find .mozilla/firefox/ -name '*.default*'); do
+        rm "$profile_dir/chrome/userChrome.css"
+    done
 fi
