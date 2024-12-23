@@ -1200,19 +1200,22 @@ EOF
 sudo mkdir -p /etc/firefox/policies
 sudo mv /tmp/policies.json /etc/firefox/policies
 
-# firefox hide tab bar - snap
-for profile_dir in $(find snap/firefox/common/.mozilla/firefox/ -name '*.default*'); do
-    echo "profile_dir: $profile_dir"
-    mkdir -p "$profile_dir/chrome"
-    echo "#TabsToolbar { visibility: collapse; }" > "$profile_dir/chrome/userChrome.css"
-done
+# firefox hide tab bar - desktop only
+if [ `hostnamectl chassis` == "desktop" ]; then
+    # snap
+    for profile_dir in $(find snap/firefox/common/.mozilla/firefox/ -name '*.default*'); do
+        echo "profile_dir: $profile_dir"
+        mkdir -p "$profile_dir/chrome"
+        echo "#TabsToolbar { visibility: collapse; }" > "$profile_dir/chrome/userChrome.css"
+    done
 
-# firefox hide tab bar - other
-for profile_dir in $(find .mozilla/firefox/ -name '*.default*'); do
-    echo "profile_dir: $profile_dir"
-    mkdir -p "$profile_dir/chrome"
-    echo "#TabsToolbar { visibility: collapse; }" > "$profile_dir/chrome/userChrome.css"
-done
+    # other
+    for profile_dir in $(find .mozilla/firefox/ -name '*.default*'); do
+        echo "profile_dir: $profile_dir"
+        mkdir -p "$profile_dir/chrome"
+        echo "#TabsToolbar { visibility: collapse; }" > "$profile_dir/chrome/userChrome.css"
+    done
+fi
 
 #
 #   __ _ _ __   ___  _ __ ___   ___
@@ -1275,11 +1278,29 @@ dconf write /org/gnome/shell/world-clocks/locations "[<(uint32 2, <('Beijing', '
 dconf write /org/gnome/nautilus/icon-view/default-zoom-level "'large'"
 dconf write /org/gnome/nautilus/preferences/recursive-search "'never'"
 dconf write /org/gnome/nautilus/preferences/default-sort-order "'mtime'"
+dconf write /org/gnome/nautilus/preferences/default-sort-in-reverse-order true
 dconf write /org/gnome/nautilus/icon-view/captions "['detailed_type', 'date_modified', 'size']"
 dconf write /org/gnome/nautilus/preferences/show-delete-permanently true
 dconf write /org/gnome/nautilus/preferences/show-create-link true
 dconf write /org/gnome/nautilus/preferences/show-directory-item-counts "'never'"
-dconf write /org/gnome/nautilus/preferences/default-sort-in-reverse-order true
+# customizations on tablets
+if [ `hostnamectl chassis` == "tablet" ]; then
+    # suspend on power button press
+    dconf write /org/gnome/settings-daemon/plugins/power/power-button-action "'suspend'"
+    # don't lock on suspend
+    dconf write /org/gnome/desktop/screensaver/ubuntu-lock-on-suspend false
+    # turn on on-screen keyboard
+    dconf write /org/gnome/desktop/interface/toolkit-accessibility true
+    dconf write /org/gnome/desktop/a11y/applications/screen-keyboard-enabled true
+    # set power saving profile
+    dconf write /org/gnome/shell/last-selected-power-profile "'power-saver'"
+    # reset to dynamic workspaces
+    dconf write /org/gnome/mutter/dynamic-workspaces true
+fi
+# customization on desktops
+if [ `hostnamectl chassis` == "desktop" ]; then
+    dconf write /org/gnome/shell/last-selected-power-profile "'performance'"
+fi
 
 #  _          _                          _
 # | | ___   _| |__   ___ _ __ _ __   ___| |_ ___  ___
