@@ -1199,6 +1199,7 @@ cat <<EOF > /tmp/policies.json
 }
 EOF
 sudo mkdir -p /etc/firefox/policies
+jq . /tmp/policies.json # validate the json
 sudo mv /tmp/policies.json /etc/firefox/policies
 
 # snap
