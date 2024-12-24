@@ -117,7 +117,7 @@ cat<<'EOF' > .emacs.d/init.el
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 (package-initialize)
 
-(setq package-selected-packages '(lsp-mode yasnippet yasnippet-snippets tree-sitter tree-sitter-langs lsp-treemacs helm-lsp magit diff-hl python-black projectile hydra flycheck company company-quickhelp which-key helm-xref rainbow-delimiters dap-mode yaml-mode json-mode jinja2-mode web-mode nim-mode color-identifiers-mode zoom-window  ef-themes astyle howm))
+(setq package-selected-packages '(lsp-mode yasnippet yasnippet-snippets tree-sitter tree-sitter-langs lsp-treemacs helm-lsp magit diff-hl python-black projectile hydra flycheck company company-quickhelp which-key helm-xref rainbow-delimiters dap-mode yaml-mode json-mode jinja2-mode web-mode nim-mode color-identifiers-mode zoom-window astyle howm))
 
 (when (cl-find-if-not #'package-installed-p package-selected-packages)
   (package-refresh-contents)
