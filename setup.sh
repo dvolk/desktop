@@ -378,16 +378,20 @@ EOF
 curl -o /tmp/hosts https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts
 curl -o /tmp/mozilla-hosts https://raw.githubusercontent.com/MrRawes/firefox-hosts/firefox-hosts/hosts
 curl -o /tmp/crypto-hosts https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt
-
+curl -o /tmp/fedi.json https://nodes.fediverse.party/nodes.json
+for fedi_node in $(cat /tmp/fedi.json | jq -r .[]); do echo 0.0.0.0 $fedi_node; done > /tmp/fedi.txt
 # merge the bad hosts
 {
-    echo "127.0.1.1 cdn.matomo.cloud"
+    echo "# matomo web analytics"
+    echo "0.0.0.0 cdn.matomo.cloud"
     echo "# block mozilla telemetry"
     cat /tmp/mozilla-hosts
     echo "# block crypto hosts"
     cat /tmp/crypto-hosts
     echo "# add localhost"
     echo "127.0.1.1 $(hostname)"
+    echo "# fedi hosts"
+    cat /tmp/fedi.tct
 } >> /tmp/hosts
 
 sed -i '/0.0.0.0 addons.mozilla.org/d' /tmp/hosts
