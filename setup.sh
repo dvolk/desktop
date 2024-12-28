@@ -458,7 +458,7 @@ cat <<EOF > /tmp/policies.json
         "DisablePocket": true,
         "DisableProfileRefresh": true,
         "DisableTelemetry": true,
-        "DisplayBookmarksToolbar": false,
+        "DisplayBookmarksToolbar": "never",
         "DontCheckDefaultBrowser": true,
         "DisableFeedbackCommands": true,
         "DisableFirefoxScreenshots": true,
