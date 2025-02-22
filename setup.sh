@@ -1350,3 +1350,8 @@ if [ `hostnamectl chassis` == "tablet" ]; then
         rm "$profile_dir/chrome/userChrome.css"
     done
 fi
+
+if [ `hostnamectl chassis` == "vm" ]; then
+    # don't lock the screen in virtual machines
+    dconf write /org/gnome/desktop/screensaver/lock-enabled false
+fi
