@@ -1270,11 +1270,6 @@ dconf write /org/gnome/Weather/locations "[<(uint32 2, <('Oxford', 'EGTK', true,
 dconf write /org/gnome/shell/weather/locations "[<(uint32 2, <('Oxford', 'EGTK', true, [(0.90465476585696891, -0.022965042297741389)], [(0.90324279449210554, -0.021951006002332681)])>)>]"
 # dash apps
 dconf write /org/gnome/shell/favorite-apps "['firefox_firefox.desktop', 'emacs.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop', 'transmission-gtk.desktop', 'virt-manager.desktop', 'com.obsproject.Studio.desktop', 'org.gnome.gThumb.desktop', 'org.gnome.SystemMonitor.desktop', 'org.gnome.Settings.desktop']"
-# download and set background
-wget -nc -O .config/background 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Hong_Kong_Harbour_Night_2019-06-11.jpg' || true
-dconf write /org/gnome/desktop/background/picture-uri "'file:///home/ubuntu/.config/background'"
-dconf write /org/gnome/desktop/background/picture-options "'zoom'"
-dconf write /org/gnome/desktop/background/picture-uri-dark "'file:///home/ubuntu/.config/background'"
 # gnome world clocks
 dconf write /org/gnome/shell/world-clocks/locations "[<(uint32 2, <('Beijing', 'ZBAA', true, [(0.69696814214530467, 2.0295270260429752)], [(0.69689057971334611, 2.0313596217575696)])>)>, <(uint32 2, <('New York', 'KNYC', true, [(0.71180344078725644, -1.2909618758762367)], [(0.71059804659265924, -1.2916478949920254)])>)>, <(uint32 2, <('Dallas', 'KDAL', true, [(0.57338429251143708, -1.690448351049749)], [(0.57217226606568217, -1.6895950770317414)])>)>]"
 # nautilus
