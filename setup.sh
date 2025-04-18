@@ -391,7 +391,7 @@ for fedi_node in $(cat /tmp/fedi.json | jq -r .[]); do echo 0.0.0.0 $fedi_node; 
     echo "# add localhost"
     echo "127.0.1.1 $(hostname)"
     echo "# fedi hosts"
-    cat /tmp/fedi.tct
+    cat /tmp/fedi.txt
 } >> /tmp/hosts
 
 sed -i '/0.0.0.0 addons.mozilla.org/d' /tmp/hosts
