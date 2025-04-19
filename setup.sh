@@ -395,7 +395,6 @@ for fedi_node in $(cat /tmp/fedi.json | jq -r .[]); do echo 0.0.0.0 $fedi_node; 
 } >> /tmp/hosts
 
 sed -i '/0.0.0.0 addons.mozilla.org/d' /tmp/hosts
-sed -i '/0.0.0.0 .*\.reddit\.com/d' /tmp/hosts
 
 sudo cp /tmp/hosts /etc/hosts
 
