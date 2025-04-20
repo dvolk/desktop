@@ -1303,14 +1303,6 @@ if [ ! -f "/usr/local/bin/kind" ]; then
     sudo mv kind-linux-amd64 /usr/local/bin/kind
 fi
 
-if [ ! -f "/usr/local/bin/kubecolor" ]; then
-    curl -LO https://github.com/kubecolor/kubecolor/releases/download/v0.4.0/kubecolor_0.4.0_linux_amd64.tar.gz
-    tar xf kubecolor_0.4.0_linux_amd64.tar.gz kubecolor
-    rm kubecolor_0.4.0_linux_amd64.tar.gz
-    chmod +x kubecolor
-    sudo mv kubecolor /usr/local/bin/kubecolor
-fi
-
 #                 _
 #   ___ _   _ ___| |_ ___  _ __ ___
 #  / __| | | / __| __/ _ \| '_ ` _ \
