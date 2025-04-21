@@ -68,10 +68,7 @@ if [ -f /etc/profile.d/autojump.bash ]; then
 fi
 
 alias h='cat ~/stuff/logs/*-history-* | grep -a'
-alias k='kubecolor'
 
-source <(kubectl completion bash)
-complete -o default -F __start_kubectl k
 bind 'set completion-ignore-case on'
 
 alias dev='echo -e "\033]11;#000000\007"' # black
