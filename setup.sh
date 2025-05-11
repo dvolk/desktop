@@ -506,12 +506,14 @@ cat <<EOF > /tmp/policies.json
             "uBlock0@raymondhill.net": {
                 "installation_mode": "force_installed",
                 "install_url": "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi",
-                "default_area": "navbar"
+                "default_area": "navbar",
+                "private_browsing": true
             },
             "treestyletab@piro.sakura.ne.jp": {
                 "installation_mode": "force_installed",
                 "install_url": "https://addons.mozilla.org/firefox/downloads/latest/tree-style-tab/latest.xpi",
-                "default_area": "navbar"
+                "default_area": "navbar",
+                "private_browsing": true
             },
             "@testpilot-containers": {
                 "installation_mode": "force_installed",
@@ -541,7 +543,12 @@ cat <<EOF > /tmp/policies.json
 
              "keyword.enabled": { "Value": false, "Status": "locked" },
              "browser.fixup.alternate.enabled": { "Value": false, "Status": "locked" },
-             "browser.urlbar.suggest.searches": { "Value": false, "Status": "locked" }
+             "browser.urlbar.suggest.searches": { "Value": false, "Status": "locked" },
+
+             "browser.sessionstore.interval": { "Value": 3600000, "Status": "locked" },
+
+             "privacy.globalprivacycontrol.enabled": { "Value": true, "Status": "locked" },
+"            "privacy.donottrackheader.enabled": { "Value": true, "Status": "locked" }
          },
          "Bookmarks": [
              {"Title": "Archwiki: Window manager", "URL": "https://wiki.archlinux.org/title/Window_manager", "Placement": "menu", "Folder": "X11 Window managers/desktops"},
