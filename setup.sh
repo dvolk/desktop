@@ -599,7 +599,9 @@ cat <<EOF > /tmp/policies.json
              "browser.sessionstore.interval": { "Value": 3600000, "Status": "locked" },
 
              "privacy.globalprivacycontrol.enabled": { "Value": true, "Status": "locked" },
-             "privacy.donottrackheader.enabled": { "Value": true, "Status": "locked" }
+             "privacy.donottrackheader.enabled": { "Value": true, "Status": "locked" },
+
+             "network.dns.native_https_query": { "Value": true, "Status": "locked" }
          },
          "Bookmarks": [
              {"Title": "Archwiki: Window manager", "URL": "https://wiki.archlinux.org/title/Window_manager", "Placement": "menu", "Folder": "X11 Window managers/desktops"},
