@@ -1296,13 +1296,17 @@ dconf write /org/gnome/shell/last-selected-power-profile "'performance'"
 #
 
 if [ ! -f "/usr/local/bin/kubectl" ]; then
-    curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+    # check https://dl.k8s.io/release/stable.txt for latest
+    curl -LO "https://dl.k8s.io/release/v1.33.1/bin/linux/amd64/kubectl"
+    echo "5de4e9f2266738fd112b721265a0c1cd7f4e5208b670f811861f699474a100a3  kubectl" | sha256sum -c -
     chmod a+x kubectl
     sudo mv kubectl /usr/local/bin/kubectl
 fi
 
 if [ ! -f "/usr/local/bin/kind" ]; then
-    curl -LO https://kind.sigs.k8s.io/dl/v0.24.0/kind-linux-amd64
+    # https://github.com/kubernetes-sigs/kind/releases
+    curl -LO https://github.com/kubernetes-sigs/kind/releases/download/v0.29.0/kind-linux-amd64
+    echo "c72eda46430f065fb45c5f70e7c957cc9209402ef309294821978677c8fb3284  kind-linux-amd64" | sha256sum -c -
     chmod +x kind-linux-amd64
     sudo mv kind-linux-amd64 /usr/local/bin/kind
 fi
