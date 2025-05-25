@@ -448,6 +448,57 @@ EOF
 #
 #
 
+mkdir -p .mozilla
+mkdir -p .cache/mozilla
+
+cat <<EOF > /tmp/home-ubuntu-.mozilla.mount
+[Unit]
+Description=Mount tmpfs on /home/ubuntu/.mozilla
+DefaultDependencies=no
+Requires=-.mount
+After=-.mount
+
+[Mount]
+What=tmpfs
+Where=/home/ubuntu/.mozilla
+Type=tmpfs
+Options=defaults,noatime,lazytime,nosuid,nodev,noexec,rw,size=256M
+
+[Install]
+WantedBy=local-fs.target
+EOF
+
+cat <<EOF > /tmp/home-ubuntu-.cache-mozilla.mount
+[Unit]
+Description=Mount tmpfs on /home/ubuntu/.cache/mozilla
+DefaultDependencies=no
+Requires=-.mount
+After=-.mount
+
+[Mount]
+What=tmpfs
+Where=/home/ubuntu/.cache/mozilla
+Type=tmpfs
+Options=defaults,noatime,lazytime,nosuid,nodev,noexec,rw,size=256M
+
+[Install]
+WantedBy=local-fs.target
+EOF
+
+sudo mv /tmp/home-ubuntu-.mozilla.mount /etc/systemd/system/home-ubuntu-.mozilla.mount
+sudo mv /tmp/home-ubuntu-.cache-mozilla.mount /etc/systemd/system/home-ubuntu-.cache-mozilla.mount
+
+
+# enable on >8gb ram systems
+MEM_KB=$(awk '/MemTotal/ {print $2}' /proc/meminfo)
+if [ "$MEM_KB" -ge 9000000 ]; then
+    sudo systemctl daemon-reload
+    sudo systemctl enable home-ubuntu-.mozilla.mount
+    sudo systemctl enable home-ubuntu-.cache-mozilla.mount
+    sudo systemctl start home-ubuntu-.mozilla.mount
+    sudo systemctl start home-ubuntu-.cache-mozilla.mount
+fi
+
 cat <<EOF > /tmp/policies.json
 {
     "policies": {
