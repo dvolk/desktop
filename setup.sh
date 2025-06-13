@@ -1430,3 +1430,40 @@ if [ `hostnamectl chassis` == "vm" ]; then
     # don't lock the screen in virtual machines
     dconf write /org/gnome/desktop/screensaver/lock-enabled false
 fi
+
+#   __             _
+#  / _| ___  _ __ | |_ ___
+# | |_ / _ \| '_ \| __/ __|
+# |  _| (_) | | | | |_\__ \
+# |_|  \___/|_| |_|\__|___/
+#
+
+mkdir -p .fonts
+cd .fonts
+
+# Download Iosevka
+wget -nc https://github.com/be5invis/Iosevka/releases/download/v33.2.3/PkgTTC-Iosevka-33.2.3.zip
+echo "ba2cb426b9d21d7c1a6a54efe63461cb1c166081d4aacf8467f8f672e0491caa  PkgTTC-Iosevka-33.2.3.zip" | sha256sum -c -
+unzip PkgTTC-Iosevka-33.2.3.zip
+# Download scientifica
+wget -nc https://github.com/oppiliappan/scientifica/releases/download/v2.3/scientifica.tar
+echo "f0857869a0e846c6f175dcb853dd1f119ea17a75218e63b7f0736d5a8e1e8a7f  scientifica.tar" | sha256sum -c -
+tar xf scientifica.tar
+# Download JetBrains Mono
+wget -nc https://github.com/JetBrains/JetBrainsMono/releases/download/v2.304/JetBrainsMono-2.304.zip
+echo "6f6376c6ed2960ea8a963cd7387ec9d76e3f629125bc33d1fdcd7eb7012f7bbf  JetBrainsMono-2.304.zip" | sha256sum -c -
+unzip JetBrainsMono-2.304.zip
+# Copy scientifica config (90 - fixed width font)
+cat <<EOF > /tmp/91-scientifica.conf
+<match target="scan">
+    <test name="family">
+        <string>scientifica</string>
+    </test>
+    <edit name="spacing">
+        <int>90</int>
+    </edit>
+</match>
+EOF
+sudo cp /tmp/91-scientifica.conf /etc/fonts/conf.d/91-scientifica.conf
+
+cd ..
