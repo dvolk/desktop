@@ -1306,6 +1306,12 @@ done
 #  |___/
 #
 
+# no thanks
+{
+    systemctl --user stop tracker-miner-fs-3.service
+    systemctl --user mask tracker-miner-fs-3.service
+    rm -rf .cache/tracker3
+} || true
 # disable extensions
 {
     gnome-extensions disable ding@rastersoft.com
