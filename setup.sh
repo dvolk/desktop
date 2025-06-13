@@ -447,8 +447,20 @@ EOF
     sudo adduser ubuntu libvirt
 } || true
 
-# how does this interact with the hotspot?
-# sudo ufw enable
+#   __ _                        _ _
+#  / _(_)_ __ _____      ____ _| | |
+# | |_| | '__/ _ \ \ /\ / / _` | | |
+# |  _| | | |  __/\ V  V / (_| | | |
+# |_| |_|_|  \___| \_/\_/ \__,_|_|_|
+#
+
+sudo ufw default deny incoming
+sudo ufw --force enable
+
+sudo ufw logging on
+sudo ufw allow in on lxdbr0
+sudo ufw route allow in on lxdbr0
+sudo ufw route allow out on lxdbr0
 
 #   __ _           __
 #  / _(_)_ __ ___ / _| _____  __
