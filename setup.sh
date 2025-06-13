@@ -73,6 +73,16 @@ bind 'set completion-ignore-case on'
 
 alias dev='echo -e "\033]11;#000000\007"' # black
 alias prod='echo -e "\033]11;#660000\007"' # red
+
+be() {
+  pod=$(kubectl get pods --no-headers -o custom-columns=:metadata.name | fzf)
+  container=$(kubectl get pod "$pod" -o jsonpath='{.spec.containers[*].name}' | tr ' ' '\n' | fzf)
+  kubectl exec -it "$pod" -c "$container" -- bash
+}
+kn() {
+  ns=$(kubectl get ns --no-headers -o custom-columns=:metadata.name | fzf)
+  kubectl config set-context --current --namespace="$ns"
+}
 EOF
 
 # ssh config
