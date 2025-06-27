@@ -16,6 +16,7 @@ sudo apt update
 sudo apt -y upgrade
 
 sudo snap refresh
+sudo snap install astral-uv
 
 sudo apt -y install etckeeper
 sudo etckeeper commit || true
