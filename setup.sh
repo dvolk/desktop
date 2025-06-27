@@ -284,6 +284,7 @@ cat<<'EOF' > .emacs.d/init.el
 (global-set-key [(shift f5)] 'elfeed)
 (global-set-key [(shift f9)] 'elfeed-update)
 (global-set-key [(shift f12)] 'hide-mode-line-mode)
+(global-set-key [(shift meta w)] 'delete-region)
 
 (treemacs)
 (global-visual-line-mode)
