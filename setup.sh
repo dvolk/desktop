@@ -84,6 +84,8 @@ kn() {
   ns=$(kubectl get ns --no-headers -o custom-columns=:metadata.name | fzf)
   kubectl config set-context --current --namespace="$ns"
 }
+
+PS1='\[\033[48;5;236m\]\[\033[38;5;141m\] \u \[\033[48;5;240m\]\[\033[38;5;236m\]\[\033[38;5;252m\] \h \[\033[48;5;33m\]\[\033[38;5;240m\]\[\033[38;5;15m\] \w \[\033[48;5;40m\]\[\033[38;5;33m\]$(git branch 2>/dev/null | grep "^*" | colrm 1 2 | awk '\''{ print "\[\033[38;5;15m\]  " $0 " " }'\'')$(if git branch 2>/dev/null | grep -q "^*"; then echo "\[\033[48;5;236m\]\[\033[38;5;40m\]"; else echo "\[\033[48;5;236m\]\[\033[38;5;33m\]"; fi)\[\033[38;5;141m\] \A \[\033[0m\]\[\033[38;5;236m\]\[\033[0m\] '
 EOF
 
 # ssh config
