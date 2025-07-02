@@ -61,19 +61,16 @@ cat<<'EOF' > .bashrc
 
 export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> ~/stuff/logs/bash-history-$(date "+%Y-%m-%d").log; fi;'
 
-if [ -f /usr/share/autojump/autojump.bash ]; then
-   source /usr/share/autojump/autojump.bash
-fi
-if [ -f /etc/profile.d/autojump.bash ]; then
-   source /etc/profile.d/autojump.bash
-fi
+if [ -f /usr/share/autojump/autojump.bash ]; then source /usr/share/autojump/autojump.bash; fi
+if [ -f /etc/profile.d/autojump.bash ]; then source /etc/profile.d/autojump.bash; fi
 
 alias h='cat ~/stuff/logs/*-history-* | grep -a'
 
 bind 'set completion-ignore-case on'
 
-alias dev='echo -e "\033]11;#000000\007"' # black
-alias prod='echo -e "\033]11;#660000\007"' # red
+alias dev='echo -e "\033]11;#000000\007"' # black term background
+alias prod='echo -e "\033]11;#660000\007"' # red term background
+alias git2ssh='git remote set-url origin "$(git remote get-url origin | sed -E "s#https?://([^/]+)/#git@\1:#")"' # convert github https remote to ssh
 
 be() {
   pod=$(kubectl get pods --no-headers -o custom-columns=:metadata.name | fzf)
