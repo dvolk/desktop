@@ -82,7 +82,13 @@ kn() {
   kubectl config set-context --current --namespace="$ns"
 }
 
-PS1='\[\033[48;5;236m\]\[\033[38;5;141m\] \u \[\033[48;5;240m\]\[\033[38;5;236m\]\[\033[38;5;252m\] \h \[\033[48;5;33m\]\[\033[38;5;240m\]\[\033[38;5;15m\] \w \[\033[48;5;40m\]\[\033[38;5;33m\]$(git branch 2>/dev/null | grep "^*" | colrm 1 2 | awk '\''{ print "\[\033[38;5;15m\] " $0 " " }'\'')$(if git branch 2>/dev/null | grep -q "^*"; then echo "\[\033[48;5;236m\]\[\033[38;5;40m\]"; else echo "\[\033[48;5;236m\]\[\033[38;5;33m\]"; fi)\[\033[38;5;141m\] \A \[\033[0m\]\[\033[38;5;236m\]\[\033[0m\] '
+# add git info to prompt
+source /usr/lib/git-core/git-sh-prompt
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWSTASHSTATE=1
+export GIT_PS1_SHOWUNTRACKEDFILES=1
+export GIT_PS1_SHOWUPSTREAM="auto"
+PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;33m\]$(__git_ps1 " (%s)")\[\033[00m\]\$ '
 EOF
 
 # ssh config
