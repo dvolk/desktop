@@ -16,7 +16,6 @@ sudo apt update
 sudo apt -y upgrade
 
 sudo snap refresh
-sudo snap install astral-uv
 
 sudo apt -y install etckeeper
 sudo etckeeper commit || true
@@ -34,13 +33,13 @@ sudo apt -y install imagemagick
 sudo apt -y install p7zip unace unar unrar unzip zip xz-utils arj lzip lzop rar rzip unalz p7zip-rar
 
 # misc packages
-sudo apt -y install jq rsync git tmux htop iotop bmon powertop lsof ncdu aria2 bzip2 fzf parallel rdate sqlite3 tig tshark apt-file autojump bc curl dict-gcide dictd ranger smartmontools lshw m4 pwgen sshfs tree ufw w3m lynx wget whois ngrep rtorrent ncompress rpm2cpio ncal expect figlet neofetch mutt
+sudo apt -y install jq rsync git tmux htop iotop bmon powertop lsof ncdu aria2 bzip2 fzf parallel rdate sqlite3 tig tshark apt-file autojump bc curl dict-gcide dictd ranger smartmontools lshw m4 pwgen sshfs tree ufw w3m lynx wget whois ngrep rtorrent ncompress rpm2cpio ncal expect figlet screenfetch mutt bear
 
 # python dev packages
-sudo apt -y install python-is-python3 build-essential python3-pip python3-virtualenv python3-watchdog mypy python3-pylsp python3-pylsp-black python3-pylsp-jsonrpc black python3-pylsp-black python3-isort mypy python3-mypy python3-mypy-extensions python3-flake8 python3-rope
+sudo apt -y install python-is-python3 build-essential python3-pip python3-virtualenv python3-watchdog mypy python3-pylsp python3-pylsp-black python3-pylsp-jsonrpc black python3-pylsp-black python3-isort mypy python3-mypy python3-mypy-extensions python3-flake8 python3-rope python3-tqdm python3-tabulate
 
 # desktop packages
-sudo apt -y install gimp emacs osmo kiwix blender rawtherapee feh mpv fbreader zathura zathura-djvu obs-studio virt-manager transmission gthumb gnome-weather gnome-tweaks foliate gnome-epub-thumbnailer
+sudo apt -y install gimp emacs osmo kiwix blender rawtherapee feh mpv fbreader zathura zathura-djvu obs-studio virt-manager transmission gthumb gnome-weather gnome-tweaks foliate gnome-epub-thumbnailer dosbox ffmpegthumbnailer innoextract obs-studio
 
 # deps for cataclysmdda
 sudo apt -y install libsdl2-gfx-1.0-0 libsdl2-image-2.0-0 libsdl2-mixer-2.0-0 libsdl2-ttf-2.0-0
