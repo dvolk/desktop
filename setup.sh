@@ -382,6 +382,20 @@ WHEEL_DOWN    seek -10         # seek 10 seconds backward
 WHEEL_UP   seek 10          # seek 10 seconds forward
 EOF
 
+# ranger config (disable preview pane)
+
+cat<<'EOF' > .config/ranger/rc.conf
+set column_ratios 4,3,1
+set preview_directories false
+set preview_files false
+set preview_images false
+set collapse_preview true
+set padding_right false
+
+set sort mtime
+set sort_reverse false
+EOF
+
 #  _               _
 # | |__   ___  ___| |_ ___
 # | '_ \ / _ \/ __| __/ __|
