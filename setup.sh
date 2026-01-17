@@ -401,8 +401,8 @@ EOF
 # | | | | (_) \__ \ |_\__ \
 # |_| |_|\___/|___/\__|___/
 #
-
-curl -o /tmp/hosts https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts
+curl -o /tmp/hosts https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+#curl -o /tmp/hosts https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts
 curl -o /tmp/mozilla-hosts https://raw.githubusercontent.com/MrRawes/firefox-hosts/firefox-hosts/hosts
 curl -o /tmp/crypto-hosts https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt
 curl -o /tmp/fedi.json https://nodes.fediverse.party/nodes.json
