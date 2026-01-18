@@ -95,14 +95,14 @@ mkdir -p .ssh
 cat<<'EOF' > .ssh/config
 Host *
     ControlMaster auto
-    ControlPersist 24h
+    ControlPersist 1000h
     ControlPath ~/.ssh/%r@%h:%p
 
 Host eclipse
     Hostname eclipse.oxfordfun.com
     Port 44444
     User ubuntu
-    DynamicForward 8080
+    DynamicForward 3128
 EOF
 
 # git config
