@@ -606,12 +606,6 @@ cat <<EOF > /tmp/policies.json
                 "default_area": "navbar",
                 "private_browsing": true
             },
-            "treestyletab@piro.sakura.ne.jp": {
-                "installation_mode": "force_installed",
-                "install_url": "https://addons.mozilla.org/firefox/downloads/latest/tree-style-tab/latest.xpi",
-                "default_area": "navbar",
-                "private_browsing": true
-            },
             "@testpilot-containers": {
                 "installation_mode": "force_installed",
                 "install_url": "https://addons.mozilla.org/firefox/downloads/latest/multi-account-containers/latest.xpi",
