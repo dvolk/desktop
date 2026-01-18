@@ -629,9 +629,6 @@ cat <<EOF > /tmp/policies.json
              "ui.key.menuAccessKeyFocuses": { "Value": false, "Status": "locked" },
              "dom.security.https_only_mode_ever_enabled": { "Value": true, "Status": "locked" },
 
-             "toolkit.legacyUserProfileCustomizations.stylesheets": { "Value": true, "Status": "locked" },
-             "layout.css.has-selector.enabled": { "Value": true, "Status": "locked" },
-
              "keyword.enabled": { "Value": false, "Status": "locked" },
              "browser.fixup.alternate.enabled": { "Value": false, "Status": "locked" },
              "browser.urlbar.suggest.searches": { "Value": false, "Status": "locked" },
@@ -1327,20 +1324,6 @@ EOF
 sudo mkdir -p /etc/firefox/policies
 jq . /tmp/policies.json # validate the json
 sudo mv /tmp/policies.json /etc/firefox/policies
-
-# snap
-for profile_dir in $(find snap/firefox/common/.mozilla/firefox/ -name '*.default*'); do
-    echo "profile_dir: $profile_dir"
-    mkdir -p "$profile_dir/chrome"
-    echo "#TabsToolbar { visibility: collapse; }" > "$profile_dir/chrome/userChrome.css"
-done
-
-# other
-for profile_dir in $(find .mozilla/firefox/ -name '*.default*'); do
-    echo "profile_dir: $profile_dir"
-    mkdir -p "$profile_dir/chrome"
-    echo "#TabsToolbar { visibility: collapse; }" > "$profile_dir/chrome/userChrome.css"
-done
 
 #
 #   __ _ _ __   ___  _ __ ___   ___
