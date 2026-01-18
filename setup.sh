@@ -383,8 +383,9 @@ EOF
 
 # ranger config (disable preview pane)
 
+mkdir -p .config/ranger
 cat<<'EOF' > .config/ranger/rc.conf
-set column_ratios 4,3,1
+set column_ratios 2,1,10
 set preview_directories false
 set preview_files false
 set preview_images false
