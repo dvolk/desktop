@@ -370,10 +370,13 @@ slang=en
 alang=en,eng,ja,jp,jpn
 
 gamma=10
-panscan=1
+#panscan=1
 profile=high-quality
 
 hr-seek=yes
+#af=lavfi=[dynaudnorm=f=75:g=25:p=0.55]
+
+af=lavfi="pan=stereo|c0=FC+LFE+FL+BL+SL|c1=FC+LFE+FR+BR+SR,loudnorm=I=-14:LRA=1:tp=-1:linear=false:dual_mono=true"
 EOF
 
 cat<<'EOF' > .config/mpv/input.conf
