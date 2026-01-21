@@ -545,7 +545,7 @@ if [ "$MEM_KB" -ge 9000000 ]; then
     sudo systemctl start home-ubuntu-.cache-mozilla.mount
 fi
 
-cat <<EOF > /tmp/policies.json
+cat <<'EOF' > /tmp/policies.json
 {
     "policies": {
         "CaptivePortal": false,
@@ -559,6 +559,9 @@ cat <<EOF > /tmp/policies.json
         "DontCheckDefaultBrowser": true,
         "DisableFeedbackCommands": true,
         "DisableFirefoxScreenshots": true,
+        "DisableDefaultBrowserAgent": true,
+        "DisableEncryptedClientHello": false,
+        "DisableProfileImport": true,
         "FirefoxSuggest": {
             "WebSuggestions": false,
             "SponsoredSuggestions": false,
@@ -572,7 +575,16 @@ cat <<EOF > /tmp/policies.json
             "Highlights": false,
             "Pocket": false,
             "SponsoredPocket": false,
+            "Stories": false,
+            "SponsoredStories": false,
             "Snippets": false,
+            "Locked": true
+        },
+        "GenerativeAI": {
+            "Enabled": false,
+            "Chatbot": false,
+            "LinkPreviews": false,
+            "TabGroups": false,
             "Locked": true
         },
         "DNSOverHTTPS": {
@@ -595,7 +607,23 @@ cat <<EOF > /tmp/policies.json
             "FeatureRecommendations": false,
             "UrlbarInterventions": false,
             "SkipOnboarding": true,
-            "MoreFromMozilla": false
+            "MoreFromMozilla": false,
+            "FirefoxLabs": false
+        },
+        "EnableTrackingProtection": {
+            "Value": true,
+            "Locked": true,
+            "Cryptomining": true,
+            "Fingerprinting": true,
+            "EmailTracking": true,
+            "SuspectedFingerprinting": true,
+            "Category": "strict",
+            "BaselineExceptions": false,
+            "ConvenienceExceptions": false
+        },
+        "EncryptedMediaExtensions": {
+            "Enabled": false,
+            "Locked": true
         },
         "OverrideFirstRunPage": "about:blank",
         "OverridePostUpdatePage": "about:blank",
@@ -615,32 +643,45 @@ cat <<EOF > /tmp/policies.json
         "Cookies": {
             "Behavior": "reject-tracker-and-partition-foreign"
         },
+        "PDFjs": {
+            "Enabled": false,
+            "EnablePermissions": false
+        },
         "HttpsOnlyMode": "force_enabled",
+        "NetworkPrediction": false,
         "AutofillAddressEnabled": false,
         "AutofillCreditCardEnabled": false,
         "DisableSetDesktopBackground": true,
         "DownloadDirectory": "${home}/Downloads",
         "PromptForDownloadLocation": false,
         "NoDefaultBookmarks": true,
-         "Preferences":
-         {
-             "general.smoothScroll": { "Value": false, "Status": "locked" },
-             "browser.altClickSave": { "Value": true, "Status": "locked" },
-             "ui.key.menuAccessKeyFocuses": { "Value": false, "Status": "locked" },
-             "dom.security.https_only_mode_ever_enabled": { "Value": true, "Status": "locked" },
+        "SkipTermsOfUse": true,
+        "VisualSearchEnabled": false,
+        "SearchEngines": {
+            "PreventInstalls": true,
+            "Remove": ["Google", "Bing", "DuckDuckGo", "eBay", "Perplexity"]
+        },
 
-             "keyword.enabled": { "Value": false, "Status": "locked" },
-             "browser.fixup.alternate.enabled": { "Value": false, "Status": "locked" },
-             "browser.urlbar.suggest.searches": { "Value": false, "Status": "locked" },
+        "Preferences":
+        {
+            "general.smoothScroll": { "Value": false, "Status": "locked" },
+            "browser.altClickSave": { "Value": true, "Status": "locked" },
+            "ui.key.menuAccessKeyFocuses": { "Value": false, "Status": "locked" },
+            "dom.security.https_only_mode_ever_enabled": { "Value": true, "Status": "locked" },
 
-             "browser.sessionstore.interval": { "Value": 3600000, "Status": "locked" },
+            "keyword.enabled": { "Value": false, "Status": "locked" },
+            "browser.fixup.alternate.enabled": { "Value": false, "Status": "locked" },
+            "browser.urlbar.suggest.searches": { "Value": false, "Status": "locked" },
 
-             "privacy.globalprivacycontrol.enabled": { "Value": true, "Status": "locked" },
-             "privacy.donottrackheader.enabled": { "Value": true, "Status": "locked" },
+            "browser.sessionstore.interval": { "Value": 3600000, "Status": "locked" },
 
-             "network.dns.native_https_query": { "Value": true, "Status": "locked" }
-         },
-         "Bookmarks": [
+            "privacy.globalprivacycontrol.enabled": { "Value": true, "Status": "locked" },
+            "privacy.donottrackheader.enabled": { "Value": true, "Status": "locked" },
+
+            "network.dns.native_https_query": { "Value": true, "Status": "locked" }
+
+        },
+        "Bookmarks": [
              {"Title": "Archwiki: Window manager", "URL": "https://wiki.archlinux.org/title/Window_manager", "Placement": "menu", "Folder": "X11 Window managers/desktops"},
              {"Title": "List of Window Managers", "URL": "https://www.gilesorr.com/wm/table.html", "Placement": "menu", "Folder": "X11 Window managers/desktops"},
              {"Title": "i3", "URL": "https://i3wm.org/", "Placement": "menu", "Folder": "X11 Window managers/desktops"},
