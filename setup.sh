@@ -677,6 +677,8 @@ cat <<'EOF' > /tmp/policies.json
             "privacy.globalprivacycontrol.enabled": { "Value": true, "Status": "locked" },
             "privacy.donottrackheader.enabled": { "Value": true, "Status": "locked" },
 
+            "network.http.referer.XOriginPolicy": { "Value": 2, "Status": "locked" },
+            "network.http.referer.trimmingPolicy ": { "Value": 2, "Status": "locked" },
             "network.dns.native_https_query": { "Value": true, "Status": "locked" }
 
         },
