@@ -442,7 +442,6 @@ mkdir -p stuff/mpv-screenshots
 mkdir -p stuff/backups
 mkdir -p stuff/logs
 mkdir -p stuff/torrents
-mkdir -p stuff/mongodb
 mkdir -p stuff/images
 mkdir -p stuff/org
 mkdir -p stuff/howm
@@ -459,7 +458,6 @@ file:///home/ubuntu/stuff/mpv-screenshots
 file:///home/ubuntu/stuff/backups
 file:///home/ubuntu/stuff/logs
 file:///home/ubuntu/stuff/torrents
-file:///home/ubuntu/stuff/mongodb
 file:///home/ubuntu/stuff/images
 file:///home/ubuntu/stuff/org
 EOF
@@ -745,11 +743,9 @@ cat <<'EOF' > /tmp/policies.json
              {"Title": "Springer Science and Fiction", "URL": "https://www.springer.com/series/11657", "Placement": "menu", "Folder": "Publishers"},
              {"Title": "DuckDB", "URL": "https://duckdb.org", "Placement": "menu", "Folder": "Databases"},
              {"Title": "SQLite", "URL": "https://sqlite.org", "Placement": "menu", "Folder": "Databases"},
-             {"Title": "MongoDB", "URL": "https://mongodb.com", "Placement": "menu", "Folder": "Databases"},
              {"Title": "MySQL", "URL": "https://www.mysql.com", "Placement": "menu", "Folder": "Databases"},
              {"Title": "PostgreSQL", "URL": "https://postgresql.org", "Placement": "menu", "Folder": "Databases"},
              {"Title": "Gitea", "URL": "https://gitea.io/", "Placement": "menu", "Folder": "Self-hosted server software"},
-             {"Title": "Mongo", "URL": "https://www.mongodb.com/", "Placement": "menu", "Folder": "Self-hosted server software"},
              {"Title": "Focal board", "URL": "https://www.focalboard.com/download/personal-edition/ubuntu/", "Placement": "menu", "Folder": "Self-hosted server software"},
              {"Title": "Filebrowser", "URL": "https://filebrowser.org/features", "Placement": "menu", "Folder": "Self-hosted server software"},
              {"Title": "Fossil", "URL": "https://fossil-scm.org/home/doc/trunk/www/index.wiki", "Placement": "menu", "Folder": "Self-hosted server software"},
