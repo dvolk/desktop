@@ -115,6 +115,12 @@ cat<<'EOF' > ~/.git/config
     helper = store
 EOF
 
+# tmux config
+cat<<'EOF' > ~/.tmux.conf
+set -g mouse on
+set -g status-bg '#88AACC'
+EOF
+
 # flake8 config
 cat<<'EOF' > .config/flake8
 [flake8]
