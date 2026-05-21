@@ -668,6 +668,8 @@ cat <<'EOF' > /tmp/policies.json
             "ui.key.menuAccessKeyFocuses": { "Value": false, "Status": "locked" },
             "dom.security.https_only_mode_ever_enabled": { "Value": true, "Status": "locked" },
 
+            "full-screen-api.ignore-widgets": { "Value": true, "Status": "locked" },
+
             "keyword.enabled": { "Value": false, "Status": "locked" },
             "browser.fixup.alternate.enabled": { "Value": false, "Status": "locked" },
             "browser.urlbar.suggest.searches": { "Value": false, "Status": "locked" },
