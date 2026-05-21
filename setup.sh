@@ -585,6 +585,7 @@ cat <<'EOF' > /tmp/policies.json
             "TabGroups": false,
             "Locked": true
         },
+        "TranslateEnabled": false,
         "DNSOverHTTPS": {
             "Enabled": true,
             "Locked": true,
